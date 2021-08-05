@@ -1,0 +1,3 @@
+[submodule "miscellaneous/ntu-demography_project"]
+	path = miscellaneous/ntu-demography_project
+	url = https://github.com/jessekelighine/ntu-demography_project
