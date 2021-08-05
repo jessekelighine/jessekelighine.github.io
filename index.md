@@ -5,7 +5,7 @@ author: "jessekelighine@gmail.com"
 ---
 
 <div style="margin: 0 auto;">
-<img class="front_gif" src="./resources/cat.gif" alt="cat" />
+<img class="front_pic" src="./resources/pinkeln.png" alt="cat" />
 </div>
 
 - [Statistics](./statistics/statistics.html).

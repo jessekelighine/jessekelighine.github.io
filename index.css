@@ -7,8 +7,9 @@ body {
 	padding: 0px 20px;
 }
 
-.front_gif {
-	max-width: 15em;
+.front_pic {
+	width: 0 auto;
+	width: 15em;
 }
 
 .back_button {
