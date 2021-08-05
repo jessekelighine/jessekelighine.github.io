@@ -1,0 +1,99 @@
+\documentclass{standalone}
+%<--------------------------------------------------------------------------->%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% \usetikzlibrary{angles,quotes}
+% \usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\begin{tikzpicture}[scale=4,thick,line cap=round]
+	\tikzstyle{bian}=[circle,fill=white,inner sep=.2pt,pos=.5];
+	\tikzstyle{jiao}=[draw,circle];
+	\newcommand*{\LANG}{0.7694208842938133 * 2}; % math.tan(72 / 180 * math.pi) * 0.5 * 0.5
+	\begin{scope}
+		\node[jiao] (A) at (0,0)			{A};
+		\node[jiao] (B) at ($(A)+(-144:1)$) {B};
+		\node[jiao] (C) at ($(B)+(-72:1)$)  {C};
+		\node[jiao] (D) at ($(C)+(0:1)$)	{D};
+		\node[jiao] (E) at ($(D)+(72:1)$)   {E};
+		\draw (A) edge[<->,bend right=25] node[bian]{1} (B);
+		\draw (B) edge[<->,bend right=25] node[bian]{2} (C);
+		\draw (D) edge[<->,bend right=25] node[bian]{3} (E);
+		\draw (C) edge[<->,bend right=25] node[bian]{4} (D);
+		\draw (B) edge[<->,bend right=25] node[bian]{5} (E);
+		\draw (E) edge[<->,bend right=25] node[bian]{6} (A);
+		\node at (0,0.15) {5 people sharing cookies};
+	\end{scope}
+	\begin{scope}[xshift=2cm,yshift=0cm]
+		\newcommand*{\EDGE}{\LANG / 2 * 1.05};
+		\node[jiao] (A6) at (0,0)                {A};
+		\node[jiao] (B6) at ($(A6)+(210:\EDGE)$) {B};
+		\node[jiao] (C6) at ($(B6)+(-90:\EDGE)$) {C};
+		\node[jiao] (D6) at ($(C6)+(-30:\EDGE)$) {D};
+		\node[jiao] (E6) at ($(D6)+(+30:\EDGE)$) {E};
+		\node[jiao] (F6) at ($(E6)+(+90:\EDGE)$) {F};
+		\draw (A6) edge[<->,bend right=20] node[bian]{1} (B6);
+		\draw (B6) edge[<->,bend right=20] node[bian]{2} (C6);
+		\draw (C6) edge[<->,bend right=20] node[bian]{3} (D6);
+		\draw (D6) edge[<->,bend right=20] node[bian]{5} (E6);
+		\draw (E6) edge[<->,bend right=20] node[bian]{4} (F6);
+		\draw (F6) edge[<->,bend right=20] node[bian]{7} (A6);
+		\draw (C6) edge[<->,bend right=20] node[bian]{6} (F6);
+		\draw (C6) edge[<->,bend right=50] node[bian]{8} (B6);
+		\node at (0,0.15) {6 people sharing cookies};
+	\end{scope}
+	\begin{scope}[xshift=0cm,yshift=-2cm]
+		\newcommand*{\SIEBEN}{360/7};
+		\newcommand*{\EDGE}{\LANG * 0.45648694878029983}; % 2 * math.tan(math.pi / 2 / 7)
+		\node[jiao] (A7) at (0,0)                             {A};
+		\node[jiao] (B7) at ($(A7)+(\SIEBEN*1/2+180:\EDGE)$)  {B};
+		\node[jiao] (C7) at ($(B7)+(\SIEBEN*3/2+180:\EDGE)$)  {C};
+		\node[jiao] (D7) at ($(C7)+(\SIEBEN*5/2+180:\EDGE)$)  {D};
+		\node[jiao] (E7) at ($(D7)+(\SIEBEN*7/2+180:\EDGE)$)  {E};
+		\node[jiao] (F7) at ($(E7)+(\SIEBEN*9/2+180:\EDGE)$)  {F};
+		\node[jiao] (G7) at ($(F7)+(\SIEBEN*11/2+180:\EDGE)$) {G};
+		\draw (A7) edge[<->,bend right=15] node[bian]{1}  (B7);
+		\draw (B7) edge[<->,bend right=15] node[bian]{2}  (C7);
+		\draw (C7) edge[<->,bend right=15] node[bian]{3}  (D7);
+		\draw (D7) edge[<->,bend right=15] node[bian]{4}  (E7);
+		\draw (E7) edge[<->,bend right=15] node[bian]{6}  (F7);
+		\draw (F7) edge[<->,bend right=15] node[bian]{5}  (G7);
+		\draw (G7) edge[<->,bend right=15] node[bian]{8}  (A7);
+		\draw (D7) edge[<->,bend right=15] node[bian]{7}  (G7);
+		\draw (D7) edge[<->,bend right=50] node[bian]{9}  (C7);
+		\draw (C7) edge[<->,bend right=50] node[bian]{10} (B7);
+		\node at (0,0.15) {7 people sharing cookies};
+	\end{scope}
+	\begin{scope}[xshift=2cm,yshift=-2cm]
+		\newcommand*{\ACHT}{360/8};
+		\newcommand*{\EDGE}{\LANG * 0.3826834323650898 * 1.05}; % 1/ math.sqrt( 2 + math.sqrt(2) )
+		\node[jiao] (A8) at (0,0)                           {A};
+		\node[jiao] (B8) at ($(A8)+(\ACHT*1/2+180:\EDGE)$)  {B};
+		\node[jiao] (C8) at ($(B8)+(\ACHT*3/2+180:\EDGE)$)  {C};
+		\node[jiao] (D8) at ($(C8)+(\ACHT*5/2+180:\EDGE)$)  {D};
+		\node[jiao] (E8) at ($(D8)+(\ACHT*7/2+180:\EDGE)$)  {E};
+		\node[jiao] (F8) at ($(E8)+(\ACHT*9/2+180:\EDGE)$)  {F};
+		\node[jiao] (G8) at ($(F8)+(\ACHT*11/2+180:\EDGE)$) {G};
+		\node[jiao] (H8) at ($(G8)+(\ACHT*13/2+180:\EDGE)$) {H};
+		\draw (A8) edge[<->,bend right=10] node[bian]{1}  (B8);
+		\draw (B8) edge[<->,bend right=10] node[bian]{2}  (C8);
+		\draw (C8) edge[<->,bend right=10] node[bian]{3}  (D8);
+		\draw (D8) edge[<->,bend right=10] node[bian]{4}  (E8);
+		\draw (E8) edge[<->,bend right=10] node[bian]{5}  (F8);
+		\draw (F8) edge[<->,bend right=10] node[bian]{7}  (G8);
+		\draw (G8) edge[<->,bend right=10] node[bian]{6}  (H8);
+		\draw (H8) edge[<->,bend right=10] node[bian]{9}  (A8);
+		\draw (E8) edge[<->,bend right=10] node[bian]{8}  (H8);
+		\draw (E8) edge[<->,bend right=50] node[bian]{10} (D8);
+		\draw (D8) edge[<->,bend right=50] node[bian]{11} (C8);
+		\draw (C8) edge[<->,bend right=50] node[bian]{12} (B8);
+		\node at (0,0.15) {8 people sharing cookies};
+	\end{scope}
+\end{tikzpicture}
+
+\end{document}
+

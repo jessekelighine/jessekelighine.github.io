@@ -1,0 +1,92 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{TIJDEMAN1971}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ef394d3d25a1d8fc03c158f5da9d66a3}{%
+           family={Tijdeman},
+           familyi={T\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ef394d3d25a1d8fc03c158f5da9d66a3}
+      \strng{fullhash}{ef394d3d25a1d8fc03c158f5da9d66a3}
+      \strng{bibnamehash}{ef394d3d25a1d8fc03c158f5da9d66a3}
+      \strng{authorbibnamehash}{ef394d3d25a1d8fc03c158f5da9d66a3}
+      \strng{authornamehash}{ef394d3d25a1d8fc03c158f5da9d66a3}
+      \strng{authorfullhash}{ef394d3d25a1d8fc03c158f5da9d66a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nieuw Archief voor Wiskunde}
+      \field{number}{3}
+      \field{title}{On a telephone problem}
+      \field{volume}{XIX}
+      \field{year}{1971}
+      \field{pages}{188\bibrangedash 192}
+      \range{pages}{5}
+    \endentry
+    \entry{BAKER1972191}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=055abecca2cc481ba3adfb244ecd415c}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Brenda},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=88bd932c15c4ae7b0f7652a409325659}{%
+           family={Shostak},
+           familyi={S\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{137d971e6b906c7be6719ab7b68533e2}
+      \strng{fullhash}{137d971e6b906c7be6719ab7b68533e2}
+      \strng{bibnamehash}{137d971e6b906c7be6719ab7b68533e2}
+      \strng{authorbibnamehash}{137d971e6b906c7be6719ab7b68533e2}
+      \strng{authornamehash}{137d971e6b906c7be6719ab7b68533e2}
+      \strng{authorfullhash}{137d971e6b906c7be6719ab7b68533e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0012-365X}
+      \field{journaltitle}{Discrete Mathematics}
+      \field{number}{3}
+      \field{title}{Gossips and telephones}
+      \field{volume}{2}
+      \field{year}{1972}
+      \field{pages}{191\bibrangedash 193}
+      \range{pages}{3}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
