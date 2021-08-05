@@ -3,17 +3,16 @@
 body {
 	width: auto;
 	max-width: 60em;
-	margin: 20pt auto;
+	margin: 0 auto;
+	padding: 0px 20px;
 }
 
 .title { font-size: 40px; }
 
 .math {
-	font-size: 18px;
-	/* font-family: "Menlo"; */
-	background-color: #f1f1f1;
-	border-radius: 8px;
-	/* padding: 2px; */
+	font-size: 15px;
+	/* background-color: #f1f1f1; */
+	/* border-radius: 8px; */
 }
 
 em { color: #87AfAF; }
@@ -122,7 +121,7 @@ h6 {
 
 p {
 	color: rgba(0, 0, 0, 0.6);
-	font-size: 20px;
+	font-size: 15px;
 	line-height: 150%;
 	font-family: sans-serif;
 	font-style: normal;
