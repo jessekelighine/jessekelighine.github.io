@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}研究動機、研究目的}{1}{section.1}%
+\contentsline {section}{\numberline {2}研究主題}{1}{section.2}%
+\contentsline {section}{\numberline {3}實驗方法}{1}{section.3}%
+\contentsline {section}{\numberline {4}研究結果與討論}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}雙副對：圖 \ref {two}}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}條根支：圖 \ref {stick}}{2}{subsection.4.2}%
+\contentsline {section}{\numberline {5}結論與改善}{3}{section.5}%
+\contentsline {section}{\numberline {6}參考文獻}{4}{section.6}%

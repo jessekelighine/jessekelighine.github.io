@@ -7,12 +7,22 @@ body {
 	padding: 0px 20px;
 }
 
+.front_gif {
+	max-width: 15em;
+}
+
+.back_button {
+	float: right;
+	background-color: #f1f1f1;
+	border-radius: 8px;
+}
+
 .title { font-size: 40px; }
 
 .math {
-	font-size: 15px;
-	/* background-color: #f1f1f1; */
-	/* border-radius: 8px; */
+	font-size: 18px;
+	background-color: #f1f1f1;
+	border-radius: 8px;
 }
 
 em { color: #87AfAF; }
@@ -121,7 +131,7 @@ h6 {
 
 p {
 	color: rgba(0, 0, 0, 0.6);
-	font-size: 15px;
+	font-size: 20px;
 	line-height: 150%;
 	font-family: sans-serif;
 	font-style: normal;
