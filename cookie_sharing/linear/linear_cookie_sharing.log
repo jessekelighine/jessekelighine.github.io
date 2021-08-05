@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  17 JUL 2021 22:51
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  5 AUG 2021 15:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**linear/linear_cookie_sharing.tex
-(./linear/linear_cookie_sharing.tex
+**linear_cookie_sharing.tex
+(./linear_cookie_sharing.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/standalone/standalone.cls
@@ -391,8 +391,7 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count278
 \g__pdf_backend_annotation_int=\count279
 \g__pdf_backend_link_int=\count280
-)
-No file linear_cookie_sharing.aux.
+) (./linear_cookie_sharing.aux)
 \openout1 = `linear_cookie_sharing.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -406,6 +405,7 @@ LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 7
 .
+
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -425,14 +425,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 ]
-(linear/linear_cookie_sharing.aux) ) 
+(./linear_cookie_sharing.aux) ) 
 Here is how much of TeX's memory you used:
- 11871 strings out of 478436
- 248849 string characters out of 5854824
- 549377 words of memory out of 5000000
+ 11872 strings out of 478436
+ 248854 string characters out of 5854824
+ 549368 words of memory out of 5000000
  31596 multiletter control sequences out of 15000+600000
  403438 words of font info for 28 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,7n,116p,418b,926s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 113i,7n,116p,411b,926s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on linear/linear_cookie_sharing.pdf (1 page).
+Output written on linear_cookie_sharing.pdf (1 page).
