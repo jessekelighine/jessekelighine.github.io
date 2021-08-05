@@ -1,9 +1,8 @@
 ---
-title:  "jessekelighine@gmail.com"
+title:  "陳捷 Jesse"
 author: "jessekelighine@gmail.com"
-date:   "2021-Aug-05"
 ---
 
-# Hello World!
+# Interesting Mathematics
 
 - [Cookie Sharing Scheme](./cookie_sharing/cookie_sharing.pdf)
