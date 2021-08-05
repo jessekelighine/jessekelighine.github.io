@@ -1,8 +1,9 @@
 /* NOTION.CSS */
 
 body {
-	width: 65%;
-	margin: 0 auto;
+	width: auto;
+	max-width: 60em;
+	margin: 20pt auto;
 }
 
 .title { font-size: 40px; }
