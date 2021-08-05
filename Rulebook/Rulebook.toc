@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}遊戲介紹}{1}{section.1}%
+\contentsline {section}{\numberline {2}遊戲規則}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}棋盤介紹}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}基本走法}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}排擠}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}遊戲規則版本一}{5}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}遊戲規則版本二}{6}{subsection.2.5}%
+\contentsline {section}{\numberline {3}後記}{8}{section.3}%

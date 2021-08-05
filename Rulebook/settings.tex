@@ -1,0 +1,111 @@
+\usepackage{setspace}\setstretch{1.25} % {\setstretch{1.25} \par}
+%<---------------------------------------------------------------------------->%
+%%% Section Font %%%
+\usepackage[small,sf]{titlesec}
+\titleformat*{\section}{\normalsize\sf}
+\titleformat*{\subsection}{\normalsize\sf}
+%<---------------------------------------------------------------------------->%
+%%% Graphics %%%
+\usepackage{graphicx}
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+%<---------------------------------------------------------------------------->%
+%%% Enumerate %%%
+\usepackage{enumitem}
+\setlist{listparindent=\parindent,parsep=0pt,nosep}
+%<---------------------------------------------------------------------------->%
+%%% Math %%%
+\usepackage{gensymb,amssymb}
+\usepackage{mathrsfs,amsmath}
+\usepackage{mathtools}
+%<---------------------------------------------------------------------------->%
+%%% Rules %%%
+\usepackage{booktabs}
+%<---------------------------------------------------------------------------->%
+%%% Page # of # %%%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy} \renewcommand{\headrulewidth}{0pt} \fancyhf{}
+\fancyfoot[C]{\footnotesize 第 \thepage\ 頁 / 共 \pageref{LastPage} 頁}
+\fancypagestyle{plain}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}
+\fancyfoot[C]{\footnotesize 第 \thepage\ 頁 / 共 \pageref{LastPage} 頁}}
+%<---------------------------------------------------------------------------->%
+%%% Hyper Ref %%%
+\usepackage[hidelinks,colorlinks=true]{hyperref}
+%<---------------------------------------------------------------------------->%
+%%% Example %%%
+\newcommand{\zB}{$\blacktriangleright$\hspace{1pt}例：}
+%<---------------------------------------------------------------------------->%
+% %%% Table of Contents %%%
+% \usepackage[titles]{tocloft}
+% \renewcommand{\contentsname}{目錄}
+% \renewcommand{\cfttoctitlefont}{\sf\large}
+% \renewcommand{\cftsecfont}{\sf}
+% \renewcommand{\cftsubsecfont}{\sf}
+% \makeatletter\renewcommand\tableofcontents{\@starttoc{toc}}\makeatother
+% %<---------------------------------------------------------------------------->%
+%%% CJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{GenWanMin TJ L}
+\newcommand{\chsansfont}{Noto Sans CJK KR Medium}
+\newcommand{\chmonofont}{Noto Sans CJK KR Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chsansfont,AutoFakeSlant=0.2]
+\setCJKsansfont{\chsansfont}[BoldFont=\chsansfont,AutoFakeSlant=0.2]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true}
+\setlength{\parindent}{2em}
+%<--------------------------------------------------------------------------->%
+%%% Underdot %%%
+\usepackage{xeCJKfntef}
+\newcommand{\underdot}[1]{\CJKunderdot{#1}}
+%<---------------------------------------------------------------------------->%
+%%% Punctuation width %%%
+\xeCJKsetwidth{、}{0.55em}
+\xeCJKsetwidth{，}{0.6em}
+\xeCJKsetwidth{：}{0.65em}
+\xeCJKsetwidth{；}{0.65em}
+\xeCJKsetwidth{。}{0.7em}
+\xeCJKsetwidth{・}{0.7em}
+\xeCJKsetwidth{〈〉}{0.7em}
+\xeCJKsetwidth{《》}{0.7em}
+\xeCJKsetwidth{「」}{0.7em}
+\xeCJKsetwidth{『』}{0.7em}
+\xeCJKsetwidth{【】}{0.7em}
+\xeCJKsetwidth{（）}{0.7em}
+%<--------------------------------------------------------------------------->%
+%%% Punctuation Kerning %%%
+% Pairs-with-punctuation kerning (after).
+\xeCJKsetkern{〉}{、}{0.2em} \xeCJKsetkern{〉}{，}{0.2em} \xeCJKsetkern{〉}{。}{0.2em} \xeCJKsetkern{〉}{；}{0.2em} \xeCJKsetkern{〉}{：}{0.2em} 
+\xeCJKsetkern{》}{、}{0.2em} \xeCJKsetkern{》}{，}{0.2em} \xeCJKsetkern{》}{。}{0.2em} \xeCJKsetkern{》}{；}{0.2em} \xeCJKsetkern{》}{：}{0.2em} 
+\xeCJKsetkern{」}{、}{0.2em} \xeCJKsetkern{」}{，}{0.2em} \xeCJKsetkern{」}{。}{0.2em} \xeCJKsetkern{」}{；}{0.2em} \xeCJKsetkern{」}{：}{0.2em} 
+\xeCJKsetkern{』}{、}{0.2em} \xeCJKsetkern{』}{，}{0.2em} \xeCJKsetkern{』}{。}{0.2em} \xeCJKsetkern{』}{；}{0.2em} \xeCJKsetkern{』}{：}{0.2em} 
+\xeCJKsetkern{】}{、}{0.2em} \xeCJKsetkern{】}{，}{0.2em} \xeCJKsetkern{】}{。}{0.2em} \xeCJKsetkern{】}{；}{0.2em} \xeCJKsetkern{】}{：}{0.2em} 
+\xeCJKsetkern{）}{、}{0.2em} \xeCJKsetkern{）}{，}{0.2em} \xeCJKsetkern{）}{。}{0.2em} \xeCJKsetkern{）}{；}{0.2em} \xeCJKsetkern{）}{：}{0.2em} 
+% Pairs-with-punctuation kerning (before).
+\xeCJKsetkern{、}{〈}{0.4em} \xeCJKsetkern{。}{〈}{0.4em} \xeCJKsetkern{，}{〈}{0.4em} \xeCJKsetkern{：}{〈}{0.4em} \xeCJKsetkern{；}{〈}{0.4em}
+\xeCJKsetkern{、}{《}{0.4em} \xeCJKsetkern{。}{《}{0.4em} \xeCJKsetkern{，}{《}{0.4em} \xeCJKsetkern{：}{《}{0.4em} \xeCJKsetkern{；}{《}{0.4em}
+\xeCJKsetkern{、}{「}{0.4em} \xeCJKsetkern{。}{「}{0.4em} \xeCJKsetkern{，}{「}{0.4em} \xeCJKsetkern{：}{「}{0.4em} \xeCJKsetkern{；}{「}{0.4em}
+\xeCJKsetkern{、}{『}{0.4em} \xeCJKsetkern{。}{『}{0.4em} \xeCJKsetkern{，}{『}{0.4em} \xeCJKsetkern{：}{『}{0.4em} \xeCJKsetkern{；}{『}{0.4em}
+\xeCJKsetkern{、}{【}{0.4em} \xeCJKsetkern{。}{【}{0.4em} \xeCJKsetkern{，}{【}{0.4em} \xeCJKsetkern{：}{【}{0.4em} \xeCJKsetkern{；}{【}{0.4em}
+\xeCJKsetkern{、}{（}{0.4em} \xeCJKsetkern{。}{（}{0.4em} \xeCJKsetkern{，}{（}{0.4em} \xeCJKsetkern{：}{（}{0.4em} \xeCJKsetkern{；}{（}{0.4em}
+% Pairwise kerning (back-to-back).
+\xeCJKsetkern{〉}{〈}{0.3em} \xeCJKsetkern{〉}{《}{0.3em} \xeCJKsetkern{〉}{「}{0.3em} \xeCJKsetkern{〉}{『}{0.3em} \xeCJKsetkern{〉}{【}{0.3em} \xeCJKsetkern{〉}{（}{0.3em}
+\xeCJKsetkern{》}{〈}{0.3em} \xeCJKsetkern{》}{《}{0.3em} \xeCJKsetkern{》}{「}{0.3em} \xeCJKsetkern{》}{『}{0.3em} \xeCJKsetkern{》}{【}{0.3em} \xeCJKsetkern{》}{（}{0.3em}
+\xeCJKsetkern{」}{〈}{0.3em} \xeCJKsetkern{」}{《}{0.3em} \xeCJKsetkern{」}{「}{0.3em} \xeCJKsetkern{」}{『}{0.3em} \xeCJKsetkern{」}{【}{0.3em} \xeCJKsetkern{」}{（}{0.3em}
+\xeCJKsetkern{』}{〈}{0.3em} \xeCJKsetkern{』}{《}{0.3em} \xeCJKsetkern{』}{「}{0.3em} \xeCJKsetkern{』}{『}{0.3em} \xeCJKsetkern{』}{【}{0.3em} \xeCJKsetkern{』}{（}{0.3em}
+\xeCJKsetkern{】}{〈}{0.3em} \xeCJKsetkern{】}{《}{0.3em} \xeCJKsetkern{】}{「}{0.3em} \xeCJKsetkern{】}{『}{0.3em} \xeCJKsetkern{】}{【}{0.3em} \xeCJKsetkern{】}{（}{0.3em}
+\xeCJKsetkern{）}{〈}{0.3em} \xeCJKsetkern{）}{《}{0.3em} \xeCJKsetkern{）}{「}{0.3em} \xeCJKsetkern{）}{『}{0.3em} \xeCJKsetkern{）}{【}{0.3em} \xeCJKsetkern{）}{（}{0.3em}
+% Pairwise kerning (font-to-back).
+\xeCJKsetkern{〈}{〈}{0.2em} \xeCJKsetkern{〈}{《}{0.2em} \xeCJKsetkern{〈}{「}{0.2em} \xeCJKsetkern{〈}{『}{0.2em} \xeCJKsetkern{〈}{【}{0.2em} \xeCJKsetkern{〈}{（}{0.2em}
+\xeCJKsetkern{《}{〈}{0.2em} \xeCJKsetkern{《}{《}{0.2em} \xeCJKsetkern{《}{「}{0.2em} \xeCJKsetkern{《}{『}{0.2em} \xeCJKsetkern{《}{【}{0.2em} \xeCJKsetkern{《}{（}{0.2em}
+\xeCJKsetkern{「}{〈}{0.2em} \xeCJKsetkern{「}{《}{0.2em} \xeCJKsetkern{「}{「}{0.2em} \xeCJKsetkern{「}{『}{0.2em} \xeCJKsetkern{「}{【}{0.2em} \xeCJKsetkern{「}{（}{0.2em}
+\xeCJKsetkern{『}{〈}{0.2em} \xeCJKsetkern{『}{《}{0.2em} \xeCJKsetkern{『}{「}{0.2em} \xeCJKsetkern{『}{『}{0.2em} \xeCJKsetkern{『}{【}{0.2em} \xeCJKsetkern{『}{（}{0.2em}
+\xeCJKsetkern{【}{〈}{0.2em} \xeCJKsetkern{【}{《}{0.2em} \xeCJKsetkern{【}{「}{0.2em} \xeCJKsetkern{【}{『}{0.2em} \xeCJKsetkern{【}{【}{0.2em} \xeCJKsetkern{【}{（}{0.2em}
+\xeCJKsetkern{（}{〈}{0.2em} \xeCJKsetkern{（}{《}{0.2em} \xeCJKsetkern{（}{「}{0.2em} \xeCJKsetkern{（}{『}{0.2em} \xeCJKsetkern{（}{【}{0.2em} \xeCJKsetkern{（}{（}{0.2em}
+% Pairwise kerning (back-to-front).
+\xeCJKsetkern{〉}{〉}{0.2em} \xeCJKsetkern{〉}{》}{0.2em} \xeCJKsetkern{〉}{」}{0.2em} \xeCJKsetkern{〉}{』}{0.2em} \xeCJKsetkern{〉}{】}{0.2em} \xeCJKsetkern{〉}{）}{0.2em}
+\xeCJKsetkern{》}{〉}{0.2em} \xeCJKsetkern{》}{》}{0.2em} \xeCJKsetkern{》}{」}{0.2em} \xeCJKsetkern{》}{』}{0.2em} \xeCJKsetkern{》}{】}{0.2em} \xeCJKsetkern{》}{）}{0.2em}
+\xeCJKsetkern{」}{〉}{0.2em} \xeCJKsetkern{」}{》}{0.2em} \xeCJKsetkern{」}{」}{0.2em} \xeCJKsetkern{」}{』}{0.2em} \xeCJKsetkern{」}{】}{0.2em} \xeCJKsetkern{」}{）}{0.2em}
+\xeCJKsetkern{』}{〉}{0.2em} \xeCJKsetkern{』}{》}{0.2em} \xeCJKsetkern{』}{」}{0.2em} \xeCJKsetkern{』}{』}{0.2em} \xeCJKsetkern{』}{】}{0.2em} \xeCJKsetkern{』}{）}{0.2em}
+\xeCJKsetkern{】}{〉}{0.2em} \xeCJKsetkern{】}{》}{0.2em} \xeCJKsetkern{】}{」}{0.2em} \xeCJKsetkern{】}{』}{0.2em} \xeCJKsetkern{】}{】}{0.2em} \xeCJKsetkern{】}{）}{0.2em}
+\xeCJKsetkern{）}{〉}{0.2em} \xeCJKsetkern{）}{》}{0.2em} \xeCJKsetkern{）}{」}{0.2em} \xeCJKsetkern{）}{』}{0.2em} \xeCJKsetkern{）}{】}{0.2em} \xeCJKsetkern{）}{）}{0.2em}
+%<--------------------------------------------------------------------------->%
