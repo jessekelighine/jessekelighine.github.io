@@ -4,23 +4,24 @@ title:  "Gallery"
 
 # Designs
 
-- **身心科補助懶人包**
-  <img src="./resources/mental_health.png" width="100%"/>
-- **台灣大學校慶酷卡**
-  <img src="./resources/cool_card-1.png" width="100%"/>
-- **I waste time**
-  <img src="./resources/i_waste_time.png" width="100%"/>
+- **校慶酷卡設計**
+  <img src="./resources/cool_card-1.png" alt="cool card front" width="100%"/>
+  <img src="./resources/cool_card-2.png" alt="cool card back" width="100%"/>
+- **懶人包設計**
+  <img src="./resources/mental_health.png" alt="mental health info" width="100%"/>
+- **設計**
+  <img src="./resources/i_waste_time.png" alt="design pattern" width="100%"/>
 
 # Posters
 
-- **台灣大學經濟營**
+- **營隊海報**
   <img src="./resources/b2-01.png" width="100%"/>
 - **講座海報**
   <img src="./resources/UBS.png" width="100%"/>
 
-# Pamphlets
+# Pamphlets and Publications
 
-> [**RE100: Taiwan Renewable Energy Report**](./resources/RE100-2020_report.pdf):
+> [**RE100: Taiwan Renewable Energy Briefing**](./resources/RE100-2020_report.pdf):
 > 於中華經濟研究院參與製作國際再生能源倡議組織 RE100 2020 年台灣再生能源報告書，
 > 負責處理、視覺化數據與報告書排版。
 > ([RE100 page](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan))
@@ -35,5 +36,9 @@ title:  "Gallery"
 > <figure>
 > 	<embed src="./resources/voting_pamphlet.pdf" width="100%" height="800px" />
 > </figure>
+
+# Random GIFs
+
+<img class="front_pic" src="./resources/cat_roll.gif" alt="cat roll" />
 
 <a href="../index.html" class="back_button">BACK</a>
