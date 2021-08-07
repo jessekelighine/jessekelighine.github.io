@@ -1,15 +1,15 @@
-[2] Config.pm:311> INFO - This is Biber 2.16
-[3] Config.pm:314> INFO - Logfile is 'cookie_sharing.blg'
-[135] biber-darwin:340> INFO - === Sat Jul 17, 2021, 22:51:22
-[158] Biber.pm:415> INFO - Reading 'cookie_sharing.bcf'
-[321] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
-[345] Biber.pm:4340> INFO - Processing section 0
-[373] Biber.pm:4531> INFO - Looking for bibtex format file 'ref.bib' for section 0
-[375] bibtex.pm:1689> INFO - LaTeX decoding ...
-[383] bibtex.pm:1494> INFO - Found BibTeX data source 'ref.bib'
-[448] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[449] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[449] Biber.pm:4168> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
-[449] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
-[455] bbl.pm:654> INFO - Writing 'cookie_sharing.bbl' with encoding 'UTF-8'
-[458] bbl.pm:757> INFO - Output to cookie_sharing.bbl
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'cookie_sharing.blg'
+[154] biber-darwin:340> INFO - === Sat Aug  7, 2021, 17:26:26
+[179] Biber.pm:415> INFO - Reading 'cookie_sharing.bcf'
+[371] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[397] Biber.pm:4340> INFO - Processing section 0
+[416] Biber.pm:4531> INFO - Looking for bibtex format file 'ref.bib' for section 0
+[426] bibtex.pm:1689> INFO - LaTeX decoding ...
+[434] bibtex.pm:1494> INFO - Found BibTeX data source 'ref.bib'
+[510] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[510] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[510] Biber.pm:4168> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'en-US'
+[510] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[518] bbl.pm:654> INFO - Writing 'cookie_sharing.bbl' with encoding 'UTF-8'
+[521] bbl.pm:757> INFO - Output to cookie_sharing.bbl

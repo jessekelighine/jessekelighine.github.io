@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  31 JUL 2021 14:35
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  7 AUG 2021 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -129,44 +129,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-(/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2021/03/28 v1.26 mathematical typesetting tools
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count198
-\calc@Bcount=\count199
-\calc@Adimen=\dimen156
-\calc@Bdimen=\dimen157
-\calc@Askip=\skip52
-\calc@Bskip=\skip53
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count266
-\calc@Cskip=\skip54
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mhsetup.sty
-Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
-)
-LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
-LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count267
-\l_MT_multwidth_dim=\dimen158
-\origjot=\skip55
-\l_MT_shortvdotswithinadjustabove_dim=\dimen159
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen160
-\l_MT_above_intertext_sep=\dimen161
-\l_MT_below_intertext_sep=\dimen162
-\l_MT_above_shortintertext_sep=\dimen163
-\l_MT_below_shortintertext_sep=\dimen164
-\xmathstrut@box=\box49
-\xmathstrut@dim=\dimen165
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/cancel/cancel.sty
-Package: cancel 2013/04/12 v2.2 Cancel math terms
-)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
 
@@ -186,7 +148,7 @@ Package pdftexcmds Info: \pdfdraftmode not found.
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count268
+\etb@tempcnta=\count198
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
@@ -196,7 +158,7 @@ Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count269
+\lrq@indent=\count199
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -208,62 +170,62 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count270
-\c@listtotal=\count271
-\c@listcount=\count272
-\c@liststart=\count273
-\c@liststop=\count274
-\c@citecount=\count275
-\c@citetotal=\count276
-\c@multicitecount=\count277
-\c@multicitetotal=\count278
-\c@instcount=\count279
-\c@maxnames=\count280
-\c@minnames=\count281
-\c@maxitems=\count282
-\c@minitems=\count283
-\c@citecounter=\count284
-\c@maxcitecounter=\count285
-\c@savedcitecounter=\count286
-\c@uniquelist=\count287
-\c@uniquename=\count288
-\c@refsection=\count289
-\c@refsegment=\count290
-\c@maxextratitle=\count291
-\c@maxextratitleyear=\count292
-\c@maxextraname=\count293
-\c@maxextradate=\count294
-\c@maxextraalpha=\count295
-\c@abbrvpenalty=\count296
-\c@highnamepenalty=\count297
-\c@lownamepenalty=\count298
-\c@maxparens=\count299
-\c@parenlevel=\count300
-\blx@tempcnta=\count301
-\blx@tempcntb=\count302
-\blx@tempcntc=\count303
-\blx@maxsection=\count304
-\blx@maxsegment@0=\count305
-\blx@notetype=\count306
-\blx@parenlevel@text=\count307
-\blx@parenlevel@foot=\count308
-\blx@sectionciteorder@0=\count309
-\blx@entrysetcounter=\count310
-\blx@biblioinstance=\count311
-\labelnumberwidth=\skip56
-\labelalphawidth=\skip57
-\biblabelsep=\skip58
-\bibitemsep=\skip59
-\bibnamesep=\skip60
-\bibinitsep=\skip61
-\bibparsep=\skip62
-\bibhang=\skip63
+\c@tabx@nest=\count266
+\c@listtotal=\count267
+\c@listcount=\count268
+\c@liststart=\count269
+\c@liststop=\count270
+\c@citecount=\count271
+\c@citetotal=\count272
+\c@multicitecount=\count273
+\c@multicitetotal=\count274
+\c@instcount=\count275
+\c@maxnames=\count276
+\c@minnames=\count277
+\c@maxitems=\count278
+\c@minitems=\count279
+\c@citecounter=\count280
+\c@maxcitecounter=\count281
+\c@savedcitecounter=\count282
+\c@uniquelist=\count283
+\c@uniquename=\count284
+\c@refsection=\count285
+\c@refsegment=\count286
+\c@maxextratitle=\count287
+\c@maxextratitleyear=\count288
+\c@maxextraname=\count289
+\c@maxextradate=\count290
+\c@maxextraalpha=\count291
+\c@abbrvpenalty=\count292
+\c@highnamepenalty=\count293
+\c@lownamepenalty=\count294
+\c@maxparens=\count295
+\c@parenlevel=\count296
+\blx@tempcnta=\count297
+\blx@tempcntb=\count298
+\blx@tempcntc=\count299
+\blx@maxsection=\count300
+\blx@maxsegment@0=\count301
+\blx@notetype=\count302
+\blx@parenlevel@text=\count303
+\blx@parenlevel@foot=\count304
+\blx@sectionciteorder@0=\count305
+\blx@entrysetcounter=\count306
+\blx@biblioinstance=\count307
+\labelnumberwidth=\skip52
+\labelalphawidth=\skip53
+\biblabelsep=\skip54
+\bibitemsep=\skip55
+\bibnamesep=\skip56
+\bibinitsep=\skip57
+\bibparsep=\skip58
+\bibhang=\skip59
 \blx@bcfin=\read2
 \blx@bcfout=\write3
 \blx@langwohyphens=\language23
-\c@mincomprange=\count312
-\c@maxcomprange=\count313
-\c@mincompwidth=\count314
+\c@mincomprange=\count308
+\c@maxcomprange=\count309
+\c@mincompwidth=\count310
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -278,100 +240,100 @@ File: apa.dbx 2020/08/28 v9.14 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count315
-\c@savedafterword=\count316
-\c@annotator=\count317
-\c@savedannotator=\count318
-\c@author=\count319
-\c@savedauthor=\count320
-\c@bookauthor=\count321
-\c@savedbookauthor=\count322
-\c@commentator=\count323
-\c@savedcommentator=\count324
-\c@editor=\count325
-\c@savededitor=\count326
-\c@editora=\count327
-\c@savededitora=\count328
-\c@editorb=\count329
-\c@savededitorb=\count330
-\c@editorc=\count331
-\c@savededitorc=\count332
-\c@foreword=\count333
-\c@savedforeword=\count334
-\c@holder=\count335
-\c@savedholder=\count336
-\c@introduction=\count337
-\c@savedintroduction=\count338
-\c@namea=\count339
-\c@savednamea=\count340
-\c@nameb=\count341
-\c@savednameb=\count342
-\c@namec=\count343
-\c@savednamec=\count344
-\c@translator=\count345
-\c@savedtranslator=\count346
-\c@shortauthor=\count347
-\c@savedshortauthor=\count348
-\c@shorteditor=\count349
-\c@savedshorteditor=\count350
-\c@groupauthor=\count351
-\c@savedgroupauthor=\count352
-\c@narrator=\count353
-\c@savednarrator=\count354
-\c@execproducer=\count355
-\c@savedexecproducer=\count356
-\c@execdirector=\count357
-\c@savedexecdirector=\count358
-\c@with=\count359
-\c@savedwith=\count360
-\c@labelname=\count361
-\c@savedlabelname=\count362
-\c@institution=\count363
-\c@savedinstitution=\count364
-\c@lista=\count365
-\c@savedlista=\count366
-\c@listb=\count367
-\c@savedlistb=\count368
-\c@listc=\count369
-\c@savedlistc=\count370
-\c@listd=\count371
-\c@savedlistd=\count372
-\c@liste=\count373
-\c@savedliste=\count374
-\c@listf=\count375
-\c@savedlistf=\count376
-\c@location=\count377
-\c@savedlocation=\count378
-\c@organization=\count379
-\c@savedorganization=\count380
-\c@origlocation=\count381
-\c@savedoriglocation=\count382
-\c@origpublisher=\count383
-\c@savedorigpublisher=\count384
-\c@publisher=\count385
-\c@savedpublisher=\count386
-\c@language=\count387
-\c@savedlanguage=\count388
-\c@origlanguage=\count389
-\c@savedoriglanguage=\count390
-\c@citation=\count391
-\c@savedcitation=\count392
-\c@pageref=\count393
-\c@savedpageref=\count394
-\shorthandwidth=\skip64
-\shortjournalwidth=\skip65
-\shortserieswidth=\skip66
-\shorttitlewidth=\skip67
-\shortauthorwidth=\skip68
-\shorteditorwidth=\skip69
-\locallabelnumberwidth=\skip70
-\locallabelalphawidth=\skip71
-\localshorthandwidth=\skip72
-\localshortjournalwidth=\skip73
-\localshortserieswidth=\skip74
-\localshorttitlewidth=\skip75
-\localshortauthorwidth=\skip76
-\localshorteditorwidth=\skip77
+\c@afterword=\count311
+\c@savedafterword=\count312
+\c@annotator=\count313
+\c@savedannotator=\count314
+\c@author=\count315
+\c@savedauthor=\count316
+\c@bookauthor=\count317
+\c@savedbookauthor=\count318
+\c@commentator=\count319
+\c@savedcommentator=\count320
+\c@editor=\count321
+\c@savededitor=\count322
+\c@editora=\count323
+\c@savededitora=\count324
+\c@editorb=\count325
+\c@savededitorb=\count326
+\c@editorc=\count327
+\c@savededitorc=\count328
+\c@foreword=\count329
+\c@savedforeword=\count330
+\c@holder=\count331
+\c@savedholder=\count332
+\c@introduction=\count333
+\c@savedintroduction=\count334
+\c@namea=\count335
+\c@savednamea=\count336
+\c@nameb=\count337
+\c@savednameb=\count338
+\c@namec=\count339
+\c@savednamec=\count340
+\c@translator=\count341
+\c@savedtranslator=\count342
+\c@shortauthor=\count343
+\c@savedshortauthor=\count344
+\c@shorteditor=\count345
+\c@savedshorteditor=\count346
+\c@groupauthor=\count347
+\c@savedgroupauthor=\count348
+\c@narrator=\count349
+\c@savednarrator=\count350
+\c@execproducer=\count351
+\c@savedexecproducer=\count352
+\c@execdirector=\count353
+\c@savedexecdirector=\count354
+\c@with=\count355
+\c@savedwith=\count356
+\c@labelname=\count357
+\c@savedlabelname=\count358
+\c@institution=\count359
+\c@savedinstitution=\count360
+\c@lista=\count361
+\c@savedlista=\count362
+\c@listb=\count363
+\c@savedlistb=\count364
+\c@listc=\count365
+\c@savedlistc=\count366
+\c@listd=\count367
+\c@savedlistd=\count368
+\c@liste=\count369
+\c@savedliste=\count370
+\c@listf=\count371
+\c@savedlistf=\count372
+\c@location=\count373
+\c@savedlocation=\count374
+\c@organization=\count375
+\c@savedorganization=\count376
+\c@origlocation=\count377
+\c@savedoriglocation=\count378
+\c@origpublisher=\count379
+\c@savedorigpublisher=\count380
+\c@publisher=\count381
+\c@savedpublisher=\count382
+\c@language=\count383
+\c@savedlanguage=\count384
+\c@origlanguage=\count385
+\c@savedoriglanguage=\count386
+\c@citation=\count387
+\c@savedcitation=\count388
+\c@pageref=\count389
+\c@savedpageref=\count390
+\shorthandwidth=\skip60
+\shortjournalwidth=\skip61
+\shortserieswidth=\skip62
+\shorttitlewidth=\skip63
+\shortauthorwidth=\skip64
+\shorteditorwidth=\skip65
+\locallabelnumberwidth=\skip66
+\locallabelalphawidth=\skip67
+\localshorthandwidth=\skip68
+\localshortjournalwidth=\skip69
+\localshortserieswidth=\skip70
+\localshorttitlewidth=\skip71
+\localshortauthorwidth=\skip72
+\localshorteditorwidth=\skip73
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 
@@ -387,19 +349,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-\c@textcitecount=\count395
-\c@textcitetotal=\count396
-\c@textcitemaxnames=\count397
-\c@biburlbigbreakpenalty=\count398
-\c@biburlbreakpenalty=\count399
-\c@biburlnumpenalty=\count400
-\c@biburlucpenalty=\count401
-\c@biburllcpenalty=\count402
+\c@textcitecount=\count391
+\c@textcitetotal=\count392
+\c@textcitemaxnames=\count393
+\c@biburlbigbreakpenalty=\count394
+\c@biburlbreakpenalty=\count395
+\c@biburlnumpenalty=\count396
+\c@biburlucpenalty=\count397
+\c@biburllcpenalty=\count398
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count403
+\c@smartand=\count399
 )
 Package biblatex Info: Trying to load bibliography style 'apa'...
 Package biblatex Info: ... file 'apa.bbx' found.
@@ -411,8 +373,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count404
-\c@bbx:relatedtotal=\count405
+\c@bbx:relatedcount=\count400
+\c@bbx:relatedtotal=\count401
 ))
 Package biblatex Info: Trying to load citation style 'apa'...
 Package biblatex Info: ... file 'apa.cbx' found.
@@ -449,27 +411,28 @@ File: biblatex.cfg
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count406
-\mult@box=\box50
-\multicol@leftmargin=\dimen166
-\c@unbalance=\count407
-\c@collectmore=\count408
-\doublecol@number=\count409
-\multicoltolerance=\count410
-\multicolpretolerance=\count411
-\full@width=\dimen167
-\page@free=\dimen168
-\premulticols=\dimen169
-\postmulticols=\dimen170
-\multicolsep=\skip78
-\multicolbaselineskip=\skip79
-\partial@page=\box51
-\last@line=\box52
-\maxbalancingoverflow=\dimen171
-\mult@rightbox=\box53
-\mult@grightbox=\box54
-\mult@gfirstbox=\box55
-\mult@firstbox=\box56
+\c@tracingmulticols=\count402
+\mult@box=\box49
+\multicol@leftmargin=\dimen156
+\c@unbalance=\count403
+\c@collectmore=\count404
+\doublecol@number=\count405
+\multicoltolerance=\count406
+\multicolpretolerance=\count407
+\full@width=\dimen157
+\page@free=\dimen158
+\premulticols=\dimen159
+\postmulticols=\dimen160
+\multicolsep=\skip74
+\multicolbaselineskip=\skip75
+\partial@page=\box50
+\last@line=\box51
+\maxbalancingoverflow=\dimen161
+\mult@rightbox=\box52
+\mult@grightbox=\box53
+\mult@gfirstbox=\box54
+\mult@firstbox=\box55
+\@tempa=\box56
 \@tempa=\box57
 \@tempa=\box58
 \@tempa=\box59
@@ -506,31 +469,30 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box90
 \@tempa=\box91
 \@tempa=\box92
-\@tempa=\box93
-\c@minrows=\count412
-\c@columnbadness=\count413
-\c@finalcolumnbadness=\count414
-\last@try=\dimen172
-\multicolovershoot=\dimen173
-\multicolundershoot=\dimen174
-\mult@nat@firstbox=\box94
-\colbreak@box=\box95
-\mc@col@check@num=\count415
+\c@minrows=\count408
+\c@columnbadness=\count409
+\c@finalcolumnbadness=\count410
+\last@try=\dimen162
+\multicolovershoot=\dimen163
+\multicolundershoot=\dimen164
+\mult@nat@firstbox=\box93
+\colbreak@box=\box94
+\mc@col@check@num=\count411
 )
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2021/04/07 3.57 The Babel package
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2021/04/07 3.57 Babel common definitions
-\babel@savecnt=\count416
-\U@D=\dimen175
+\babel@savecnt=\count412
+\U@D=\dimen165
 \l@babelnohyphens=\language24
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/xebabel.def
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel/txtbabel.def))
 \bbl@readstream=\read3
 )
-\bbl@dirlevel=\count417
+\bbl@dirlevel=\count413
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
@@ -544,15 +506,15 @@ Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip80
-\f@nch@O@elh=\skip81
-\f@nch@O@erh=\skip82
-\f@nch@O@olh=\skip83
-\f@nch@O@orh=\skip84
-\f@nch@O@elf=\skip85
-\f@nch@O@erf=\skip86
-\f@nch@O@olf=\skip87
-\f@nch@O@orf=\skip88
+\f@nch@headwidth=\skip76
+\f@nch@O@elh=\skip77
+\f@nch@O@erh=\skip78
+\f@nch@O@olh=\skip79
+\f@nch@O@orh=\skip80
+\f@nch@O@elf=\skip81
+\f@nch@O@erf=\skip82
+\f@nch@O@olf=\skip83
+\f@nch@O@orf=\skip84
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
@@ -574,8 +536,8 @@ Package graphics Info: Driver file: xetex.def on input line 105.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/xetex.def
 File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen176
-\Gin@req@width=\dimen177
+\Gin@req@height=\dimen166
+\Gin@req@width=\dimen167
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
@@ -595,9 +557,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen178
-\Hy@linkcounter=\count418
-\Hy@pagecounter=\count419
+\@linkdim=\dimen168
+\Hy@linkcounter=\count414
+\Hy@pagecounter=\count415
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
@@ -611,7 +573,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count420
+\Hy@SavedSpaceFactor=\count416
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
@@ -624,9 +586,9 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count421
+\c@Hy@tempcnt=\count417
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen179
+\XeTeXLinkMargin=\dimen169
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -635,9 +597,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count422
-\Field@Width=\dimen180
-\Fld@charsize=\dimen181
+\Fld@menulength=\count418
+\Field@Width=\dimen170
+\Fld@charsize=\dimen171
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -653,9 +615,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count423
-\c@Item=\count424
-\c@Hfootnote=\count425
+\Hy@abspage=\count419
+\c@Item=\count420
+\c@Hfootnote=\count421
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 
@@ -666,11 +628,11 @@ File: hxetex.def 2021-02-27 v7.00k Hyperref driver for XeTeX
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\pdfm@box=\box96
-\c@Hy@AnnotLevel=\count426
-\HyField@AnnotCount=\count427
-\Fld@listcount=\count428
-\c@bookmark@seq@number=\count429
+\pdfm@box=\box95
+\c@Hy@AnnotLevel=\count422
+\HyField@AnnotCount=\count423
+\Fld@listcount=\count424
+\c@bookmark@seq@number=\count425
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -685,7 +647,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip89
+\Hy@SectionHShift=\skip85
 ) (/usr/local/texlive/2021/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2021-02-18 L3 programming layer (loader) 
@@ -694,14 +656,14 @@ Package: expl3 2021-02-18 L3 programming layer (loader)
 File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 
 (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count430
-\l__color_backend_stack_int=\count431
-\g__color_backend_stack_int=\count432
-\g__graphics_track_int=\count433
-\l__pdf_internal_box=\box97
-\g__pdf_backend_object_int=\count434
-\g__pdf_backend_annotation_int=\count435
-\g__pdf_backend_link_int=\count436
+\c__kernel_sys_dvipdfmx_version_int=\count426
+\l__color_backend_stack_int=\count427
+\g__color_backend_stack_int=\count428
+\g__graphics_track_int=\count429
+\l__pdf_internal_box=\box96
+\g__pdf_backend_object_int=\count430
+\g__pdf_backend_annotation_int=\count431
+\g__pdf_backend_link_int=\count432
 ))
 Package: xeCJK 2020/10/19 v3.8.6 Typesetting CJK scripts with XeLaTeX
 
@@ -711,25 +673,25 @@ Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
 y
 Package: xtemplate 2021-03-12 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen182
-\l__xtemplate_tmp_int=\count437
+\l__xtemplate_tmp_dim=\dimen172
+\l__xtemplate_tmp_int=\count433
 \l__xtemplate_tmp_muskip=\muskip22
-\l__xtemplate_tmp_skip=\skip90
+\l__xtemplate_tmp_skip=\skip86
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-
 01.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
 tex)))
-\l__xeCJK_tmp_int=\count438
-\l__xeCJK_tmp_box=\box98
-\l__xeCJK_tmp_dim=\dimen183
-\l__xeCJK_tmp_skip=\skip91
+\l__xeCJK_tmp_int=\count434
+\l__xeCJK_tmp_box=\box97
+\l__xeCJK_tmp_dim=\dimen173
+\l__xeCJK_tmp_skip=\skip87
  (/usr/local/texlive/2021/texmf-dist/tex/latex/ctex/ctexhook.sty
 Package: ctexhook 2021/03/14 v2.5.6 Document and package hooks (CTEX)
 )
-\g__xeCJK_space_factor_int=\count439
-\l__xeCJK_begin_int=\count440
-\l__xeCJK_end_int=\count441
+\g__xeCJK_space_factor_int=\count435
+\l__xeCJK_begin_int=\count436
+\l__xeCJK_end_int=\count437
 \c__xeCJK_CJK_class_int=\XeTeXcharclass1
 \c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
 \c__xeCJK_FullRight_class_int=\XeTeXcharclass3
@@ -738,49 +700,49 @@ Package: ctexhook 2021/03/14 v2.5.6 Document and package hooks (CTEX)
 \c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
 \c__xeCJK_CM_class_int=\XeTeXcharclass7
 \c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
-\l__xeCJK_last_skip=\skip92
-\g__xeCJK_node_int=\count442
-\c__xeCJK_CJK_node_dim=\dimen184
-\c__xeCJK_CJK-space_node_dim=\dimen185
-\c__xeCJK_default_node_dim=\dimen186
-\c__xeCJK_default-space_node_dim=\dimen187
-\c__xeCJK_CJK-widow_node_dim=\dimen188
-\c__xeCJK_normalspace_node_dim=\dimen189
-\l__xeCJK_ccglue_skip=\skip93
-\l__xeCJK_ecglue_skip=\skip94
-\l__xeCJK_punct_kern_skip=\skip95
-\l__xeCJK_last_penalty_int=\count443
-\l__xeCJK_last_bound_dim=\dimen190
-\l__xeCJK_last_kern_dim=\dimen191
-\l__xeCJK_widow_penalty_int=\count444
+\l__xeCJK_last_skip=\skip88
+\g__xeCJK_node_int=\count438
+\c__xeCJK_CJK_node_dim=\dimen174
+\c__xeCJK_CJK-space_node_dim=\dimen175
+\c__xeCJK_default_node_dim=\dimen176
+\c__xeCJK_default-space_node_dim=\dimen177
+\c__xeCJK_CJK-widow_node_dim=\dimen178
+\c__xeCJK_normalspace_node_dim=\dimen179
+\l__xeCJK_ccglue_skip=\skip89
+\l__xeCJK_ecglue_skip=\skip90
+\l__xeCJK_punct_kern_skip=\skip91
+\l__xeCJK_last_penalty_int=\count439
+\l__xeCJK_last_bound_dim=\dimen180
+\l__xeCJK_last_kern_dim=\dimen181
+\l__xeCJK_widow_penalty_int=\count440
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
 (xtemplate)             argument(s) on line 2342.
 
-\l__xeCJK_fixed_punct_width_dim=\dimen192
-\l__xeCJK_mixed_punct_width_dim=\dimen193
-\l__xeCJK_middle_punct_width_dim=\dimen194
-\l__xeCJK_fixed_margin_width_dim=\dimen195
-\l__xeCJK_mixed_margin_width_dim=\dimen196
-\l__xeCJK_middle_margin_width_dim=\dimen197
-\l__xeCJK_bound_punct_width_dim=\dimen198
-\l__xeCJK_bound_margin_width_dim=\dimen199
-\l__xeCJK_margin_minimum_dim=\dimen256
-\l__xeCJK_kerning_total_width_dim=\dimen257
-\l__xeCJK_same_align_margin_dim=\dimen258
-\l__xeCJK_different_align_margin_dim=\dimen259
-\l__xeCJK_kerning_margin_width_dim=\dimen260
-\l__xeCJK_kerning_margin_minimum_dim=\dimen261
-\l__xeCJK_bound_dim=\dimen262
-\l__xeCJK_reverse_bound_dim=\dimen263
-\l__xeCJK_margin_dim=\dimen264
-\l__xeCJK_minimum_bound_dim=\dimen265
-\l__xeCJK_kerning_margin_dim=\dimen266
-\g__xeCJK_family_int=\count445
-\l__xeCJK_fam_int=\count446
-\g__xeCJK_fam_allocation_int=\count447
-\l__xeCJK_verb_case_int=\count448
-\l__xeCJK_verb_exspace_skip=\skip96
+\l__xeCJK_fixed_punct_width_dim=\dimen182
+\l__xeCJK_mixed_punct_width_dim=\dimen183
+\l__xeCJK_middle_punct_width_dim=\dimen184
+\l__xeCJK_fixed_margin_width_dim=\dimen185
+\l__xeCJK_mixed_margin_width_dim=\dimen186
+\l__xeCJK_middle_margin_width_dim=\dimen187
+\l__xeCJK_bound_punct_width_dim=\dimen188
+\l__xeCJK_bound_margin_width_dim=\dimen189
+\l__xeCJK_margin_minimum_dim=\dimen190
+\l__xeCJK_kerning_total_width_dim=\dimen191
+\l__xeCJK_same_align_margin_dim=\dimen192
+\l__xeCJK_different_align_margin_dim=\dimen193
+\l__xeCJK_kerning_margin_width_dim=\dimen194
+\l__xeCJK_kerning_margin_minimum_dim=\dimen195
+\l__xeCJK_bound_dim=\dimen196
+\l__xeCJK_reverse_bound_dim=\dimen197
+\l__xeCJK_margin_dim=\dimen198
+\l__xeCJK_minimum_bound_dim=\dimen199
+\l__xeCJK_kerning_margin_dim=\dimen256
+\g__xeCJK_family_int=\count441
+\l__xeCJK_fam_int=\count442
+\g__xeCJK_fam_allocation_int=\count443
+\l__xeCJK_verb_case_int=\count444
+\l__xeCJK_verb_exspace_skip=\skip92
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
@@ -788,20 +750,20 @@ Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
-\l__fontspec_script_int=\count449
-\l__fontspec_language_int=\count450
-\l__fontspec_strnum_int=\count451
-\l__fontspec_tmp_int=\count452
-\l__fontspec_tmpa_int=\count453
-\l__fontspec_tmpb_int=\count454
-\l__fontspec_tmpc_int=\count455
-\l__fontspec_em_int=\count456
-\l__fontspec_emdef_int=\count457
-\l__fontspec_strong_int=\count458
-\l__fontspec_strongdef_int=\count459
-\l__fontspec_tmpa_dim=\dimen267
-\l__fontspec_tmpb_dim=\dimen268
-\l__fontspec_tmpc_dim=\dimen269
+\l__fontspec_script_int=\count445
+\l__fontspec_language_int=\count446
+\l__fontspec_strnum_int=\count447
+\l__fontspec_tmp_int=\count448
+\l__fontspec_tmpa_int=\count449
+\l__fontspec_tmpb_int=\count450
+\l__fontspec_tmpc_int=\count451
+\l__fontspec_em_int=\count452
+\l__fontspec_emdef_int=\count453
+\l__fontspec_strong_int=\count454
+\l__fontspec_strongdef_int=\count455
+\l__fontspec_tmpa_dim=\dimen257
+\l__fontspec_tmpb_dim=\dimen258
+\l__fontspec_tmpc_dim=\dimen259
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
@@ -846,8 +808,8 @@ Package fontspec Info: Font family 'GenWanMinTJL(0)' created for font
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count460
-\@quotereset=\count461
+\@quotelevel=\count456
+\@quotereset=\count457
 (./cookie_sharing.aux)
 \openout1 = `cookie_sharing.aux'.
 
@@ -993,7 +955,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count462
+\c@section@level=\count458
 )
 LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
@@ -1113,12 +1075,12 @@ Package logreq Info: Writing requests to 'cookie_sharing.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22984 strings out of 478436
- 463445 string characters out of 5854824
- 1387182 words of memory out of 5000000
- 42563 multiletter control sequences out of 15000+600000
+ 22534 strings out of 478436
+ 456768 string characters out of 5854824
+ 1373811 words of memory out of 5000000
+ 42127 multiletter control sequences out of 15000+600000
  411347 words of font info for 88 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 87i,11n,91p,747b,5050s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,11n,91p,747b,5042s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on cookie_sharing.pdf (1 page).

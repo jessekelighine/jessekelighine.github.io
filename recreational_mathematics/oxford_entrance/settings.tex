@@ -1,0 +1,23 @@
+%%% Column %%%
+\usepackage{multicol}  % \begin{multicols*}{3}[例外]字\end{multicols*}
+\usepackage[english]{babel}
+%<--------------------------------------------------------------------------->%
+\newcommand{\putfig}[1]{%
+	\vspace{0.8em}%
+	\centerline{\includegraphics[scale=1]{./figures/#1}}%
+	\vspace{0.5em}%
+}
+\newcommand{\separationline}{%
+	\vspace{0.3em}%
+	\centerline{----- $*$ ----- $*$ ----- $*$ -----}%
+	\vspace{0.3em}%
+}
+\newcommand{\ratio}{\!:\!}
+%<--------------------------------------------------------------------------->%
+\input{~/.vim/ftplugin/tex_snippets/preamble_enumerate.tex}
+\input{~/.vim/ftplugin/tex_snippets/preamble_math.tex}
+\input{~/.vim/ftplugin/tex_snippets/preamble_pagechinese.tex}
+\input{~/.vim/ftplugin/tex_snippets/preamble_hyperreference.tex}
+\input{~/.vim/ftplugin/tex_snippets/preamble_xe.tex}
+\input{~/.vim/ftplugin/tex_snippets/preamble_punct.tex}
+%<--------------------------------------------------------------------------->%

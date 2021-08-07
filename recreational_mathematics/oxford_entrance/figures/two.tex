@@ -1,0 +1,23 @@
+\documentclass{standalone}
+%<--------------------------------------------------------------------------->%
+%%% TikZ %%%
+\usepackage{tikz}
+% \usetikzlibrary{calc}
+% \usetikzlibrary{angles,quotes}
+% \usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\begin{tikzpicture}[scale=3.5,thick,line cap=round,rotate=90]
+	\tikzstyle{jiao}=[solid,circle,draw,fill=white,inner sep=.8pt];
+	\input{./tile.tex}
+	\draw[tile1] (0,0) rectangle (1,1);
+	\draw[tile1] (0,0) rectangle (1/2,1);
+	\node[above,white] at (0,1/2) {1};
+	\node[left,white] at (1/4,0) {$\frac{1}{2}$};
+	\node[above right] at (0,0) {$n=2$};
+\end{tikzpicture}
+
+\end{document}

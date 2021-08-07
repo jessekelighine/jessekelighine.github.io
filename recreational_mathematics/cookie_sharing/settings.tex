@@ -1,17 +1,10 @@
 %%% Math %%%
 \usepackage{gensymb,amssymb}
 \usepackage{mathrsfs,amsmath} % \mathscr{F}
-\usepackage{mathtools} % \stackrel{i.i.d.}{\sim} % \substack{-\\-} % \middle
-% \usepackage{centernot}
-% \usepackage{accents}
-\usepackage[makeroom]{cancel}
-\newcommand{\two}[2]{\substack{ \text{#1} \\ \text{#2} }}
-\newcommand{\raum}{\phantom{=}{\:\,}}
 %<--------------------------------------------------------------------------->%
 %%% Biblatex %%%
 \usepackage[hyperref=true,backend=biber,style=apa,sorting=ynt,backref=false]{biblatex} 
 \addbibresource{ref.bib}
-%\printbibliography[title = \ctxfr{參考文獻}]
 %<--------------------------------------------------------------------------->%
 %%% Column %%%
 \usepackage{multicol}  % \begin{multicols*}{3}[例外]字\end{multicols*}
@@ -30,8 +23,8 @@
 \renewcommand{\tablename}{表}
 %<--------------------------------------------------------------------------->%
 %%% Hyper Reference %%%
-\PassOptionsToPackage{hyphens}{url}\usepackage[hidelinks,colorlinks=true]{hyperref}
-\newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks,colorlinks=true]{hyperref}
 %<--------------------------------------------------------------------------->%
 %%% CJK %%%
 \usepackage{xeCJK}
@@ -50,31 +43,47 @@
 \xeCJKsetwidth{；}{0.65em}
 \xeCJKsetwidth{。}{0.7em}
 \xeCJKsetwidth{・}{0.7em}
+\xeCJKsetwidth{〈〉}{0.7em}
+\xeCJKsetwidth{《》}{0.7em}
 \xeCJKsetwidth{「」}{0.7em}
 \xeCJKsetwidth{『』}{0.7em}
+\xeCJKsetwidth{【】}{0.7em}
 \xeCJKsetwidth{（）}{0.7em}
-\xeCJKsetwidth{《》}{0.7em}
+%<--------------------------------------------------------------------------->%
 %%% Punctuation Kerning %%%
-\xeCJKsetkern{」}{（}{0.2em}
-\xeCJKsetkern{」}{、}{0.2em}
-\xeCJKsetkern{」}{，}{0.2em}
-\xeCJKsetkern{」}{。}{0.2em}
-\xeCJKsetkern{」}{；}{0.2em}
-\xeCJKsetkern{」}{：}{0.2em}
-\xeCJKsetkern{、}{「}{0.4em}
-\xeCJKsetkern{、}{（}{0.4em}
-\xeCJKsetkern{。}{《}{0.2em}
-\xeCJKsetkern{。}{「}{0.4em}
-\xeCJKsetkern{。}{」}{0.2em}
-\xeCJKsetkern{。}{（}{0.6em}
-\xeCJKsetkern{。}{）}{0.4em}
-\xeCJKsetkern{。}{『}{0.4em}
-\xeCJKsetkern{》}{（}{0.2em}
-\xeCJKsetkern{）}{《}{0.2em}
-\xeCJKsetkern{，}{「}{0.4em}
-\xeCJKsetkern{，}{（}{0.4em}
-\xeCJKsetkern{：}{「}{0.4em}
-\xeCJKsetkern{：}{（}{0.5em}
-\xeCJKsetkern{；}{「}{0.4em}
-\xeCJKsetkern{；}{（}{0.4em}
+% Pairs-with-punctuation kerning (after).
+\xeCJKsetkern{〉}{、}{0.2em} \xeCJKsetkern{〉}{，}{0.2em} \xeCJKsetkern{〉}{。}{0.2em} \xeCJKsetkern{〉}{；}{0.2em} \xeCJKsetkern{〉}{：}{0.2em} 
+\xeCJKsetkern{》}{、}{0.2em} \xeCJKsetkern{》}{，}{0.2em} \xeCJKsetkern{》}{。}{0.2em} \xeCJKsetkern{》}{；}{0.2em} \xeCJKsetkern{》}{：}{0.2em} 
+\xeCJKsetkern{」}{、}{0.2em} \xeCJKsetkern{」}{，}{0.2em} \xeCJKsetkern{」}{。}{0.2em} \xeCJKsetkern{」}{；}{0.2em} \xeCJKsetkern{」}{：}{0.2em} 
+\xeCJKsetkern{』}{、}{0.2em} \xeCJKsetkern{』}{，}{0.2em} \xeCJKsetkern{』}{。}{0.2em} \xeCJKsetkern{』}{；}{0.2em} \xeCJKsetkern{』}{：}{0.2em} 
+\xeCJKsetkern{】}{、}{0.2em} \xeCJKsetkern{】}{，}{0.2em} \xeCJKsetkern{】}{。}{0.2em} \xeCJKsetkern{】}{；}{0.2em} \xeCJKsetkern{】}{：}{0.2em} 
+\xeCJKsetkern{）}{、}{0.2em} \xeCJKsetkern{）}{，}{0.2em} \xeCJKsetkern{）}{。}{0.2em} \xeCJKsetkern{）}{；}{0.2em} \xeCJKsetkern{）}{：}{0.2em} 
+% Pairs-with-punctuation kerning (before).
+\xeCJKsetkern{、}{〈}{0.4em} \xeCJKsetkern{。}{〈}{0.4em} \xeCJKsetkern{，}{〈}{0.4em} \xeCJKsetkern{：}{〈}{0.4em} \xeCJKsetkern{；}{〈}{0.4em}
+\xeCJKsetkern{、}{《}{0.4em} \xeCJKsetkern{。}{《}{0.4em} \xeCJKsetkern{，}{《}{0.4em} \xeCJKsetkern{：}{《}{0.4em} \xeCJKsetkern{；}{《}{0.4em}
+\xeCJKsetkern{、}{「}{0.4em} \xeCJKsetkern{。}{「}{0.4em} \xeCJKsetkern{，}{「}{0.4em} \xeCJKsetkern{：}{「}{0.4em} \xeCJKsetkern{；}{「}{0.4em}
+\xeCJKsetkern{、}{『}{0.4em} \xeCJKsetkern{。}{『}{0.4em} \xeCJKsetkern{，}{『}{0.4em} \xeCJKsetkern{：}{『}{0.4em} \xeCJKsetkern{；}{『}{0.4em}
+\xeCJKsetkern{、}{【}{0.4em} \xeCJKsetkern{。}{【}{0.4em} \xeCJKsetkern{，}{【}{0.4em} \xeCJKsetkern{：}{【}{0.4em} \xeCJKsetkern{；}{【}{0.4em}
+\xeCJKsetkern{、}{（}{0.4em} \xeCJKsetkern{。}{（}{0.4em} \xeCJKsetkern{，}{（}{0.4em} \xeCJKsetkern{：}{（}{0.4em} \xeCJKsetkern{；}{（}{0.4em}
+% Pairwise kerning (back-to-back).
+\xeCJKsetkern{〉}{〈}{0.3em} \xeCJKsetkern{〉}{《}{0.3em} \xeCJKsetkern{〉}{「}{0.3em} \xeCJKsetkern{〉}{『}{0.3em} \xeCJKsetkern{〉}{【}{0.3em} \xeCJKsetkern{〉}{（}{0.3em}
+\xeCJKsetkern{》}{〈}{0.3em} \xeCJKsetkern{》}{《}{0.3em} \xeCJKsetkern{》}{「}{0.3em} \xeCJKsetkern{》}{『}{0.3em} \xeCJKsetkern{》}{【}{0.3em} \xeCJKsetkern{》}{（}{0.3em}
+\xeCJKsetkern{」}{〈}{0.3em} \xeCJKsetkern{」}{《}{0.3em} \xeCJKsetkern{」}{「}{0.3em} \xeCJKsetkern{」}{『}{0.3em} \xeCJKsetkern{」}{【}{0.3em} \xeCJKsetkern{」}{（}{0.3em}
+\xeCJKsetkern{』}{〈}{0.3em} \xeCJKsetkern{』}{《}{0.3em} \xeCJKsetkern{』}{「}{0.3em} \xeCJKsetkern{』}{『}{0.3em} \xeCJKsetkern{』}{【}{0.3em} \xeCJKsetkern{』}{（}{0.3em}
+\xeCJKsetkern{】}{〈}{0.3em} \xeCJKsetkern{】}{《}{0.3em} \xeCJKsetkern{】}{「}{0.3em} \xeCJKsetkern{】}{『}{0.3em} \xeCJKsetkern{】}{【}{0.3em} \xeCJKsetkern{】}{（}{0.3em}
+\xeCJKsetkern{）}{〈}{0.3em} \xeCJKsetkern{）}{《}{0.3em} \xeCJKsetkern{）}{「}{0.3em} \xeCJKsetkern{）}{『}{0.3em} \xeCJKsetkern{）}{【}{0.3em} \xeCJKsetkern{）}{（}{0.3em}
+% Pairwise kerning (font-to-back).
+\xeCJKsetkern{〈}{〈}{0.2em} \xeCJKsetkern{〈}{《}{0.2em} \xeCJKsetkern{〈}{「}{0.2em} \xeCJKsetkern{〈}{『}{0.2em} \xeCJKsetkern{〈}{【}{0.2em} \xeCJKsetkern{〈}{（}{0.2em}
+\xeCJKsetkern{《}{〈}{0.2em} \xeCJKsetkern{《}{《}{0.2em} \xeCJKsetkern{《}{「}{0.2em} \xeCJKsetkern{《}{『}{0.2em} \xeCJKsetkern{《}{【}{0.2em} \xeCJKsetkern{《}{（}{0.2em}
+\xeCJKsetkern{「}{〈}{0.2em} \xeCJKsetkern{「}{《}{0.2em} \xeCJKsetkern{「}{「}{0.2em} \xeCJKsetkern{「}{『}{0.2em} \xeCJKsetkern{「}{【}{0.2em} \xeCJKsetkern{「}{（}{0.2em}
+\xeCJKsetkern{『}{〈}{0.2em} \xeCJKsetkern{『}{《}{0.2em} \xeCJKsetkern{『}{「}{0.2em} \xeCJKsetkern{『}{『}{0.2em} \xeCJKsetkern{『}{【}{0.2em} \xeCJKsetkern{『}{（}{0.2em}
+\xeCJKsetkern{【}{〈}{0.2em} \xeCJKsetkern{【}{《}{0.2em} \xeCJKsetkern{【}{「}{0.2em} \xeCJKsetkern{【}{『}{0.2em} \xeCJKsetkern{【}{【}{0.2em} \xeCJKsetkern{【}{（}{0.2em}
+\xeCJKsetkern{（}{〈}{0.2em} \xeCJKsetkern{（}{《}{0.2em} \xeCJKsetkern{（}{「}{0.2em} \xeCJKsetkern{（}{『}{0.2em} \xeCJKsetkern{（}{【}{0.2em} \xeCJKsetkern{（}{（}{0.2em}
+% Pairwise kerning (back-to-front).
+\xeCJKsetkern{〉}{〉}{0.2em} \xeCJKsetkern{〉}{》}{0.2em} \xeCJKsetkern{〉}{」}{0.2em} \xeCJKsetkern{〉}{』}{0.2em} \xeCJKsetkern{〉}{】}{0.2em} \xeCJKsetkern{〉}{）}{0.2em}
+\xeCJKsetkern{》}{〉}{0.2em} \xeCJKsetkern{》}{》}{0.2em} \xeCJKsetkern{》}{」}{0.2em} \xeCJKsetkern{》}{』}{0.2em} \xeCJKsetkern{》}{】}{0.2em} \xeCJKsetkern{》}{）}{0.2em}
+\xeCJKsetkern{」}{〉}{0.2em} \xeCJKsetkern{」}{》}{0.2em} \xeCJKsetkern{」}{」}{0.2em} \xeCJKsetkern{」}{』}{0.2em} \xeCJKsetkern{」}{】}{0.2em} \xeCJKsetkern{」}{）}{0.2em}
+\xeCJKsetkern{』}{〉}{0.2em} \xeCJKsetkern{』}{》}{0.2em} \xeCJKsetkern{』}{」}{0.2em} \xeCJKsetkern{』}{』}{0.2em} \xeCJKsetkern{』}{】}{0.2em} \xeCJKsetkern{』}{）}{0.2em}
+\xeCJKsetkern{】}{〉}{0.2em} \xeCJKsetkern{】}{》}{0.2em} \xeCJKsetkern{】}{」}{0.2em} \xeCJKsetkern{】}{』}{0.2em} \xeCJKsetkern{】}{】}{0.2em} \xeCJKsetkern{】}{）}{0.2em}
+\xeCJKsetkern{）}{〉}{0.2em} \xeCJKsetkern{）}{》}{0.2em} \xeCJKsetkern{）}{」}{0.2em} \xeCJKsetkern{）}{』}{0.2em} \xeCJKsetkern{）}{】}{0.2em} \xeCJKsetkern{）}{）}{0.2em}
 %<--------------------------------------------------------------------------->%
