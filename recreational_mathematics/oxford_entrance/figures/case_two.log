@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  7 AUG 2021 18:01
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  7 AUG 2021 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**figures/six.tex
-(./figures/six.tex
+**figures/case_two.tex
+(./figures/case_two.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/standalone/standalone.cls
@@ -392,8 +392,8 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 \g__pdf_backend_annotation_int=\count279
 \g__pdf_backend_link_int=\count280
 )
-No file six.aux.
-\openout1 = `six.aux'.
+No file case_two.aux.
+\openout1 = `case_two.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -422,21 +422,22 @@ Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 22.
+(Font)              <7> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 22.
+(Font)              <5> on input line 19.
  [1
 
-] (figures/six.aux) ) 
+] (figures/case_two.aux) ) 
 Here is how much of TeX's memory you used:
- 11744 strings out of 478436
- 246379 string characters out of 5854824
- 510316 words of memory out of 5000000
- 31465 multiletter control sequences out of 15000+600000
+ 11738 strings out of 478436
+ 246307 string characters out of 5854824
+ 507326 words of memory out of 5000000
+ 31459 multiletter control sequences out of 15000+600000
  403438 words of font info for 28 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,5n,116p,401b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 113i,5n,116p,406b,662s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on figures/six.pdf (1 page).
+Output written on figures/case_two.pdf (1 page).

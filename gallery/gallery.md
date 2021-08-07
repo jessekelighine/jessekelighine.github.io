@@ -36,4 +36,4 @@ title:  "Gallery"
 
 <img class="front_pic" src="./resources/cat_roll.gif" alt="cat roll" />
 
-<a href="../index.html" class="back_button">BACK</a>
+<a href="../index.html" class="back_button">HOME</a>

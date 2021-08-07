@@ -12,4 +12,4 @@ title:  "Recreational Mathematics"
   牛津大學的數學口試的其中一個問題不需要任何的計算就可以回答，
   你可以通過嗎？
 
-<a href="../index.html" class="back_button">BACK</a>
+<a href="../index.html" class="back_button">HOME</a>

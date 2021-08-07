@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  7 AUG 2021 20:44
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  7 AUG 2021 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -147,7 +147,6 @@ Package babel Info: \l@australian = using hyphenrules for ukenglish
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language7) on input line 108.
 ))
-(/Users/jessechen/.vim/ftplugin/tex_snippets/preamble_enumerate.tex
 (/usr/local/texlive/2021/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip51
@@ -156,8 +155,7 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box93
 \enit@count@id=\count198
 \enitdp@description=\count199
-))
-(/Users/jessechen/.vim/ftplugin/tex_snippets/preamble_math.tex
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
@@ -234,7 +232,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
-))
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2021/03/28 v1.26 mathematical typesetting tools
 
@@ -270,7 +268,6 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
 \xmathstrut@box=\box96
 \xmathstrut@dim=\dimen176
 )
-(/Users/jessechen/.vim/ftplugin/tex_snippets/preamble_pagechinese.tex
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
@@ -286,8 +283,7 @@ rs
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
-))
-(/Users/jessechen/.vim/ftplugin/tex_snippets/preamble_hyperreference.tex)
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
 
@@ -422,8 +418,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip68
-) (/Users/jessechen/.vim/ftplugin/tex_snippets/preamble_xe.tex
-(/usr/local/texlive/2021/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2021-02-18 L3 programming layer (loader) 
 
@@ -579,7 +574,6 @@ Package fontspec Info: Font family 'GenWanMinTJL(0)' created for font
 (fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
 
 )
-(/Users/jessechen/.vim/ftplugin/tex_snippets/preamble_punct.tex))
 (./oxford_entrance.aux)
 \openout1 = `oxford_entrance.aux'.
 
@@ -824,16 +818,16 @@ Package fontspec Info: Font family 'NotoSansCJKKRRegular(0)' created for font
 (fontspec)             CJK KR Regular/BI/OT:script=hani;language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-File: ./figures/two.pdf Graphic file (type pdf)
-<use ./figures/two.pdf>
-File: ./figures/demo.pdf Graphic file (type pdf)
-<use ./figures/demo.pdf>
+File: ./figures/case_two.pdf Graphic file (type pdf)
+<use ./figures/case_two.pdf>
+File: ./figures/case_demo.pdf Graphic file (type pdf)
+<use ./figures/case_demo.pdf>
 File: ./figures/family1.pdf Graphic file (type pdf)
 <use ./figures/family1.pdf>
-File: ./figures/six.pdf Graphic file (type pdf)
-<use ./figures/six.pdf>
-File: ./figures/ten.pdf Graphic file (type pdf)
-<use ./figures/ten.pdf>
+File: ./figures/case_six.pdf Graphic file (type pdf)
+<use ./figures/case_six.pdf>
+File: ./figures/case_ten.pdf Graphic file (type pdf)
+<use ./figures/case_ten.pdf>
 File: ./figures/family2.pdf Graphic file (type pdf)
 <use ./figures/family2.pdf>
 
@@ -862,12 +856,12 @@ Package rerunfilecheck Info: File `oxford_entrance.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 15734 strings out of 478436
- 322223 string characters out of 5854824
- 716368 words of memory out of 5000000
- 35344 multiletter control sequences out of 15000+600000
+ 15708 strings out of 478436
+ 321120 string characters out of 5854824
+ 716065 words of memory out of 5000000
+ 35338 multiletter control sequences out of 15000+600000
  411387 words of font info for 93 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 92i,11n,94p,397b,586s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,11n,91p,344b,586s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on oxford_entrance.pdf (2 pages).

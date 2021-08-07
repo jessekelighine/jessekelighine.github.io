@@ -9,4 +9,4 @@ title:  "Statistics"
 - [**James-Stein Estimator**](./james-stein_estimator/james-stein_estimator.pdf):
   Introduction to the *James-Stein Estimator* and its *empirical Bayes* motivation. (beamer)
 
-<a href="../index.html" class="back_button">BACK</a>
+<a href="../index.html" class="back_button">HOME</a>

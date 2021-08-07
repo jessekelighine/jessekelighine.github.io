@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  7 AUG 2021 18:01
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  7 AUG 2021 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -422,6 +422,7 @@ Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
+Missing character: There is no ; ("3B) in font nullfont!
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 24.
@@ -431,12 +432,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ] (figures/case_seven.aux) ) 
 Here is how much of TeX's memory you used:
- 11751 strings out of 478436
- 246572 string characters out of 5854824
+ 11753 strings out of 478436
+ 246617 string characters out of 5854824
  510330 words of memory out of 5000000
- 31472 multiletter control sequences out of 15000+600000
+ 31474 multiletter control sequences out of 15000+600000
  403438 words of font info for 28 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 113i,5n,116p,408b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 113i,5n,116p,408b,655s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on figures/case_seven.pdf (1 page).

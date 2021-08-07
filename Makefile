@@ -1,6 +1,6 @@
 # Makefile
 
-.PHONY: all
+.PHONY: all clean
 
 all: index.html
 
@@ -31,3 +31,8 @@ miscellaneous/miscellaneous.html: miscellaneous/miscellaneous.md ./index.css
 
 gallery/gallery.html: gallery/gallery.md ./index.css
 	pandoc -f markdown+east_asian_line_breaks -s --toc --mathjax -c ../index.css gallery/gallery.md -o gallery/gallery.html
+
+FILES  = "*.html"
+clean:
+	eval "rm -rf ${FILES}"
+	eval "rm -rf **/${FILES}"
