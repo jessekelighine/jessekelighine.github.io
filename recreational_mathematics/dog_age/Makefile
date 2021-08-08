@@ -7,7 +7,7 @@ FIGURES = $(MAIN).svg
 
 all: $(MAIN).html
 
-$(MAIN).html: $(MAIN).md ../../index.css Makefile $(FIGURES)
+$(MAIN).html: $(MAIN).md ../../style.css Makefile $(FIGURES)
 	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c $(word 2,$^) $< -o $@
 	open $(MAIN).html
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  8 AUG 2021 15:37
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.4.14)  8 AUG 2021 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -477,7 +477,8 @@ File: l3backend-xetex.def 2021-03-18 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count294
 \g__pdf_backend_annotation_int=\count295
 \g__pdf_backend_link_int=\count296
-) (./dog_age.aux)
+)
+No file dog_age.aux.
 \openout1 = `dog_age.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -491,7 +492,6 @@ LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
 0.
-
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -508,9 +508,9 @@ Missing character: There is no ; ("3B) in font nullfont!
 ]
 (./dog_age.aux) ) 
 Here is how much of TeX's memory you used:
- 13866 strings out of 478436
- 290515 string characters out of 5854824
- 640870 words of memory out of 5000000
+ 13864 strings out of 478436
+ 290491 string characters out of 5854824
+ 640879 words of memory out of 5000000
  33549 multiletter control sequences out of 15000+600000
  403916 words of font info for 33 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191

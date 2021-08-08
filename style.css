@@ -1,12 +1,5 @@
 /* NOTION.CSS */
 
-body {
-	width: auto;
-	max-width: 60em;
-	margin: 0 auto;
-	padding: 10px 20px;
-}
-
 .front_pic {
 	width: 0 auto;
 	width: 15em;
@@ -16,25 +9,79 @@ body {
 	float: right;
 	background-color: #f1f1f1;
 	border-radius: 8px;
+	font-size: 14pt;
 }
 
-.title { font-size: 40px; }
-
 .math {
-	font-size: 18px;
+	font-size: 14pt;
 	background-color: #f1f1f1;
 	border-radius: 8px;
 }
 
-em { color: #87AfAF; }
+.title {
+	font-size: 20pt;
+	width: 100%;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #37352f;
+	margin-top: 50px;
+}
+
+.subtitle {
+	color: rgba(0, 0, 0, 0.6);
+	font-weight: 500;
+}
+
+.nav {
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.nav-left {
+	float: left;
+}
+
+.nav-right {
+	float: right;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+	float: left;
+	color: #37352f;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 14pt;
+	font-weight: 550;
+}
+
+/* Add a color to the active/current link */
+.nav a.active {
+	background-color: #fff;
+	color: #37352f;
+}
+
+/* Change the color of links on hover */
+.nav a:hover {
+	background-size: 1px;
+	background-color: rgba(55, 53, 47, 0.08);
+	color: #37352f;
+}
+
+body {
+	width: auto;
+	max-width: 60em;
+	margin: 0 auto;
+	padding: 10px 20px;
+}
+
 em { color: #478D99; }
 
-strong { color: #D787AF; }
 strong { color: #C76669; }
 
 a {
 	color: rgba(0, 0, 0, 0.6);
-	font-size: 20px;
+	font-size: 14pt;
 	line-height: 150%;
 	font-family: sans-serif;
 	font-style: normal;
@@ -56,7 +103,7 @@ a:hover{
 	background: linear-gradient(#eee, #eee);
 	background-size: auto 4em;
 	background-repeat: no-repeat;
-	background-position: 0% 15px; 
+	background-position: 0% 15px;
 }
 
 body {
@@ -64,21 +111,9 @@ body {
 	font-weight: 500;
 }
 
-.title {
-	width: 100%;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #37352f;
-	margin-top: 50px;
-}
-
-.subtitle {
-	color: rgba(0, 0, 0, 0.6);
-	font-weight: 500;
-}
-
 h1 {
 	font-family: sans-serif;
-	font-size: 30px;
+	font-size: 18pt;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 700;
@@ -87,7 +122,7 @@ h1 {
 
 h2 {
 	font-family: sans-serif;
-	font-size: 25px;
+	font-size: 16pt;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 700;
@@ -96,43 +131,16 @@ h2 {
 
 h3 {
 	font-family: sans-serif;
-	font-size: 25px;
+	font-size: 14pt;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 700;
 	line-height: 1.1;
-}
-
-h4 {
-	font-family: sans-serif;
-	font-size: 25px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 700;
-	line-height: 1.1;
-}
-
-h5 {
-	font-family: sans-serif;
-	font-size: 25px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 700;
-	line-height: 1.1;
-}
-
-h6 {
-	font-family: sans-serif;
-	font-size: 15px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 700;
-	line-height: 1;
 }
 
 p {
 	color: rgba(0, 0, 0, 0.6);
-	font-size: 20px;
+	font-size: 14pt;
 	line-height: 150%;
 	font-family: sans-serif;
 	font-style: normal;
@@ -178,12 +186,12 @@ button.primary:hover {
 }
 
 form {
-	font-size: 20px;
+	font-size: 14pt;
 }
 
 input,
 textarea {
-	font-size: 18px;
+	font-size: 14pt;
 	padding: 8px;
 	margin: 10px auto;
 }
@@ -208,7 +216,7 @@ code {
 	/* margin-bottom: 15px; */
 	/* margin-left: 5px; */
 	/* margin-right: 5px; */
-	font-size: 18px;
+	font-size: 14pt;
 	border-radius: 8px;
 	line-height: 1.25;
 }
@@ -221,7 +229,7 @@ pre {
 	margin-bottom: 15px;
 	margin-left: 5px;
 	margin-right: 5px;
-	font-size: 18px;
+	font-size: 14pt;
 	font-family: monospace;
 	border-radius: 8px;
 	line-height: 1.25;
@@ -233,7 +241,7 @@ blockquote {
 	margin: 1.5em 10px;
 	padding: 40px 20px;
 	/* quotes: "\201C""\201D""\2018""\2019"; */
-	font-size: 20px;
+	font-size: 14pt;
 	line-height: 150%;
 	font-family: sans-serif;
 	font-style: italic;
@@ -250,43 +258,6 @@ blockquote p {
 	display: inline;
 }
 
-.nav {
-	background-color: #fff;
-	overflow: hidden;
-}
-
-.nav-left {
-	float: left;
-}
-
-.nav-right {
-	float: right;
-}
-
-/* Style the links inside the navigation bar */
-.nav a {
-	float: left;
-	color: #37352f;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	font-size: 15px;
-	font-weight: 550;
-}
-
-/* Add a color to the active/current link */
-.nav a.active {
-	background-color: #fff;
-	color: #37352f;
-}
-
-/* Change the color of links on hover */
-.nav a:hover {
-	background-size: 1px;
-	background-color: rgba(55, 53, 47, 0.08);
-	color: #37352f;
-}
-
 ul {
 	color: rgba(0, 0, 0, 0.6);
 	font-family: sans-serif;
@@ -295,7 +266,7 @@ ul {
 li {
 	color: rgba(0, 0, 0, 0.6);
 	font-family: sans-serif;
-	font-size: 20px;
+	font-size: 14pt;
 	line-height: 1.5;
 }
 

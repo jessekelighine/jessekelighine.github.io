@@ -2,41 +2,35 @@
 
 .PHONY: all clean
 
-SUBPAGES = statistics/statistics.html \
-	recreational_mathematics/recreational_mathematics.html \
-	miscellaneous/miscellaneous.html \
-	gallery/gallery.html
+SUBPAGES = \
+	statistics.html \
+	recreational_mathematics.html \
+	miscellaneous.html \
+	gallery.html
 
 all: index.html
 
-index.html: index.md index.css Makefile $(SUBPAGES)
+# index
+index.html: index.md style.css $(SUBPAGES) Makefile 
 	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c $(word 2,$^) $< -o $@
 
 # statistics
-statistics/statistics.html: statistics/statistics.md index.css
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
-	### add HOME button.
-	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
+statistics.html: statistics.md style.css
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c $(word 2,$^) $< -o $@
 
 # recreational mathematics
-recreational_mathematics/recreational_mathematics.html: recreational_mathematics/recreational_mathematics.md index.css
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
-	### add HOME button.
-	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
+recreational_mathematics.html: recreational_mathematics.md style.css
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c $(word 2,$^) $< -o $@
 
 # miscellaneous
-miscellaneous/miscellaneous.html: miscellaneous/miscellaneous.md index.css
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
+miscellaneous.html: miscellaneous.md style.css
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c $(word 2,$^) $< -o $@
 	### add HOME button.
-	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
 
 # gallery
-gallery/gallery.html: gallery/gallery.md index.css
-	pandoc -f markdown+east_asian_line_breaks -s --toc --mathjax -c ../$(word 2,$^) $< -o $@
-	### add HOME button.
-	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
+gallery.html: gallery.md style.css
+	pandoc -f markdown+east_asian_line_breaks -s --toc --mathjax -c $(word 2,$^) $< -o $@
 
 FILES  = "*.html"
 clean:
 	eval "rm -rf ${FILES}"
-	eval "rm -rf **/${FILES}"
