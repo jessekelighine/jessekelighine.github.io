@@ -31,7 +31,7 @@ miscellaneous/miscellaneous.html: miscellaneous/miscellaneous.md index.css
 
 # gallery
 gallery/gallery.html: gallery/gallery.md index.css
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
+	pandoc -f markdown+east_asian_line_breaks -s --toc --mathjax -c ../$(word 2,$^) $< -o $@
 	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
 
 FILES  = "*.html"
