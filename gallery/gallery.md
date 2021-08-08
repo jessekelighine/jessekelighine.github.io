@@ -1,5 +1,5 @@
 ---
-title:  "Gallery"
+title:  'Gallery'
 ---
 
 # Designs
@@ -25,15 +25,13 @@ title:  "Gallery"
 > 於中華經濟研究院參與製作國際再生能源倡議組織 RE100 2020 年台灣再生能源報告書，
 > 負責處理、視覺化數據與報告書排版。
 > ([RE100 page](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan))
-> <embed src="./resources/RE100-2020_report.pdf" style="width:100%; max-height:100vh; min-height:100vh" />
+> <iframe src='./resources/RE100-2020_report.pdf' frameborder='0' style="width:100%; height:50vw;" allowfullscreen></iframe>
 
 > [**高級中等學校選民教育手冊**](./resources/voting_pamphlet.pdf):
 > 受到青年協會與教育部國教育署委託，負責將文案排版成手冊，
 > 其中內容包含將調查資料整理與視覺化；完成整本手冊之版面與設計。
-> <embed src="./resources/voting_pamphlet.pdf" style="width:100%; max-height:100vh; min-height:100vh" />
+> <iframe src='./resources/voting_pamphlet.pdf' frameborder='0' style="width:100%; height:50vw;" allowfullscreen></iframe>
 
 # Random GIFs
 
 <img class="front_pic" src="./resources/cat_roll.gif" alt="cat roll" />
-
-<a href="../index.html" class="back_button">HOME</a>

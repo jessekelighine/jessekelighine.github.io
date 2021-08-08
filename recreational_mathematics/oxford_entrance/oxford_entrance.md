@@ -1,6 +1,6 @@
 ---
 title:  "你能通過牛津大學的數學面試嗎？"
-author: "http://jessekelighine.com"
+author: '<a href="../../index.html"><strong>jessekelighine.com</strong></a>'
 date:   "August, 2021"
 ---
 
@@ -11,10 +11,10 @@ date:   "August, 2021"
 [Tom Crawford](https://www.seh.ox.ac.uk/people/tom-crawford)
 教授設計的[其中一個面試問題](https://www.youtube.com/watch?v=VZ25tZ9z6uI)中就沒有任何計算，
 並且問題敘述簡單到連小學、國中生都可以懂。
-
 這樣的問題不是要看出一個學生會多少複雜的數學，
 而是要測驗他們探索現象的方式以及歸納與推演的能力。
-我們就來看看你可不可以通過牛津大學的數學面試吧！
+
+我們就來看看你能不能通過牛津大學的數學面試吧！
 
 > **問題**：可以用 $n$ 個長寬比 $2:1$ 的長方形鋪滿一個正方形嗎？
 
@@ -36,5 +36,3 @@ date:   "August, 2021"
 注意到問題中不要求使用的長方形大小要相同，只要長寬比是 $2:1$ 就 ok。
 
 動手試試看吧！ [**暴雷解答在此**](oxford_entrance.pdf)
-
-<a href="../../index.html" class="back_button">HOME</a>

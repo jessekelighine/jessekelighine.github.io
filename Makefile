@@ -2,35 +2,37 @@
 
 .PHONY: all clean
 
-all: index.html
-
-index.html: index.md Makefile index.css \
-	resources/pinkeln.png \
-	statistics/statistics.html \
+SUBPAGES = statistics/statistics.html \
 	recreational_mathematics/recreational_mathematics.html \
 	miscellaneous/miscellaneous.html \
 	gallery/gallery.html
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ./index.css index.md -o index.html
+
+all: index.html
+
+index.html: index.md index.css Makefile $(SUBPAGES)
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c $(word 2,$^) $< -o $@
+
+# <a href="../index.html" class="back_button"><strong>HOME</strong></a>
 
 # statistics
-
-statistics/statistics.html: statistics/statistics.md ./index.css
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../index.css statistics/statistics.md -o statistics/statistics.html
+statistics/statistics.html: statistics/statistics.md index.css
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
+	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
 
 # recreational mathematics
-
-recreational_mathematics/recreational_mathematics.html: recreational_mathematics/recreational_mathematics.md ./index.css
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../index.css recreational_mathematics/recreational_mathematics.md -o recreational_mathematics/recreational_mathematics.html
+recreational_mathematics/recreational_mathematics.html: recreational_mathematics/recreational_mathematics.md index.css
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
+	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
 
 # miscellaneous
-
-miscellaneous/miscellaneous.html: miscellaneous/miscellaneous.md ./index.css
-	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../index.css miscellaneous/miscellaneous.md -o miscellaneous/miscellaneous.html
+miscellaneous/miscellaneous.html: miscellaneous/miscellaneous.md index.css
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
+	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
 
 # gallery
-
-gallery/gallery.html: gallery/gallery.md ./index.css
-	pandoc -f markdown+east_asian_line_breaks -s --toc --mathjax -c ../index.css gallery/gallery.md -o gallery/gallery.html
+gallery/gallery.html: gallery/gallery.md index.css
+	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c ../$(word 2,$^) $< -o $@
+	vim +' exe "/<header" | exe "norm o<a href='../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
 
 FILES  = "*.html"
 clean:

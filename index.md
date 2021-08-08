@@ -1,6 +1,6 @@
 ---
 title:  "陳捷 Jesse Chen"
-author: "jessekelighine@gmail.com"
+author: 'jessekelighine@gmail.com'
 header-includes:
 	<link rel="icon" href="./resources/sheep_color.png">
 ---

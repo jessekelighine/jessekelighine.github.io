@@ -1,5 +1,5 @@
 ---
-title:  "Miscellaneous"
+title:  'Miscellaneous'
 ---
 
 - [**KELIGHINE 遊戲**](./Rulebook/Rulebook.pdf):
@@ -15,5 +15,3 @@ title:  "Miscellaneous"
   像是「雙、副、對」或「條、根、支」。
   台灣的母語使用者會怎麼在這幾個量詞之間選擇呢？
   ([海報](./quantifier/poster.pdf))
-
-<a href="../index.html" class="back_button">HOME</a>
