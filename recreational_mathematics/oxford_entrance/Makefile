@@ -21,8 +21,6 @@ all: $(MAIN).html
 
 $(MAIN).html: $(MAIN).md ../../index.css $(MAIN).pdf $(WEBFILES) 
 	pandoc -f markdown+east_asian_line_breaks -s --mathjax -c $(word 2,$^) $< -o $@
-	### add HOME button.
-	vim +' exe "/<header" | exe "norm o<a href='../../index.html' class='back_button'><strong>HOME</strong></a>\<Esc>" | x ' $@
 	open $(MAIN).html
 
 $(MAIN).pdf: $(MAIN).tex settings.tex Makefile $(FIGURES) figures/tile.tex
