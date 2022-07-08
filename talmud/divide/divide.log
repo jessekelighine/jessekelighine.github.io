@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.20)  21 APR 2022 15:46
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.4.20)  8 JUL 2022 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -233,7 +233,7 @@ Package: xparse 2022-01-12 L3 Experimental document command parser
 \l__xeCJK_widow_penalty_int=\count288
 
 Package xtemplate Info: Declaring object type 'xeCJK/punctuation' taking 0
-(xtemplate)             argument(s) on line 2337.
+(xtemplate)             argument(s) on line 2338.
 
 \l__xeCJK_fixed_punct_width_dim=\dimen168
 \l__xeCJK_mixed_punct_width_dim=\dimen169
@@ -789,12 +789,12 @@ Missing character: There is no ; ("3B) in font nullfont!
 
 ] (./divide.aux) ) 
 Here is how much of TeX's memory you used:
- 18945 strings out of 477696
- 441595 string characters out of 5841668
- 758234 words of memory out of 5000000
- 39279 multiletter control sequences out of 15000+600000
- 472131 words of font info for 56 fonts, out of 8000000 for 9000
+ 18863 strings out of 477696
+ 439940 string characters out of 5841668
+ 751110 words of memory out of 5000000
+ 39199 multiletter control sequences out of 15000+600000
+ 472123 words of font info for 55 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 100i,6n,104p,417b,821s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 100i,6n,104p,417b,817s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on divide.xdv (1 page, 13336 bytes).
+Output written on divide.xdv (1 page, 9500 bytes).

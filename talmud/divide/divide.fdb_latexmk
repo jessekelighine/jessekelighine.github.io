@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1650527187 "divide.xdv" "divide.pdf" "divide" 1650527187
-  "divide.xdv" 1650527186 13336 4746c79fd1cc1e635563a624e1b580b4 "xelatex"
+["xdvipdfmx"] 1657258934 "divide.xdv" "divide.pdf" "divide" 1657258934
+  "divide.xdv" 1657258933 9500 a31b797cc228e689aa7e41aeb750f0f7 "xelatex"
   (generated)
   "divide.pdf"
-["xelatex"] 1650527184 "divide.tex" "divide.xdv" "divide" 1650527187
+["xelatex"] 1657258932 "divide.tex" "divide.xdv" "divide" 1657258934
   "/dev/null" 0 -1 0 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -134,14 +134,14 @@
   "/usr/local/texlive/2022basic/texmf-dist/tex/latex/xcolor/xcolor.sty" 1635798903 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/local/texlive/2022basic/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1605910342 4902 efb3d66683a2da2a232f71e3a571a899 ""
   "/usr/local/texlive/2022basic/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg" 1639348229 408 329917a4d81a3866191c0328b8d2efeb ""
-  "/usr/local/texlive/2022basic/texmf-dist/tex/xelatex/xecjk/xeCJK.sty" 1639348229 181053 eb8addfa85bbd37389125f93da936dc2 ""
+  "/usr/local/texlive/2022basic/texmf-dist/tex/xelatex/xecjk/xeCJK.sty" 1650610627 181092 6d542c15048cda866e317375e9dd8b1b ""
   "/usr/local/texlive/2022basic/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty" 1639348229 39112 d2c64c2924adb909ead58a883c2e3793 ""
   "/usr/local/texlive/2022basic/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
   "/usr/local/texlive/2022basic/texmf-var/web2c/xetex/xelatex.fmt" 1650391562 4582819 9059c7f89357b59f23e59eaffba5d7b5 ""
   "/usr/local/texlive/2022basic/texmf.cnf" 1647274000 628 5a32b7ea7dd5bed632a871bee125276d ""
-  "divide.aux" 1650527186 32 3985256e7290058c681f74d7a3565a19 "xelatex"
-  "divide.tex" 1650508349 2089 5dc87d3b9ae93192ffe5bbd9f5b3cdf6 ""
-  "rule.tex" 1650457845 1126 91d6e965ac7e727ca7013045740c1224 ""
+  "divide.aux" 1657258933 32 3985256e7290058c681f74d7a3565a19 "xelatex"
+  "divide.tex" 1657258500 2089 5dc87d3b9ae93192ffe5bbd9f5b3cdf6 ""
+  "rule.tex" 1657258500 399 867de62c7c75d05b936076610b5bdd53 ""
   (generated)
   "divide.aux"
   "divide.log"

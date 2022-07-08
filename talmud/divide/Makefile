@@ -29,4 +29,3 @@ $(MAIN)-%.pdf: $(MAIN).tex rule-%.tex
 	rm -rf $(RULE); ln -s rule-$*.tex $(RULE)
 	latexmk -xelatex $<
 	mv $(MAIN).pdf $@
-	# open $@
