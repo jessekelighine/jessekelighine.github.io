@@ -1,0 +1,12 @@
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{The Method}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Definition of GMM}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Assumptions}{10}{0}{2}
+\beamer@subsectionintoc {2}{3}{Explicit Form}{11}{0}{2}
+\beamer@sectionintoc {3}{Discussion}{12}{0}{3}
+\beamer@subsectionintoc {3}{1}{Sampling Error}{12}{0}{3}
+\beamer@subsectionintoc {3}{2}{Asymptotic Distribution}{13}{0}{3}
+\beamer@subsectionintoc {3}{3}{How to Choose the Weighting Matrix?}{14}{0}{3}
+\beamer@subsectionintoc {3}{4}{How to Check Instruments?}{17}{0}{3}
+\beamer@subsectionintoc {3}{5}{Implications of Homoskedasticity}{18}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{19}{0}{4}
