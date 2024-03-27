@@ -1,0 +1,71 @@
+\documentclass{standalone}
+%<--------------------------------------------------------------------------->%
+%%% Color %%%
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs,gensymb}
+\usepackage{mathtools}
+%<--------------------------------------------------------------------------->%
+%% CJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{Noto Sans CJK KR Regular}
+\newcommand{\chsansfont}{Noto Sans CJK KR Regular}
+\newcommand{\chboldfont}{Noto Sans CJK KR Medium}
+\newcommand{\chmonofont}{Noto Sans Mono CJK KR Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chsansfont,ItalicFont={LXGW WenKai Light}]
+\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
+%<--------------------------------------------------------------------------->%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% \usetikzlibrary{fit}
+\usetikzlibrary{angles,quotes}
+\usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\begin{tikzpicture}[scale=7/24,thick,line cap=round]
+	\tikzstyle{jiao}=[solid,circle,draw,fill=white,inner sep=.8pt];
+	%% Define position {{{
+	\newcommand*{\Ca}{6};
+	\newcommand*{\Cb}{8};
+	\coordinate (O)     at (0,0);
+	\coordinate (CLAIM) at (\Ca,\Cb);
+	\coordinate (C1)    at (\Ca,0);
+	\coordinate (C2)    at (0,\Cb);
+	%% }}}
+	%% Claim {{{
+	\draw[dotted,gray] (CLAIM) -| node[pos=0.5,left ]{$c_2$} (O);
+	\draw[dotted,gray] (CLAIM) |- node[pos=0.5,below]{$c_1$} (O);
+	%% }}}
+	%% Asset {{{
+	\newcommand*{\Ea}{5};
+	\newcommand*{\Eb}{9};
+	\draw[myred,name path=asset_one]        (0,\Ea) -- (\Ea,0) node[below]{$E$};
+	\draw[myred,dashed,name path=asset_two] (0,\Eb) -- (\Eb,0) node[below]{$E'$};
+	%% }}}
+	%% Axis {{{
+	\draw[<->] (0,10) node[above]{乙} -- (0,0) -- (10,0) node[right]{甲};
+	%% }}}
+	%% Rule {{{
+	\input{rule.tex}
+	%% }}}
+	%% Nodes {{{
+	\node[jiao]                      at (O)     {};
+	\node[jiao,label=above:{總債權}] at (CLAIM) {};
+	%% }}}
+\end{tikzpicture}
+
+\end{document}

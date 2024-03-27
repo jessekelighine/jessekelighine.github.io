@@ -1,0 +1,65 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Section Font %%%
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\sffamily\raggedright}
+%-----------------------------------------------------------------------------%
+%%% Date Time %%%
+\usepackage{datetime}
+\newdateformat{meinesdatum}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\meinesdatum}
+%-----------------------------------------------------------------------------%
+%%% Minimal Title %%%
+\makeatletter\def\@maketitle{%
+\noindent{\sffamily\bfseries\@title}%
+\hfill\texttt{\@date}\\{\ }\null\hfill\texttt{\@author}
+\par\vskip1.5em}\makeatother
+%-----------------------------------------------------------------------------%
+%%% Hyper Reference %%%
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks,colorlinks=true]{hyperref}
+% \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
+%-----------------------------------------------------------------------------%
+%%% Enumerate %%%
+\usepackage{enumitem}
+\setlist{listparindent=\parindent,parsep=0pt,nosep} % paragraph indent 
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\raum}{\phantom{=}{\:\,}}
+% \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%-----------------------------------------------------------------------------%
+%%% Probability %%%
+\let\Pr\relax
+\DeclareMathOperator{\Pr}{\text{\textrm{\upshape\textbf{P}}}}
+\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\asto}{\overset{as}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pr}[1]{\Pr\left\{#1\right\}}
+\newcommand{\given}[1][]{\,#1|\,}
+%-----------------------------------------------------------------------------%
+\newcommand{\bernoulli}[1]{\text{Bernoulli(#1)}}
+%-----------------------------------------------------------------------------%
+%%% Math Notes %%%
+\usepackage{amsthm}
+\newtheoremstyle{this}{}{}{\slshape}{}{\bfseries}{.}{.5em}{}\theoremstyle{this}
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+% \newenvironment{pf}{\noindent$\blacktriangleright$\textit{proof}.\ }{\hfill$\blacksquare$}
+% \newenvironment{example}{\noindent\textbf{Example.}}{}
+% \newenvironment{ok}[1]{\noindent\textbf{#1.}}{}
+%-----------------------------------------------------------------------------%

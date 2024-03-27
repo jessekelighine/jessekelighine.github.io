@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="jessekelighine.com" />
+  <meta name="dcterms.date" content="2023-12-12" />
+  <title>一個關於剪紙的定理</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/resources/sheep_color.png">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">一個關於剪紙的定理</h1>
+<p class="author"><a
+href="https://jessekelighine.com"><code>jessekelighine.com</code></a></p>
+<p class="date">2023-12-12</p>
+</header>
+<blockquote>
+<p><strong>定義（圖形）.</strong>
+一個<em>圖形</em>是一個簡單多邊形，亦即：一個圖形沒有洞，並且其邊不與自己相交。</p>
+</blockquote>
+<p>簡單來説，就是可以用一張紙剪出來且沒有洞的圖形。</p>
+<blockquote>
+<p><strong>定義（剪）.</strong>
+<em>剪</em>指將一個圖形以一條直線分割成兩部分。</p>
+</blockquote>
+<p>這個定義模仿的就是一把剪刀剪下去的概念。</p>
+<blockquote>
+<p><strong>定義（貼）.</strong>
+<em>貼</em>指的是把兩個圖形不重疊地合併再一起。</p>
+</blockquote>
+<p>任何一個圖形的面積在<em>剪貼</em>前後不會改變。</p>
+<blockquote>
+<p><strong>定理.</strong> 任何三角形可以剪貼成長方形。</br>
+<strong>證明.</strong> 給定 <span class="math inline">\(\triangle
+ABC\)</span>，作 <span class="math inline">\(\overline{AB}\)</span>
+的垂線 <span class="math inline">\(\overline{CM}\)</span>。連接線段
+<span class="math inline">\(\overline{AC}\)</span> 及 <span
+class="math inline">\(\overline{BC}\)</span>。
+<img src="figures/figure-triangle_to_rectangle.svg" alt="triangle" style="min-width: 12.5em; max-width: 50%; width: 50%; display: block; margin: auto;"/></p>
+</blockquote>
+<blockquote>
+<p><strong>定理.</strong> 任何長方形可以剪接成正方形。</br>
+<strong>證明.</strong>
+<img src="figures/figure-rectangle_to_square.svg" alt="triangle" style="min-width: 12.5em; max-width: 50%; width: 50%; display: block; margin: auto;"/>
+我們想將 <span class="math inline">\(\square{ABCD}\)</span> 拼剪成正方形
+<span class="math inline">\(\square{AEFG}\)</span>。作法如下：</p>
+</blockquote>
+<!-- <img src="figures/figure-pythagorean.svg" alt="pythagorean" style="max-width: 50%; width: 50%; display: block; margin: auto;"/> -->
+<p><img src="figures/figure-pythagorean.svg" alt="pythagorean" style="max-width: 50; width: 50%; display: block; margin: auto;"/></p>
+</body>
+</html>

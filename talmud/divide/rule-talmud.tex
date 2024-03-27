@@ -1,0 +1,13 @@
+%% Aumann and Maschler {{{
+\coordinate[jiao,label=above left:$M$] (HALF) at (\Ca/2,\Cb/2);
+\draw[black!20,dotted,name path=temp2] (\Ca/2,0) -- node[pos=0.5,sloped]{\footnotesize{|}}  (HALF) -- node[pos=0.5,sloped]{\footnotesize{|}}  (\Ca/2,\Cb);
+\draw[black!20,dotted,name path=temp3] (0,\Cb/2) -- node[pos=0.5,sloped]{\footnotesize{||}} (HALF) -- node[pos=0.5,sloped]{\footnotesize{||}} (\Ca,\Cb/2);
+\draw[name path=temp4,draw=none] (O) -- +(45:14.14);
+\draw[name path=temp5,draw=none] (CLAIM) -- +(180+45:{min(\Ca,\Cb)*1.415});
+\path[name intersections={of= temp4 and temp2}]; \coordinate (KINK1) at (intersection-1) {};
+\path[name intersections={of= temp5 and temp2}]; \coordinate (KINK2) at (intersection-1) {};
+\path[draw=myblue,name path=solution_path] (O) -- (KINK1) -- (HALF) -- (KINK2) -- (CLAIM);
+\path[name intersections={of=solution_path and asset_one}]; \coordinate[jiao,label=left:{$S$}]   (S1) at (intersection-1) {};
+\path[name intersections={of=solution_path and asset_two}]; \coordinate[jiao,label=right:{$S'$}] (S2) at (intersection-1) {};
+% \node[yshift=-.8cm] at (10/2,0) {Aumann-Maschler (Talmud)};
+%% }}}

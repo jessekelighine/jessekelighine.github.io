@@ -1,0 +1,256 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
+% \usepackage{setspace}\setstretch{1.3} % \begin{spacing}{1.3}
+\usepackage[a4paper,vmargin={3.85cm,3.85cm},hmargin={3.85cm,3.85cm}]{geometry}
+%-----------------------------------------------------------------------------%
+\usepackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Title %%%
+\title{Akaike Information Criterion: The Idea%
+\footnote{In this short introduction, I shall ignore some technical regularity conditions for clarity.
+I also assume the reader is familiar \acrshort{ml} estimator, it's asymptotic properties, and Fisher information.}}
+\author{陳\,捷 Jesse C.\ Chen\\\texttt{\href{https://jessekelighine.com}{jessekelighine.com}}}
+\date{\today}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\maketitle
+
+\section{What's Wrong with \texorpdfstring{\acrlong{ml}}{Maximum Likelihood}?}
+
+\noindent
+Suppose we have a data set $\YY=\{y_{i}\}_{i=1}^n$ and a probability density model $f(\cdot\given\ttheta)$ where $\ttheta$ is the parameter.
+If we try to fit model $f$ with the data $\YY$ and obtain the estimate of the parameter $\ttheta$,
+\begin{align}
+	\hat\ttheta_{\YY} \coloneqq \arg\max_{\ttheta} \log f(\YY\given\ttheta). \tag{\acrshort{ml}}
+\end{align}
+What are we \emph{actually} doing here?
+We are supposing that \emph{if} $\YY$ is generated from a probability density $f(\cdot\given\ttheta_{0})$,
+\emph{then} $\hat\ttheta_{\YY}$ is a good estimate for $\ttheta_{0}$.
+This is extensively argued by Ronald Fisher, the inventor of the \acrlong{ml} method.
+
+Yet, this approach poses an obvious problem:
+\emph{What if} $\YY$ follows another distribution with density function $g(\cdot\given\pphi_{0})$?
+We can, of course, also find the \acrshort{ml} estimate for $\pphi_{0}$:
+\begin{align*}
+	\hat\pphi_{\YY} \coloneqq \arg\max_{\pphi} \log g(\YY\given\pphi).
+\end{align*}
+In the spirit of \acrshort{ml},
+we can compare the two log-likelihoods,
+\begin{align}\label{eq:ml-compare}
+	\log f(\YY\given\hat\ttheta_{\YY})
+	\quad\text{and}\quad
+	\log g(\YY\given\hat\pphi_{\YY}),
+\end{align}
+and see which is larger.
+However, this poses another problem:
+since we only have one observation $\YY$,
+we can find some density function $h(\cdot\given\ppsi)$ \emph{tailored} to fit the data at hand $\YY$ very well,
+producing a high likelihood $h(\YY\given\hat\ppsi_{\YY})$,
+but fails to produce a high likelihood $h(\XX\given\hat\ppsi_{\YY})$ when another data set $\XX$ is presented.
+This is referred to as the problem of \textbf{overfitting}.
+
+Luckily,
+in describing \textbf{overfitting},
+we are motivated to do \textbf{cross-validation},
+i.e., to use another data $\XX$ (independent to $\YY$ but follows the sample distribution)
+to evaluate a parameter estimated under data $\YY$.
+
+\section{Deriving \texorpdfstring{\acrshort{aic}}{AIC}}
+
+Let's switch back to using $f(\cdot\given\ttheta)$ for our density function.
+Also let $\ttheta$ be a $k$-dimensional vector of parameters.
+Instead of trying to estimate compare the log-likelihood like in \eqref{eq:ml-compare},
+we try to estimate the \textbf{cross-validated} version
+\begin{align*}
+	\log f(\XX\given\hat\ttheta_{\YY}).
+\end{align*}
+That is, after we obtained the estimator $\hat\ttheta_{\YY}$ using the data set $\YY$,
+we evaluate the likelihood using another data set $\XX$.
+However, since we do not have another independent data set $\XX$, we need to do some approximation.
+
+First, we approximate $\log f(\XX\given\hat\ttheta_{\YY})$ by using the second-order Taylor expansion around $\hat\ttheta_{\XX}$:
+\begin{align*}
+	\log f(\XX\given\hat\ttheta_{\YY})
+	&\approx
+	\log f(\XX\given\hat\ttheta_{\XX}) \tag{0-th order}\\
+	&+
+	(\hat\ttheta_{\YY}-\hat\ttheta_{\XX})\T\left[\frac{\partial\log f(\XX\given\hat\ttheta_{\XX})}{\partial\ttheta}\right] \tag{first order}\\
+	&+
+	\frac12
+	(\hat\ttheta_{\YY}-\hat\ttheta_{\XX})\T
+	\left[
+	\frac{\partial^2\log f(\XX\given\hat\ttheta_{\XX})}{\partial\ttheta\partial\ttheta\T}
+	\right]
+	(\hat\ttheta_{\YY}-\hat\ttheta_{\XX}) \tag{second order}
+\end{align*}
+Note that the first-order term (the Jacobian) is exactly zero since $\hat\ttheta_{\XX}$ is the \acrshort{ml} estimator.
+Thus, we have
+\begin{align*}
+	\log f(\XX\given\hat\ttheta_{\YY})
+	&\approx
+	\log f(\XX\given\hat\ttheta_{\XX}) \\
+	&+
+	\frac12
+	(\hat\ttheta_{\YY}-\hat\ttheta_{\XX})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\YY}-\hat\ttheta_{\XX})
+	\shortintertext{ where }
+	\JJ(\hat\ttheta_{\XX})
+	&= 
+	\frac{\partial^2\log f(\XX\given\hat\ttheta_{\XX})}{\partial\ttheta\partial\ttheta\T}.
+\end{align*}
+This is the key insight of \acrshort{aic}:
+we can obtain the \textbf{cross-validated} log-likelihood by making a ``correction'' to the estimated likelihood $f(\YY\given\hat\ttheta_{\YY})$.
+Now we split the correction term into three parts:
+\begin{align*}
+	(\hat\ttheta_{\YY}-\hat\ttheta_{\XX})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\YY}-\hat\ttheta_{\XX})
+	&= 
+	(\hat\ttheta_{\XX}-\ttheta_{0})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\XX}-\ttheta_{0}) \label{eq:part-a}\tag{a}\\
+	&+
+	(\hat\ttheta_{\YY}-\ttheta_{0})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\YY}-\ttheta_{0}) \label{eq:part-b}\tag{b}\\
+	&-
+	2
+	(\hat\ttheta_{\YY}-\ttheta_{0})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\XX}-\ttheta_{0}) \label{eq:part-c}\tag{c}
+\end{align*}
+We can easily see that part \eqref{eq:part-c} goes to zero asymptotically ($n\to\infty$):
+\begin{align*}
+	(\hat\ttheta_{\YY}-\ttheta_{0})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\XX}-\ttheta_{0})
+	=
+	\underbrace{(\hat\ttheta_{\YY}-\ttheta_{0})\T}_{\pto0}
+	\JJ(\hat\ttheta_{\XX})
+	\underbrace{(\hat\ttheta_{\XX}-\ttheta_{0})}_{\pto0}.
+\end{align*}
+Part \eqref{eq:part-a} and \eqref{eq:part-b} are similar in form:
+\begin{align*}
+	(\hat\ttheta_{\YY}-\ttheta_{0})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\YY}-\ttheta_{0})
+	&=
+	\trace
+	\left(
+	\blue{
+	(\hat\ttheta_{\YY}-\ttheta_{0})
+	(\hat\ttheta_{\YY}-\ttheta_{0})\T
+	}
+	\JJ(\hat\ttheta_{\XX})
+	\right) \\
+	(\hat\ttheta_{\XX}-\ttheta_{0})\T
+	\JJ(\hat\ttheta_{\XX})
+	(\hat\ttheta_{\XX}-\ttheta_{0})
+	&=
+	\trace
+	\left(
+	\blue{
+	(\hat\ttheta_{\XX}-\ttheta_{0})
+	(\hat\ttheta_{\XX}-\ttheta_{0})\T
+	}
+	\JJ(\hat\ttheta_{\XX})
+	\right).
+\end{align*}
+Since $\hat\ttheta_{\XX}$ and $\hat\ttheta_{\YY}$ are both \acrshort{ml} estimators,
+the blue parts above converges to the inverse of Fisher information (asymptotic variance).
+By information equality,
+$\JJ(\hat\ttheta_{\XX})$ also converges to the negative of Fisher information in probability.
+Hence, we have part \eqref{eq:part-a} and \eqref{eq:part-b} as the trace of identity matrices of dimension $k\times k$.
+That is, we have both parts equal to $-k$.
+
+Therefore, our approximation for the \textbf{cross-validated} log-likelihood is
+\begin{align*}
+	\log f(\XX\given\hat\ttheta_{\YY})
+	\approx
+	\log f(\XX\given\hat\ttheta_{\XX}) - k.
+\end{align*}
+This is the famous \acrshort{aic}.
+However, \acrshort{aic} is often written as
+\begin{align*}
+	\aic = 2k - 2 \log f(\XX\given\hat\ttheta_{\XX}). \label{eq:aic}\tag{\acrshort{aic}}
+\end{align*}
+This is due to its connect with information theory and \acrlong{kl}.
+
+\section{\texorpdfstring{\acrshort{aic}}{AIC}'s Connection with \texorpdfstring{\acrlong{kl}}{KL Divergence}}
+
+\acrshort{kl} divergence is an information theoretic measure of the discrepancy between two distributions.
+It is defined as
+\begin{align*}
+	\KL(p\ggiven q) \coloneqq \int_{\mathcal{X}} \log\left[\frac{p(x)}{q(x)}\right]p(x)\dd{x}
+\end{align*}
+where $p$ and $q$ are two densities on the same support $\mathcal{X}$.
+The two main properties of \acrshort{kl} are
+\begin{enumerate}
+	\item $\KL(p\ggiven q)\geq 0$ $\forall p,q$.
+	\item $\KL(p\ggiven q)=0$ iff $p=q$ (almost everywhere).
+\end{enumerate}
+That is, $\KL(p\ggiven q)$ is small when $p$ and $q$ are similar.
+
+In our case, we want to know the discrepancy between
+the ``true'' likelihood function $f(\cdot\given\ttheta_{0})$ and
+the estimated likelihood function $f(\cdot\given\hat\ttheta_{\YY})$.
+Hence, we wish to choose the model with small discrepancy between the two:
+\begin{align*}
+	\KL(f(\cdot\given\ttheta_0) \ggiven f(\cdot\given\hat\ttheta_{\YY}))
+	&=
+	\int_{\mathcal{X}}
+	\log
+	\left[
+	\frac{f(\XX\given\ttheta_{0})}{f(\XX\given\hat\ttheta_{\YY})}
+	\right]
+	f(\XX\given\ttheta_{0})
+	\dd{\XX} \\
+	&= 
+	\int_{\mathcal{X}}
+	\log
+	f(\XX\given\ttheta_{0})
+	f(\XX\given\ttheta_{0})
+	\dd{\XX}
+	\tag{entropy}\\
+	&+
+	\int_{\mathcal{X}}
+	-
+	\log
+	f(\XX\given\hat\ttheta_{\YY})
+	f(\XX\given\ttheta_{0})
+	\dd{\XX}
+	\tag{cross-entropy}\\
+	&=
+	\text{constant}
+	- \E_{\XX} \log f(\XX\given\hat\ttheta_{\YY})
+\end{align*}
+Thus, we can view \eqref{eq:aic} as an approximation of \textbf{cross-entropy}.
+Measuring the discrepancy between $f(\cdot\given\ttheta_{0})$ and $f(\cdot\given\hat\ttheta_{\YY})$ makes intuitive sense:
+the problem of \textbf{overfitting} can be understood as a large discrepancy between the ``true'' likelihood and the ``estimated'' likelihood.
+In the original paper \parencite{akaike-1974}, \acrshort{aic} is motivated by \acrshort{kl}.
+Hence, \acrshort{aic} is represented as the \emph{negative} of the \textbf{cross-validated} likelihood to match the sign of \textbf{cross-entropy}.
+Thus in practice, we want to select the model with \emph{small} \acrshort{aic}.
+
+\section{Why Times Two?}
+
+If we consider a Gaussian model with $\ttheta=(\mu,\sigma^2)$,
+the log-likelihood is written as
+\begin{align*}
+	\log f(\XX\given \ttheta)
+	=
+	- \frac{n}{2} \log(2\pi)
+	- \frac{n}{2} \log\sigma^2
+	- \frac{1}{2\sigma^2} \sum_{i=1}^{n} (x_{i} - \mu)^2.
+\end{align*}
+It is a lot nicer to write $2\log f(\XX\given\ttheta)$ so we can get rid of those $\frac12$'s.
+That's why.
+\asDemonstrated
+
+\vfill
+\printglossaries
+\printbibliography
+
+\end{document}

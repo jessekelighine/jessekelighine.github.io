@@ -1,0 +1,8 @@
+%% Generic Solution Path {{{
+\draw[myblue,name path=solution_path] (O) .. controls (3,1) and (2,6) .. ($(CLAIM)+(0,-1)$) -- (CLAIM);
+\path[name intersections={of=solution_path and asset_one}]; \coordinate[jiao,label=right:{$S$}]  (S1) at (intersection-1) {};
+\path[name intersections={of=solution_path and asset_two}]; \coordinate[jiao,label=right:{$S'$}] (S2) at (intersection-1) {};
+\draw[black, dotted] (S1) |- node[pos=0.5,below]{$x_1$} (O);
+\draw[black, dotted] (S1) -| node[pos=0.5,left]{$x_2$} (O);
+% \node[yshift=-.8cm] at (10/2,0) {};
+%% }}}

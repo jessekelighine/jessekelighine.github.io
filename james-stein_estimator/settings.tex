@@ -1,0 +1,41 @@
+\usetheme{Luebeck}\usecolortheme{crane}
+\usefonttheme{professionalfonts}\useinnertheme{rectangles}
+%<--------------------------------------------------------------------------->%
+%%% Page # of # %%%
+\setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{navigation symbols}{}{%
+\usebeamerfont{footline}\usebeamercolor[fg]{footline}\hspace{1em}%
+\insertframenumber:\inserttotalframenumber}
+\setbeamercolor{footline}{fg=black}
+\setbeamerfont{footline}{series=\bfseries}
+%<--------------------------------------------------------------------------->%
+%%% Date Time %%%
+\usepackage{datetime}
+\newtimeformat{zeit}%
+{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}:\twodigit{\THESECOND}}
+\settimeformat{zeit}%
+\newdateformat{meinesdatum}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\meinesdatum}
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{gensymb,amssymb}
+\usepackage{mathrsfs,amsmath}
+%<--------------------------------------------------------------------------->%
+\newcommand{\bfmu}{\boldsymbol{\mu}}
+\newcommand{\bfM}{\boldsymbol{M}}
+\newcommand{\bfz}{\boldsymbol{z}}
+%<--------------------------------------------------------------------------->%
+%%% Probability %%%
+\DeclareMathOperator{\Exp}{\mathbb{E}}
+\DeclareMathOperator{\Cov}{Cov}
+\newcommand{\E}[2][]{\Exp_{#1}\!\left[#2\right]}
+\newcommand{\cov}[2][]{\Cov_{#1}\!\left(#2\right)}
+\newcommand{\given}[1][]{\,#1|\,}
+%<--------------------------------------------------------------------------->%
+%%% Distributions %%%
+\newcommand{\normal}[2][]{\mathcal{N}_{#1}\left(#2\right)}
+%<--------------------------------------------------------------------------->%
+%%% Graphics %%%
+\usepackage{graphicx}
+%<--------------------------------------------------------------------------->%

@@ -1,0 +1,160 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%<--------------------------------------------------------------------------->%
+%%% Color %%%
+\usepackage[dvipsnames]{xcolor} % \textcolor{red}{}
+\definecolor{rot}{RGB}{229,0,0}
+\definecolor{bla}{RGB}{0,98,144}
+\definecolor{gel}{RGB}{255,195,0}
+\newcommand{\red}[1]{\textcolor{rot}{#1}}
+\newcommand{\blue}[1]{\textcolor{bla}{#1}}
+\newcommand{\yellow}[1]{\textcolor{gel}{#1}}
+%-----------------------------------------------------------------------------%
+%%% Graphics %%%
+\usepackage{graphicx}
+%<--------------------------------------------------------------------------->%
+%%% Enumerate %%%
+\usepackage{enumitem}
+\setlist{listparindent=\parindent,parsep=0pt,nosep} % paragraph indent 
+%<--------------------------------------------------------------------------->%
+%%% Hyper Reference %%%
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks,colorlinks=true]{hyperref}
+% \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
+%<--------------------------------------------------------------------------->%
+%%% Math %%%
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs,gensymb}
+\usepackage{mathtools}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\two}[2]{\substack{ \text{#1} \\ \text{#2} }}
+% \newcommand{\raum}{\phantom{=}{\:\,}}
+\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%<--------------------------------------------------------------------------->%
+%%% Math Notes %%%
+\usepackage{amsthm}
+\makeatletter
+\def\thmheadbrackets#1#2#3{%
+\thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+\thmnote{ {\the\thm@notefont\!（#3）\!}}}
+\makeatother
+\newtheoremstyle{this}{}{}{}{}{\bfseries}{.}{0.5em}{\thmheadbrackets{#1}{#2}{#3}}
+\theoremstyle{this}
+\newtheorem{theorem}{定理}
+\newtheorem{definition}{定義}
+\newtheorem{remark}{討論}
+\renewcommand*{\proofname}{\upshape\bfseries 證明}
+\renewcommand{\qedsymbol}{\ensuremath{\blacksquare}}
+% \newenvironment{pf}{\noindent$\blacktriangleright$\textit{proof}.\ }{\hfill$\blacksquare$}
+% \newenvironment{example}{\noindent\textbf{Example.}}{}
+% \newenvironment{ok}[1]{\noindent\textbf{#1.}}{}
+%<--------------------------------------------------------------------------->%
+%%% Column %%%
+\usepackage{multicol}  % \begin{multicols*}{3}[例外]字\end{multicols*}
+% \usepackage[english]{babel}
+\usepackage{float}
+%<--------------------------------------------------------------------------->%
+%%% Date Time %%%
+\usepackage{datetime}
+\newtimeformat{zeit}{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}\ (UTC+8)}
+\settimeformat{zeit}
+\newdateformat{meinesdatum}{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\meinesdatum}
+%-----------------------------------------------------------------------------%
+%%% Custom Title %%%
+\makeatletter\def\@maketitle{%
+\begin{center}%
+	\let\footnote\thanks%
+	{\large\textsf{\@title}\par}%
+	\vskip1em%
+	{\normalsize\lineskip.5em%
+	\begin{tabular}[t]{c}%
+		\@author%
+	\end{tabular}%
+	\par}%
+	\vskip1em%
+	{\normalsize\@date}%
+\end{center}%
+\par\vskip1em}
+\makeatother
+%-----------------------------------------------------------------------------%
+%%% Page # of # %%%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}\renewcommand{\headrulewidth}{0pt}\fancyhf{}
+\fancyfoot[C]{\footnotesize 第 \thepage\ 頁 / 共 \pageref{LastPage} 頁}
+\fancypagestyle{plain}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}
+\fancyfoot[C]{\footnotesize 第 \thepage\ 頁 / 共 \pageref{LastPage} 頁}}
+%<--------------------------------------------------------------------------->%
+%%% Chinese Numbers %%%
+\usepackage[encoding=UTF8,style=Traditional]{zhnumber}
+%<--------------------------------------------------------------------------->%
+%% CJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{GenWanMin TJ L}
+\newcommand{\chsansfont}{Noto Sans CJK KR Medium}
+\newcommand{\chboldfont}{Noto Sans CJK KR Medium}
+\newcommand{\chmonofont}{Noto Sans Mono CJK KR Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont={LXGW WenKai Light}]
+\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
+\setlength{\parindent}{2em}
+%<--------------------------------------------------------------------------->%
+%%% Underdot %%%
+\usepackage{xeCJKfntef}
+\newcommand{\underdot}[1]{\CJKunderdot[symbol=\large.]{#1}}
+\newcommand{\underlineCJK}[1]{\CJKunderline{#1}}
+%-----------------------------------------------------------------------------%
+%%% Punctuation width %%%
+\xeCJKsetwidth{、}{0.55em}
+\xeCJKsetwidth{，}{0.6em}
+\xeCJKsetwidth{：}{0.65em}
+\xeCJKsetwidth{；}{0.65em}
+\xeCJKsetwidth{。}{0.7em}
+\xeCJKsetwidth{・}{0.7em}
+\xeCJKsetwidth{〈〉}{0.7em}
+\xeCJKsetwidth{《》}{0.7em}
+\xeCJKsetwidth{「」}{0.7em}
+\xeCJKsetwidth{『』}{0.7em}
+\xeCJKsetwidth{【】}{0.7em}
+\xeCJKsetwidth{（）}{0.7em}
+%<--------------------------------------------------------------------------->%
+%%% Punctuation Kerning %%%
+% Pairs-with-punctuation kerning (after).
+\xeCJKsetkern{〉}{、}{0.2em} \xeCJKsetkern{〉}{，}{0.2em} \xeCJKsetkern{〉}{。}{0.2em} \xeCJKsetkern{〉}{；}{0.2em} \xeCJKsetkern{〉}{：}{0.2em}
+\xeCJKsetkern{》}{、}{0.2em} \xeCJKsetkern{》}{，}{0.2em} \xeCJKsetkern{》}{。}{0.2em} \xeCJKsetkern{》}{；}{0.2em} \xeCJKsetkern{》}{：}{0.2em}
+\xeCJKsetkern{」}{、}{0.2em} \xeCJKsetkern{」}{，}{0.2em} \xeCJKsetkern{」}{。}{0.2em} \xeCJKsetkern{」}{；}{0.2em} \xeCJKsetkern{」}{：}{0.2em}
+\xeCJKsetkern{』}{、}{0.2em} \xeCJKsetkern{』}{，}{0.2em} \xeCJKsetkern{』}{。}{0.2em} \xeCJKsetkern{』}{；}{0.2em} \xeCJKsetkern{』}{：}{0.2em}
+\xeCJKsetkern{】}{、}{0.2em} \xeCJKsetkern{】}{，}{0.2em} \xeCJKsetkern{】}{。}{0.2em} \xeCJKsetkern{】}{；}{0.2em} \xeCJKsetkern{】}{：}{0.2em}
+\xeCJKsetkern{）}{、}{0.2em} \xeCJKsetkern{）}{，}{0.2em} \xeCJKsetkern{）}{。}{0.2em} \xeCJKsetkern{）}{；}{0.2em} \xeCJKsetkern{）}{：}{0.2em}
+% Pairs-with-punctuation kerning (before).
+\xeCJKsetkern{、}{〈}{0.4em} \xeCJKsetkern{。}{〈}{0.4em} \xeCJKsetkern{，}{〈}{0.4em} \xeCJKsetkern{：}{〈}{0.4em} \xeCJKsetkern{；}{〈}{0.4em}
+\xeCJKsetkern{、}{《}{0.4em} \xeCJKsetkern{。}{《}{0.4em} \xeCJKsetkern{，}{《}{0.4em} \xeCJKsetkern{：}{《}{0.4em} \xeCJKsetkern{；}{《}{0.4em}
+\xeCJKsetkern{、}{「}{0.4em} \xeCJKsetkern{。}{「}{0.4em} \xeCJKsetkern{，}{「}{0.4em} \xeCJKsetkern{：}{「}{0.4em} \xeCJKsetkern{；}{「}{0.4em}
+\xeCJKsetkern{、}{『}{0.4em} \xeCJKsetkern{。}{『}{0.4em} \xeCJKsetkern{，}{『}{0.4em} \xeCJKsetkern{：}{『}{0.4em} \xeCJKsetkern{；}{『}{0.4em}
+\xeCJKsetkern{、}{【}{0.4em} \xeCJKsetkern{。}{【}{0.4em} \xeCJKsetkern{，}{【}{0.4em} \xeCJKsetkern{：}{【}{0.4em} \xeCJKsetkern{；}{【}{0.4em}
+\xeCJKsetkern{、}{（}{0.4em} \xeCJKsetkern{。}{（}{0.4em} \xeCJKsetkern{，}{（}{0.4em} \xeCJKsetkern{：}{（}{0.4em} \xeCJKsetkern{；}{（}{0.4em}
+% Pairwise kerning (back-to-back).
+\xeCJKsetkern{〉}{〈}{0.3em} \xeCJKsetkern{〉}{《}{0.3em} \xeCJKsetkern{〉}{「}{0.3em} \xeCJKsetkern{〉}{『}{0.3em} \xeCJKsetkern{〉}{【}{0.3em} \xeCJKsetkern{〉}{（}{0.3em}
+\xeCJKsetkern{》}{〈}{0.3em} \xeCJKsetkern{》}{《}{0.3em} \xeCJKsetkern{》}{「}{0.3em} \xeCJKsetkern{》}{『}{0.3em} \xeCJKsetkern{》}{【}{0.3em} \xeCJKsetkern{》}{（}{0.3em}
+\xeCJKsetkern{」}{〈}{0.3em} \xeCJKsetkern{」}{《}{0.3em} \xeCJKsetkern{」}{「}{0.3em} \xeCJKsetkern{」}{『}{0.3em} \xeCJKsetkern{」}{【}{0.3em} \xeCJKsetkern{」}{（}{0.3em}
+\xeCJKsetkern{』}{〈}{0.3em} \xeCJKsetkern{』}{《}{0.3em} \xeCJKsetkern{』}{「}{0.3em} \xeCJKsetkern{』}{『}{0.3em} \xeCJKsetkern{』}{【}{0.3em} \xeCJKsetkern{』}{（}{0.3em}
+\xeCJKsetkern{】}{〈}{0.3em} \xeCJKsetkern{】}{《}{0.3em} \xeCJKsetkern{】}{「}{0.3em} \xeCJKsetkern{】}{『}{0.3em} \xeCJKsetkern{】}{【}{0.3em} \xeCJKsetkern{】}{（}{0.3em}
+\xeCJKsetkern{）}{〈}{0.3em} \xeCJKsetkern{）}{《}{0.3em} \xeCJKsetkern{）}{「}{0.3em} \xeCJKsetkern{）}{『}{0.3em} \xeCJKsetkern{）}{【}{0.3em} \xeCJKsetkern{）}{（}{0.3em}
+% Pairwise kerning (font-to-back).
+\xeCJKsetkern{〈}{〈}{0.2em} \xeCJKsetkern{〈}{《}{0.2em} \xeCJKsetkern{〈}{「}{0.2em} \xeCJKsetkern{〈}{『}{0.2em} \xeCJKsetkern{〈}{【}{0.2em} \xeCJKsetkern{〈}{（}{0.2em}
+\xeCJKsetkern{《}{〈}{0.2em} \xeCJKsetkern{《}{《}{0.2em} \xeCJKsetkern{《}{「}{0.2em} \xeCJKsetkern{《}{『}{0.2em} \xeCJKsetkern{《}{【}{0.2em} \xeCJKsetkern{《}{（}{0.2em}
+\xeCJKsetkern{「}{〈}{0.2em} \xeCJKsetkern{「}{《}{0.2em} \xeCJKsetkern{「}{「}{0.2em} \xeCJKsetkern{「}{『}{0.2em} \xeCJKsetkern{「}{【}{0.2em} \xeCJKsetkern{「}{（}{0.2em}
+\xeCJKsetkern{『}{〈}{0.2em} \xeCJKsetkern{『}{《}{0.2em} \xeCJKsetkern{『}{「}{0.2em} \xeCJKsetkern{『}{『}{0.2em} \xeCJKsetkern{『}{【}{0.2em} \xeCJKsetkern{『}{（}{0.2em}
+\xeCJKsetkern{【}{〈}{0.2em} \xeCJKsetkern{【}{《}{0.2em} \xeCJKsetkern{【}{「}{0.2em} \xeCJKsetkern{【}{『}{0.2em} \xeCJKsetkern{【}{【}{0.2em} \xeCJKsetkern{【}{（}{0.2em}
+\xeCJKsetkern{（}{〈}{0.2em} \xeCJKsetkern{（}{《}{0.2em} \xeCJKsetkern{（}{「}{0.2em} \xeCJKsetkern{（}{『}{0.2em} \xeCJKsetkern{（}{【}{0.2em} \xeCJKsetkern{（}{（}{0.2em}
+% Pairwise kerning (back-to-front).
+\xeCJKsetkern{〉}{〉}{0.2em} \xeCJKsetkern{〉}{》}{0.2em} \xeCJKsetkern{〉}{」}{0.2em} \xeCJKsetkern{〉}{』}{0.2em} \xeCJKsetkern{〉}{】}{0.2em} \xeCJKsetkern{〉}{）}{0.2em}
+\xeCJKsetkern{》}{〉}{0.2em} \xeCJKsetkern{》}{》}{0.2em} \xeCJKsetkern{》}{」}{0.2em} \xeCJKsetkern{》}{』}{0.2em} \xeCJKsetkern{》}{】}{0.2em} \xeCJKsetkern{》}{）}{0.2em}
+\xeCJKsetkern{」}{〉}{0.2em} \xeCJKsetkern{」}{》}{0.2em} \xeCJKsetkern{」}{」}{0.2em} \xeCJKsetkern{」}{』}{0.2em} \xeCJKsetkern{」}{】}{0.2em} \xeCJKsetkern{」}{）}{0.2em}
+\xeCJKsetkern{』}{〉}{0.2em} \xeCJKsetkern{』}{》}{0.2em} \xeCJKsetkern{』}{」}{0.2em} \xeCJKsetkern{』}{』}{0.2em} \xeCJKsetkern{』}{】}{0.2em} \xeCJKsetkern{』}{）}{0.2em}
+\xeCJKsetkern{】}{〉}{0.2em} \xeCJKsetkern{】}{》}{0.2em} \xeCJKsetkern{】}{」}{0.2em} \xeCJKsetkern{】}{』}{0.2em} \xeCJKsetkern{】}{】}{0.2em} \xeCJKsetkern{】}{）}{0.2em}
+\xeCJKsetkern{）}{〉}{0.2em} \xeCJKsetkern{）}{》}{0.2em} \xeCJKsetkern{）}{」}{0.2em} \xeCJKsetkern{）}{』}{0.2em} \xeCJKsetkern{）}{】}{0.2em} \xeCJKsetkern{）}{）}{0.2em}
+%<--------------------------------------------------------------------------->%

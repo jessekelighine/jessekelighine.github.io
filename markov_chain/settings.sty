@@ -1,0 +1,65 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Enumerate %%%
+\usepackage{enumitem}
+\setlist{listparindent=\parindent,parsep=0pt} % paragraph indent 
+%-----------------------------------------------------------------------------%
+%%% Section Font %%%
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\sffamily\bfseries\raggedright}
+\titleformat*{\subsection}{\normalsize\sffamily\bfseries\raggedright}
+% \renewcommand\thesection{（\zhnum{section}）}
+%-----------------------------------------------------------------------------%
+%%% Hyper Reference %%%
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks,colorlinks=true]{hyperref}
+%-----------------------------------------------------------------------------%
+%%% Math Notes %%%
+\usepackage{amsthm}
+\newtheoremstyle{this}{}{}{\slshape}{}{\bfseries}{.}{.5em}{}\theoremstyle{this}
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+% \newenvironment{example}{\noindent\textbf{Example.}}{}
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\raum}{\phantom{=}{\:\,}}
+% \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%-----------------------------------------------------------------------------%
+\let\Pr\relax
+\DeclareMathOperator{\Pr}{\text{\upshape\textbf{P}}}
+% \DeclareMathOperator{\E}{\mathbb{E}}
+% \DeclareMathOperator{\var}{Var}
+% \DeclareMathOperator{\cov}{Cov}
+\newcommand{\pr}[1]{\Pr\!\left\{#1\right\}}
+\newcommand{\T}{^\mathsf{T}}
+\newcommand{\given}[1][]{\,#1|\,}
+\newcommand{\iidto}{\overset{\text{iid}}{\sim}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\inftyoften}{\text{ i.o.}}
+\newcommand{\id}{\mathbf{1}}
+%-----------------------------------------------------------------------------%
+%%% Date Time %%%
+\usepackage{datetime}
+\newdateformat{meinesdatum}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\meinesdatum}
+%-----------------------------------------------------------------------------%
+%%% Custom Title %%%
+\makeatletter\def\@maketitle{%
+\begin{center}%
+	\textsf{\textbf{\@title}}\hfill\texttt{\@author}\\%
+	\hfill\texttt{\@date}%
+\end{center}%
+\par\vskip1.5em}
+\makeatother
+%-----------------------------------------------------------------------------%

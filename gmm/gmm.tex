@@ -1,0 +1,368 @@
+\documentclass{article}
+\input{settings.tex}
+%<--------------------------------------------------------------------------->%
+\title{Generalised Method of Moments}
+\author{\texttt{jessekelighine.com}}
+\date{\today}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\maketitle
+
+\noindent
+Consider the normal linear regression form:
+\begin{align}\label{true_model}
+	y_i =
+	\begin{bmatrix}
+		\zz_{i1} & \cdots & \zz_{iL}
+	\end{bmatrix}
+	\begin{bmatrix}
+		\delta_1\\\vdots\\\delta_L
+	\end{bmatrix}
+	+ \varepsilon_i
+	\quad\leadsto\quad
+	y_i = \zz_i'\delta + \varepsilon_i
+\end{align}
+where
+$y_i$ is the dependent variable,
+$\zz_i$ is the independent variable vector,
+$\delta$ is the parameter vector.
+We are interested in the parameters $\delta$.
+
+If $\zz_i$ is exogenous, then we can simply use the OLS estimator.
+However, if $\zz_i$ is not exogenous,
+then \emph{instrument variables} can be used.
+Let $\xx_i$ be a vector of valid instruments (relevant and exogenous) with dimension $K\times1$.
+Consider the following:
+\begin{align}
+	y_i = \zz_i'\delta + \varepsilon_i
+	&\implies \xx_i y_i = \xx_i \zz_i' \delta + \xx_i \varepsilon_i \\
+	&\implies \E{\xx_i y_i} = \E{\xx_i \zz_i' \delta + \xx_i \varepsilon_i} \\
+	\text{($\xx_i$ is exogenous)}
+	&\implies \E{\xx_i y_i} = \E{\xx_i \zz_i'}\delta \label{motif} \\
+	\text{($\xx_i$ is relevant, $\E{\xx_i\zz_i'}$ invertible)}
+	&\implies \E{\xx_i\zz_i'}\inv\E{\xx_i y_i} = \delta \label{IV}
+\end{align}
+Notice that were $\zz_i$ to be exogenous,
+then the result would be identical to OLS by replacing $\xx_i$ with $\zz_i$.
+If we replace the \emph{moments} in \refer{IV} with the corresponding estimators,
+then we obtain the familiar ``instrument variable estimator''
+estimator $\hat\delta_{\text{IV}}=\SS_{\xx\zz}\inv\ss_{\xx y}\pto\E{\xx_i\zz_i'}\inv\E{\xx_i y_i}$ where
+\begin{align*}
+	\SS_{\xx\zz} = \frac1n\sum_{i=1}^{n} \xx_i\zz_i' \quad\text{ and }\quad
+	\ss_{\xx y} = \frac1n\sum_{i=1}^{n} \xx_iy_i
+\end{align*}
+in which $n$ is the number of samples.
+
+However, the glaring problems of the IV method is that $\E{\xx_i\zz_i'}$ is not invertible.
+It could be that $\E{\xx_i\zz_i'}$ is not full rank,
+or that $\E{\xx_i\zz_i'}$ is not a square matrix if $K\neq L$.
+Before considering how to solve for a solution,
+we first consider under which circumstances the solution exists and is unique.
+
+\begin{definition}[Identification]
+	The $K\times L$ matrix $\E{\xx_i\zz_i'}$
+	is said to satisfy \underline{identification condition} if
+	it is of full \emph{column} rank (rank $=L$).
+	Denote this matrix by $\SIGMA_{\xx\zz}$.
+\end{definition}
+
+From \refer{motif} it is clear that the identification condition is crucial
+for obtaining a unique solution.
+Let's consider three cases of $K$, $L$ and identification conditions:
+\begin{enumerate}[label = \arabic*.]
+	\item[($K>L$)]\textbf{under-identified}:
+		If there are more regressor than instruments,
+		then it is clear from \refer{motif} that there are infinitely many
+		solutions to $\delta$.
+	\item[($K=L$)]\textbf{just-identified}:
+		If there are exactly the same number of regressors and instruments
+		(and the instruments are valid),
+		then we can simply use \refer{IV}.
+	\item[($K<L$)]\textbf{over-identified}:
+		If there are more instruments than regressors,
+		the solution to $\delta$ cannot be obtained by \refer{IV},
+		but we know the solution exists
+		if the identification conditions is met.
+\end{enumerate}
+For the first case, we can do nothing;
+for the second case, we can use \refer{IV};
+for the third case, we have nothing yet.
+Therefore, the GMM (Generalised Method of Moments) is introduced to find a solution in the third case.
+
+\section{The Method}
+
+Let's rewrite \refer{motif} by moving everything to one side and also the version in which
+the population moments are replaced with their estimators:
+\begin{align}\label{essence_one}
+	\E{\xx_i y_i} - \E{\xx_i \zz_i'}\delta = \zero.
+\end{align}
+Notice that we no not actually need to invert $\SIGMA_{\xx\zz}$ to get a solution,
+we just need to find a $\delta$ in the solution space that satisfies \refer{essence_one}.
+Similar to the IV case, we replace the moments with their estimators
+and let it be denoted by $\gg_n(\tilde{\delta})$:
+\begin{align}\label{essence_two}
+	\gg_n(\tilde{\delta})
+	\coloneqq \frac1n \sum_{i=1}^{n} \xx_i(y_i - \zz_i'\tilde{\delta})
+	= \ss_{\xx y} - \SS_{\xx\zz}\tilde{\delta}
+\end{align}
+where $\tilde{\delta}$ is something we want to find to make $\gg_n(\tilde{\delta})$ to be as close
+to $\zero$ as possible.
+To achieves this, we do not actually need to find solutions of $\delta$ in $L$-dimensional space,
+we can achieve the equivalent by minimising the \emph{norm} of $\gg_n(\tilde{\delta})$.
+We can pick any norm that is well-defined.
+GMM uses the well-known quadratic form:
+\begin{align*}
+	\gg_n(\tilde{\delta})'\hat{\WW}\gg_n(\tilde{\delta})
+\end{align*}
+where $\hat{\WW}$ can be any symmetric positive definite matrix.
+(It is often the case that the choice of $\hat{\WW}$ depends on the data)
+Notice that if we choose $\hat{\WW}=I_K$ where $I_K$ is an $K\times K$ identity matrix,
+then the quadratic form reduces to Euclidean norm squared.
+
+Now we can state the GMM estimator explicitly:
+\begin{definition}[GMM Estimator]
+	Let $\hat{\WW}$ be a $K\times K$ symmetric positive definite matrix
+	(possible dependent on the sample)
+	\suchthat $\hat{\WW}\pto\WW$ also symmetric positive definite as the sample size $n\to\infty$.
+	The \underline{GMM estimator} of $\delta$, denoted $\hat{\delta}(\hat{\WW})$, is
+	\begin{align*}
+		\hat{\delta}(\hat{\WW})
+		= \argmin_{\tilde{\delta}} \mathcal{J}(\tilde{\delta},\hat{\WW})
+		\quad\text{where}\quad
+		\mathcal{J}(\tilde{\delta},\hat{\WW})
+		\coloneqq n\cdot\gg_n(\tilde{\delta})'\hat{\WW}\gg_n(\tilde{\delta})
+	\end{align*}
+\end{definition}
+
+To obtain the explicit form of $\hat{\delta}(\hat{\WW})$,
+we consider the first order condition (check for gradient $=\zero$):
+\begin{align*}
+	\frac{\partial{\mathcal{J}(\tilde{\delta},\hat{\WW})}}{\partial{\tilde{\delta}}}
+	\equiv
+	\begin{bmatrix}
+		\frac{\partial{\mathcal{J}(\tilde{\delta},\hat{\WW})}}{\partial{\tilde{\delta}_1}} \\
+		\frac{\partial{\mathcal{J}(\tilde{\delta},\hat{\WW})}}{\partial{\tilde{\delta}_2}} \\
+		\vdots \\
+		\frac{\partial{\mathcal{J}(\tilde{\delta},\hat{\WW})}}{\partial{\tilde{\delta}_K}} \\
+	\end{bmatrix}
+	= 2n\cdot\SS_{\xx\zz}'\hat{\WW}(\ss_{\xx y}-\SS_{\xx\zz}\tilde{\delta})
+	\leteq \zero.
+\end{align*}
+And by rearranging, we have
+\begin{align}\label{gmm_explicit_form}
+	\hat{\delta}(\hat{\WW}) = (\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv\SS_{\xx\zz}'\hat{\WW}\ss_{\xx y}.
+\end{align}
+Notice that here we rely on $\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz}$ being invertible.
+This is justified \emph{asymptotically}.
+Given some sufficiently large $n$,
+then we can guarantee $\SS_{\xx\zz}$ is full column rank.
+Since it is required that $\hat{\WW}$ is positive definite, it is invertible.
+(Since its kernel has dimension $0$.)
+Therefore, $\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz}$ is invertible
+However, sufficiently large $n$ is nearly impossible to obtain.
+Thus, in practice, we do not necessarily rely on this explicit form.
+
+\section{Properties}
+
+\subsection{Sampling Error}
+
+The sampling error can be obtained by multiplying the true model \refer{true_model}
+by $\xx_i$ on both sides and taking the average:
+\begin{align*}
+	y_i = \zz_i'\delta+\varepsilon_i
+	&\implies \ss_{\xx y} = \SS_{\xx\zz}\delta + \bar{\gg}
+	\quad\text{where}\quad
+	\bar{\gg} \coloneqq \gg_n(\delta) = \frac1n\sum_{i=1}^{n}\xx_i\varepsilon_i
+\end{align*}
+and then substitute $\ss_{\xx y}$ it into \refer{gmm_explicit_form}:
+\begin{align}
+	\hat{\delta}(\hat{\WW})
+	&= (\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv\SS_{\xx\zz}'\hat{\WW}(\SS_{\xx\zz}\delta + \bar{\gg}) \nonumber \\
+	\implies \hat{\delta}(\hat{\WW}) - \delta
+	&= (\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv\SS_{\xx\zz}'\hat{\WW}\bar{\gg} \pto 0 \label{consistent}
+\end{align}
+The consistency of GMM immediately follows from the above.
+
+\subsection{Asymptotic Distribution and its Estimation}
+
+Since this is a classical theory, the asymptotic distribution is normal.
+Consider the explicit form of GMM \refer{consistent} and multiply
+both sides by $\sqrt{n}$:
+\begin{align*}
+	\sqrt{n}(\hat{\delta}(\hat{\WW}) - \delta)
+	= (\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv\SS_{\xx\zz}'\hat{\WW}\big(\sqrt{n}\bar{\gg}\big)
+	\dto \normal{0,\avar{\hat{\delta}(\hat{\WW})}}
+\end{align*}
+where $\avar{\hat{\delta}(\hat{\WW})}$ is the asymptotic covariance matrix.
+	\footnote{Here we rely on $\sqrt{n}\bar{\gg}\dto\normal{0,\OMEGA}$.
+	This in turn relies on some assumptions on the property of $\bar{\gg}$.
+	The assumption is that $\gg_i$ is a martingale difference sequence,
+	\emph{a fortiori}, $\E{\gg_i}=0$.
+	}
+It remains to find the explicit expression of $\avar{\hat{\delta}(\hat{\WW})}$.
+To obtain the expression, the only way is to expand out the square of
+$(\hat{\delta}(\hat{\WW})-\delta)$:
+\begin{align*}
+	(\hat{\delta}(\hat{\WW})-\delta)(\hat{\delta}(\hat{\WW})-\delta)'
+	= (\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv\SS_{\xx\zz}'\hat{\WW}
+	\bar{\gg}\bar{\gg}'
+	\hat{\WW}\SS_{\xx\zz}(\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv
+\end{align*}
+Notice that everything in the above expression, apart from $\bar{\gg}\bar{\gg}'$,
+converges to something we know (or something we defined).
+Thus, we consider $\bar{\gg}\bar{\gg}'$, the covariance matrix of $\bar{\gg}$:
+\begin{align*}
+	\bar{\gg}\bar{\gg}'
+	= \frac1n \sum_{i=1}^{n}\sum_{j=1}^{n} \xx_i\varepsilon_i\varepsilon_j\xx_j'
+	= \underbrace{\frac1n \sum_{i=1}^{n} \varepsilon_i^2\xx_i\xx_i'}_{\pto\E{\varepsilon_i^2\xx_i\xx_i'}}
+	+ \underbrace{\frac1n \sum_{i}\sum_{j\neq i} \xx_i\varepsilon_i\varepsilon_j\xx_j'}_{\pto0}
+\end{align*}
+where we let $\OMEGA\coloneqq\E{\varepsilon_i^2\xx_i\xx_i'}$.
+Therefore, the explicit form of $\avar{\hat{\delta}(\hat{\WW})}$ is
+\begin{align*}
+	\avar{\hat{\delta}(\hat{\WW})}
+	= (\SIGMA_{\xx\zz}'\WW\SIGMA_{\xx\zz})\inv
+	\SIGMA_{\xx\zz}'\WW\OMEGA\WW\SIGMA_{\xx\zz}
+	(\SIGMA_{\xx\zz}'\WW\SIGMA_{\xx\zz})\inv.
+\end{align*}
+Therefore, the estimator for $\avar{\hat{\delta}(\hat{\WW})}$ is simply
+\begin{align*}
+	\widehat{\avar{\hat{\delta}(\hat{\WW})}}
+	= (\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv\SS_{\xx\zz}'\hat{\WW}
+	\hat{\OMEGA}
+	\hat{\WW}\SS_{\xx\zz}(\SS_{\xx\zz}'\hat{\WW}\SS_{\xx\zz})\inv
+\end{align*}
+provided we have an unbiased estimator $\hat{\OMEGA}$ of $\OMEGA$.
+The obvious choice for $\hat{\OMEGA}$ is the same as OLS:
+\begin{align*} % p.212
+	\hat{\OMEGA} = \frac1n \sum_{i=1}^{n}\hat{\varepsilon}_i^2\xx_i\xx_i'
+	\quad\text{where}\quad
+	\hat{\varepsilon}_i^2 \coloneqq y_i - \zz_i'\hat{\delta}
+\end{align*}
+Note that $\hat{\delta}$ can be any consistent estimator of $\delta$.
+
+So far the procedure is very similar to OLS.
+Once we obtained the asymptotic distribution,
+then we can perform hypothesis testing in the regular manner.
+Two questions remain to be answered:
+\begin{enumerate}[label = (\roman*)]
+	\item How to choose $\hat{\WW}$?
+	\item Can we somehow check the two conditions, relevancy and exogeneity, of instruments?
+\end{enumerate}
+We will answer the two questions in the following two sections.
+
+\section{How to Choose $\hat{\WW}$?}
+
+Although different choices of $\hat{\WW}$ will not alter the consistency of the estimator,
+but the efficiency of it will differ.
+Thus, a natural question is whether we can find some optimal $\hat{\WW}$ that minimises the asymptotic
+variance $\avar{\hat{\delta}(\hat{\WW})}$.
+By ``minimise'' we mean trying to find a choice for $\hat{\WW}$, say $\XX$, such that every element in
+$\avar{\hat{\delta}(\XX)}$ is no larger than $\avar{\hat{\delta}(\hat{\WW})}$ $\forall\hat{\WW}$.
+
+Before a serious attempt of minimising $\avar{\hat{\delta}(\hat{\WW})}$,
+it tempting to choose $\WW=\OMEGA\inv$ since
+\begin{align*}
+	\avar{\hat{\delta}(\OMEGA\inv)}
+	&= (\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv
+	\SIGMA_{\xx\zz}'\cancel{\OMEGA\inv\OMEGA}\OMEGA\inv\SIGMA_{\xx\zz}
+	(\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv \\
+	&= (\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv
+	\cancel{\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz}}
+	\cancel{(\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv} \\
+	&= (\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv
+\end{align*}
+is a big simplification. And this can be achieved by some $\hat{\WW}\pto\OMEGA\inv$.
+In fact, it can be shown that this choice of $\hat{\WW}$ is an optimal choice:
+
+\begin{proposition}[optimal choice of weighting matrix]
+	A lower bound for the asymptotic variance of GMM estimators indexed by $\hat{\WW}$
+	is given by $(\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv$.
+	This lower bound can be achieved by choosing $\hat{\WW}\pto\OMEGA\inv$.
+\end{proposition}
+\begin{proof}(sketch)
+	We want to show that all entries in matrix
+	\begin{align*}
+		\avar{\hat{\delta}(\WW)}-\avar{\hat{\delta}(\OMEGA\inv)}
+	\end{align*}
+	are non-negative $\forall$ symmetric positive definite $\WW$.
+	We achieve this goal by stripping $\avar{\hat{\delta}(\hat{\WW})}$ on both sides until
+	only $I$ remains:
+	\begin{align*}
+		&\raum (\SIGMA_{\xx\zz}'\WW\SIGMA_{\xx\zz})\inv
+		\SIGMA_{\xx\zz}'\WW\OMEGA\WW\SIGMA_{\xx\zz}
+		(\SIGMA_{\xx\zz}'\WW\SIGMA_{\xx\zz})\inv
+		- (\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv \\
+		&= \bigcirc\Big[\SIGMA_{\xx\zz}'\WW\OMEGA\WW\SIGMA_{\xx\zz}-(\SIGMA_{\xx\zz}'\WW\SIGMA_{\xx\zz})(\SIGMA_{\xx\zz}\OMEGA\inv\SIGMA_{\xx\zz})\inv(\SIGMA_{\xx\zz}'\WW\SIGMA_{\xx\zz})\Big]\bigcirc \\
+		&= \bigcirc\Big[\OMEGA-\SIGMA_{\xx\zz}(\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv\SIGMA_{\xx\zz}'\Big]\bigcirc \\
+		&= \bigcirc\Big[I - \OMEGA^{-\frac12}\SIGMA_{\xx\zz}(\SIGMA_{\xx\zz}'\OMEGA\inv\SIGMA_{\xx\zz})\inv\SIGMA_{\xx\zz}'\OMEGA^{-\frac12}\Big]\bigcirc \\
+		&= A[I-B]A'
+	\end{align*}
+	It is clear that $B$ is symmetric and idempotent.
+	Therefore, all entries in
+	\begin{align*}
+		A[I-B]A' = A(I-B)(I-B)'A'
+	\end{align*}
+	are positive.
+\end{proof}
+
+However, there are is glaring problems of choosing $\WW=\OMEGA\inv$:
+If we set $\hat{\WW}=\hat{\OMEGA}\inv$,
+we have to obtain $\hat{\OMEGA}$ first,
+and to obtain $\OMEGA$,
+we have to obtain an estimation for $\delta$ first.
+In practice, there are a number of methods that overcomes this problem,
+either by doing a initial estimation of $\delta$ first or update $\hat{\WW}$ iteratively.
+% Therefore, in practice, it is often the case that
+% \emph{two-step efficient GMM procedure} is used:
+% \begin{itemize}
+% 	\item[\emph{Step 1.}]
+% 		We set $\hat{\WW}=\SS_{\xx\xx}\inv$ to obtain an GMM estimation
+% 		$\hat{\delta}(\SS_{\xx\xx}\inv)$.
+% 	\item[\emph{Step 2.}]
+% 		We use the estimation $\hat{\delta}(\SS_{\xx\xx}\inv)$ to obtain $\hat{\OMEGA}\inv$,
+% 		and redo GMM with $\hat{\WW}=\hat{\OMEGA}\inv$ to get $\hat{\delta}(\hat{\OMEGA}\inv)$.
+% \end{itemize}
+
+%% TODO: the inverse of $\OMEGA\inv$ exists?
+
+\section{How to Check Instruments?}
+
+Checking for instrument validity is very hard.
+Consistent with the GMM idea, the $J$-test is proposed:
+
+\begin{proposition}[Hansen's test of overidentifying restrictions]
+	If all assumptions for GMM hold,
+	and there is a consistent estimator for $\OMEGA\inv$,
+	then
+	\begin{align*}
+		\mathcal{J}(\hat{\delta}(\hat{\OMEGA}\inv),\hat{\OMEGA}\inv)\dto \chi^2_{K-L}
+	\end{align*}
+\end{proposition}
+\begin{remark}
+	Notice that this test is for \emph{all} assumptions.
+	That is, if the test fails, any assumption could be false.
+	Furthermore, it is an necessary condition for the validity of the assumptions,
+	i.e., even if the test holds, it is not necessary that the assumptions hold.
+\end{remark}
+
+This $J$-test is what we've learnt in year two,
+the difference is that what we've learned is the homoskedastic version.
+The one stated above is the general version.
+
+\section{Implications of Homoskedasticity}
+
+If we impose homoskedasticity, then GMM becomes TSLS.
+This is why we say the TSLS error is not robust.
+
+\section{Conclusion}
+
+\vfill
+\section*{References}
+\begin{enumerate}[label = {[\arabic*]}]
+	\item Econometrics (2000) Fumio Hayashi. Chapter 3. \asDemonstrated % p.186
+\end{enumerate}
+
+\end{document}

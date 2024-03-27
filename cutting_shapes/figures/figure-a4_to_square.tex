@@ -1,0 +1,56 @@
+\documentclass[12pt]{standalone}
+%<--------------------------------------------------------------------------->%
+\input{colors.tex}
+%<--------------------------------------------------------------------------->%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\raum}{\phantom{=}{\:\,}}
+% \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%-----------------------------------------------------------------------------%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{angles,quotes}
+\usetikzlibrary{decorations.markings}
+\usepackage{marvosym}
+% \usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+%%% TikZ: Mark Angles %%%
+\newcommand{\MarkRightAngle}[5][]{%
+\draw[#1] let \p1=($(#3)-(#4)$),\n1={1/veclen(\x1,\y1)},\p2=($(#4)-(#5)$),\n2={1/veclen(\x2,\y2)} in%
+($(#4)!#2!(#5)$) -- ++(\x1*\n1*#2,\y1*\n1*#2) -- ++(\x2*\n2*#2,\y2*\n2*#2);}
+\newcommand{\MarkAngle}[5]["$\theta$",->,draw=blue!80,fill=blue!20]{\pic[#1,angle radius=#2] {angle = #3--#4--#5};}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\begin{tikzpicture}[scale=100,line cap=round,very thick]
+	\tikzstyle{jiao}=[solid,circle,draw,fill=white,inner sep=.8pt];
+	\input{tikzsettings.tex}
+	\newcommand{\awidth}{2.1mm}
+	\newcommand{\aheight}{2.97mm}
+	\newcommand{\asquare}{2.49739mm}
+	\begin{scope}[red]
+		\draw (0,0) rectangle (\aheight,\awidth);
+		\draw[dotted] (\asquare,0) -- node[pos=0.2,scale=2,sloped]{\Rightscissors} node[pos=0.6,above,sloped]{$39.74$mm} +(0,\asquare-\awidth);
+		\draw[loosely dashed] (\asquare,\asquare-\awidth) -- node[pos=0.5,above,sloped]{$170.26$mm} (\asquare,\awidth);
+		\draw[dotted]
+			(\aheight-\asquare,\awidth) -- node[pos=0.5,scale=2,sloped]{\Rightscissors} 
+			(\asquare,\asquare-\awidth) -- node[pos=0.5,scale=2,sloped]{\Rightscissors} (\aheight,0);
+	\end{scope}
+	\begin{scope}[red]
+		\node[above,rotate=-90] at (0,\awidth/2) {$210$mm};
+		\node[above] at (\asquare/2,0) {$\sqrt{210\text{mm}\times297\text{mm}}\approx249.74\text{mm}$};
+		\node[above] at (\asquare/2+\aheight/2,0) {$47.26$mm};
+		\node[above,rotate=90] at (\aheight,\awidth/2) {$210$mm};
+		\node[above,rotate=180] at (\aheight/2+\asquare/2,\awidth) {$47.26$mm};
+		\node[above,rotate=180] at (\aheight/2-\asquare/2,\awidth) {$47.26$mm};
+		\node[above,rotate=180] at (\aheight/2,\awidth) {$184.48$mm};
+	\end{scope}
+\end{tikzpicture}
+
+\end{document}

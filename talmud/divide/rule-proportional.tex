@@ -1,0 +1,6 @@
+%% Proportional Solution Path {{{
+\draw[myblue,name path=solution_path] (O) -- (CLAIM);
+\path[name intersections={of=solution_path and asset_one}]; \coordinate[jiao,label=left:{$S$}]  (S1) at (intersection-1) {};
+\path[name intersections={of=solution_path and asset_two}]; \coordinate[jiao,label=right:{$S'$}] (S2) at (intersection-1) {};
+% \node[yshift=-.8cm] at (10/2,0) {Proportional Rule};
+%% }}}

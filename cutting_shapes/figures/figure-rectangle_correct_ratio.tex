@@ -1,0 +1,47 @@
+\documentclass{standalone}
+%<--------------------------------------------------------------------------->%
+\input{colors.tex}
+%<--------------------------------------------------------------------------->%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% \usetikzlibrary{fit}
+\usetikzlibrary{angles,quotes}
+% \usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+%%% TikZ: Mark Angles %%%
+\newcommand{\MarkRightAngle}[5][]{%
+\draw[#1] let \p1=($(#3)-(#4)$),\n1={1/veclen(\x1,\y1)},\p2=($(#4)-(#5)$),\n2={1/veclen(\x2,\y2)}in%
+($(#4)!#2!(#5)$) -- ++(\x1*\n1*#2,\y1*\n1*#2) -- ++(\x2*\n2*#2,\y2*\n2*#2);}
+\newcommand{\MarkAngle}[5]["$\theta$",->,draw=blue!80,fill=blue!20]{\pic[#1,angle radius=#2] {angle = #3--#4--#5};}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\begin{tikzpicture}[thick,line cap=round]
+	\tikzstyle{jiao}=[solid,circle,draw,fill=white,inner sep=.8pt];
+	\input{tikzsettings.tex}
+	\newcommand{\width}{5cm}
+	\newcommand{\height}{1cm}
+	\coordinate (A) at (0,0);
+	\coordinate (B) at (\width,0);
+	\coordinate (C) at (\width,\height);
+	\coordinate (D) at (0,\height);
+	\coordinate (E) at ($(A)!0.5!(B)$);
+	\coordinate (F) at ($(E)+(0,\height*2)$);
+	\coordinate (G) at ($(F)-(\width/2,0)$);
+	%% Draw
+	\draw (A) rectangle (C);
+	\draw (A) rectangle (F);
+	%% Final
+	\node[jiao,label=below left :{$A$}] at (A) {};
+	\node[jiao,label=below right:{$B$}] at (B) {};
+	\node[jiao,label=above right:{$C$}] at (C) {};
+	\node[jiao,label=left       :{$D$}] at (D) {};
+	\node[jiao,label=below      :{$E$}] at (E) {};
+	\node[jiao,label=above right:{$F$}] at (F) {};
+	\node[jiao,label=above left :{$G$}] at (G) {};
+\end{tikzpicture}
+
+\end{document}

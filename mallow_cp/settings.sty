@@ -1,0 +1,63 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+\newcommand{\Tsymb}{\mathsf{T}}
+\newcommand{\T}{^{\Tsymb}}
+\newcommand{\inv}{^{-1}}
+\DeclareMathOperator{\trace}{tr}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\raum}{\phantom{=}{\:\,}}
+% \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%-----------------------------------------------------------------------------%
+%%% Custom Title %%%
+\makeatletter\def\@maketitle{%
+\noindent{\sffamily\bfseries\@title}%
+\hfill\texttt{\@date}\\{\ }\null\hfill\texttt{\@author}
+\par\vskip1.5em}\makeatother
+%-----------------------------------------------------------------------------%
+%%% Date Time %%%
+\usepackage{datetime}
+\newtimeformat{zeit}%
+{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}:\twodigit{\THESECOND}}
+\settimeformat{zeit}%
+\newdateformat{meinesdatum}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\meinesdatum}
+%-----------------------------------------------------------------------------%
+%%% Math Notes %%%
+\usepackage{amsthm}
+\newtheoremstyle{this}{}{}{\slshape}{}{\bfseries}{.}{.5em}{}\theoremstyle{this}
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+% \newenvironment{pf}{\noindent$\blacktriangleright$\textit{proof}.\ }{\hfill$\blacksquare$}
+% \newenvironment{example}{\noindent\textbf{Example.}}{}
+% \newenvironment{ok}[1]{\noindent\textbf{#1.}}{}
+%-----------------------------------------------------------------------------%
+%%% Probability %%%
+\let\Pr\relax
+\DeclareMathOperator{\Pr}{\text{\textrm{\upshape\textbf{P}}}}
+\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\asto}{\overset{as}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pr}[1]{\Pr\left\{#1\right\}}
+\newcommand{\given}[1][]{\,#1|\,}
+%-----------------------------------------------------------------------------%
+%%% Section Font %%%
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\sffamily\raggedright}
+\titleformat*{\subsection}{\normalsize\bfseries\sffamily\raggedright}
+% \renewcommand\thesection{（\zhnum{section}）}
+%-----------------------------------------------------------------------------%

@@ -1,0 +1,260 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
+% \usepackage{setspace}\setstretch{1.25} % {\setstretch{1.25} \par}
+\usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
+%<--------------------------------------------------------------------------->%
+%%% Date Time %%%
+\usepackage{datetime}
+\newdateformat{meinesdatum}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\meinesdatum}
+%-----------------------------------------------------------------------------%
+%%% Minimal Title %%%
+\makeatletter\def\@maketitle{%
+\noindent{\sffamily\bfseries\@title}%
+\hfill\texttt{\@date}\\{\ }\null\hfill\texttt{\@author}
+\par\vskip1.5em}\makeatother
+%-----------------------------------------------------------------------------%
+%%% Section Font %%%
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\sffamily\raggedright}
+%-----------------------------------------------------------------------------%
+%%% Enumerate %%%
+\usepackage{enumitem}
+\setlist{listparindent=\parindent,parsep=0pt,nosep} % paragraph indent 
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+\usepackage{amsthm}
+\newcommand{\dd}{\,d}
+%-----------------------------------------------------------------------------%
+%%% Probability %%%
+\let\Pr\relax
+\DeclareMathOperator{\Pr}{\text{\textrm{\upshape\textbf{P}}}}
+\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\cov}{Cov}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\asto}{\overset{as}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pr}[1]{\Pr\left\{#1\right\}}
+\newcommand{\given}[1][]{\,#1|\,}
+%-----------------------------------------------------------------------------%
+\newcommand{\normal}[1]{\mathcal{N}\left(#1\right)}
+\newcommand{\inv}{^{-1}}
+%-----------------------------------------------------------------------------%
+%%% Hyper Reference %%%
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks,colorlinks=true]{hyperref}
+% \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
+%-----------------------------------------------------------------------------%
+\title{Fisher Information}
+\author{\texttt{jessekelighine.com}}
+\date{\today}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\maketitle
+
+\noindent
+The \emph{Fisher Information} is given by the following:
+\begin{align}\label{eq:fisher}
+	\mathcal{I}_\theta
+	:= \E\left[\left(\frac{\partial}{\partial\theta}\log f(x\given\theta)\right)^2
+	\given[\middle]\theta\right]
+\end{align}
+where $f(\cdot)$ is the conditioned likelihood function (density function)
+and $x$ is the observed (realised) value of random variable $X$.
+
+\section{Idea}
+
+The idea is to measure ``how much information about a parameter $\theta$ can
+we get from observing a random variable $X$.''
+By information we mean ``how much can $\theta$ affect the distribution of $X$.''
+% That is, a random variable $X$ might contain a certain amount of
+% information about the parameter $\theta$, however, it is not clear to us how
+% mush such parameter affects the distribution of $X$.
+In the extreme cases, if the distribution of $X$ does not depend of $\theta$,
+then no information about $\theta$ is gained from observing $X$;
+if the distribution of $X$ is highly dependent of the parameter	$\theta$,
+then a lot of information about $\theta$ is gained from observing $X$,
+since different $\theta$'s would imply very differnet distributions of $X$.
+
+\section{Explanation of the Formula}
+
+To measure this, we use formula (\ref{eq:fisher}).
+Essentially, we measure how much the density function will change if we nudge
+the parameter $\theta$ by a little bit.
+We use $\frac{\partial}{\partial\theta}\log f(x\given\theta)$ since we want 
+to measure the ``percentage of change'' due to $\theta$.
+However, we cannot simple calculate the expectation of $\frac{\partial}{\partial\theta}\log f(x\given\theta)$ since under some reularity conditions we have
+\begin{align*}
+	\E\left[\frac{\partial}{\partial\theta}\log f(x\given\theta)\given[\middle]\theta\right]
+	&= \int_{\mathcal{X}} \frac{\partial}{\partial\theta}\Big(\log f(x\given\theta)\Big) f(x\given\theta) \dd{x} \\
+	% &= \int_{\mathcal{X}} \frac1{f(x\given\theta)}\frac{\partial f(x\given\theta)}{\partial\theta} f(x\given\theta) \dd{x} \\
+	&= \int_{\mathcal{X}} \frac{\partial}{\partial\theta}f(x\given\theta) \dd{x}
+	= \frac{\partial}{\partial\theta} \int_{\mathcal{X}} f(x\given\theta) \dd{x}
+	= 0.
+\end{align*}
+That is, the expected ``percentage of change'' is zero.
+Thus, we measure the \emph{variance} of ``percentage of change'' to guage how much $\theta$ affects the distribution of $X$.
+% Thus, the ``percentage of change'' is squared to ensure that the measure is not always zero.
+Let $\ell_{x}(\theta):=\log f(x\given\theta)$ and
+$\dot\ell_{x}(\theta):=\frac{\partial}{\partial\theta}\ell_{x}(\theta)$.
+We have $\E{\dot\ell_{x}(\theta)}=0$ and $\var{\dot\ell_{x}(\theta)}=\mathcal{I}_{\theta}$.
+Denote this result as $\dot\ell_{x}(\theta)\sim(0,\mathcal{I}_{\theta})$.
+
+\section{Maximum Likelihood Estimation}
+
+% Consider the log likelihood function $\log f(x\given\theta)$,
+% denoted by $\ell_x(\theta)$.
+% As shown above, we have that
+% $\dot{\ell}_{x}(\theta):=\frac{\partial}{\partial\theta}\ell_{x}(\theta)$
+% has expectation 0 and variance $\mathcal{I}_{\theta}$,
+% i.e., $\dot{\ell}_{x}(\theta)\sim(0,\mathcal{I}_\theta)$.
+If we estimate the parameter $\theta$ using MLE (using $\hat{\theta}_{\text{MLE}}$),
+then it can be shown that
+\begin{align}\label{eq:mle}
+	\hat{\theta}_{\text{MLE}}
+	\dto
+	\normal{0,\mathcal{I}_{\theta}\inv},
+\end{align}
+that is, the bigger the Fisher information, the better the estimation.
+
+\begin{proof}
+	Let $x=\{x_1,...,x_n\}$ be iid samples from $f(x\given\theta_0)$ where
+	$\theta_0$ is the true parameter.
+	Let $\ell_{x}(\theta)$ denote $\sum_{i=1}^{n}\ell_{x_i}(\theta)$ be
+	the likelihood function.
+
+	We know that $\dot\ell_{x}(\theta)\sim(0,n\mathcal{I}_{\theta})$
+	since $x_i$ are iid samples from $f(x\given\theta_0)$.
+	We want to find the expectation of $\ddot\ell_{x}(\theta)$.
+	Consider the second partial derivative of $\ell_{x}(\theta)$
+	with respect to $\theta$:
+	\begin{align*}
+		\ddot\ell_{x}(\theta)
+		:= \frac{\partial^2}{\partial\theta^2} \ell_{x}(\theta)
+		= \frac{\ddot f(x\given\theta)}{f(x\given\theta)}
+		- \left(\frac{\dot f(x\given\theta)}{f(x\given\theta)}\right)^2
+	\end{align*}
+	Take expectation of both sides and we have
+	\begin{align*}
+		\E{\ddot\ell_{x}(\theta)}
+		= \E\left[ \frac{\ddot f(x\given\theta)}{f(x\given\theta)}
+		- \left(\frac{\dot f(x\given\theta)}{f(x\given\theta)}\right)^2 \right]
+		&= \E\left[\frac{\ddot f(x\given\theta)}{f(x\given\theta)}\right]
+		- n\mathcal{I}_{\theta} \\
+		&= \int_{\mathcal{X}}
+		\frac{\ddot f(x\given\theta)}{f(x\given\theta)}f(x\given\theta) d{x}
+		- n\mathcal{I}_{\theta} \\
+		&= \underbrace{\int_{\mathcal{X}} \ddot f(x\given\theta) d{x}}_{=0}
+		- n\mathcal{I}_{\theta} \\
+		&= - n\mathcal{I}_{\theta}.
+	\end{align*}
+	where $\int_{\mathcal{X}}\ddot f(x\given\theta)d{x}=0$ is obtained by
+	interchanging the integral and differentiation.
+	Hence, $-\E{\ddot\ell_{x}(\theta)}=n\mathcal{I}_{\theta}$.
+
+	Since $\hat{\theta}_{\text{MLE}}$ is an MLE estimator, 
+	it satisfies $\dot\ell_{x}(\hat{\theta}_{\text{MLE}})=0$ by first order condition.
+	By mean value theorem, we have
+	\begin{align*}
+		\underbrace{\dot\ell_{x}(\hat{\theta}_{\text{MLE}})}_{=0}
+		- \dot\ell_{x}(\theta_0)
+		= \ddot\ell_{x}(\bar\theta)(\hat{\theta}_{\text{MLE}}-\theta_0)
+	\end{align*}
+	where $\bar{\theta}$ is an value between $\theta_0$ and $\hat{\theta}_{\text{MLE}}$.
+	By rearranging the terms we have
+	\begin{align*}
+		\sqrt{n}(\hat{\theta}_{\text{MLE}}-\theta_0)
+		= -\left(\frac{\ddot\ell_{x}(\bar\theta)}{n}\right)^{-1}
+		\frac{\dot\ell_{x}(\theta_0)}{\sqrt{n}}
+		&\dto -(n\mathcal{I}_{\theta})^{-1}\normal{0,n\mathcal{I}_{\theta}} \\
+		&= \normal{0,(n\mathcal{I}_{\theta})^{-1}}
+	\end{align*}
+	by Slutsky's Theorem
+	where $({\ddot\ell_{x}(\bar\theta)}/{n})^{-1}\pto(n\mathcal{I}_{\theta})^{-1}$
+	by weak law of large number and
+	${\dot\ell_{x}(\theta_0)}/{\sqrt{n}}\dto\normal{0,n\mathcal{I}_{\theta}}$
+	by central limit theorem.
+\end{proof}
+
+Notice that this results also applies to multi-dimension parameters $\vec{\theta}$
+by replacing Fisher information by a Fisher information matrix and $\ddot\ell_{x}(\theta)$ by
+the Hessian.
+
+\section{Cram\'er-Rao Bounds}
+
+One reason that MLE is favourable is that it is very efficient in the sense
+that it has the smallest possible variance of all the estimators.
+Cram\'er-Rao Bounds show that for any unbiased estimator $\tilde{\theta}$
+of the parameter $\theta$, we have
+\begin{align*}
+	\var{\tilde{\theta}}\geq\frac1{n\mathcal{I}_{\theta}}.
+\end{align*}
+However, MLE are not always unbiased (e.g.\! MLE for variance).
+But since the bias of MLE are on the order of $1/n$,
+the bias is relatively small compared to its variance.
+
+\begin{proof}
+	Consider an unbiased estimator $\tilde{\theta}=t(x)$ of $\theta$.
+	We have
+	\begin{align*}
+		\int_{\mathcal{X}} t(x)\dot\ell_{x}(\theta)f(x\given\theta) d{x}
+		= \int_{\mathcal{X}} t(x)\dot f(x\given\theta) d{x}
+		&= \frac{\partial}{\partial\theta} \int_{\mathcal{X}} t(x)f(x\given\theta) d{x} \\
+		&= \frac{\partial}{\partial\theta} \theta
+		= 1.
+	\end{align*}
+	Since $\dot\ell_{x}(\theta)$ has expectation zero,
+	$\int_{\mathcal{X}}[t(x)-\theta]\dot\ell_{x}(\theta)f(x\given\theta)d{x}=1$.
+	By applying Cauchy-Schwarz inequality, we have
+	\begin{align*}
+		\left[\int_{\mathcal{X}}[t(x)-\theta]\dot\ell_{x}(\theta)f(x\given\theta)d{x}\right]^2
+		&\leq \int_{\mathcal{X}} [t(x)-\theta]^2 f(x\given\theta) d{x} \cdot
+		\int_{\mathcal{X}} \dot\ell_{x}(\theta)^2 f(x\given\theta) d{x} \\
+		\implies 1 &\leq \var{t(x)} \cdot \mathcal{I}_{\theta}
+	\end{align*}
+\end{proof}
+
+\section{Observed Fisher Information}
+
+In equation \eqref{eq:mle},
+we derived the asymptotic distribution of MLE and found that
+the variance of such distribution is the inverse of Fisher information.
+However, in practice, it is hard to obtain Fisher information since it 
+requires probability calculation.
+Therefore, Fisher advocated of the use of \emph{Observed Fisher Information},
+denoted by $I(x)$, defined by
+\begin{align*}
+	I(x)
+	:= -\ddot\ell_{x}(\hat{\theta}_{\text{MLE}})
+	= \left. \frac{\partial^2}{\partial\theta^2} \ell_{x}(\theta) \right|_{\hat{\theta}_{\text{MLE}}},
+\end{align*}
+which can be calculated numerically given the data $x$.
+This is basically an application of the \emph{plug-in principle}.
+
+Apart from being easy to calculate,
+another benefit, argued by Fisher, of using the observed Fisher information 
+is that it is a kind of \emph{conditioned inference}
+(or in Fisher's jargon, approximate ancillary),
+which bridges the gap between Bayesian and frequentist inference:
+by using the ``observed'' information,
+we are essentially updating our belief (or our confident) in the estimator based on the observed data,
+which might be more relevant while making inferences.
+\hfill$\blacksquare$
+
+\vfill
+
+\section*{References}
+
+\begin{enumerate}[label = {[\arabic*]}]
+	\item Wikipedia: \url{https://en.wikipedia.org/wiki/Fisher_information}
+	\item Handbook of Econometrics. volume 4. p.2141. Whitney K. Newey \& Daniel Mcfadden.  
+	\item Computer Age Statistical Inference. Chapter \emph{Fisherian Inference and Maximum Likelihood Estimation}. Bradley Efron \& Trevor Hastie.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,11 @@
+%% Constrained Equal Losses {{{
+\draw[name path=temp1,draw=none] (CLAIM) -- +(45+180:{min(\Ca,\Cb)*1.415});
+\draw[name path=temp2,draw=none] (O) -- (C2);
+\path[name intersections={of= temp1 and temp2}]; \coordinate (KINK) at (intersection-1) {};
+\pic ["\LARGE{$\cdot$}",draw=myyellow] {angle = C2--CLAIM--KINK};
+\pic ["\LARGE{$\cdot$}",draw=myyellow] {angle = KINK--CLAIM--C1};
+\path[draw=myblue,name path=solution_path] (O) -- (KINK) -- (CLAIM);
+\path[name intersections={of=solution_path and asset_one}]; \coordinate[jiao,label=left:{$S$}]   (S1) at (intersection-1) {};
+\path[name intersections={of=solution_path and asset_two}]; \coordinate[jiao,label=right:{$S'$}] (S2) at (intersection-1) {};
+% \node[yshift=-.8cm] at (10/2,0) {Constrained Equal Losses};
+%% }}}

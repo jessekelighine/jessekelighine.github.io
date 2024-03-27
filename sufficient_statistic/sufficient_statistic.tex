@@ -1,0 +1,67 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
+%<--------------------------------------------------------------------------->%
+\usepackage{settings}
+%<--------------------------------------------------------------------------->%
+%%% Title %%%
+\title{Sufficient Statistics}
+\author{\href{https://jessekelighine.com}{\texttt{jessekelighine.com}}}
+\date{\today}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\maketitle
+
+\begin{definition}[Sufficient Statistic]
+	Let $\{X_i\}_{i=1}^{n}$ be iid samples from a distribution with
+	probability mass/density function $f(x;\theta)$ where $\theta$ is
+	a parameter of the distribution.
+	Let $Y=g(X_1,...,X_n)$ be a statistic.
+	If
+	\begin{align}\label{sufficient_def}
+		\pr{X_1=x_1,...,X_n=x_n\given Y=y}
+	\end{align}
+	does not depend on $\theta$,
+	then $Y$ is said to be a \textbf{sufficient statistic} for $\theta$
+	or \textbf{sufficient} for $\theta$.
+\end{definition}
+
+\begin{remark}
+	If a sufficient statistic for a parameter is found,
+	then every information about such parameter that can be inferred from the
+	data is capture in that statistic.
+	That is, any other information (e.g.\! variation of the data set)
+	does not provide any further information about the parameter.
+\end{remark}
+
+\begin{example}
+	Let $\{X_i\}_{i=1}^{n}\iidto\bernoulli{p}$ and a statistic $Y=\sum_{i=1}^{n}X_i$.
+	Consider the expression (\ref{sufficient_def}):
+	\begin{align*}
+		\pr{X_1=x_1,...,X_n=x_n\given Y=y}
+		&= \frac{ \prod_{i=1}^{n} p^{x_i} (1-p)^{1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
+		&= \frac{ p^{\sum_{i=1}^{n}x_i} (1-p)^{\sum_{i=1}^{n}1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
+		&= \frac{ p^{y}(1-p)^{n-y} }{ {n\choose y}p^{y}(1-p)^{n-y} }
+		= \frac{1}{{n\choose y}}.
+	\end{align*}
+	Notice that the result does not depend on $p$.
+	Therefore, $Y$ is a sufficient statistic for $p$.
+\end{example}
+
+\begin{theorem}[Fisher-Neyman Factorisation]
+	$Y$ is sufficient for $\theta$ iff
+	\begin{align*}
+		f(x_1,...,x_n;\theta) = \phi(Y;\theta)h(x_1,...,x_n)
+	\end{align*}
+	where $\phi(\cdot)$ is a function that depends on $x_i$ only through $Y$
+	and $h(\cdot)$ is a function that does not depend on $\theta$.
+\end{theorem}
+
+\vfill
+\section*{References}
+\begin{enumerate}[label = {[\arabic*]}]
+	\item Explanation and examples of sufficient statistics. \url{https://www.youtube.com/watch?v=G5pLCoPXr9g}
+\end{enumerate}
+
+\end{document}

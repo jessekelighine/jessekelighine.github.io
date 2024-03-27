@@ -1,0 +1,64 @@
+%%% CJK %%%
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Sans CJK KR Medium}
+%<--------------------------------------------------------------------------->%
+%%% Beamer Footline & Block %%%
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[default]
+\makeatother\setbeamertemplate{footline}{\leavevmode\hbox{%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{author in head/foot}%
+	\usebeamerfont{author in head/foot}%
+	\insertshortauthor\hspace{1em}{\ }%
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{date in head/foot}%
+	\usebeamerfont{title in head/foot}%
+	\hspace{1em}\insertshorttitle%
+	\hfill\textbf{\insertframenumber/\inserttotalframenumber}%
+\end{beamercolorbox}%
+}\vskip0pt}\makeatletter
+%<--------------------------------------------------------------------------->%
+%%% Graphics %%%
+\usepackage{graphicx}
+%<--------------------------------------------------------------------------->%
+%%% Math %%%
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs,gensymb}
+\usepackage{mathtools}
+\usepackage[makeroom]{cancel}
+\newcommand{\raum}{\phantom{=}{\:\,}}
+%<--------------------------------------------------------------------------->%
+%%% Probability %%%
+\DeclareMathOperator{\Exp}{\mathbb{E}}
+\DeclareMathOperator*{\argmin}{\arg\min}
+\newcommand{\E}[2][]{\Exp_{#1}\!\left[#2\right]}
+%<--------------------------------------------------------------------------->%
+%%% Convergence and Relations %%%
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+%<--------------------------------------------------------------------------->%
+%%% Distributions %%%
+\newcommand{\normal}[2][]{\mathcal{N}_{#1}\left(#2\right)}
+%<--------------------------------------------------------------------------->%
+%%% Others %%%
+\newcommand{\inv}{^{-1}}
+\renewcommand{\implies}{\Longrightarrow}
+\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+\newcommand{\suchthat}{s.t.\ }
+\newcommand{\leteq}{\overset{\text{\small let}}{=}}
+\newcommand{\avar}[1]{\mathrm{Avar}(#1)}
+\newcommand{\reals}[1][]{\mathbb{R}^{#1}}
+\newcommand{\given}{\,|\,}
+%<--------------------------------------------------------------------------->%
+%%% Bold Symbols %%%
+\newcommand{\OMEGA}{\boldsymbol{\Omega}}
+\newcommand{\SIGMA}{\boldsymbol{\Sigma}}
+\newcommand{\ddelta}{\boldsymbol{\delta}}
+\newcommand{\ZERO}{\mathbf{0}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\XX}{\mathbf{X}}
+\newcommand{\WW}{\mathbf{W}}
+\renewcommand{\gg}{\mathbf{g}}
+\renewcommand{\ss}{\mathbf{s}}
+\renewcommand{\SS}{\mathbf{S}}
+%<--------------------------------------------------------------------------->%
