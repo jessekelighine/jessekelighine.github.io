@@ -1,4 +1,7 @@
-/* STYLE.CSS */
+/* Descrption: Minimal CSS for Markdown Generated Website.
+ * Author: Jesse C. Chen (jessekelighine.com)
+ *
+ * */
 
 .title {
 	font-size: 30px;
@@ -12,8 +15,7 @@
 	display: table;
 	font-family: "Monaco", monospace;
 	background-color: #f1f1f1;
-	border-radius: 8px;
-	line-height: 1.25;
+	border-radius: 10px;
 }
 
 .subtitle {
@@ -64,28 +66,17 @@ em {
 
 strong {
 	color: #C76669;
+	font-weight: 600;
 }
 
 a {
 	color: rgba(0, 0, 0, 0.6);
-	line-height: 150%;
-	font-family: "Helvetica", "Noto Sans CJK KR", sans-serif;
-	font-style: normal;
-	font-variant: normal;
 	font-weight: 400;
 	text-decoration: underline;
 	padding:3px;
 }
 
-a:link{
-	color: rgba(0, 0, 0, 0.6);
-}
-
-a:visited{
-	color: rgba(0, 0, 0, 0.6);
-}
-
-a:hover{
+a:hover {
 	background: linear-gradient(#eee, #eee);
 	background-size: auto 4em;
 	background-repeat: no-repeat;
@@ -94,29 +85,22 @@ a:hover{
 
 body {
 	width: auto;
+	line-height: 160%;
 	max-width: 40em;
 	margin: 0 auto;
 	padding: 10px 20px;
 	font-family: "Helvetica", "Noto Sans CJK KR", sans-serif;
 	font-size: 15pt;
-	font-weight: 500;
-}
-
-h1 { font-family: "Helvetica", "Noto Sans CJK KR", sans-serif; font-size: 30px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 1.1; }
-h2 { font-family: "Helvetica", "Noto Sans CJK KR", sans-serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 1.1; }
-h3 { font-family: "Helvetica", "Noto Sans CJK KR", sans-serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 1.1; }
-h4 { font-family: "Helvetica", "Noto Sans CJK KR", sans-serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 1.1; }
-h5 { font-family: "Helvetica", "Noto Sans CJK KR", sans-serif; font-size: 25px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 1.1; }
-h6 { font-family: "Helvetica", "Noto Sans CJK KR", sans-serif; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 1;   }
-
-p {
-	color: rgba(0, 0, 0, 0.6);
-	line-height: 170%;
-	font-family: "Helvetica", "Noto Sans CJK KR", sans-serif;
-	font-style: normal;
-	font-variant: normal;
 	font-weight: 400;
+	color: rgba(0, 0, 0, 0.6);
 }
+
+h1 { font-size: 18pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
+h2 { font-size: 18pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
+h3 { font-size: 16pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
+h4 { font-size: 16pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
+h5 { font-size: 16pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
+h6 { font-size: 16pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
 
 /* CODE */
 
@@ -124,19 +108,6 @@ code {
 	font-family: "Monaco", monospace;
 	background-color: #f1f1f1;
 	border-radius: 8px;
-	line-height: 1.25;
-}
-
-pre {
-	background-color: #f1f1f1;
-	padding: 8px;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	margin-left: 5px;
-	margin-right: 5px;
-	font-family: "Monaco", monospace;
-	border-radius: 8px;
-	line-height: 1.25;
 }
 
 /* QUOTES */
@@ -144,37 +115,8 @@ pre {
 blockquote {
 	background: #f9f9f9;
 	border-left: 10px solid #ccc;
-	margin: 1.5em 10px;
-	padding: 40px 20px;
-	quotes: "\201C""\201D""\2018""\2019";
-	line-height: 150%;
-	font-family: "Helvetica", "Noto Sans CJK KR", sans-serif;
-	font-style: normal;
-}
-
-blockquote:before {
-	color: #ccc;
-	line-height: 0.1em;
-	margin-right: 0.25em;
-	vertical-align: -0.4em;
-}
-
-blockquote p {
-	display: inline;
-}
-
-/* LIST */
-
-ul {
-	color: rgba(0, 0, 0, 0.6);
-	font-family: "Helvetica", "Noto Sans CJK KR", sans-serif;
-}
-
-li {
-	color: rgba(0, 0, 0, 0.6);
-	font-family: "Helvetica", "Noto Sans CJK KR", sans-serif;
-	font-weight: 400;
-	line-height: 1.5;
+	margin: 10px 10px;
+	padding: 10px 20px;
 }
 
 /* TABLE */
@@ -184,6 +126,7 @@ table {
 	padding: 10px;
     border-collapse: collapse;
 	font-style: normal;
+	color: #444;
 }
 
 tr {
