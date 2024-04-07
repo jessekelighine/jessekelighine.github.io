@@ -137,12 +137,12 @@ intuition of Fisher Information:</p>
 variance in the score function <span
 class="math inline">\(\dot\ell(x\given\theta)\)</span>. <a href="#fn3"
 class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> And
-a large variation in the score function suggests that our maximum
+a large variation in the score function means that our maximum
 likelihood estimate, which solves the problem <span
 class="math display">\[\arg\max_{\theta\in\Theta}\ell(x\given\theta)\]</span>
 via first order condition <span
-class="math display">\[\dot\ell(x\given\theta)=0,\]</span> would also be
-volatile. This means that a large Fisher Information is
+class="math display">\[\dot\ell(x\given\theta)=0,\]</span> also has a
+large variance. This means that a large Fisher Information is
 <em>bad</em>.</p>
 </blockquote>
 <h1 data-number="3" id="information-equality"><span
@@ -276,19 +276,31 @@ is positive definite. If we plugin <span
 class="math inline">\(v=t(\{x_i\})-\theta\)</span> and <span
 class="math inline">\(u=\dot\ell(\{x_i\}\given\theta)\)</span>, we have
 <span class="math display">\[
-\var t(\{x_i\}) - n\mathcal{I}_{\theta}
+\var t(\{x_i\}) - (n\mathcal{I}_{\theta})\inv
 \]</span> is positive definite. Therefore, <span
 class="math inline">\(\var{t(\{x_i\})}\)</span> is larger than <span
-class="math inline">\(n\mathcal{I}_{\theta}\)</span>. <a href="#fn6"
-class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<p>This result conveys two messages:</p>
+class="math inline">\((n\mathcal{I}_{\theta})\inv\)</span>. <a
+href="#fn6" class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a> What does it mean to be compared to
+<span class="math inline">\((n\mathcal{I}_\theta)\inv\)</span>? When
+<span class="math inline">\(n\)</span> is sufficiently large, we have
+the approximation <span class="math display">\[
+\hat\theta - \theta_0 \overset{A}{\sim}
+\mathcal{N}(0,(n\mathcal{I}_\theta)\inv)
+\]</span> Hence, we can see that the variance of our maximum likelihood
+estimator is approximately <span
+class="math inline">\((n\mathcal{I}_{\theta})\inv\)</span>, which beast
+each and every other unbiased estimator.</p>
+<p>In a nutshell:</p>
+<blockquote>
 <ol type="1">
-<li>The maximum likelihood method is the best method in the sense that
-it produces the most precise estimator.</li>
-<li>Fisher Information is a reasonable definition of “information,” as
-it describes the best “precision” under all unbiased estimators of <span
-class="math inline">\(\theta\)</span>.</li>
+<li><strong>Maximum likelihood</strong> is the best method in the sense
+that it produces the most precise estimator.</li>
+<li><strong>Fisher Information</strong> is a reasonable definition of
+“information,” as it describes the best “precision” under all unbiased
+estimators of <span class="math inline">\(\theta\)</span>.</li>
 </ol>
+</blockquote>
 <aside id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />

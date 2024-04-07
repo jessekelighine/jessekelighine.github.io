@@ -83,8 +83,10 @@ This observation gives us the first intuition of Fisher Information:
 
 > **Intuition 1**:
 > Large Fisher Information means large variance in the score function $\dot\ell(x\given\theta)$. [^large-information]
-> And a large variation in the score function suggests that our maximum likelihood estimate, which solves the problem
-> $$\arg\max_{\theta\in\Theta}\ell(x\given\theta)$$ via first order condition $$\dot\ell(x\given\theta)=0,$$ would also be volatile.
+> And a large variation in the score function means that our maximum likelihood estimate,
+> which solves the problem $$\arg\max_{\theta\in\Theta}\ell(x\given\theta)$$
+> via first order condition $$\dot\ell(x\given\theta)=0,$$
+> also has a large variance.
 > This means that a large Fisher Information is *bad*.
 
 [^leibniz]: We shall assume that Leibniz rule of differentiation is always satisfied for interchanging integration and differentiation.
@@ -204,17 +206,24 @@ is positive definite.
 If we plugin $v=t(\{x_i\})-\theta$ and $u=\dot\ell(\{x_i\}\given\theta)$,
 we have
 $$
-\var t(\{x_i\}) - n\mathcal{I}_{\theta}
+\var t(\{x_i\}) - (n\mathcal{I}_{\theta})\inv
 $$
 is positive definite.
-Therefore, $\var{t(\{x_i\})}$ is larger than $n\mathcal{I}_{\theta}$. [^positive-definite]
+Therefore, $\var{t(\{x_i\})}$ is larger than $(n\mathcal{I}_{\theta})\inv$. [^positive-definite]
+What does it mean to be compared to $(n\mathcal{I}_\theta)\inv$?
+When $n$ is sufficiently large, we have the approximation
+$$
+\hat\theta - \theta_0 \overset{A}{\sim} \mathcal{N}(0,(n\mathcal{I}_\theta)\inv)
+$$
+Hence, we can see that the variance of our maximum likelihood estimator is approximately $(n\mathcal{I}_{\theta})\inv$,
+which beast each and every other unbiased estimator.
 
-This result conveys two messages:
+In a nutshell:
 
-1. The maximum likelihood method is the best method
-   in the sense that it produces the most precise estimator.
-2. Fisher Information is a reasonable definition of "information,"
-   as it describes the best "precision" under all unbiased estimators of $\theta$.
+> 1. **Maximum likelihood** is the best method
+>    in the sense that it produces the most precise estimator.
+> 2. **Fisher Information** is a reasonable definition of "information,"
+>    as it describes the best "precision" under all unbiased estimators of $\theta$.
 
 [^positive-definite]:
 	If you are not sure what does positive definiteness have to do with the concept of "larger" (i.e., concept of size),
