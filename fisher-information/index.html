@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="jessekelighine.com" />
+  <meta name="dcterms.date" content="2024-04-07" />
+  <title>Fisher Information</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fisher Information</h1>
+<p class="author">jessekelighine.com</p>
+<p class="date">2024-04-07</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#what-are-we-trying-to-do"
+id="toc-what-are-we-trying-to-do"><span
+class="toc-section-number">1</span> What are we trying to do?</a></li>
+<li><a href="#variance-of-score-function"
+id="toc-variance-of-score-function"><span
+class="toc-section-number">2</span> Variance of Score Function</a></li>
+<li><a href="#information-equality" id="toc-information-equality"><span
+class="toc-section-number">3</span> Information Equality</a></li>
+<li><a href="#maximum-likelihood" id="toc-maximum-likelihood"><span
+class="toc-section-number">4</span> Maximum Likelihood</a></li>
+<li><a href="#cramér-rao-bound" id="toc-cramér-rao-bound"><span
+class="toc-section-number">5</span> Cramér-Rao Bound</a></li>
+</ul>
+</nav>
+<p><span class="math display">\[
+\DeclareMathOperator{\E}{\text{\textrm{\textbf{E}}}}
+\DeclareMathOperator{\var}{\text{\textrm{\textbf{Var}}}}
+\newcommand{\given}[1][]{\,#1|\,}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\symbT}{\top}
+\newcommand{\T}{^{\symbT}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\invT}{^{-\symbT}}
+\]</span></p>
+<p><strong>Fisher Information</strong> is defined as follows: <span
+class="math display">\[
+\mathcal{I}_{\theta}
+\coloneqq
+\E
+\left[
+\left(
+\frac{\partial}{\partial\theta}\log f(x\given\theta)
+\right)
+\left(
+\frac{\partial}{\partial\theta}\log f(x\given\theta)
+\right)\T
+\given[\middle]
+\theta
+\right]
+\]</span> where <span
+class="math inline">\(f(\cdot\given\theta)\)</span> is the likelihood
+function of the random variable <span class="math inline">\(x\)</span>
+with parameter <span class="math inline">\(\theta\)</span>. The
+expectation is taken with respect to the random variable <span
+class="math inline">\(x\)</span>.</p>
+<p>In this note, we talk about what Fisher Information is, its relation
+to <em>maximum likelihood</em>, its conflicting intuitions, and
+<em>Cramér-Rao bound</em>, an inequality closely related to Fisher
+Information. <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<h1 data-number="1" id="what-are-we-trying-to-do"><span
+class="header-section-number">1</span> What are we trying to do?</h1>
+<p>The goal is simple: we want to have a way of measuring “how
+informative a parameter is to the likelihood function.” If a certain
+parameter is very important in shaping the likelihood function, we
+expect our estimate of it to be more “precise.” In contrast, if a
+parameter does not change the shape of the likelihood much, then we
+would expect the estimate of such parameter “poor,” since likelihood
+functions under different true parameters look the same to us.</p>
+<p>We will later see that <strong>Fisher Information</strong> achieves
+precisely this purpose in the context of maximum likelihood
+estimation.</p>
+<h1 data-number="2" id="variance-of-score-function"><span
+class="header-section-number">2</span> Variance of Score Function</h1>
+<p>Let’s first define some notation. Let <span
+class="math inline">\(\ell(x\given\theta)\coloneqq\log
+f(x\given\theta)\)</span> be the log-likelihood function. We use
+Newton’s notation to denote differentiation with respect to the
+parameter, that is, <span class="math display">\[
+\dot\ell(x\given\theta)
+\coloneqq \frac{\partial}{\partial\theta} \ell(x\given\theta)
+= \frac{\partial}{\partial\theta} \log f(x\given\theta).
+\]</span> Notice that <span
+class="math inline">\(\dot\ell(x\given\theta)\)</span> has mean zero:
+<span class="math display">\[
+\begin{aligned}
+\E\dot\ell(x\given\theta)
+&amp;= \int_{\mathcal{X}} \left[ \frac{\partial}{\partial\theta} \log
+f(x\given\theta) \right] f(x\given\theta) dx \\
+&amp;= \int_{\mathcal{X}} \dot f(x\given\theta) dx
+= \frac{\partial}{\partial\theta} \int_{\mathcal{X}} f(x\given\theta) dx
+= 0.
+\end{aligned}
+\]</span> Thus, we have <span
+class="math inline">\(\var\dot\ell(x\given\theta) =
+\E\dot\ell(x\given\theta)\dot\ell(x\given\theta)\T\)</span>, <a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a> which is the definition of
+<strong>Fisher Information</strong>. This observation gives us the first
+intuition of Fisher Information:</p>
+<blockquote>
+<p><strong>Intuition 1</strong>: Large Fisher Information means large
+variance in the score function <span
+class="math inline">\(\dot\ell(x\given\theta)\)</span>. <a href="#fn3"
+class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> And
+a large variation in the score function suggests that our maximum
+likelihood estimate, which solves the problem <span
+class="math display">\[\arg\max_{\theta\in\Theta}\ell(x\given\theta)\]</span>
+via first order condition <span
+class="math display">\[\dot\ell(x\given\theta)=0,\]</span> would also be
+volatile. This means that a large Fisher Information is
+<em>bad</em>.</p>
+</blockquote>
+<h1 data-number="3" id="information-equality"><span
+class="header-section-number">3</span> Information Equality</h1>
+<p>Before jumping to conclusion, let’s consider <span
+class="math inline">\(\E\ddot\ell(x\given\theta_0)\)</span>, the
+expected Hessian matrix of the log-likelihood function. It turns out
+<span class="math inline">\(\E\ddot\ell(x\given\theta_0)\)</span> and
+<span class="math inline">\(\var\dot\ell(x\given\theta_0)\)</span> only
+differ by a negative sign: <span class="math display">\[
+\begin{aligned}
+\E\ddot\ell(x\given\theta)
+&amp;= \int_{\mathcal{X}} \left[
+\frac{\partial^2}{\partial\theta\partial\theta\T} \log f(x\given\theta)
+\right] f(x\given\theta) dx \\
+&amp;= \int_{\mathcal{X}} \left[ \frac{\ddot
+f(x\given\theta)}{f(x\given\theta)} - \frac{\dot f(x\given\theta)\dot
+f(x\given\theta)\T}{f(x\given\theta)^2} \right] f(x\given\theta) dx \\
+&amp;= \underbrace{\frac{\partial^2}{\partial\theta^2}
+\int_{\mathcal{X}} f(x\given\theta) dx}_{=0} - \int_{\mathcal{X}}
+\dot\ell(x\given\theta)\dot\ell(x\given\theta)\T f(x\given\theta) dx
+= -\var\dot\ell(x\given\theta)
+\end{aligned}
+\]</span> This result is sometimes referred to as <em>information
+equality</em>. The equality states that the asymptotic variance of <span
+class="math inline">\(\hat\theta\)</span> is simply the negative of the
+Hessian of the log-likelihood function.</p>
+<p>However, this means that we can also defined <strong>Fisher
+Information</strong> as <span
+class="math inline">\(-\E\ddot\ell(x\given\theta)\)</span>, which yields
+another intuition:</p>
+<blockquote>
+<p><strong>Intuition 2</strong>: A large Fisher information is actually
+<em>good</em>, since it is the Hessian matrix of the log-likelihood
+function. A larger Hessian implies a larger curvature, meaning that the
+log-likelihood function is more “defined” or “pointy” for our parameter,
+which naturally leads to a better estimation.</p>
+</blockquote>
+<p>This is in direct conflict with <strong>Intuition 1</strong>, how do
+we resolve this?</p>
+<h1 data-number="4" id="maximum-likelihood"><span
+class="header-section-number">4</span> Maximum Likelihood</h1>
+<p>Let’s be precise. Suppose we have the data set <span
+class="math inline">\(\{x_{i}\}_{i=1}^{n}\iidto
+f(\cdot\given\theta_0)\)</span>. Then we denote the joint log-likelihood
+as <span class="math display">\[
+\ell(\{x_i\}\given\theta) \coloneqq \sum_{i=1}^{n}
+\ell(x_i\given\theta).
+\]</span> We want to derive the asymptotic distribution of the maximum
+likelihood estimator <span class="math inline">\(\hat\theta\)</span> as
+<span class="math inline">\(n\to\infty\)</span>. By mean value theorem,
+we have <span class="math display">\[
+\underbrace{\dot\ell(\{x_i\}\given\hat\theta)}_{=0} -
+\dot\ell(\{x_i\}\given\theta_{0}) = \ddot\ell(\{x_i\}\given\bar\theta)
+(\hat\theta - \theta_0)
+\]</span> where <span class="math inline">\(\bar\theta\)</span> is a
+value between <span class="math inline">\(\theta_0\)</span> and <span
+class="math inline">\(\hat\theta\)</span>. Supposing we already have the
+consistency result <span
+class="math inline">\(\hat\theta\pto\theta_0\)</span>, we have <span
+class="math display">\[
+\begin{aligned}
+\sqrt{n} ( \hat\theta - \theta_0 )
+&amp;= - \left[ \frac{ \ddot\ell(\{x_i\}\given\bar\theta) }{ n }
+\right]\inv \left( \frac{ \dot\ell(\{x_i\}\given\theta_{0}) }{ \sqrt{n}
+} \right) \\
+&amp;\dto - \E\left[\ddot\ell(x\given\theta_0)\right]\inv
+\mathcal{N}(0,\var\dot\ell(x\given\theta_0)).
+\end{aligned}
+\]</span> Now we know the asymptotic distribution of <span
+class="math inline">\(\sqrt{n}(\hat\theta-\theta_0)\)</span> is a normal
+distribution centered at <span class="math inline">\(0\)</span> with
+variance <span
+class="math inline">\(\E[\ddot\ell(x\given\theta_0)]\inv\var\dot\ell(x\given\theta_0)\E[\ddot\ell(x\given\theta_0)]\inv\)</span>.</p>
+<p>Notice this this result confirms with both of our intuitions: we have
+<span class="math inline">\(\var\dot\ell(x\given\theta)\)</span> in the
+nominator (in concord with <strong>Intuition 1</strong>), and <span
+class="math inline">\(\E\ddot\ell(x\given\theta_0)\)</span> in the
+denominator (in concord with <strong>Intuition 2</strong>). Hence, it is
+a trade-off between these two effects we found in the two intuitions.
+And by <em>information equality</em>, we obtain the famous maximum
+likelihood result: <span class="math display">\[
+\sqrt{n} ( \hat\theta - \theta_0 ) \dto
+\mathcal{N}(0,\mathcal{I}_{\theta}\inv).
+\]</span> Therefore, a <strong>“larger”</strong> Fisher Information is
+what we really want. This does not mean that <strong>Intuition
+2</strong> is correct and <strong>Intuition 1</strong> is wrong, it is a
+result of both intuitions combined.</p>
+<p>Note that the maximum likelihood result achieves what we set out to
+do in the first place. We now know that the estimation quality of <span
+class="math inline">\(\hat\theta\)</span> depends on the size of <span
+class="math inline">\(\mathcal{I}_{\theta}\)</span>: the larger <span
+class="math inline">\(\mathcal{I}_{\theta}\)</span> is, the more precise
+the estimation, i.e., under the same number of samples <span
+class="math inline">\(n\)</span>, a larger <span
+class="math inline">\(\mathcal{I}_{\theta}\)</span> yields a more
+precise result. <a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a></p>
+<h1 data-number="5" id="cramér-rao-bound"><span
+class="header-section-number">5</span> Cramér-Rao Bound</h1>
+<p>Now we know that Fisher Information tells us the precision of our
+estimation, but can we do better? Can we be more precise? The answer is
+<strong>NO</strong>, given that we want the estimation to be unbiased.
+<a href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a> This result is called Cramér-Rao
+bound, stating that any other unbiased estimation of <span
+class="math inline">\(\theta_0\)</span> must have variance larger than
+<span class="math inline">\(\mathcal{I}_{\theta}\inv\)</span>.</p>
+<p>Suppose <span class="math inline">\(\tilde\theta=t(\{x_i\})\)</span>
+is an unbiased estimator for <span
+class="math inline">\(\theta_0\)</span>, it’s straightforward via some
+algebra to see that we have the covariance between <span
+class="math inline">\(\dot\ell(\{x_i\}\given\theta)\)</span> and <span
+class="math inline">\(t(\{x_i\})-\theta\)</span> as an identity matrix
+of dimension <span class="math inline">\(k\)</span>: <span
+class="math display">\[
+\begin{aligned}
+\E [t(\{x_i\})-\theta] \dot\ell(\{x_i\}\given\theta)\T
+&amp;= \int_{\mathcal{X}^n} [t(\{x_i\})-\theta]
+\dot\ell(\{x_i\}\given\theta)\T f(\{x_i\}\given\theta) d\{x_i\} \\
+&amp;= I_k,
+\end{aligned}
+\]</span> where <span class="math inline">\(k\)</span> is the length of
+<span class="math inline">\(\theta_0\)</span>.</p>
+<p>A slight variation of Cauchy-Schwarz inequality states that for
+random vectors <span class="math inline">\(v\)</span> and <span
+class="math inline">\(u\)</span> both with mean <span
+class="math inline">\(0\)</span>, we have that <span
+class="math inline">\(\E(vv\T) - \E(vu\T)\E(uu\T)\inv\E(uv\T)\)</span>
+is positive definite. If we plugin <span
+class="math inline">\(v=t(\{x_i\})-\theta\)</span> and <span
+class="math inline">\(u=\dot\ell(\{x_i\}\given\theta)\)</span>, we have
+<span class="math display">\[
+\var t(\{x_i\}) - n\mathcal{I}_{\theta}
+\]</span> is positive definite. Therefore, <span
+class="math inline">\(\var{t(\{x_i\})}\)</span> is larger than <span
+class="math inline">\(n\mathcal{I}_{\theta}\)</span>. <a href="#fn6"
+class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>This result conveys two messages:</p>
+<ol type="1">
+<li>The maximum likelihood method is the best method in the sense that
+it produces the most precise estimator.</li>
+<li>Fisher Information is a reasonable definition of “information,” as
+it describes the best “precision” under all unbiased estimators of <span
+class="math inline">\(\theta\)</span>.</li>
+</ol>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I this note, I shall assume the knowledge of maximum
+likelihood estimation and linear algebra.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>We shall assume that Leibniz rule of differentiation is
+always satisfied for interchanging integration and differentiation.<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>A large covariance matrix means the variance is large
+along every direction. Click <a
+href="https://jessekelighine.com/covariance_matrix/covariance_matrix.pdf">here</a>
+to see an intuitive explanation.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>In some contexts (mostly in Bayesian statistics), the
+inverse of a covariance matrix is called the <em>precision matrix</em>.
+Thus, we can view Fisher Information as the precision matrix of the
+asymptotic distribution. I find this name particularly fitting in this
+context.<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Maximum likelihood estimation is not always unbiased,
+but the order of the bias is small <span
+class="math inline">\(O(1/n)\)</span>.<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>If you are not sure what does positive definiteness have
+to do with the concept of “larger” (i.e., concept of size), Click <a
+href="https://jessekelighine.com/covariance_matrix/covariance_matrix.pdf">here</a>
+to see an intuitive explanation.<a href="#fnref6" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
+</body>
+</html>

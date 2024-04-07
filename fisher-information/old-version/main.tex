@@ -1,56 +1,11 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
-% \usepackage{setspace}\setstretch{1.25} % {\setstretch{1.25} \par}
 \usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
 %<--------------------------------------------------------------------------->%
-%%% Date Time %%%
-\usepackage{datetime}
-\newdateformat{meinesdatum}
-{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
-\setdefaultdate{\meinesdatum}
-%-----------------------------------------------------------------------------%
-%%% Minimal Title %%%
-\makeatletter\def\@maketitle{%
-\noindent{\sffamily\bfseries\@title}%
-\hfill\texttt{\@date}\\{\ }\null\hfill\texttt{\@author}
-\par\vskip1.5em}\makeatother
-%-----------------------------------------------------------------------------%
-%%% Section Font %%%
-\usepackage{titlesec}
-\titleformat*{\section}{\normalsize\bfseries\sffamily\raggedright}
-%-----------------------------------------------------------------------------%
-%%% Enumerate %%%
-\usepackage{enumitem}
-\setlist{listparindent=\parindent,parsep=0pt,nosep} % paragraph indent 
-%-----------------------------------------------------------------------------%
-%%% Math %%%
-\usepackage{amsmath,mathtools,amssymb,mathrsfs}
-\usepackage{amsthm}
-\newcommand{\dd}{\,d}
-%-----------------------------------------------------------------------------%
-%%% Probability %%%
-\let\Pr\relax
-\DeclareMathOperator{\Pr}{\text{\textrm{\upshape\textbf{P}}}}
-\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
-\DeclareMathOperator{\var}{Var}
-\DeclareMathOperator{\cov}{Cov}
-\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
-\newcommand{\asto}{\overset{as}{\longrightarrow}}
-\newcommand{\pto}{\overset{p}{\longrightarrow}}
-\newcommand{\dto}{\overset{d}{\longrightarrow}}
-\newcommand{\pr}[1]{\Pr\left\{#1\right\}}
-\newcommand{\given}[1][]{\,#1|\,}
-%-----------------------------------------------------------------------------%
-\newcommand{\normal}[1]{\mathcal{N}\left(#1\right)}
-\newcommand{\inv}{^{-1}}
-%-----------------------------------------------------------------------------%
-%%% Hyper Reference %%%
-\PassOptionsToPackage{hyphens}{url}
-\usepackage[hidelinks,colorlinks=true]{hyperref}
-% \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
-%-----------------------------------------------------------------------------%
+\usepackage{settings}
+%<--------------------------------------------------------------------------->%
 \title{Fisher Information}
-\author{\texttt{jessekelighine.com}}
+\author{陳\,捷 Jesse C.\ Chen\\\texttt{\href{https://jessekelighine.com}{jessekelighine.com}}}
 \date{\today}
 %<--------------------------------------------------------------------------->%
 
@@ -66,21 +21,22 @@ The \emph{Fisher Information} is given by the following:
 	\given[\middle]\theta\right]
 \end{align}
 where $f(\cdot)$ is the conditioned likelihood function (density function)
-and $x$ is the observed (realised) value of random variable $X$.
+of random variable $x$.
+The expectation is taken with respect to the random variable $x$.
 
 \section{Idea}
 
 The idea is to measure ``how much information about a parameter $\theta$ can
-we get from observing a random variable $X$.''
-By information we mean ``how much can $\theta$ affect the distribution of $X$.''
-% That is, a random variable $X$ might contain a certain amount of
+we get from observing a random variable $x$.''
+By information we mean ``how much can $\theta$ affect the distribution of $x$.''
+% That is, a random variable $x$ might contain a certain amount of
 % information about the parameter $\theta$, however, it is not clear to us how
-% mush such parameter affects the distribution of $X$.
-In the extreme cases, if the distribution of $X$ does not depend of $\theta$,
-then no information about $\theta$ is gained from observing $X$;
-if the distribution of $X$ is highly dependent of the parameter	$\theta$,
-then a lot of information about $\theta$ is gained from observing $X$,
-since different $\theta$'s would imply very differnet distributions of $X$.
+% mush such parameter affects the distribution of $x$.
+In the extreme cases, if the distribution of $x$ does not depend of $\theta$,
+then no information about $\theta$ is gained from observing $x$;
+if the distribution of $x$ is highly dependent of the parameter	$\theta$,
+then a lot of information about $\theta$ is gained from observing $x$,
+since different $\theta$'s would imply very differnet distributions of $x$.
 
 \section{Explanation of the Formula}
 
@@ -99,12 +55,15 @@ However, we cannot simple calculate the expectation of $\frac{\partial}{\partial
 	= 0.
 \end{align*}
 That is, the expected ``percentage of change'' is zero.
-Thus, we measure the \emph{variance} of ``percentage of change'' to guage how much $\theta$ affects the distribution of $X$.
+Thus, we measure the \emph{variance} of ``percentage of change'' to guage how much $\theta$ affects the distribution of $x$.
 % Thus, the ``percentage of change'' is squared to ensure that the measure is not always zero.
-Let $\ell_{x}(\theta):=\log f(x\given\theta)$ and
-$\dot\ell_{x}(\theta):=\frac{\partial}{\partial\theta}\ell_{x}(\theta)$.
-We have $\E{\dot\ell_{x}(\theta)}=0$ and $\var{\dot\ell_{x}(\theta)}=\mathcal{I}_{\theta}$.
-Denote this result as $\dot\ell_{x}(\theta)\sim(0,\mathcal{I}_{\theta})$.
+
+Let $\ell(x\given\theta):=\log f(x\given\theta)$ and dot denote differentiation with respect to the parameter, i.e.,
+$\dot\ell(x\given\theta):=\frac{\partial}{\partial\theta}\ell(x\given\theta)$.
+From the derivation above, we have that $\E{\dot\ell(x\given\theta)}=0$;
+also, from the definition of Fisher informtion,
+we have $\var{\dot\ell(x\given\theta)}=\mathcal{I}_{\theta}$.
+% Denote this result as $\dot\ell_{x}(\theta)\sim(0,\mathcal{I}_{\theta})$.
 
 \section{Maximum Likelihood Estimation}
 

@@ -38,7 +38,7 @@ header-includes:
   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation.
 - [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf):
   A brief introduction to Generalized Method of Moments, aka *GMM*.
-- [**Fisher Information**](fisher_information/fisher_information.pdf):
+- [**Fisher Information**](./fisher-information):
   A brief introduction to Fisher Information and some related ideas.
 - [**Markov Chain**](markov_chain/markov_chain.pdf):
   Concepts and results related to Markov chain,
