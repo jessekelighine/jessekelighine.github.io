@@ -141,10 +141,11 @@ Part \eqref{eq:part-a} and \eqref{eq:part-b} are similar in form:
 	\trace
 	\left(
 	\blue{
+	n
 	(\hat\ttheta_{\YY}-\ttheta_{0})
 	(\hat\ttheta_{\YY}-\ttheta_{0})\T
 	}
-	\JJ(\hat\ttheta_{\XX})
+	\frac{\JJ(\hat\ttheta_{\XX})}{n}
 	\right) \\
 	(\hat\ttheta_{\XX}-\ttheta_{0})\T
 	\JJ(\hat\ttheta_{\XX})
@@ -153,18 +154,19 @@ Part \eqref{eq:part-a} and \eqref{eq:part-b} are similar in form:
 	\trace
 	\left(
 	\blue{
+	n
 	(\hat\ttheta_{\XX}-\ttheta_{0})
 	(\hat\ttheta_{\XX}-\ttheta_{0})\T
 	}
-	\JJ(\hat\ttheta_{\XX})
+	\frac{\JJ(\hat\ttheta_{\XX})}{n}
 	\right).
 \end{align*}
 Since $\hat\ttheta_{\XX}$ and $\hat\ttheta_{\YY}$ are both \acrshort{ml} estimators,
-the blue parts above converges to the inverse of Fisher information (asymptotic variance).
+the expectation of the blue parts is approximately the inverse of Fisher information (asymptotic variance).
 By information equality,
-$\JJ(\hat\ttheta_{\XX})$ also converges to the negative of Fisher information in probability.
-Hence, we have part \eqref{eq:part-a} and \eqref{eq:part-b} as the trace of identity matrices of dimension $k\times k$.
-That is, we have both parts equal to $-k$.
+$\JJ(\hat\ttheta_{\XX})/n$ also converges to the negative of Fisher information in probability.
+Hence, we have part \eqref{eq:part-a} and \eqref{eq:part-b} approximated as the trace of identity matrices of dimension $k\times k$.
+That is, we have both parts approximated as $-k$.
 
 Therefore, our approximation for the \textbf{cross-validated} log-likelihood is
 \begin{align*}

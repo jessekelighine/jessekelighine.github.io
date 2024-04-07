@@ -4,8 +4,14 @@
 
 all: index.html
 
-index.html: index.md style.css Makefile 
-	pandoc --toc -f markdown+east_asian_line_breaks --standalone --mathjax -c $(word 2,$^) $< -o $@
+index.html: index.md style.css
+	pandoc \
+		--toc \
+		--from markdown+east_asian_line_breaks \
+		--standalone \
+		--mathjax \
+		--css style.css $< \
+		--output $@
 
 FILES  = "*.html"
 clean:

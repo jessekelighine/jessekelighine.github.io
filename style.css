@@ -1,6 +1,5 @@
 /* Descrption: Minimal CSS for Markdown Generated Website.
  * Author: Jesse C. Chen (jessekelighine.com)
- *
  * */
 
 .title {
@@ -13,7 +12,7 @@
 
 .author, .date {
 	display: table;
-	font-family: "Monaco", monospace;
+	font-family: "Monaco", "Noto Sans CJK KR", monospace;
 	background-color: #f1f1f1;
 	border-radius: 10px;
 }
@@ -54,7 +53,7 @@
 	display: block;
 	padding: 0.3em 0.8em;
 	text-decoration: none;
-	font-family: "Monaco", monospace;
+	font-family: "Monaco", "Noto Sans CJK KR", monospace;
 }
 
 /* BODY */
@@ -105,7 +104,7 @@ h6 { font-size: 16pt; font-style: normal; font-variant: normal; font-weight: 600
 /* CODE */
 
 code {
-	font-family: "Monaco", monospace;
+	font-family: "Monaco", "Noto Sans CJK KR", monospace;
 	background-color: #f1f1f1;
 	border-radius: 8px;
 }
