@@ -261,9 +261,7 @@ of dimension <span class="math inline">\(k\)</span>: <span
 class="math display">\[
 \begin{aligned}
 \E [t(\{x_i\})-\theta] \dot\ell(\{x_i\}\given\theta)\T
-&amp;= \int_{\mathcal{X}^n} [t(\{x_i\})-\theta]
-\dot\ell(\{x_i\}\given\theta)\T f(\{x_i\}\given\theta) d\{x_i\} \\
-&amp;= I_k,
+= I_k,
 \end{aligned}
 \]</span> where <span class="math inline">\(k\)</span> is the length of
 <span class="math inline">\(\theta_0\)</span>.</p>
@@ -272,7 +270,8 @@ random vectors <span class="math inline">\(v\)</span> and <span
 class="math inline">\(u\)</span> both with mean <span
 class="math inline">\(0\)</span>, we have that <span
 class="math inline">\(\E(vv\T) - \E(vu\T)\E(uu\T)\inv\E(uv\T)\)</span>
-is positive definite. If we plugin <span
+is positive definite. <a href="#fn6" class="footnote-ref" id="fnref6"
+role="doc-noteref"><sup>6</sup></a> If we plugin <span
 class="math inline">\(v=t(\{x_i\})-\theta\)</span> and <span
 class="math inline">\(u=\dot\ell(\{x_i\}\given\theta)\)</span>, we have
 <span class="math display">\[
@@ -280,17 +279,18 @@ class="math inline">\(u=\dot\ell(\{x_i\}\given\theta)\)</span>, we have
 \]</span> is positive definite. Therefore, <span
 class="math inline">\(\var{t(\{x_i\})}\)</span> is larger than <span
 class="math inline">\((n\mathcal{I}_{\theta})\inv\)</span>. <a
-href="#fn6" class="footnote-ref" id="fnref6"
-role="doc-noteref"><sup>6</sup></a> What does it mean to be compared to
-<span class="math inline">\((n\mathcal{I}_\theta)\inv\)</span>? When
-<span class="math inline">\(n\)</span> is sufficiently large, we have
-the approximation <span class="math display">\[
+href="#fn7" class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a></p>
+<p>What does it mean to be compared to <span
+class="math inline">\((n\mathcal{I}_\theta)\inv\)</span>? When <span
+class="math inline">\(n\)</span> is sufficiently large, we have the
+approximation <span class="math display">\[
 \hat\theta - \theta_0 \overset{A}{\sim}
 \mathcal{N}(0,(n\mathcal{I}_\theta)\inv)
 \]</span> Hence, we can see that the variance of our maximum likelihood
 estimator is approximately <span
-class="math inline">\((n\mathcal{I}_{\theta})\inv\)</span>, which beast
-each and every other unbiased estimator.</p>
+class="math inline">\((n\mathcal{I}_{\theta})\inv\)</span>, which beats
+every other unbiased estimator.</p>
 <p>In a nutshell:</p>
 <blockquote>
 <ol type="1">
@@ -326,10 +326,15 @@ role="doc-backlink">↩︎</a></p></li>
 but the order of the bias is small <span
 class="math inline">\(O(1/n)\)</span>.<a href="#fnref5"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>If you are not sure what does positive definiteness have
+<li id="fn6"><p>Note <span
+class="math inline">\(\E(v+Au)(v+Au)\T\)</span> is positive definite.
+Let <span class="math inline">\(A=-\E{vu\T}(\E{uu\T})\inv\)</span> and
+we obtain the desired result.<a href="#fnref6" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>If you are not sure what does positive definiteness have
 to do with the concept of “larger” (i.e., concept of size), Click <a
 href="https://jessekelighine.com/covariance_matrix/covariance_matrix.pdf">here</a>
-to see an intuitive explanation.<a href="#fnref6" class="footnote-back"
+to see an intuitive explanation.<a href="#fnref7" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>

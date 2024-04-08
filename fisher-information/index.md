@@ -193,8 +193,7 @@ we have the covariance between $\dot\ell(\{x_i\}\given\theta)$ and $t(\{x_i\})-\
 $$
 \begin{aligned}
 \E [t(\{x_i\})-\theta] \dot\ell(\{x_i\}\given\theta)\T
-&= \int_{\mathcal{X}^n} [t(\{x_i\})-\theta] \dot\ell(\{x_i\}\given\theta)\T f(\{x_i\}\given\theta) d\{x_i\} \\
-&= I_k,
+= I_k,
 \end{aligned}
 $$
 where $k$ is the length of $\theta_0$.
@@ -202,7 +201,7 @@ where $k$ is the length of $\theta_0$.
 A slight variation of Cauchy-Schwarz inequality states that
 for random vectors $v$ and $u$ both with mean $0$, we have that
 $\E(vv\T) - \E(vu\T)\E(uu\T)\inv\E(uv\T)$
-is positive definite.
+is positive definite. [^cauchy-scharz]
 If we plugin $v=t(\{x_i\})-\theta$ and $u=\dot\ell(\{x_i\}\given\theta)$,
 we have
 $$
@@ -210,13 +209,14 @@ $$
 $$
 is positive definite.
 Therefore, $\var{t(\{x_i\})}$ is larger than $(n\mathcal{I}_{\theta})\inv$. [^positive-definite]
+
 What does it mean to be compared to $(n\mathcal{I}_\theta)\inv$?
 When $n$ is sufficiently large, we have the approximation
 $$
 \hat\theta - \theta_0 \overset{A}{\sim} \mathcal{N}(0,(n\mathcal{I}_\theta)\inv)
 $$
 Hence, we can see that the variance of our maximum likelihood estimator is approximately $(n\mathcal{I}_{\theta})\inv$,
-which beast each and every other unbiased estimator.
+which beats every other unbiased estimator.
 
 In a nutshell:
 
@@ -224,6 +224,10 @@ In a nutshell:
 >    in the sense that it produces the most precise estimator.
 > 2. **Fisher Information** is a reasonable definition of "information,"
 >    as it describes the best "precision" under all unbiased estimators of $\theta$.
+
+[^cauchy-scharz]:
+	Note $\E(v+Au)(v+Au)\T$ is positive definite.
+	Let $A=-\E{vu\T}(\E{uu\T})\inv$ and we obtain the desired result.
 
 [^positive-definite]:
 	If you are not sure what does positive definiteness have to do with the concept of "larger" (i.e., concept of size),
