@@ -94,7 +94,7 @@ This observation gives us the first intuition of Fisher Information:
 [^leibniz]: We shall assume that Leibniz rule of differentiation is always satisfied for interchanging integration and differentiation.
 [^large-information]:
 	A large covariance matrix means the variance is large along every direction.
-	Click [here](https://jessekelighine.com/covariance_matrix/covariance_matrix.pdf) to see an intuitive explanation.
+	Click [here](https://jessekelighine.com/covariance-matrix) to see an intuitive explanation.
 
 # Information Equality
 
@@ -233,4 +233,4 @@ In a nutshell:
 
 [^positive-definite]:
 	If you are not sure what does positive definiteness have to do with the concept of "larger" (i.e., concept of size),
-	Click [here](https://jessekelighine.com/covariance_matrix/covariance_matrix.pdf) to see an intuitive explanation.
+	Click [here](https://jessekelighine.com/covariance-matrix) to see an intuitive explanation.

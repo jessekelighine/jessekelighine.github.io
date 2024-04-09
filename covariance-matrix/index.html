@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="jessekelighine.com" />
+  <meta name="dcterms.date" content="2024-04-09" />
+  <title>How to compare the size of covariance matrices?</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="../resources/sheep_color.png">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">How to compare the size of covariance matrices?</h1>
+<p class="author"><a
+href="https://jessekelighine.com"><code>jessekelighine.com</code></a></p>
+<p class="date">2024-04-09</p>
+</header>
+<p><span class="math display">\[
+\DeclareMathOperator{\E}{\text{\textrm{\textbf{E}}}}
+\DeclareMathOperator{\var}{\text{\textrm{\textbf{Var}}}}
+\newcommand{\given}[1][]{\,#1|\,}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\symbT}{\top}
+\newcommand{\T}{^{\symbT}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\invT}{^{-\symbT}}
+%%
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\AA}{\mathbf{A}}
+\]</span></p>
+<p>Consider two covariance matrices <span
+class="math inline">\(A_{n\times n}\)</span> and <span
+class="math inline">\(B_{n\times n}\)</span>. We say that <span
+class="math inline">\(A\)</span> is <em>bigger</em> or <em>larger</em>
+than <span class="math inline">\(B\)</span>, often denoted by <span
+class="math inline">\(A\geq B\)</span> or <span
+class="math inline">\(A\succeq B\)</span>, if <span
+class="math inline">\(A-B\)</span> is <strong>semi-positive
+definite</strong>. Why do we use the “definiteness” of a matrix to
+compare the size of two covariance matrices?</p>
+<h1 data-number="1" id="semi-positiveness"><span
+class="header-section-number">1</span> Semi-positiveness</h1>
+<h2 data-number="1.1" id="interpretation-1"><span
+class="header-section-number">1.1</span> Interpretation 1</h2>
+<p>First, notice that a covariance matrix is not only symmetric, but
+also semi-positive definite. Consider a random vector <span
+class="math inline">\(X=(x_1,...,x_n)\T\)</span>. The covariance matrix
+is defined by <span class="math display">\[
+\begin{aligned}
+\KK &amp;\coloneqq \E{(X-\E{X})(X-\E{X})\T}.
+\end{aligned}
+\]</span> Given any constant vector <span
+class="math inline">\(\vv\)</span> of length <span
+class="math inline">\(n\)</span>, we have <span class="math display">\[
+\begin{aligned}
+\vv\T \KK \vv &amp;= \E{\vv\T(X-\E{X})(\vv\T(X-\E{X}))\T} \geq 0
+\end{aligned}
+\]</span> by the definition of <span class="math inline">\(\KK\)</span>.
+Therefore, the covariance matrix <span
+class="math inline">\(\KK\)</span> is semi-positive definite. In fact,
+<span class="math inline">\(\vv\T\KK\vv\)</span> is zero iff <span
+class="math inline">\(X\)</span> has no variance at all.</p>
+<h2 data-number="1.2" id="interpretation-2"><span
+class="header-section-number">1.2</span> Interpretation 2</h2>
+<p>There is another intuitive way of interpreting the positive
+definiteness of covariance matrices. Consider the same vector <span
+class="math inline">\(\vv\)</span> and the random vector <span
+class="math inline">\(X\)</span>. The dot product <span
+class="math inline">\(\vv\T X\)</span> is the <em>projection</em> of the
+random vector from <span class="math inline">\(n\)</span>-dimensional
+space on a one-dimensional space along the direction of <span
+class="math inline">\(\vv\)</span>, i.e., this collapse the <span
+class="math inline">\(n\)</span>-dimensional random variable to a
+one-dimensional random variable through some linear combination.</p>
+<p>If we calculate the variance of the one-dimensional random variable
+<span class="math inline">\(\vv\T X\)</span>, we obtain <span
+class="math display">\[
+\begin{aligned}
+\var(\vv\T X)
+&amp;= \E{\vv\T X(\vv\T X)\T } - \E{\vv\T X}\E{\vv\T X}\T  \\
+&amp;= \vv\T \big(\E{XX\T } - \E{X}\E{X}\T \big)\vv \\
+&amp;= \vv\T\KK\vv.
+\end{aligned}
+\]</span> Notice that the variance assumes the exact form as before. And
+since variance is always non-negative, it is clear that the covariance
+matrix must be semi-positive definite. That is, for any direction <span
+class="math inline">\(\vv\)</span>, the variance of <strong><span
+class="math inline">\(X\)</span> projected on that direction</strong> is
+(clearly) non-negative.</p>
+<h1 data-number="2" id="comparison-of-covariance-matrices"><span
+class="header-section-number">2</span> Comparison of Covariance
+Matrices</h1>
+<p>Let <span class="math inline">\(X=(x_1,...,x_n)\T\)</span> and <span
+class="math inline">\(Y=(y_1,...,y_n)\T\)</span> be random vectors with
+mean <span class="math inline">\((0,...,0)\T\)</span> for simplicity.
+Let <span class="math inline">\(\AA=\E{XX\T}\)</span> and <span
+class="math inline">\(\BB=\E{YY\T}\)</span> be the covariance matrices.
+Our goal is to compare <span class="math inline">\(\AA\)</span> and
+<span class="math inline">\(\BB\)</span> in some meaningful way.</p>
+<p>Motivated by the second interpretation, we can project <span
+class="math inline">\(X\)</span> and <span
+class="math inline">\(Y\)</span> on a vector <span
+class="math inline">\(\vv\)</span>, and then compare the variance
+(non-negative real number) of the two projections. To make the
+comparison meaningful, it is reasonable to compare <strong>all</strong>
+possible projections, i.e., consider all possible choices of <span
+class="math inline">\(\vv\)</span>.</p>
+<p>Formally, consider any vector <span
+class="math inline">\(\vv\)</span>. The projection of <span
+class="math inline">\(X\)</span> on <span
+class="math inline">\(\vv\)</span> is <span class="math inline">\(\vv\T
+X\)</span>. The variance of <span class="math inline">\(\vv\T X\)</span>
+is <span class="math display">\[
+\begin{aligned}
+\E{(\vv\T X)^2}
+&amp;= \E{\vv\T XX\T\vv} \\
+&amp;= \vv\T\E{XX\T}\vv
+= \vv\T\AA\vv
+\end{aligned}
+\]</span> where <span class="math inline">\(A\)</span> is the covariance
+matrix. Similarly, consider the same for <span
+class="math inline">\(Y\)</span>. If we find that <span
+class="math inline">\(\forall\vv\)</span>, <span class="math display">\[
+\begin{align*}
+\vv\T\AA\vv - \vv\T\BB\vv
+= \vv\T(\AA-\BB)\vv
+\geq 0,
+\end{align*}
+\]</span> then, by definition, <span
+class="math inline">\(\AA-\BB\)</span> is semi-positive definite. Now we
+know why we say <span class="math inline">\(\AA\)</span> is
+<em>larger</em> than <span class="math inline">\(\BB\)</span> when <span
+class="math inline">\(\AA-\BB\)</span> is positive definite:</p>
+<blockquote>
+<p><span class="math inline">\(\AA-\BB\)</span> being positive definite
+means that for <strong>all possible directions</strong>, the variance of
+<span class="math inline">\(X\)</span> is larger than <span
+class="math inline">\(Y\)</span>’s.</p>
+</blockquote>
+<p>This order of semi-positive definite matrices is called the <a
+href="https://en.wikipedia.org/wiki/Loewner_order">Löwner order</a>.</p>
+<h1 data-number="3" id="visualization"><span
+class="header-section-number">3</span> Visualization</h1>
+<p>This interpretation of the partial ordering can be understood easily
+through visualisation. The following are representations of the
+distributions <span class="math inline">\(X\)</span> and <span
+class="math inline">\(Y\)</span> where the two random vectors are
+two-dimensional:</p>
+<div style="clear: both; display: table; margin: auto;">
+<div class="column" style="float: left;">
+<p><img
+src="./figures/visual-1.svg"
+alt="visual-1"
+style="
+max-width: 10em;
+width: 80vw;
+display: block;
+margin: auto;
+"
+/></p>
+</div>
+<div class="column" style="float: left;">
+<p><img
+src="./figures/visual-2.svg"
+alt="visual-2"
+style="
+max-width: 10em;
+width: 80vw;
+display: block;
+margin: auto;
+"
+/></p>
+</div>
+</div>
+<p>Let <span class="math inline">\(X\)</span> with covariance matrix
+<span class="math inline">\(\AA\)</span> be the <em>blue</em>
+distribution and <span class="math inline">\(Y\)</span> with covariance
+matrix <span class="math inline">\(\BB\)</span> be the
+<strong>red</strong> distribution.</p>
+<ul>
+<li>It is clear that in case 1, <span class="math inline">\(\AA\)</span>
+is <em>bigger</em> than <span class="math inline">\(\BB\)</span> since
+the variance of <span class="math inline">\(X\)</span> is bigger that
+<span class="math inline">\(Y\)</span>’s in every direction.</li>
+<li>However, the same statement is not true in case 2. In some
+directions (e.g. <span class="math inline">\(\vv_1\)</span>), the
+variance of <span class="math inline">\(X\)</span> is larger; in other
+directions (e.g. <span class="math inline">\(\vv_2\)</span>), the
+variance of <span class="math inline">\(Y\)</span> is larger. Thus,
+<span class="math inline">\(\AA\)</span> and <span
+class="math inline">\(\BB\)</span> are not comparable in this case.</li>
+</ul>
+</body>
+</html>

@@ -31,7 +31,7 @@ header-includes:
 
 ## Statistics
 
-- [**Definiteness of Covariance Matrices**](covariance_matrix/covariance_matrix.pdf):
+- [**Definiteness of Covariance Matrices**](./covariance-matrix):
   What do we mean when we compare covariances matrices through positive definiteness?
   A short intuitive interpretation.
 - [**James-Stein Estimator**](james-stein_estimator/james-stein_estimator.pdf):
