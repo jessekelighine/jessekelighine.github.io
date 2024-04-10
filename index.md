@@ -44,7 +44,7 @@ header-includes:
   Concepts and results related to Markov chain,
   a proof of the Metropolis-Hastings Algorithm,
   and a proof of the Gibbs Sampling Algorithm.
-- [**Sufficient Statistics**](sufficient_statistic/sufficient_statistic.pdf):
+- [**Sufficient Statistics**](sufficient-statistic/sufficient-statistic.pdf):
   Short definition and example of sufficient statistics.
 - [**Mallow's Cp**](mallow_cp/mallow_cp.pdf):
   Motivating Mallow's $C_p$ criterion, one of the simplest model selection criterion.
