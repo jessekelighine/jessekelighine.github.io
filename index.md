@@ -78,5 +78,7 @@ header-includes:
   An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/).
 - [**18歲，投下你的第一票**](./resources/voting-pamphlet.pdf):
   2019 年教育部投票手冊。排版設計者：*我*。
+- [**《申請覺迷錄》**](./grad-school-application)：
+  申請碩班、博班的心得。
 - [**Gallery**](./gallery):
   Some graphics and designs I've created.

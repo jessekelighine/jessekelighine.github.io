@@ -1,0 +1,98 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
+\usepackage{setspace}\setstretch{1.1} % \begin{spacing}{1.3}
+\usepackage[a4paper,vmargin={3.5cm,3.5cm},hmargin={3.5cm,3.5cm}]{geometry}
+\usepackage[skip=2pt plus1pt,indent=2em]{parskip}
+%-----------------------------------------------------------------------------%
+%%% Page # of # %%%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}\renewcommand{\headrulewidth}{0pt}\fancyhf{}
+\fancyfoot[C]{\small Page \thepage\ of \pageref{LastPage}}
+\fancypagestyle{plain}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}
+\fancyfoot[C]{\small Page \thepage\ of \pageref{LastPage}}}
+%-----------------------------------------------------------------------------%
+%%% Font %%%
+\setmainfont{EB Garamond}
+\setmonofont{IBM Plex Mono}
+%-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\setCJKmainfont{GenWanMin TJ L}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\noindent
+\textbf{Personal Statement}
+\hfill
+\textsc{Applicant: Jesse Chieh Chen}\\
+\null\hfill{\footnotesize\texttt{r11323013@ntu.edu.tw}}\\
+\input{./aux-school/title.tex}\unskip
+\vspace{0.3em}
+\hrule
+\vspace{1em}
+
+\noindent
+Dear Members of the Admissions Committee,\\
+
+\noindent
+\input{./aux-school/interest.tex}\unskip\
+In 2018, I started my journey in economics at National Taiwan University (NTU).
+% My keen interest in statistics and econometrics led me to start pursuing a minor in mathematics during the following year.
+My passion for quantitative analysis prompted me to pursue a minor in mathematics in the following year.
+I am proud to have received four Dean's List awards (top 5\%) during my undergraduate studies.
+% Due to Covid19 and conscription considerations,
+% I pursued an MSc in Economics after my bachelor's degree to keep my studies going in preparation for future studies abroad.
+Amidst the challenges posed by Covid-19 and the need to fulfill conscription requirements,
+I started an MSc in Economics following my bachelor's degree,
+with the intent of maintaining academic continuity in preparation for future overseas studies.
+I am well-positioned to graduate from my master's program with the highest GPA in my graduating class.
+During my studies, my interest shifted from economics to statistics as I gained theoretical understanding
+and hands-on experience of econometrics and statistics.
+I aim to enhance my statistical abilities and gain a deeper understanding,
+as well as practical skills, throughout my MSc programme in statistics.
+
+The first research experience I had was working as an RA under Professor Ming-Jen Lin.
+We worked with the large Taiwanese health insurance data to investigate intergenerational health transmission.
+I was involved in reconstructing family trees using household registry information,
+devising and performing hypothesis testing, and running structural estimation using R and Stata.
+This experience provided me with a solid foundation in programming and statistical inference in practice.
+
+% Working with this large data set prompted me to think about how health issues spread through networks such as family structures,
+% socio-economic strata, and geographic locations.
+% As I gained experience in the workflow of empirical studies,
+% my interest shifted towards the theoretical and econometric aspects of estimating social-interaction effects.
+
+Subsequently, I started RA work with Professor Hon-Ho Kwok on estimating spatial auto-regressive (SAR) models.
+My responsibilities primarily involved implementing the estimation process in Matlab.
+This collaboration culminated in my bachelor's thesis,
+where I focused on estimating SAR models using non-linear least squares (NLS).
+Aided by my solid mathematical foundation in analysis, linear algebra, and probability,
+I demonstrated NLS's consistency and asymptotic normality.
+And with my experiences in computation, I validated these results through extensive numerical simulations in R
+and proposed a feasible two-step estimation procedure to achieve optimal asymptotic efficiency.
+
+Currently, I am tackling the challenge of unknown networks in SAR models, a high-dimensional problem.
+After learning about Bayesian statistics and related computational methods from Professor Chih-Sheng Hsieh,
+I realized that in comparison to the frequentist approach,
+a Bayesian approach is more suitable for estimating unknown networks.
+My current master's thesis revolves around establishing a Bayesian method for estimating unknown networks.
+I've developed preliminary methods for sampling from random matrices and
+conducting statistical inference using Gibbs sampling and Markov Chain Monte Carlo.
+Having completed my conscription duty in the latter part of 2023,
+I plan to finish my masters thesis and graduate in June 2024.
+
+\input{./aux-school/ending.tex}\unskip
+
+\vspace{1em}
+\noindent
+Thank you for considering my application.\\
+
+\vspace{2em}
+\hfill
+\begin{minipage}{.35\textwidth}
+	Sincerely,\\
+	Jesse Chieh Chen\hspace{0.5em}陳\,捷
+\end{minipage}
+
+\end{document}
