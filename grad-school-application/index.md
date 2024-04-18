@@ -426,7 +426,7 @@ CV 用最簡短的言語條列式的寫下你的經歷，
   碩士論文的部分只繳交了一個 10 頁的 proposal。
   至於論文的部分就不在這裡獻醜了，
   反正就是密密麻麻的字跟一些數學。
-- [**自動化範例**](./documents/sop-stat/)：
+- [**自動化範例**](https://github.com/jessekelighine/jessekelighine.github.io/tree/main/grad-school-application/documents/sop-stat)：
   在這個資料夾中我附上了使用 $\mathrm{\LaTeX}$ 以及 Makefile 客製化統計碩士 SoP 的範例。
   其中我為了四間學校客製化（ETH, LSE, UCL 以及 Nottingham），
   所以只要執行 `make eth` 就可以得到為 ETH 客製化後的 SoP，
