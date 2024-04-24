@@ -17,7 +17,7 @@ I also assume the reader is familiar \acrshort{ml} estimator, it's asymptotic pr
 
 \maketitle
 
-\section{What's Wrong with \texorpdfstring{\acrlong{ml}}{Maximum Likelihood}?}
+\section{What's Wrong with \glsentrylong{ml}?}
 
 \noindent
 Suppose we have a data set $\YY=\{y_{i}\}_{i=1}^n$ and a probability density model $f(\cdot\given\ttheta)$ where $\ttheta$ is the parameter.
@@ -28,15 +28,15 @@ If we try to fit model $f$ with the data $\YY$ and obtain the estimate of the pa
 What are we \emph{actually} doing here?
 We are supposing that \emph{if} $\YY$ is generated from a probability density $f(\cdot\given\ttheta_{0})$,
 \emph{then} $\hat\ttheta_{\YY}$ is a good estimate for $\ttheta_{0}$.
-This is extensively argued by Ronald Fisher, the inventor of the \acrlong{ml} method.
+This is extensively argued by Ronald Fisher, the inventor of the \gls{ml} method.
 
 Yet, this approach poses an obvious problem:
 \emph{What if} $\YY$ follows another distribution with density function $g(\cdot\given\pphi_{0})$?
-We can, of course, also find the \acrshort{ml} estimate for $\pphi_{0}$:
+We can, of course, also find the \gls{ml} estimate for $\pphi_{0}$:
 \begin{align*}
 	\hat\pphi_{\YY} \coloneqq \arg\max_{\pphi} \log g(\YY\given\pphi).
 \end{align*}
-In the spirit of \acrshort{ml},
+In the spirit of \gls{ml},
 we can compare the two log-likelihoods,
 \begin{align}\label{eq:ml-compare}
 	\log f(\YY\given\hat\ttheta_{\YY})
