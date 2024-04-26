@@ -1,0 +1,100 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
+% \usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
+\usepackage{setspace}\setstretch{1.2} % \begin{spacing}{1.3}
+%-----------------------------------------------------------------------------%
+\usepackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Title %%%
+\title{Mallows' $C_p$}
+\author{陳\,捷 Jesse C.\ Chen\\\texttt{\href{https://jessekelighine.com}{jessekelighine.com}}}
+\date{\today}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\maketitle
+
+\noindent
+We are given a data set $\{y_{i},\xx_{i}\}_{i=1}^{n}$
+where $\xx_{i}=(x_{i1},...,x_{ik})\T$'s are $k\times 1$ vectors and $y_{i}$'s are scalars.
+It is known that the \gls{dgp} is
+\begin{gather*}
+	y_{i} = \mu(\xx_{i}) + \epsilon_{i}
+\end{gather*}
+where $\epsilon_{i}$ is a random variable with mean zero and variance $\sigma^2$.
+That is, for each input $\xx_{i}$, an output $y_i$ is produced with an \gls{iid} error $\epsilon_i$.
+However, $\mu$ is an unknown function and it might only utilize a subset of the $k$ inputs.
+We represent the process compactly as $\yy=\mmu+\eepsilon$ where
+$\yy=(y_{1},...,y_{n})\T$,
+$\mmu=(\mu(\xx_{1}),...,\mu(\xx_{n}))\T$, and
+$\eepsilon=(\epsilon_{1},...,\epsilon_{n})\T$.
+
+Our job is simple: predict $y_{i}$ with $\xx_{i}$ using a linear model.
+However, how do we know which of $k$ the inputs of $\xx_{i}$ should we put in our model?
+That is, we want to find a way to measure how the good the prediction of a specific model would be.
+
+Let $\AA\subseteq\{1,...,k\}$ with $|\AA|=p$ denote a subset of the indices of size $p$
+and let $\XX_{\AA}$ denote the corresponding data matrix $(\xx_{1\AA},...,\xx_{n\AA})\T$.
+That is, $\AA$ denotes the subset of the $k$ independent variables we choose to put in our model.
+The standard \gls{ols} estimator yields the estimator $\hat\bbeta_{\AA}=(\XX_{\AA}\T\XX_{\AA})\inv\XX_{\AA}\T\yy$.
+An intuitive way of measuring prediction quality is to consider the expected sum of square errors:
+\begin{align}\label{eq:in-sample}
+	\E\!\left[ \sum_{i=1}^{n} ( y_{i} - \xx_{i\AA}\T\hat\bbeta_{\AA} )^{2} \right]
+	&= \E (\yy-\XX_{\AA}\hat\bbeta_{\AA})\T(\yy-\XX_{\AA}\hat\bbeta_{\AA}) \nonumber\\
+	&= n\sigma^{2} - p\sigma^{2} + \mmu\T(\II_n-\PP_{\AA})\mmu \tag{in}
+\end{align}
+where $\PP_{\AA}=\XX_{\AA}(\XX_{\AA}\T\XX_{\AA})\inv\XX_{\AA}\T$ and $\II_n$ is the $n\times n$ identity matrix.
+Notice the term $-p\sigma^{2}$.
+This term suggests that the prediction error decreases as $p$, the size of $\AA$, increases.
+That is, we can keep adding inputs from the original $k$ independent variables to the linear model and the square error will decrease!
+Therefore, this expected sum of squares error is not a good measure for how good the model will perform.
+
+However, notice this this is only the case when we are doing ``in-sample'' prediction, i.e.,
+evaluating sum of squares error with the data set that is used to produce the estimate $\hat\beta_{\AA}$.
+We can consider calculating the prediction error with a \emph{hypothetical out-sample data set},
+that is, a data set $\{y_{i}^{\text{out}},\xx_{i}\}_{i=1}^{n}$ where
+\begin{align*}
+	y_{i}^{\text{out}} &= \mu(\xx_{i}) + \epsilon_{i}^{\text{out}}.
+\end{align*}
+This hypothetical data set is essentially ``a set of regenerated $y_i$'s with the same $\xx_i$'s.''
+Using the new data set, we can compute the ``out-sample'' prediction error associated with the ``in-sample'' estimate $\hat\bbeta_{\AA}$:
+\begin{align}\label{eq:out-sample}
+	\E\!\left[ \sum_{i=1}^{n} ( y_{i}^{\text{out}} - \xx_{i\AA}\T\hat\bbeta_{\AA} )^{2} \right]
+	&= \E (\yy^{\text{out}}-\XX_{\AA}\hat\beta)\T(\yy^{\text{out}}-\XX_{\AA}\hat\bbeta_{\AA}) \nonumber\\
+	&= n\sigma^{2} + p\sigma^{2} + \mmu\T(\II_n-\PP_{\AA})\mmu. \tag{out}
+\end{align}
+Notice how the out-sample prediction error increases as $p$, number of independent variables in our model, increases.
+Hence, out-sample prediction error is a much better criterion for evaluating the fitness of a model.
+
+Now the practical question: How can we calculate the ``out-sample prediction error'' when we only observe one data set?
+The trick is to approximate the out-sample prediction error with the in-sample prediction error.
+In fact, \eqref{eq:in-sample} and \eqref{eq:out-sample} are related by the simple equation
+\begin{align}\label{eq:relation}
+	\eqref{eq:out-sample} = \eqref{eq:in-sample} + 2p\sigma^2.
+\end{align}
+The term $2p\sigma^2$ can be viewed as an error correction term to \eqref{eq:in-sample}.
+We can replace $\sigma^{2}$ by some estimator $\hat\sigma^{2}$ to obtain an estimate of \eqref{eq:out-sample}.
+And that's basically it!
+
+\dinkus
+
+\noindent
+Formally, $C_{p}$ is defined as follows:
+Suppose we have data $\{y_{i},\xx_{i}\}_{i=1}^{n}$ as before,
+and we pick $p$ of the $k$ exogenous variables from $\xx_{i}$ to calculate the linear model coefficients $\bbeta$,
+denoted by $\hat\bbeta_{\AA}$.
+The Mallows' $C_{p}$ for that choice of $p$ variables is defined by
+\begin{align}\label{eq:cp}
+	C_{p} \coloneqq 
+	\frac1n \left( \sum_{i=1}^{n} (y_{i}-\xx_{i\AA}\T\hat\bbeta_{\AA})^{2} + 2p\hat\sigma^{2} \right)
+\end{align}
+It is clear that \eqref{eq:cp} is simply \eqref{eq:relation} divided by $n$.
+The $C_{p}$ values for different choices of $\AA$ tell us how the fitness of these models differ.
+The choice of $\AA$ with the smallest $C_{p}$ is the most preferable.
+\asDemonstrated
+
+\vfill
+\printglossaries
+
+\end{document}
