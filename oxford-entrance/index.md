@@ -24,11 +24,11 @@ header-includes:
 顯然地 $n$ 不能等於 $1$，因為正方形的長寬比是 $1:1$；
 但是 $n=2$ 就是可行的，方式如下：
 
-<img src="figures/web_two.svg" alt="two demo" width="40%" style="display: block; margin: auto; min-width: 12em" />
+<img src="figures-web/two.svg" alt="two demo" width="40%" style="display: block; margin: auto; min-width: 12em" />
 
 長方形的大小也不拘，只要比例是 $1:2$ 就可以。以下是一個（炫砲的） $n=8$ 的例子：
 
-<img src="figures/web_demo.svg" alt="two demo" width="40%" style="display: block; margin: auto; min-width: 12em" />
+<img src="figures-web/demo.svg" alt="two demo" width="40%" style="display: block; margin: auto; min-width: 12em" />
 
 嚴謹一點說：
 
@@ -39,4 +39,4 @@ header-includes:
 
 動手試試看吧！
 
-[**解答在此**](oxford_entrance.pdf)
+[**解答在此**](oxford-entrance.pdf)

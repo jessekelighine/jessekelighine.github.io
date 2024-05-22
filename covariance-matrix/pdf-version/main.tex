@@ -1,13 +1,13 @@
 \documentclass[a4paper]{article}
 \usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
-% \usepackage{setspace}\setstretch{1.3} % \begin{spacing}{1.3}
-\usepackage[a4paper,vmargin={2.5cm,2.5cm},hmargin={2.5cm,2.5cm}]{geometry}
+\usepackage{setspace}\setstretch{1.1} % \begin{spacing}{1.3}
+\usepackage[a4paper,vmargin={3cm,3cm},hmargin={3cm,3cm}]{geometry}
 %<--------------------------------------------------------------------------->%
 \usepackage{settings}
 %<--------------------------------------------------------------------------->%
 %%% Title %%%
 \title{How to compare the size of covariance matrices?}
-\author{陳\,捷 \href{https://jessekelighine.com}{Jesse C. Chen}}
+\author{\href{https://jessekelighine.com}{\texttt{jessekelighine.com}}}
 \date{\today}
 %<--------------------------------------------------------------------------->%
 
@@ -15,12 +15,12 @@
 
 \maketitle
 
-\begin{multicols*}{2}
+\begin{multicols}{2}
 
 \noindent
 Consider two covariance matrices $\AA_{n\times n}$ and $\BB_{n\times n}$.
-We say that $\AA$ is \textbf{bigger} than $\BB$,
-often denoted by $\AA\geq \BB$ or $\AA\succeq \BB$, if $\AA-\BB$ is semi-positive definite.
+We say that $\AA$ is \emph{bigger} than $\BB$,
+often denoted by $\AA\geq \BB$ or $\AA\succsim \BB$, if $\AA-\BB$ is semi-positive definite.
 Why do we use the ``definiteness'' of a matrix to compare the size of two covariance matrices?
 
 First, notice that a covariance matrix is not only symmetrical, but also
@@ -83,15 +83,16 @@ If we find that $\forall\vv$,
 \end{align*}
 then, by definition, $\AA-\BB$ is semi-positive definite.
 Now we know why we say $\AA$ is \emph{larger} than $\BB$ when $\AA-\BB$ is positive definite:
-\begin{quote}
+
+\begin{tcolorbox}[enhanced,sharp corners,frame hidden,boxrule=0sp,borderline west={3pt}{0pt}{black!70}]
 	If $\AA-\BB$ is positive definite,
 	then \emph{for all possible directions $\vv$},
 	the variance of $\xx$ is larger than $\yy$'s.
 	\footnote{
-		This order of semi-positive definite matrices is called the
-		\href{https://en.wikipedia.org/wiki/Loewner_order}{L\"{o}wner ordering}.
+	This order of semi-positive definite matrices is called the
+	\href{https://en.wikipedia.org/wiki/Loewner_order}{L\"{o}wner ordering}.
 	}
-\end{quote}
+\end{tcolorbox}
 
 This interpretation of the partial ordering can be understood easily through visualisation.
 The following are representations of the distributions $\xx$ and $\yy$ where the
@@ -103,7 +104,7 @@ two random vectors are two-dimensional:
 \end{center}
 Let $\xx$ with covariance matrix $\AA$ be the blue distribution and $\yy$ with
 covariance matrix $\BB$ be the red distribution.
-It is clear that in case 1, $\AA$ is \textbf{bigger} than $\BB$ since the variance of $\xx$ is
+It is clear that in case 1, $\AA$ is \emph{bigger} than $\BB$ since the variance of $\xx$ is
 bigger that $\yy$'s in \emph{every} direction. (every possible direction of projection)
 However, the same statement is not true in case 2.
 In some directions (e.g.\! $\vv_1$), the variance of $\xx$ is larger;
@@ -111,6 +112,6 @@ in other directions (e.g.\! $\vv_2$), the variance of $\yy$ is larger.
 Thus, $\AA$ and $\BB$ are not comparable by the partial order in case 2.
 \asDemonstrated
 
-\end{multicols*}
+\end{multicols}
 
 \end{document}

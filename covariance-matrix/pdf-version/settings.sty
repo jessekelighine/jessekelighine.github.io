@@ -11,20 +11,18 @@
 % \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
 %-----------------------------------------------------------------------------%
 %%% Math %%%
-\usepackage{amsmath,amssymb}
-\usepackage{mathrsfs,gensymb}
-\usepackage{mathtools}
-\DeclareMathOperator{\Exp}{\text{\textbf{E}}}
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+\DeclareMathOperator{\Exp}{\mathbb{E}}
 \DeclareMathOperator{\Var}{\text{Var}}
 \newcommand{\E}[2][]{\Exp_{#1}[#2]}
 \newcommand{\var}[2][]{\Var_{#1}[#2]}
 \newcommand{\raum}{\phantom{=}{\:\,}}
-\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\#}}
 %<--------------------------------------------------------------------------->%
 \newcommand{\T}{^{\top}}
 \newcommand{\vv}{\mathbf{v}}
-\newcommand{\xx}{\boldsymbol{x}}
-\newcommand{\yy}{\boldsymbol{y}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
 \newcommand{\KK}{\mathbf{K}}
 \newcommand{\BB}{\mathbf{B}}
 \renewcommand{\AA}{\mathbf{A}}
@@ -39,7 +37,7 @@
 %%% Minimal Title %%%
 \makeatletter\def\@maketitle{%
 \noindent{\sffamily\bfseries\@title}%
-\hfill\texttt{\@date}\\{\ }\null\hfill\texttt{\@author}
+\hfill\texttt{\@date}\\{\ }\null\hfill\@author
 \par\vskip1.5em}\makeatother
 %-----------------------------------------------------------------------------%
 %%% Date Time %%%
@@ -53,14 +51,35 @@
 %-----------------------------------------------------------------------------%
 %%% xeCJK %%%
 \usepackage{xeCJK}
-\newcommand{\chmainfont}{Noto Sans CJK KR Regular}
-\newcommand{\chsansfont}{Noto Sans CJK KR Regular}
-\newcommand{\chboldfont}{Noto Sans CJK KR Medium}
+\newcommand{\chmainfont}{GenWanMinTJ-L}
+\newcommand{\chsansfont}{NotoSansCJKkr-Regular}
+\newcommand{\chboldfont}{NotoSansCJKkr-Bold}
 \newcommand{\chmonofont}{jf-openhuninn-2.0}
-\newcommand{\chitalfont}{LXGW WenKai Light}
+\newcommand{\chitalfont}{LXGWWenKai-Regular}
 \setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
 \setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
 \setCJKmonofont{\chmonofont}
 \xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
 \setlength\parindent{2em}
+%-----------------------------------------------------------------------------%
+%%% Font %%%
+\usepackage[math-style=ISO,bold-style=ISO]{unicode-math}
+\setmainfont{EB Garamond}
+\setsansfont{DINMittelschriftStd}
+% \setmonofont{Monaco}
+\setmathfont{Garamond-Math}[StylisticSet={7,9}]
+%-----------------------------------------------------------------------------%
+%%% TikZ Color Box %%%
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems,skins}
+\makeatletter
+\tcbset{mycolorbox/.style={
+enhanced,sharp corners,frame hidden,boxrule=0sp,
+left=8pt,right=4pt,top=4pt,bottom=4pt,
+colback=#1!5,borderline west={3pt}{0pt}{#1}}}
+\tcolorboxenvironment{theorem}{mycolorbox={myblue}}
+\tcolorboxenvironment{proof}{mycolorbox={myyellow}}
+\tcolorboxenvironment{definition}{mycolorbox={myred}}
+\tcolorboxenvironment{remark}{mycolorbox={black}}
+\makeatother
 %-----------------------------------------------------------------------------%

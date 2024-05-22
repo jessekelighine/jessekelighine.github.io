@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{setspace}\setstretch{1.25} % {\setstretch{1.25} \par}
 \usepackage[a4paper,height=25cm,hmargin={2.2cm,2.2cm}]{geometry}
-\input{./settings.tex}
+\usepackage{settings}
 %<--------------------------------------------------------------------------->%
 
 \begin{document}
@@ -37,7 +37,7 @@
 顯然地 $n$ 不能等於 $1$，因為正方形的長寬比是 $1\ratio1$；
 但是 $n=2$ 就是可行的，方式如下：
 
-\putfig{case_two}
+\putfig{case-two}
 
 \noindent
 嚴謹一點說：給定任意的正整數 $n$，
@@ -52,7 +52,7 @@
 再各用兩個 $2\ratio1$ 的長方形鑲嵌那 2 個小正方形。
 把範例 $n=2$ 鑲嵌中的其中一個長方形以這樣的方式分割會得到：
 
-\putfig{case_demo}
+\putfig{case-demo}
 
 \noindent
 這是一個重要的觀察，因為藉由這樣的分割過程，
@@ -63,7 +63,7 @@
 如果列出幾個正整數並且用綠色、紅色分別標示可行、不可行的數字，
 會有這樣一個表：
 
-\putfig{family1}
+\putfig{family-1}
 
 \noindent
 有趣的我們乎就找到了一整個可行的正整數「家族」，
@@ -79,7 +79,7 @@
 既然已經分成過 2 等份了，
 我們可以試著把其中一邊分成 3 等份，這樣就會有以下的鑲嵌：
 
-\putfig{case_six}
+\putfig{case-six}
 
 \noindent
 這樣的鑲嵌總共用了 $6$ 個長方形，是一個不在 $2+3k$ 家族中的數字，
@@ -88,7 +88,7 @@
 為了避免找之前已經找到的數字，
 我們跳過 4 等分直接考慮把分成 5 等分的情形：
 
-\putfig{case_ten}
+\putfig{case-ten}
 
 \noindent
 發現這是 $n=10$ 的鑲嵌，可以生成家族 $10+3k$。
@@ -96,7 +96,7 @@
 但其實多找到這兩個家族就已經足夠了。
 我們更新一下剛剛寫下來的表：
 
-\putfig{family2}
+\putfig{family-2}
 
 \noindent
 注意到除了我們找到的三個家族之外，
@@ -116,7 +116,7 @@
 既然要佔據 2 個角落，
 那麼那個長方形的長就必須是 1、寬是 $1/2$：
 
-\putfig{case_three}
+\putfig{case-three}
 
 \noindent
 但是顯然地剩下的部分無論水平、垂直的切，
@@ -135,7 +135,7 @@
 （因為這樣會變成 $n=2$ 的情形），
 至少要有一個是「躺著」的：
 
-\putfig{case_four}
+\putfig{case-four}
 
 \noindent
 但是顯然地，如果拉動中間的虛線並同時保持 2 個長方形的比例，
@@ -152,13 +152,13 @@
 如果我們可以讓這個家族從 $n=7$ 開始呢？
 換句話說，是不是可以把 $n=10$ 的鑲嵌中 4 個長方形何在一起變成一個長方形呢？
 
-\putfig{family3}
+\putfig{family-3}
 
 有了這樣的想法之後答案就呼之欲出了：
 我們可以把 $n=10$ 的鑲嵌中左上角的 4 個長方形合併，
 得到 $n=7$ 的鑲嵌了：
 
-\putfig{case_seven}
+\putfig{case-seven}
 
 \noindent
 $n=7$ 的例子之所以這麼難找大概就是因為這個鑲嵌是我們找的所有鑲嵌原型中，
@@ -166,7 +166,7 @@ $n=7$ 的例子之所以這麼難找大概就是因為這個鑲嵌是我們找�
 
 如此一來我們的就可以大方的把答案寫出來了：
 
-\putfig{family4}
+\putfig{family-4}
 
 \noindent
 除了 1 明顯不行以及 3 跟 4 因為太小所以不可行之外，
