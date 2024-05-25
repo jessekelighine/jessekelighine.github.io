@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{article}
-\input{./settings.tex}
+\usepackage{settings}
 %<---------------------------------------------------------------------------->%
-\title{KELIGHINE 遊戲說明}
+\title{\textsc{Kelighine} 遊戲說明}
 \author{陳\ 捷\thanks{\ 一個極其無聊的人。聯絡方式：\href{https://jessekelighine.com}{\texttt{jessekelighine.com}}}}
 \date{2020 年 2 月 \quad 版本 2.1\thanks{\ 最後更新時間： \today。更新紀錄參見表\ \ref{update}。}}
 %<---------------------------------------------------------------------------->%
@@ -398,7 +398,7 @@ Kelighine 基本上是一個類似 Snakes and Ladders 的運氣遊戲，
 	\begin{tabular}{cl}
 		\toprule
 			步驟 & 動作\\
-		\hline
+		\midrule
 			1 & 確認上一棋子的位置並找出有間接排擠效果的格子。\\
 			2 & 擲骰，再確認可不可以晉升。\\
 			  & 若晉升，則選擇上升一階的格，放置銅板，跳到第 6 步。\\
@@ -422,11 +422,11 @@ Kelighine 基本上是一個類似 Snakes and Ladders 的運氣遊戲，
 	\begin{tabular}{cl}
 		\toprule
 			步驟 & 動作\\
-		\hline
+		\midrule
 			1 & 確認對手最後一棋子的位置，在上面放置十塊錢，\\
 			  & 並找出有間接排擠效果的格子。\\
 			2 & 擲骰。\\
-			\hline
+			\midrule
 			3 & 選擇使用的點數並移動棋子。（移動或晉升）\\
 			  & 若選擇晉升 $\implies$ 選擇上升一階的格，放置一塊錢，跳到第 6 步。\\
 			  & \textsf{注意}：同階不能有兩個自己的一塊錢。\\
@@ -447,21 +447,22 @@ Kelighine 基本上是一個類似 Snakes and Ladders 的運氣遊戲，
 	\label{update}
 	\centering
 	\vspace{0.1cm}
-	\begin{tabular}{lcp{8cm}}
+	\begin{tabular}{lcp{9cm}}
 		\toprule
 			版本 & 日期 & 內容 \\
-		\hline
-			1.0.0 & 11 Feb.\! 2020 & 初版。                           \\
-			2.0.0 & 13 Feb.\! 2020 & 遊戲規則版本二大幅修改。         \\
-			2.1.0 & 16 Feb.\! 2020 & 遊戲規則版本二棋子上場規則修正。 \\
-			2.1.1 & 27 Feb.\! 2020 & 錯字改正。                       \\
+		\midrule
+			1.0.0 & \texttt{2020-02-11} & 初版。                           \\
+			2.0.0 & \texttt{2020-02-13} & 遊戲規則版本二大幅修改。         \\
+			2.1.0 & \texttt{2020-02-16} & 遊戲規則版本二棋子上場規則修正。 \\
+			2.1.1 & \texttt{2020-02-27} & 錯字改正。                       \\
                   &                & 按：在自己玩過幾次之後發現在版本二的規則之
 				  下還是有點（非常）無聊，所以我也沒辦法啦，只希望大家可以自己
 				  擴充或跟很小的小朋友玩吧… \\
-			2.1.2 & 16 Jun.\! 2020 & 無聊過來改一下錯字跟字體。       \\
-			2.1.3 & 05 Feb.\! 2021 & 重新用 Xe\TeX\ 來排版。 \\
-			2.1.4 & 05 Aug.\! 2021 & 放到網站上、加上 roadmap。 \\
-			2.1.4 & 12 Dec.\! 2023 & 改聯絡方式。 \\
+			2.1.2 & \texttt{2020-06-16} & 無聊過來改一下錯字跟字體。       \\
+			2.1.3 & \texttt{2021-02-05} & 重新用 Xe\TeX\ 來排版。 \\
+			2.1.4 & \texttt{2021-08-05} & 放到網站上、加上 roadmap。 \\
+			2.1.4 & \texttt{2023-12-12} & 改聯絡方式。 \\
+			2.1.4 & \texttt{2024-05-26} & 重新排版。 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -469,19 +470,19 @@ Kelighine 基本上是一個類似 Snakes and Ladders 的運氣遊戲，
 \begin{figure}
 	\caption{棋盤}
 	\label{a}
-	\centerline{ \includegraphics[scale = 0.4]{Mandala_remastered} }
+	\centerline{ \includegraphics[scale = 0.4]{mandala-remastered} }
 \end{figure}
 
 \begin{figure}
 	\caption{說明棋盤}
 	\label{b}
-	\centerline{ \includegraphics[scale = 0.4]{Mandala_exp} }
+	\centerline{ \includegraphics[scale = 0.4]{mandala-explain} }
 \end{figure}
 
 \begin{figure}
 	\caption{原始國中手繪圖}
 	\label{c}
-	\centerline{ \includegraphics[scale = 0.4]{Mandala_traced-01} }
+	\centerline{ \includegraphics[scale = 0.4]{mandala-traced-01} }
 \end{figure}
 
 \end{document}
