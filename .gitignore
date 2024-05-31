@@ -3,6 +3,7 @@ archive
 
 # TeX
 
+*-SAVE-ERROR
 *.acn
 *.acr
 *.alg
