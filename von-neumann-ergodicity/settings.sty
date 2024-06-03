@@ -36,14 +36,8 @@
 %-----------------------------------------------------------------------------%
 %%% Hyper Reference %%%
 \PassOptionsToPackage{hyphens}{url}
-\usepackage[hidelinks,colorlinks=true]{hyperref}
-\hypersetup{
-hidelinks,
-colorlinks = true,
-linkcolor = myred,
-urlcolor = myblue,
-citecolor = myblue
-}
+\usepackage{hyperref}
+\hypersetup{hidelinks,colorlinks=true,linkcolor=myred,urlcolor=myblue,citecolor=myblue}
 %-----------------------------------------------------------------------------%
 %%% Glossaries & Acronyms %%%
 \usepackage[style=long,acronym]{glossaries}
@@ -81,6 +75,7 @@ citecolor = myblue
 %-----------------------------------------------------------------------------%
 %%% Math %%%
 \usepackage{amsmath,mathtools,amssymb,mathrsfs}
+\usepackage{scalerel}
 % \usepackage{centernot}
 % \usepackage{accents}
 % \usepackage[makeroom]{cancel}
@@ -95,6 +90,7 @@ citecolor = myblue
 \newcommand{\naturals}{\mathbb{N}}
 \newcommand{\one}{\mathbf{1}}
 \newcommand{\divides}{\,|\,}
+\DeclareMathOperator*{\bigplus}{\scalerel*{+}{\sum}}
 %-----------------------------------------------------------------------------%
 %%% Probability %%%
 \let\Pr\relax
@@ -123,6 +119,7 @@ citecolor = myblue
 \renewcommand{\qedsymbol}{$\#$}
 \newcommand{\lemmaautorefname}{Lemma}
 \newcommand{\corollaryautorefname}{Corollary}
+\newcommand{\definitionautorefname}{Definition}
 %-----------------------------------------------------------------------------%
 %%% TikZ Color Box %%%
 \usepackage[breakable]{tcolorbox}

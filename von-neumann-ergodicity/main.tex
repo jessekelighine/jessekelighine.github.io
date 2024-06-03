@@ -427,7 +427,7 @@ Now we want to rephrase what we already understand about Markov chains under the
 \end{theorem}
 \begin{proof}
 	Omitted.
-	See, e.g., Chapter 1.5 in \cite{sarig-2023} for a proof.
+	See, e.g., Chapter 1.5 in \cite{sarig-2023} or Chapter 5.6 in \cite{durett-2019} for a proof.
 \end{proof}
 
 \begin{corollary}\label{cor:ireeducible-iff-ergodicity}
@@ -443,7 +443,7 @@ Now we want to rephrase what we already understand about Markov chains under the
 	we have
 	\begin{align}
 		\mu([\boldsymbol{a}]\cap\mathsf{T}\inv[k][\boldsymbol{b}])
-		&= \mu\left(\bigsqcup_{\boldsymbol{c}\in\mathcal{C}_{k-n_a}}[\boldsymbol{a},\boldsymbol{c},\boldsymbol{b}]\right) \nonumber\\
+		&= \mu\left(\bigplus_{\boldsymbol{c}\in\mathcal{C}_{k-n_a}}[\boldsymbol{a},\boldsymbol{c},\boldsymbol{b}]\right) \nonumber\\
 		&= \mu[\boldsymbol{a}]
 		\left( \sum_{\boldsymbol{c}\in\mathcal{C}_{k-n_a}} \mathsf{P}_{a_{n_a-1},c_0}\cdots\mathsf{P}_{c_{k-n_a-1},b_0} \right)
 		\frac{ \mu[\boldsymbol{b}] }{ \pi_{b_0} } \nonumber\\
@@ -460,24 +460,9 @@ Now we want to rephrase what we already understand about Markov chains under the
 
 	Now suppose that $\mathsf{P}$ is irreducible.
 	Let $E\in\mathcal{B}$ be invariant,
-	then $\exists[\boldsymbol{a}_1],...,[\boldsymbol{a}_m]$ s.t.\ $\mu(E\triangle\bigsqcup_{j=1}^{m}[\boldsymbol{a}_{j}])<\varepsilon$.
-	\footnote{
-		Such $[\boldsymbol{a}_1],...,[\boldsymbol{a}_m]$ always exists.
-		We can check that
-		\begin{align*}
-			\mathcal{B}' \coloneqq
-			\left\{
-			E\in\mathcal{B}:
-			\forall\varepsilon>0\
-			\exists[\boldsymbol{a}_1],...,[\boldsymbol{a}_n]
-			\text{ s.t. }
-			\mu\left(E\triangle\bigsqcup_{j=1}^{n}[\boldsymbol{a}_{j}]\right)<\varepsilon
-			\right\}
-		\end{align*}
-		forms a $\sigma$-algebra.
-		And since $\mathcal{B}'$ contains the cylinders,
-		we have $\mathcal{B}=\mathcal{B}'$.
-	}
+	then $\exists[\boldsymbol{a}_1],...,[\boldsymbol{a}_m]$ s.t.\ $\mu(E\triangle\bigplus_{j=1}^{m}[\boldsymbol{a}_{j}])<\varepsilon$.
+	Since the collection of cylinders forms a semi-algebra,
+	such $[\boldsymbol{a}_1],...,[\boldsymbol{a}_m]$ always exists.
 	Then,
 	\begin{align*}
 		\mu(E)
