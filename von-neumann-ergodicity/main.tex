@@ -443,9 +443,11 @@ Now we want to rephrase what we already understand about Markov chains under the
 	we have
 	\begin{align}
 		\mu([\boldsymbol{a}]\cap\mathsf{T}\inv[k][\boldsymbol{b}])
-		&= \mu\left(\bigplus_{\boldsymbol{c}\in\mathcal{C}_{k-n_a}}[\boldsymbol{a},\boldsymbol{c},\boldsymbol{b}]\right) \nonumber\\
+		&= \mu \left(\bigplus_{\boldsymbol{c}\in\mathcal{C}_{k-n_a}}[\boldsymbol{a},\boldsymbol{c},\boldsymbol{b}]\right) \nonumber\\
 		&= \mu[\boldsymbol{a}]
-		\left( \sum_{\boldsymbol{c}\in\mathcal{C}_{k-n_a}} \mathsf{P}_{a_{n_a-1},c_0}\cdots\mathsf{P}_{c_{k-n_a-1},b_0} \right)
+		\left(
+		\sum_{\boldsymbol{c}\in\mathcal{C}_{k-n_a}} \mathsf{P}_{a_{n_a-1},c_0}\cdots\mathsf{P}_{c_{k-n_a-1},b_0}
+		\right)
 		\frac{ \mu[\boldsymbol{b}] }{ \pi_{b_0} } \nonumber\\
 		&= \mu[\boldsymbol{a}] \mu[\boldsymbol{b}] \frac{ \mathsf{P}_{a_{n_a-1},b_0}^{k-n_a} }{ \pi_{b_0} }
 		\label{eq:cylinders-rearrange}
@@ -524,6 +526,11 @@ Now we want to rephrase what we already understand about Markov chains under the
 	However, notice that \autoref{fig:periodic} has period $2$.
 	% since if we are starting from state $1$, we must return to state $1$ on step $2$, set $4$, and so on.
 	Hence, $\mathsf{P}_{11}^{n}$ converges to $0.5$ in \autoref{fig:aperiodic} but fails to converge in \autoref{fig:periodic}.
+\end{remark}
+
+\begin{remark}
+	\autoref{cor:ireeducible-iff-ergodicity} can be extended to an if-and-only-if statement.
+	The reverse statement can be proven using techniques similar to the proof of \autoref{cor:ireeducible-iff-ergodicity}.
 \end{remark}
 
 \printglossaries
