@@ -1,20 +1,18 @@
-# Makefile
+# Latex Makefile
 
-MAIN := index
-STYLE := style.css
+MAIN := main
+NAME := covariance-matrix
 
 .PHONY: all clean
 
-all: $(MAIN).html
+all: $(NAME).pdf
 
-$(MAIN).html: $(MAIN).md $(STYLE)
-	pandoc \
-		$(MAIN).md \
-		--number-sections \
-		--standalone --mathjax \
-		--css $(STYLE) \
-		--output $@
-
-FILES  = "*.html"
 clean:
-	eval "rm -rf ${FILES}"
+	latexmk -C
+	rm -rf $(NAME).pdf
+
+$(NAME).pdf: $(MAIN).pdf
+	cp $(MAIN).pdf $(NAME).pdf
+
+$(MAIN).pdf: $(MAIN).tex settings.sty figures/*.pdf
+	latexmk -xelatex -synctex=1 $(MAIN).tex

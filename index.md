@@ -31,14 +31,14 @@ header-includes:
 
 ## Statistics
 
-- [**Definiteness of Covariance Matrices**](./covariance-matrix):
+- [**Definiteness of Covariance Matrices**](./covariance-matrix/covariance-matrix.pdf):
   What do we mean when we compare covariances matrices through positive definiteness?
   A short intuitive interpretation.
 - [**James-Stein Estimator**](james-stein_estimator/james-stein_estimator.pdf):
   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation.
 - [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf):
   A brief introduction to Generalized Method of Moments, aka *GMM*.
-- [**Fisher Information**](./fisher-information):
+- [**Fisher Information**](./fisher-information/fisher-information.pdf):
   A brief introduction to Fisher Information and some related ideas.
 - [**Markov Chain**](markov_chain/markov_chain.pdf):
   Concepts and results related to Markov chain,

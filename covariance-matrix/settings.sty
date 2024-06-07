@@ -12,7 +12,7 @@
 %-----------------------------------------------------------------------------%
 %%% Math %%%
 \usepackage{amsmath,mathtools,amssymb,mathrsfs}
-\DeclareMathOperator{\Exp}{\mathbb{E}}
+\DeclareMathOperator{\Exp}{\text{\textrm{\upshape\textbf{E}}}}
 \DeclareMathOperator{\Var}{\text{Var}}
 \newcommand{\E}[2][]{\Exp_{#1}[#2]}
 \newcommand{\var}[2][]{\Var_{#1}[#2]}
@@ -49,25 +49,12 @@
 {\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
 \setdefaultdate{\meinesdatum}
 %-----------------------------------------------------------------------------%
-%%% xeCJK %%%
-\usepackage{xeCJK}
-\newcommand{\chmainfont}{GenWanMinTJ-L}
-\newcommand{\chsansfont}{NotoSansCJKkr-Regular}
-\newcommand{\chboldfont}{NotoSansCJKkr-Bold}
-\newcommand{\chmonofont}{jf-openhuninn-2.0}
-\newcommand{\chitalfont}{LXGWWenKai-Regular}
-\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
-\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
-\setCJKmonofont{\chmonofont}
-\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
-\setlength\parindent{2em}
-%-----------------------------------------------------------------------------%
 %%% Font %%%
-\usepackage[math-style=ISO,bold-style=ISO]{unicode-math}
-\setmainfont{EB Garamond}
-\setsansfont{DINMittelschriftStd}
+% \usepackage[math-style=ISO,bold-style=ISO]{unicode-math}
+% \setmainfont{EB Garamond}
+% \setsansfont{DINMittelschriftStd}
 % \setmonofont{Monaco}
-\setmathfont{Garamond-Math}[StylisticSet={7,9}]
+% \setmathfont{Garamond-Math}[StylisticSet={7,9}]
 %-----------------------------------------------------------------------------%
 %%% TikZ Color Box %%%
 \usepackage{tcolorbox}
@@ -82,4 +69,17 @@ colback=#1!5,borderline west={3pt}{0pt}{#1}}}
 \tcolorboxenvironment{definition}{mycolorbox={myred}}
 \tcolorboxenvironment{remark}{mycolorbox={black}}
 \makeatother
+%-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{GenWanMinTJ-L}
+\newcommand{\chsansfont}{NotoSansCJKkr-Regular}
+\newcommand{\chboldfont}{NotoSansCJKkr-Bold}
+\newcommand{\chmonofont}{jf-openhuninn-2.0}
+\newcommand{\chitalfont}{LXGWWenKaiTC-Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
+\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
+\setlength\parindent{2em}
 %-----------------------------------------------------------------------------%

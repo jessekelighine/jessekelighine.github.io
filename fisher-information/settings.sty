@@ -1,0 +1,102 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Dinkus %%%
+\newcommand{\dinkus}{\vspace{1em}\centerline{$*\ *\ *$}\vspace{1em}}
+%-----------------------------------------------------------------------------%
+%%% Section Font %%%
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\raggedright}
+\titleformat*{\subsection}{\normalsize\bfseries\raggedright}
+%-----------------------------------------------------------------------------%
+%%% Date Time %%%
+\usepackage{datetime}
+\newtimeformat{mytime}%
+{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}} % \THESECOND
+\settimeformat{mytime}%
+\newdateformat{mydate}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\mydate}
+%-----------------------------------------------------------------------------%
+%%% Minimal Title %%%
+\makeatletter\def\@maketitle{%
+\noindent{\bfseries\@title}%
+\hfill\texttt{\@date}\\%
+\raggedleft\ttfamily\@author%
+\par\vskip1em}\makeatother
+%-----------------------------------------------------------------------------%
+%%% Color %%%
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
+%%% Hyper Reference %%%
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks,colorlinks=true,
+linkcolor=myred,
+urlcolor=myblue,
+citecolor=myblue}
+% \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\raum}{\mathrel{\phantom{=}}}
+% \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%-----------------------------------------------------------------------------%
+%%% Probability %%%
+\let\Pr\relax
+\DeclareMathOperator{\Pr}{\text{\textrm{\upshape\textbf{P}}}}
+\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
+\DeclareMathOperator{\var}{\text{\textrm{\upshape\textbf{Var}}}}
+\DeclareMathOperator{\cov}{\text{\textrm{\upshape\textbf{Cov}}}}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\asto}{\overset{as}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pr}[1]{\Pr\!\left\{#1\right\}}
+\newcommand{\given}[1][]{\,#1|\,}
+%-----------------------------------------------------------------------------%
+\newcommand{\symbT}{\top}
+\newcommand{\T}{^{\symbT}}
+\newcommand{\inv}{^{-1}}
+\newcommand{\invT}{^{-\symbT}}
+%-----------------------------------------------------------------------------%
+%%% Math Notes %%%
+\usepackage{amsthm}
+\newtheoremstyle{this}{}{}{\slshape}{}{\bfseries}{.}{.5em}{}\theoremstyle{this}
+\newtheorem{intuition}{Intuition}%[section]
+\renewcommand{\qedsymbol}{$\#$}
+\newcommand{\intuitionautorefname}{Intuition}
+%-----------------------------------------------------------------------------%
+%%% TikZ Color Box %%%
+\usepackage[breakable]{tcolorbox}
+\tcbuselibrary{theorems,skins}
+\makeatletter
+\tcbset{mycolorbox/.style={
+enhanced,sharp corners,frame hidden,boxrule=0sp,
+left=8pt,right=4pt,top=4pt,bottom=4pt,
+colback=#1!5,borderline west={3pt}{0pt}{#1}}}
+\tcolorboxenvironment{intuition}{mycolorbox={myred}}
+\makeatother
+%-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{GenWanMinTJ-L}
+\newcommand{\chsansfont}{NotoSansCJKkr-Regular}
+\newcommand{\chboldfont}{NotoSansCJKkr-Bold}
+\newcommand{\chmonofont}{jf-openhuninn-2.0}
+\newcommand{\chitalfont}{LXGWWenKaiTC-Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
+\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
+\setlength\parindent{2em}
+%-----------------------------------------------------------------------------%
