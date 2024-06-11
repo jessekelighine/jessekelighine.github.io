@@ -53,7 +53,7 @@ header-includes:
 - [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity/von-neumann-ergodicity.pdf):
   An introduction to von Neumann's Ergodicity Theroem and its connection with convergence of Markov Chains.
 
-## Terminal Stuff
+## Code Stuff
 
 - [**vindent.vim**](https://github.com/jessekelighine/vindent.vim):
   A *minimal*, *modern* and *highly customizable* Vim plugin that provides indentation-based navigation motions and text objects by me.
