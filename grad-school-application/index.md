@@ -1,7 +1,7 @@
 ---
 title:  "《申請覺迷錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2024-04-18"
+date:   "2024-06-13"
 header-includes:
 	<link rel="icon" href="/resources/sheep_color.png">
 ---
@@ -230,7 +230,9 @@ header-includes:
 
 ### GRE 要背單字
 
-基本上 GRE 的 *Verbal 是完全可以透過背單字衝高*；
+基本上 GRE 的 *Verbal 是完全可以透過背單字衝高*，
+我的建議是先背 1000 單（像是 Magoosh 就有提供 1000 單），
+因為如果一開始就背 3000 單一定背不完、效果不好；
 那如果你 GRE 的 **Quantitative 沒有滿分就是亞洲之恥**。 [^disgrace]
 至於 Quantitative 的準備方式，
 就是練習個兩三次模擬試題就可以了。
@@ -475,9 +477,9 @@ CV 用最簡短的言語條列式的寫下你的經歷，
   但是不要一直看 GradCafe，
   只會讓自己心煩意亂而已。
   但是可以慫恿你的同學去看 😂。
-- 原本的如意算盤是一間 PhD 都不會上，
-  然後就開開心心的去德國放羊，
-  沒想到又要到美國繼續捲了。
+- 原本以為是一間 PhD 都不會上，
+  然後就可以去德國放羊，
+  沒想到有幸又要到美國繼續捲了。
   期許自己未來能盡心就好。
 - 非常幸運可以上哥倫比亞大學，
   感謝自己的父母、感謝台灣大學的老師們、感謝時常出沒 645 的同學們。
