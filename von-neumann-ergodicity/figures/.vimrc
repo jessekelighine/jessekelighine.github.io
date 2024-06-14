@@ -1,6 +1,5 @@
 " vimrc
 
-call textoggle#Clear()
-call textoggle#Set('tikz')
-call textoggle#Set('notes')
-call textoggle#Reload()
+call textoggle#Begin()
+Load tikz
+call textoggle#End()
