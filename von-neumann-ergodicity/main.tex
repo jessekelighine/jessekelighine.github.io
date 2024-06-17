@@ -23,7 +23,7 @@
 
 \begin{definition}[Measure Preserving System]
 	A \emph{\gls{mps}} is a quadruple $(\Omega,\mathcal{B},\mu,\mathsf{T})$
-	where $(\Omega,\mathcal{B},\mu)$ is a measure space, and
+	where $\left(\Omega,\mathcal{B},\mu\right)$ is a measure space, and
 	\begin{enumerate}
 		\item $\mathsf{T}:\Omega\to \Omega$ is a measurable transformation,
 		\item $\mu$ is $\mathsf{T}$-invariance, i.e., $\mu(\mathsf{T}\inv E)=\mu(E)$ $\forall E\in\mathcal{B}$.
@@ -108,10 +108,10 @@
 		\item(2.$\implies$3.)
 			Let $f$ be a measurable function s.t.\ $f\circ\mathsf{T}=f$ a.e.
 			For any $y\in\reals$, we have
-			$[f>y]\triangle\mathsf{T}\inv[f>y]\subseteq[f\neq f\circ\mathsf{T}]$,
+			$[f>y]\triangle\mathsf{T}\inv{[f>y]}\subseteq[f\neq f\circ\mathsf{T}]$,
 			hence
 			\begin{align*}
-				\mu([f>y]\triangle\mathsf{T}\inv[f>y]) = 0.
+				\mu([f>y]\triangle\mathsf{T}\inv{[f>y]}) = 0.
 			\end{align*}
 			By the assumption, either $\mu[f>y]=0$ or $\mu[f\leq y]=0$, i.e.,
 			either $f>y$ a.e.\ or $f\leq y$ a.e.
