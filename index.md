@@ -1,13 +1,13 @@
 ---
 title:  "陳捷	Jesse C. Chen"
-author: "jcc at jessekelighine com"
+author: "jcc at jessekelighine dot com"
 header-includes:
 	<link rel="icon" href="resources/sheep_color.png">
 ---
 
 <img class="front_pic"
 	alt="cover-image"
-	src="resources/Griechisch-lateinisches_Quadrat_Ordnung_10-01.png"
+	src="resources/griechisch-lateinisches-quadrat-ordnung.webp"
 	style="
 		width: 100%;
 		display: block;

@@ -17,7 +17,7 @@ header-includes:
 <a href="../rulebook/rulebook.pdf">
 <img alt="madala"		 src="resources/Mandala_remastered.png"									style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
 </a>
-<img alt="latin-square"       src="resources/Griechisch-lateinisches_Quadrat_Ordnung_10-01.png" style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
+<img alt="latin-square"       src="resources/griechisch-lateinisches-quadrat-ordnung.png" style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
 <img alt="waste-time"            src="resources/i_waste_time.png"                                       style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
 <img alt="freedom-instrument" src="resources/freedom-instrement-01.png"                         style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
 <img alt="sick" src="resources/sick.png"                         style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
