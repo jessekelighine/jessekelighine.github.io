@@ -1,6 +1,6 @@
 \documentclass{standalone}
 %<--------------------------------------------------------------------------->%
-\input{colors.tex}
+\usepackage{settings-colors}
 %<--------------------------------------------------------------------------->%
 %%% TikZ %%%
 \usepackage{tikz}
@@ -9,18 +9,18 @@
 % \usetikzlibrary{intersections,topaths}
 % \usetikzlibrary{decorations.markings}
 %<--------------------------------------------------------------------------->%
-%%% TikZ: Mark Angles %%%
-\newcommand{\MarkRightAngle}[5][]{%
-\draw[#1] let \p1=($(#3)-(#4)$),\n1={1/veclen(\x1,\y1)},\p2=($(#4)-(#5)$),\n2={1/veclen(\x2,\y2)} in%
-($(#4)!#2!(#5)$) -- ++(\x1*\n1*#2,\y1*\n1*#2) -- ++(\x2*\n2*#2,\y2*\n2*#2);}
-\newcommand{\MarkAngle}[5]["$\theta$",->,draw=blue!80,fill=blue!20]{\pic[#1,angle radius=#2] {angle = #3--#4--#5};}
+\usepackage{settings-markangle}
 %<--------------------------------------------------------------------------->%
 
 \begin{document}
 
-\begin{tikzpicture}[thick,line cap=round]
+\begin{tikzpicture}[thick,line cap=round,scale=1]
 	\tikzstyle{jiao}=[solid,circle,draw,fill=white,inner sep=.8pt];
-	\input{tikzsettings.tex}
+	\tikzstyle{rightangle}=[opacity=0.2];
+	\tikzstyle{normalangle}=[fill=bla,opacity=0.2];
+	\tikzstyle{help}=[dotted,opacity=0.2];
+	\newcommand{\rightanglesize}{0.2cm}
+	\newcommand{\anglesize}{0.5cm}
 	\newcommand{\length}{3.5cm}
 	\coordinate (A)  at (0,0);
 	\coordinate (B)  at (\length,0);
@@ -83,8 +83,10 @@
 	\node[jiao,label=below right :{$I$} ] at (I)  {};
 	\node[jiao,label=below right :{$M$} ] at (M)  {};
 	\node[jiao,label=right       :{$F'$}] at (a)  {};
+	\node[jiao,label=below       :{$O$}]  at (c)  {};
 	\node[jiao,label=below right :{$J$} ] at (BF) {};
 	\node[jiao,label=below       :{$J'$}] at (HI) {};
+	\node[jiao,label=above right :{$N$} ] at (BC) {};
 	\node[jiao,label=above       :{$K$} ] at (FG) {};
 	\node[jiao,label=left        :{$K'$}] at (AH) {};
 	\node[jiao,label=above       :{$L$} ] at (CG) {};

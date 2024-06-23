@@ -26,6 +26,8 @@ header-includes:
   數學的精神不在於複雜的計算，而是在於找尋規律與邏輯的思考。
   牛津大學的數學口試的其中一個問題不需要任何的計算就可以回答，
   你可以通過嗎？
+- [**一個關於剪紙的定理**](./cutting-shapes):
+  你能把一個圖形剪貼成另一個圖形嗎？
 - [**RPN Calculator**](https://jessekelighine.shinyapps.io/reverse-polish/):
   An online *Reverse Polish Notation* (RPN) calculator that also converts RPN into infix notation.
 

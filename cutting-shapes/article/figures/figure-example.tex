@@ -1,0 +1,136 @@
+\documentclass{standalone}
+%<--------------------------------------------------------------------------->%
+\usepackage{settings-colors}
+%<--------------------------------------------------------------------------->%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{through}
+% \usetikzlibrary{fit}
+\usetikzlibrary{angles,quotes}
+\usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+\usepackage{settings-markangle}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\begin{tikzpicture}[thick,line cap=round]
+	\tikzstyle{bai}=[solid,circle,draw,inner sep=.8pt,fill=white];
+	\tikzstyle{hei}=[solid,circle,draw,inner sep=.8pt,fill];
+	\begin{scope}[yshift=0.25cm]
+		\newcommand{\length}{2.4cm}
+		%% Define Coordinates
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (\length,0);
+		\coordinate (C) at (\length,\length);
+		\coordinate (D) at (0,\length);
+		\coordinate (AD) at (0,\length/2);
+		\coordinate (BC) at (\length,\length/2);
+		\coordinate (O) at (\length/2,{\length/2-\length*sqrt(3)/6});
+		\coordinate (I) at ($(AD)+({\length/sqrt(sqrt(3))},0)$);
+		\path[name path=temp1] (BC) arc (30:150:{\length*sqrt(3)/3});
+		\path[name path=temp2] (I) arc (0:30:{\length/sqrt(sqrt(3))});
+		\path[name intersections={of=temp1 and temp2}];
+		\coordinate (X) at (intersection-1);
+		\coordinate (AB) at ($(X)!1!60:(AD)$);
+		\begin{scope}
+			\clip (A) rectangle (C);
+			\path[name path=temp1] (BC) -- ($(BC)!2.1!(X)$);
+			\path[name path=temp2] (C) -- (D);
+			\path[name intersections={of=temp1 and temp2}];
+			\coordinate (CD) at (intersection-1);
+		\end{scope}
+		%% Peices
+		\path[fill=gel] (A) -- (AB) -- (X) -- (AD) --cycle;
+		\path[fill=bla,opacity=0.2] (AB) -- (B) -- (BC) -- (X) --cycle;
+		%% Outline
+		\draw (A) -- (B) -- (C) -- (D) --cycle;
+		%% Cutting Lines
+		\draw[dotted,opacity=0.3] (AD) -- (X);
+		\draw[dotted,opacity=0.3] (AB) -- (X);
+		\draw[dotted,opacity=0.3] (BC) -- (CD);
+		%% Mark Angles
+		\MarkAngle[fill=bla,opacity=0.3]{0.3cm}{CD}X{BC}
+		% \MarkRightAngle[opacity=0.2]{0.2cm}BAD
+		\MarkRightAngle[opacity=0.2]{0.2cm}DCB
+		% \MarkRightAngle[opacity=0.2]{0.2cm}CBA
+		\MarkRightAngle[opacity=0.2]{0.2cm}ADC
+		%% Mark Edges
+		\draw[very thick,draw=rot] (X) -- (AD);
+		\draw[very thick,draw=rot] (X) -- (AB);
+		\draw[very thick,draw=bla] (A) -- (AD);
+		\draw[very thick,draw=bla] (D) -- (AD);
+		\draw[very thick,draw=bla] (C) -- (BC);
+		\draw[very thick,draw=bla] (B) -- (BC);
+		%% Nodes
+		\node[bai] at (A) {};
+		\node[bai] at (B) {};
+		\node[bai] at (C) {};
+		\node[bai] at (D) {};
+		\node[bai] at (X) {};
+		\node[bai] at (AB) {};
+		\node[bai] at (BC) {};
+		\node[bai] at (CD) {};
+		\node[bai] at (AD) {};
+	\end{scope}
+	\begin{scope}[xshift=3cm]
+		\newcommand{\length}{3.6473} % length * 2 / sqrt(sqrt(3)) = length * 1.5197
+		%% Define Coordinates
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (\length,0);
+		\coordinate (C) at (60:\length);
+		\coordinate (AC) at ($(A)!0.5!(C)$);
+		\coordinate (BC) at ($(B)!0.5!(C)$);
+		\begin{scope}
+			\clip (A) -- (B) -- (C) --cycle;
+			\path[name path=temp1] let \n1={sqrt(sqrt(3))*\length/2} in ($(BC)+(-\n1,0)$) arc (180:240:\n1);
+			\path[name path=temp2] (A) -- (B);
+			\path[name intersections={of=temp1 and temp2}];
+			\coordinate (J) at (intersection-1);
+			\coordinate (K) at ($(J)+({\length/2},0)$);
+		\end{scope}
+		\coordinate (K') at ($(J)!(K)!(BC)$);
+		\coordinate (AC') at ($(J)!(AC)!(BC)$);
+		%% Peices
+		\path[fill=gel] (C) -- (AC) -- (AC') -- (BC) --cycle;
+		\path[fill=bla,opacity=0.2] (K) -- (B) -- (BC) -- (K') --cycle;
+		%% Outlline
+		\draw (A) -- (B) -- (C) --cycle;
+		%% Cutting Lines
+		\draw[dotted,opacity=0.3] (J) -- (BC);
+		\draw[dotted,opacity=0.3] (K) -- (K');
+		\draw[dotted,opacity=0.3] (AC) -- (AC');
+		%% Mark Angles
+		\MarkAngle[fill=bla,opacity=0.3]{0.3cm}BAC
+		\MarkAngle[fill=bla,opacity=0.3]{0.3cm}CBA
+		\MarkAngle[fill=bla,opacity=0.3]{0.3cm}ACB
+		% \MarkRightAngle[opacity=0.2]{0.2cm}{K}{K'}{BC}
+		% \MarkRightAngle[opacity=0.2]{0.2cm}{BC}{AC'}{AC}
+		\MarkRightAngle[opacity=0.2]{0.2cm}{J}{AC'}{AC}
+		\MarkRightAngle[opacity=0.2]{0.2cm}{J}{K'}{K}
+		%% Mark Edges
+		\draw[very thick,draw=rot] (C) -- (AC);
+		\draw[very thick,draw=rot] (C) -- (BC);
+		\draw[very thick,draw=rot] (A) -- (AC);
+		\draw[very thick,draw=rot] (B) -- (BC);
+		\draw[very thick,draw=bla] (AC) -- (AC');
+		\draw[very thick,draw=bla] (K) -- (K');
+		%% Nodes
+		\node[bai] at (A) {};
+		\node[bai] at (B) {};
+		\node[bai] at (C) {};
+		\node[bai] at (J) {};
+		\node[bai] at (K) {};
+		\node[bai] at (BC) {};
+		\node[bai] at (AC) {};
+		\node[bai] at (AC') {};
+		\node[bai] at (K') {};
+	\end{scope}
+	\begin{scope}[shift={(2.75,2)}]
+		\draw[line width=0.5mm,<->] (0,0) to[out=30,in=150] (1,0);
+	\end{scope}
+\end{tikzpicture}
+
+\end{document}

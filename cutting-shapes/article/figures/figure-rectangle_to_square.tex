@@ -1,6 +1,6 @@
 \documentclass{standalone}
 %<--------------------------------------------------------------------------->%
-\input{colors.tex}
+\usepackage{settings-colors}
 %<--------------------------------------------------------------------------->%
 %%% TikZ %%%
 \usepackage{tikz}
@@ -10,18 +10,18 @@
 % \usetikzlibrary{intersections,topaths}
 % \usetikzlibrary{decorations.markings}
 %<--------------------------------------------------------------------------->%
-%%% TikZ: Mark Angles %%%
-\newcommand{\MarkRightAngle}[5][]{%
-\draw[#1] let \p1=($(#3)-(#4)$),\n1={1/veclen(\x1,\y1)},\p2=($(#4)-(#5)$),\n2={1/veclen(\x2,\y2)}in%
-($(#4)!#2!(#5)$) -- ++(\x1*\n1*#2,\y1*\n1*#2) -- ++(\x2*\n2*#2,\y2*\n2*#2);}
-\newcommand{\MarkAngle}[5]["$\theta$",->,draw=blue!80,fill=blue!20]{\pic[#1,angle radius=#2] {angle = #3--#4--#5};}
+\usepackage{settings-markangle}
 %<--------------------------------------------------------------------------->%
 
 \begin{document}
 
-\begin{tikzpicture}[thick,line cap=round]
+\begin{tikzpicture}[thick,line cap=round,scale=0.9]
 	\tikzstyle{jiao}=[solid,circle,draw,fill=white,inner sep=.8pt];
-	\input{tikzsettings.tex}
+	\tikzstyle{rightangle}=[opacity=0.2];
+	\tikzstyle{normalangle}=[fill=bla,opacity=0.2];
+	\tikzstyle{help}=[dotted,opacity=0.2];
+	\newcommand{\rightanglesize}{0.2cm}
+	\newcommand{\anglesize}{0.5cm}
 	\newcommand{\width}{5cm}
 	\newcommand{\height}{2cm}
 	\newcommand{\square}{{sqrt(\width*\height)}}
@@ -34,14 +34,22 @@
 	\coordinate (G) at (0,\square);
 	\coordinate (H) at ($(F)-(0,\height)$);
 	\coordinate (I) at ($(C)-(\square,0)$);
+	%%
+	\path[fill=gel] (B) -- (E) -- (H) --cycle;
+	\path[fill=gel] (I) -- (D) -- (G) --cycle;
+	\path[fill=bla,opacity=0.2] (I) -- (H) -- (E) -- (A) -- (D) --cycle;
+	%%
 	\draw (A) rectangle (C);
 	\draw (A) rectangle (F);
 	\draw[opacity=0.3,dotted] (B) -- (G);
 	%% Final
-	\MarkAngle[normalangle]{\anglesize}BIC;
-	\MarkAngle[normalangle]{\anglesize}HGF;
-	\MarkRightAngle[rightangle]{\rightanglesize}ICB;
-	\MarkRightAngle[rightangle]{\rightanglesize}GFH;
+	% \MarkAngle[normalangle]{\anglesize}BIC;
+	% \MarkAngle[normalangle]{\anglesize}HGF;
+	% \MarkRightAngle[rightangle]{\rightanglesize}ICB;
+	% \MarkRightAngle[rightangle]{\rightanglesize}GFH;
+	\MarkRightAngle[rightangle]{\rightanglesize}BEH;
+	\MarkRightAngle[rightangle]{\rightanglesize}IDG;
+	%%
 	\draw[very thick,rot] (F) -- (H);
 	\draw[very thick,rot] (B) -- (C);
 	\draw[very thick,gel] (F) -- (G);
@@ -49,6 +57,10 @@
 	\draw[very thick,gel] (A) -- (E);
 	\draw[very thick,bla] (E) -- (B);
 	\draw[very thick,bla] (D) -- (I);
+	\draw[very thick,rot] (A) -- (D);
+	% \draw[very thick,gra] (E) -- (H);
+	% \draw[very thick,gra] (D) -- (G);
+	%%
 	\node[jiao,label=below left  :{$A$}] at (A) {};
 	\node[jiao,label=below right :{$B$}] at (B) {};
 	\node[jiao,label=above right :{$C$}] at (C) {};
@@ -56,8 +68,8 @@
 	\node[jiao,label=below       :{$E$}] at (E) {};
 	\node[jiao,label=above right :{$F$}] at (F) {};
 	\node[jiao,label=above left  :{$G$}] at (G) {};
-	\node[jiao,label=below left  :{$H$}] at (H) {};
-	\node[jiao,label=below left  :{$I$}] at (I) {};
+	\node[jiao,label=above right :{$H$}] at (H) {};
+	\node[jiao,label=above right :{$I$}] at (I) {};
 \end{tikzpicture}
 
 \end{document}

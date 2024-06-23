@@ -1,0 +1,71 @@
+\documentclass{standalone}
+%<--------------------------------------------------------------------------->%
+\usepackage{settings-colors}
+%<--------------------------------------------------------------------------->%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% \usetikzlibrary{through}
+% \usetikzlibrary{fit}
+% \usetikzlibrary{angles,quotes}
+% \usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+\usepackage{settings-markangle}
+%<--------------------------------------------------------------------------->%
+
+\begin{document}
+
+\begin{tikzpicture}[thick,line cap=round]
+	\tikzstyle{bai}=[solid,circle,draw,inner sep=.8pt,fill=white];
+	\tikzstyle{hei}=[solid,circle,draw,inner sep=.8pt,fill];
+	\newcommand{\length}{1.8cm}
+	\begin{scope}
+		%% Coordinates
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (50:\length);
+		\coordinate (C) at (-50:\length);
+		\coordinate (Y) at ($(B)+(0.8*0.52*\length, 0.05*\length)$);
+		\coordinate (Z) at ($(C)+(0.8*0.48*\length,-0.1*\length)$);
+		%%
+		\path[fill=bla,opacity=0.2] ($(Y)!0.1!(B)$) -- (B) -- (C) -- ($(Z)!0.2!(C)$) --cycle;
+		\path[fill=gel] (A) -- (B) -- (C);
+		%% Edges
+		\draw (A) -- (B) -- (Y);
+		\draw (A) -- (C) -- (Z);
+		\draw[dashed,rot] (B) -- (C);
+		%% Nodes
+		\node[bai,label=left:{$A$}] at (A) {};
+		\node[bai,label=left:{$B$}] at (B) {};
+		\node[bai,label=left:{$C$}] at (C) {};
+	\end{scope}
+	\begin{scope}[xshift=2.8cm]
+		%% Coordinates
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (50:\length);
+		\coordinate (C) at (-50:\length);
+		\coordinate (Y) at ($(B)+(0.8*0.52*\length, 0.05*\length)$);
+		\coordinate (Z) at ($(C)+(0.8*0.48*\length,-0.1*\length)$);
+		\coordinate (D) at (5:0.4*\length);
+		\coordinate (E) at (-20:0.5*\length);
+		\coordinate (W) at ($(D)+(0.55*\length,0.05*\length)$);
+		\coordinate (X) at ($(E)+(0.55*\length,-0.1*\length)$);
+		%%
+		\path[fill=bla,opacity=0.2] ($(Y)!0.1!(B)$) -- ($(W)!0.1!(D)$) -- (D) -- (A) -- (B) --cycle;
+		\path[fill=gel] (D) -- (E) -- ($(X)!0.2!(E)$) -- ($(Z)!0.1!(C)$) -- (C) -- (A) --cycle;
+		%% Edges
+		\draw (A) -- (B) -- (Y);
+		\draw (A) -- (C) -- (Z);
+		\draw (W) -- (D) -- (E) -- (X);
+		\draw[dotted,opacity=0.2] (B) -- (C);
+		\draw[dashed,rot] (A) -- (D);
+		%% Nodes
+		\node[bai,label=left:{$A$}] at (A) {};
+		\node[bai,label=left:{$B$}] at (B) {};
+		\node[bai,label=left:{$C$}] at (C) {};
+		\node[bai,label=above:{$D$}] at (D) {};
+		\node[bai] at (E) {};
+	\end{scope}
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,94 @@
+\documentclass{standalone}
+%<--------------------------------------------------------------------------->%
+\usepackage{settings-colors}
+%<--------------------------------------------------------------------------->%
+%%% TikZ %%%
+\usepackage{tikz}
+\usetikzlibrary{calc}
+% \usetikzlibrary{through}
+% \usetikzlibrary{fit}
+% \usetikzlibrary{angles,quotes}
+\usetikzlibrary{intersections,topaths}
+% \usetikzlibrary{decorations.markings}
+%<--------------------------------------------------------------------------->%
+\usepackage{settings-markangle}
+%<--------------------------------------------------------------------------->%
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+\begin{document}
+
+\begin{tikzpicture}[thick,line cap=round,scale=1.4]
+	\tikzstyle{bai}=[thick,solid,circle,draw,inner sep=.8pt,fill=white];
+	\tikzstyle{hei}=[opacity=1,solid,circle,inner sep=.5pt,fill=black];
+	%% Define Coordinates
+	\coordinate (A) at (0,0);
+	\coordinate (B) at (2,0);
+	\coordinate (C) at (2,2);
+	\coordinate (D) at (0,2);
+	\coordinate (BC) at (2,0.5*2);
+	\coordinate (AD) at (0,0.5*2);
+	%%
+	\draw (A) -- (B) -- (C) -- (D) --cycle;
+	%%
+	\begin{scope}[opacity=0.5,thin,densely dotted]
+		\draw (C) -- node[hei,pos=1]{} (2,-2) node[label=left:{$C'$}]{};
+		\draw[name path=temp1] (2,-2) arc (-90:90:2);
+		\path[name path=temp2] (BC) -- (2*2,0.5*2);
+		\path[name intersections={of=temp1 and temp2}];
+		\draw (BC) node[hei,label=below right:{$E$}]{}  -- (intersection-1) node[hei,label=below left:{$F$}]{};
+		\draw (BC) -- +(-0.5*2,0) node[hei,label=below left:{$G$}]{};
+		\MarkRightAngle[opacity=0.2,solid]{0.12cm}{intersection-1}{BC}{C}
+		% \node[hei,label=below right:{$H$}] at ($(intersection-1)!0.5!($(BC)+(-0.5*2,0)$)$) {};
+		\draw[name path=temp1] (intersection-1) arc (0:180:{(1+sqrt(3))/2});
+		\path[name path=temp2] (BC) -- +(0,1.4);
+		\path[name intersections={of=temp1 and temp2}];
+		\draw (BC) -- (intersection-1);
+		\draw (intersection-1) node[hei,label=above:{$I$}]{} -- ($(BC)+(-1,0)$);
+		\path[name path=temp1] (C) -- +($($(BC)+(-1,0)$)-(intersection-1)$);
+		\path[name path=temp2] (BC) -- +(-1,0);
+		\path[name intersections={of=temp1 and temp2}];
+		\draw (intersection-1) node[hei,label=below left:{$J$}]{} -- (C);
+		\draw (BC) arc (0:-180:{1/sqrt(sqrt(3))}) node[pos=1,hei,label=below left:{$K$}]{};
+		\draw ($(BC)+({-2/sqrt(sqrt(3))},0)$) -- ($(BC)+(-1,0)$);
+		\draw[name path=temp1] ($(BC)+(130:{2/sqrt(sqrt(3))})$) arc (130:180:{2/sqrt(sqrt(3))});
+		\path[name path=temp2] (C) -- (D);
+		\path[name intersections={of=temp1 and temp2}];
+		\draw (intersection-1) coordinate (CD) node[hei,label=above left:{$L$}]{} -- (BC); 
+		\path[name path=temp1] ($(AD)+(-5:{2/sqrt(sqrt(3))})$) arc (-5:25:{2/sqrt(sqrt(3))});
+		\path[name path=temp2] (intersection-1) -- (BC);
+		\path[name intersections={of=temp1 and temp2}];
+		\draw (AD) node[hei,label=left:{$M$}]{} -- (intersection-1) coordinate (X) node[hei,label=above right:{$N$}]{};
+		\path[name path=temp1] ($(X)+(190:{2/sqrt(sqrt(3))})$) arc (190:270:{2/sqrt(sqrt(3))});
+		\path[name path=temp2] (A) -- (B);
+		\path[name intersections={of=temp1 and temp2}];
+		\draw (intersection-1) coordinate (AB) node[hei,label=below:{$O$}]{} -- (X);
+	\end{scope}
+	\begin{pgfonlayer}{background}
+		\path[fill=gel] (A) -- (AB) -- (X) -- (AD) --cycle;
+		\path[fill=bla,opacity=0.2] (AB) -- (B) -- (BC) -- (X) --cycle;
+	\end{pgfonlayer}
+	%%
+	\draw[very thick,rot] (X) -- (AB);
+	\draw[very thick,rot] (X) -- (AD);
+	\draw[very thick,rot] (CD) -- (BC);
+	\draw[very thick,bla] (B) -- (C);
+	\draw[very thick,bla] (A) -- (D);
+	%%
+	\node[hei,label=below left:{$A$}] at (A) {};
+	\node[hei,label=below right:{$B$}] at (B) {};
+	\node[hei,label=above right:{$C$}] at (C) {};
+	\node[hei,label=above left:{$D$}] at (D) {};
+	\node[bai] at (A) {};
+	\node[bai] at (B) {};
+	\node[bai] at (C) {};
+	\node[bai] at (D) {};
+	\node[bai] at (CD) {};
+	\node[bai] at (AD) {};
+	\node[bai] at (X) {};
+	\node[bai] at (AB) {};
+	\node[bai] at (BC) {};
+\end{tikzpicture}
+
+\end{document}
