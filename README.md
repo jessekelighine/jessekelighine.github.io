@@ -13,5 +13,5 @@ Please visit the website [jessekelighine.com](https://jessekelighine.com).
 - [x] `sufficient_statistic`
 - [x] `talmud`
 - [x] `mallow_cp`
-- [ ] `cutting-shapes`
-- [ ] `grad-school-application`
+- [x] `cutting-shapes`
+- [x] `grad-school-application`
