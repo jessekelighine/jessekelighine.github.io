@@ -52,10 +52,11 @@
 		\draw (intersection-1) node[hei,label=below left:{$J$}]{} -- (C);
 		\draw (BC) arc (0:-180:{1/sqrt(sqrt(3))}) node[pos=1,hei,label=below left:{$K$}]{};
 		\draw ($(BC)+({-2/sqrt(sqrt(3))},0)$) -- ($(BC)+(-1,0)$);
-		\draw[name path=temp1] ($(BC)+(130:{2/sqrt(sqrt(3))})$) arc (130:180:{2/sqrt(sqrt(3))});
+		\path[name path=temp1] ($(BC)+(130:{2/sqrt(sqrt(3))})$) arc (130:180:{2/sqrt(sqrt(3))});
 		\path[name path=temp2] (C) -- (D);
 		\path[name intersections={of=temp1 and temp2}];
 		\draw (intersection-1) coordinate (CD) node[hei,label=above left:{$L$}]{} -- (BC); 
+		\draw let \p1=($(intersection-1)-(BC)$), \n1={atan2(\y1,\x1)} in (intersection-1) arc (\n1:180:{2/sqrt(sqrt(3))});
 		\path[name path=temp1] ($(AD)+(-5:{2/sqrt(sqrt(3))})$) arc (-5:25:{2/sqrt(sqrt(3))});
 		\path[name path=temp2] (intersection-1) -- (BC);
 		\path[name intersections={of=temp1 and temp2}];
