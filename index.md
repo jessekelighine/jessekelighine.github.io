@@ -48,7 +48,7 @@ header-includes:
   and a proof of the Gibbs Sampling Algorithm.
 - [**Sufficient Statistics**](sufficient-statistic/sufficient-statistic.pdf):
   Short definition and example of sufficient statistics.
-- [**Mallow's Cp**](mallow_cp/mallow_cp.pdf):
+- [**Mallow's Cp**](mallow-cp/mallow-cp.pdf):
   Motivating Mallow's $C_p$ criterion, one of the simplest model selection criterion.
 - [**Akaike Information Criterion (AIC)**](akaike-information-criterion/aic.pdf):
   Motivating AIC, one of the most popular model selection criterion.

@@ -1,7 +1,7 @@
 # Latex Makefile
 
 MAIN := main
-NAME := mallow_cp
+NAME := mallow-cp
 
 .PHONY: all clean
 
