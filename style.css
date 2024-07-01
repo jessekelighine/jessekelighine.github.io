@@ -63,6 +63,10 @@
 
 /* BODY */
 
+sup {
+    line-height: 0;
+}
+
 em {
 	color: #478D99;
 	font-style: normal;
