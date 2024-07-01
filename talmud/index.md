@@ -74,4 +74,4 @@ header-includes:
 我們可能就會對「公平」這個概念有更多的認識。
 試著想想看吧！
 
-[**解答在此**](fair_division.pdf)
+[**解答在此**](article/fair-division.pdf)
