@@ -19,30 +19,30 @@ header-includes:
 
 ## Popular Mathematics
 
-- [**《塔木德》中的公平**](./talmud):
+- [**《塔木德》中的公平**](talmud):
   在東西不夠的時候，怎麼分才*公平*呢？只有「按照比例分」才叫做公平嗎？
   看看兩位二十一世紀的經濟學家是怎麼解釋千年猶太經典《塔木德》中關於「公平」意想不到的故事吧。
-- [**你能通過牛津大學的數學面試嗎？**](./oxford-entrance):
+- [**你能通過牛津大學的數學面試嗎？**](oxford-entrance):
   數學的精神不在於複雜的計算，而是在於找尋規律與邏輯的思考。
   牛津大學的數學口試的其中一個問題不需要任何的計算就可以回答，
   你可以通過嗎？
-- [**一個關於剪紙的定理**](./cutting-shapes):
+- [**一個關於剪紙的定理**](cutting-shapes):
   你能把一個圖形剪貼成另一個圖形嗎？
 - [**RPN Calculator**](https://jessekelighine.shinyapps.io/reverse-polish/):
   An online *Reverse Polish Notation* (RPN) calculator that also converts RPN into infix notation.
 
 ## Statistics
 
-- [**Definiteness of Covariance Matrices**](./covariance-matrix/covariance-matrix.pdf):
+- [**Definiteness of Covariance Matrices**](covariance-matrix/covariance-matrix.pdf):
   What do we mean when we compare covariances matrices through positive definiteness?
   A short intuitive interpretation.
 - [**James-Stein Estimator**](james-stein_estimator/james-stein_estimator.pdf):
   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation.
 - [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf):
   A brief introduction to Generalized Method of Moments, aka *GMM*.
-- [**Fisher Information**](./fisher-information/fisher-information.pdf):
+- [**Fisher Information**](fisher-information/fisher-information.pdf):
   A brief introduction to Fisher Information and some related ideas.
-- [**Markov Chain**](markov_chain/markov_chain.pdf):
+- [**Markov Chain**](markov-chain/article/markov-chain.pdf):
   Concepts and results related to Markov chain,
   a proof of the Metropolis-Hastings Algorithm,
   and a proof of the Gibbs Sampling Algorithm.
@@ -70,7 +70,7 @@ header-includes:
 
 ## Miscellanea
 
-- [**中文量詞**](./quantifier):
+- [**中文量詞**](quantifier):
   中文裡有很多相似、但是意義卻又微妙不同的量詞，像是「雙、副、對」或「條、根、支」。
   台灣的母語使用者會怎麼在這幾個量詞之間選擇呢？
   一個簡單的問卷調查結果。
@@ -80,9 +80,9 @@ header-includes:
   Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move!
 - [**RE100: Taiwan Market Report 2020**](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan):
   An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/).
-- [**18歲，投下你的第一票**](./resources/voting-pamphlet.pdf):
+- [**18歲，投下你的第一票**](resources/voting-pamphlet.pdf):
   2019 年教育部投票手冊。排版設計者：*我*。
-- [**《申請覺迷錄》**](./grad-school-application)：
+- [**《申請覺迷錄》**](grad-school-application)：
   申請碩班、博班的心得。
-- [**Gallery**](./gallery):
+- [**Gallery**](gallery):
   Some graphics and designs I've created.

@@ -47,7 +47,8 @@ An intuitive way of measuring prediction quality is to consider the expected sum
 where $\PP_{\AA}=\XX_{\AA}(\XX_{\AA}\T\XX_{\AA})\inv\XX_{\AA}\T$ and $\II_n$ is the $n\times n$ identity matrix.
 Notice the term $-p\sigma^{2}$.
 This term suggests that the prediction error decreases as $p$, the size of $\AA$, increases.
-That is, we can keep adding inputs from the original $k$ independent variables to the linear model and the square error will decrease!
+That is, we can keep adding inputs from the original $k$ independent variables to the linear model
+and the square error will decrease!
 Therefore, this expected sum of squares error is not a good measure for how good the model will perform.
 
 However, notice this this is only the case when we are doing ``in-sample'' prediction, i.e.,
@@ -58,7 +59,8 @@ that is, a data set $\{y_{i}^{\text{out}},\xx_{i}\}_{i=1}^{n}$ where
 	y_{i}^{\text{out}} &= \mu(\xx_{i}) + \epsilon_{i}^{\text{out}}.
 \end{align*}
 This hypothetical data set is essentially ``a set of regenerated $y_i$'s with the same $\xx_i$'s.''
-Using the new data set, we can compute the ``out-sample'' prediction error associated with the ``in-sample'' estimate $\hat\bbeta_{\AA}$:
+Using the new data set,
+we can compute the ``out-sample'' prediction error associated with the ``in-sample'' estimate $\hat\bbeta_{\AA}$:
 \begin{align}\label{eq:out-sample}
 	\E\!\left[ \sum_{i=1}^{n} ( y_{i}^{\text{out}} - \xx_{i\AA}\T\hat\bbeta_{\AA} )^{2} \right]
 	&= \E (\yy^{\text{out}}-\XX_{\AA}\hat\beta)\T(\yy^{\text{out}}-\XX_{\AA}\hat\bbeta_{\AA}) \nonumber\\
@@ -67,7 +69,8 @@ Using the new data set, we can compute the ``out-sample'' prediction error assoc
 Notice how the out-sample prediction error increases as $p$, number of independent variables in our model, increases.
 Hence, out-sample prediction error is a much better criterion for evaluating the fitness of a model.
 
-Now the practical question: How can we calculate the ``out-sample prediction error'' when we only observe one data set?
+Now the practical question:
+How can we calculate the ``out-sample prediction error'' when we only observe one data set?
 The trick is to approximate the out-sample prediction error with the in-sample prediction error.
 In fact, \eqref{eq:in-sample} and \eqref{eq:out-sample} are related by the simple equation
 \begin{align}\label{eq:relation}

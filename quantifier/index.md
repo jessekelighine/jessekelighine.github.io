@@ -3,7 +3,7 @@ title:  "中文量詞"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2022-12-24"
 header-includes:
-	<link rel="icon" href="resources/sheep_color.png">
+	<link rel="icon" href="../resources/sheep_color.png">
 ---
 
 **中文的量詞**非常神奇，

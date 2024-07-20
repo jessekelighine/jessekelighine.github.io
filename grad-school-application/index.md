@@ -3,7 +3,7 @@ title:  "《申請覺迷錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2024-06-13"
 header-includes:
-	<link rel="icon" href="/resources/sheep_color.png">
+	<link rel="icon" href="../resources/sheep_color.png">
 ---
 
 # 序
