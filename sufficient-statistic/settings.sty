@@ -3,24 +3,51 @@
 %-----------------------------------------------------------------------------%
 %%% Section Font %%%
 \usepackage{titlesec}
-\titleformat*{\section}{\normalsize\bfseries\sffamily\raggedright}
+\titleformat*{\section}{\normalsize\bfseries\raggedright}
+\titleformat*{\subsection}{\normalsize\bfseries\raggedright}
+% \newcommand{\marginsecnumber}[1]{\makebox[0pt][r]{#1\hspace{6pt}}}
+% \titleformat{\section}{\normalsize\bfseries\raggedright}{\marginsecnumber\thesection}{0pt}{}
+% \titleformat{\subsection}{\normalsize\bfseries\raggedright}{\marginsecnumber\thesubsection}{0pt}{}
+% \renewcommand\thesection{（\zhnum{section}）}
 %-----------------------------------------------------------------------------%
-%%% Date Time %%%
-\usepackage{datetime}
-\newdateformat{meinesdatum}
-{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
-\setdefaultdate{\meinesdatum}
-%-----------------------------------------------------------------------------%
-%%% Minimal Title %%%
-\makeatletter\def\@maketitle{%
-\noindent{\sffamily\bfseries\@title}%
-\hfill\texttt{\@date}\\{\ }\null\hfill\texttt{\@author}
-\par\vskip1.5em}\makeatother
+%%% Color %%%
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
 %-----------------------------------------------------------------------------%
 %%% Hyper Reference %%%
 \PassOptionsToPackage{hyphens}{url}
-\usepackage[hidelinks,colorlinks=true]{hyperref}
+\usepackage{hyperref}
+\hypersetup{hidelinks,colorlinks=true,
+linkcolor=myred,
+urlcolor=myblue,
+citecolor=myblue}
 % \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
+%-----------------------------------------------------------------------------%
+%%% Biblatex %%%
+\usepackage[hyperref=true,backend=biber,backref=false]{biblatex} 
+\addbibresource{references.bib}\urlstyle{tt}
+%\printbibliography[heading=none,title=\textsf{參考文獻}]
+%-----------------------------------------------------------------------------%
+%%% Date Time %%%
+\usepackage{datetime}
+\newtimeformat{mytime}%
+{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}} % \THESECOND
+\settimeformat{mytime}%
+\newdateformat{mydate}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\mydate}
+%-----------------------------------------------------------------------------%
+%%% Minimal Title %%%
+\makeatletter\def\@maketitle{%
+\noindent{\bfseries\@title}%
+\hfill\texttt{\@date}\\%
+\raggedleft\ttfamily\@author%
+\par\vskip1em}\makeatother
 %-----------------------------------------------------------------------------%
 %%% Enumerate %%%
 \usepackage{enumitem}
@@ -31,8 +58,11 @@
 % \usepackage{centernot}
 % \usepackage{accents}
 % \usepackage[makeroom]{cancel}
-% \newcommand{\raum}{\phantom{=}{\:\,}}
+% \newcommand{\raum}{\mathrel{\phantom{=}}}
 % \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+%-----------------------------------------------------------------------------%
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\inv}{^{-1}}
 %-----------------------------------------------------------------------------%
 %%% Probability %%%
 \let\Pr\relax
@@ -44,10 +74,10 @@
 \newcommand{\asto}{\overset{as}{\longrightarrow}}
 \newcommand{\pto}{\overset{p}{\longrightarrow}}
 \newcommand{\dto}{\overset{d}{\longrightarrow}}
-\newcommand{\pr}[1]{\Pr\left\{#1\right\}}
+\newcommand{\pr}[2][]{\Pr_{#1}\!\left\{#2\right\}}
 \newcommand{\given}[1][]{\,#1|\,}
 %-----------------------------------------------------------------------------%
-\newcommand{\bernoulli}[1]{\text{Bernoulli(#1)}}
+\newcommand{\bernoulli}{\text{Bernoulli}}
 %-----------------------------------------------------------------------------%
 %%% Math Notes %%%
 \usepackage{amsthm}
@@ -59,7 +89,21 @@
 \newtheorem{remark}{Remark}
 \newtheorem{proposition}{Proposition}
 \newtheorem{example}{Example}
-% \newenvironment{pf}{\noindent$\blacktriangleright$\textit{proof}.\ }{\hfill$\blacksquare$}
-% \newenvironment{example}{\noindent\textbf{Example.}}{}
-% \newenvironment{ok}[1]{\noindent\textbf{#1.}}{}
+\renewcommand{\qedsymbol}{$\#$}
+\newcommand{\lemmaautorefname}{Lemma}
+\newcommand{\exampleautorefname}{Example}
 %-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{GenWanMinTJ-L}
+\newcommand{\chsansfont}{NotoSansCJKkr-Regular}
+\newcommand{\chboldfont}{NotoSansCJKkr-Bold}
+\newcommand{\chmonofont}{jf-openhuninn-2.0}
+\newcommand{\chitalfont}{LXGWWenKaiTC-Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
+\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
+\setlength\parindent{2em}
+%-----------------------------------------------------------------------------%
+\renewcommand{\qedsymbol}{$\#$}

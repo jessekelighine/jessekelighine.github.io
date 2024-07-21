@@ -1,11 +1,11 @@
-\documentclass[a4paper,12pt]{article}
-\usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
+\documentclass[a4paper]{article}
+% \usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
 %<--------------------------------------------------------------------------->%
 \usepackage{settings}
 %<--------------------------------------------------------------------------->%
 %%% Title %%%
-\title{Sufficient Statistics}
-\author{\href{https://jessekelighine.com}{\texttt{jessekelighine.com}}}
+\title{Sufficient Statistic}
+\author{\href{https://jessekelighine.com}{jessekelighine.com}\\Jesse C.\ Chen\ 陳\,捷}
 \date{\today}
 %-----------------------------------------------------------------------------%
 
@@ -13,55 +13,159 @@
 
 \maketitle
 
+\begin{definition}[Statistical Experiment]
+	A \emph{statistical experiment} is a triple $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in\Theta})$ where
+	$\mathcal{X}$ is the sample space,
+	$\mathcal{F}$ is a $\sigma$-algebra on $\mathcal{X}$, and
+	$\{\Pr_{\theta}\}$ is a collection of of probability measures on $\mathcal{X}$ parametrized by $\theta$ in the parameter space $\Theta$.
+\end{definition}
+
 \begin{definition}[Sufficient Statistic]
-	Let $\{X_i\}_{i=1}^{n}$ be iid samples from a distribution with
-	probability mass/density function $f(x;\theta)$ where $\theta$ is
-	a parameter of the distribution.
-	Let $Y=g(X_1,...,X_n)$ be a statistic.
-	If
-	\begin{align}\label{sufficient_def}
-		\pr{X_1=x_1,...,X_n=x_n\given Y=y}
+	Let $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in\Theta})$ be an statistical experiment.
+	Let a measurable function $T:(\mathcal{X},\mathcal{F})\to(\mathcal{T},\mathcal{G})$ be a statistic.
+	The statistic $T$ is said to be \emph{sufficient} if $\Pr_{\theta}(\cdot\given T)$ does not depend on $\theta$.
+	% Let $\{X_i\}_{i=1}^{n}$ be iid samples from a distribution with
+	% probability mass/density function $f(x;\theta)$ where $\theta$ is
+	% a parameter of the distribution.
+	% Let $Y=g(X_1,...,X_n)$ be a statistic.
+	% If
+	% \begin{align}\label{sufficient_def}
+	% 	\pr{X_1=x_1,...,X_n=x_n\given Y=y}
+	% \end{align}
+	% does not depend on $\theta$,
+	% then $Y$ is said to be a \emph{sufficient statistic} for $\theta$
+	% or \emph{sufficient} for $\theta$.
+\end{definition}
+
+% \begin{remark}
+% 	If a sufficient statistic for a parameter is found,
+% 	then every information about such parameter that can be inferred from the
+% 	data is capture in that statistic.
+% 	That is, any other information (e.g.\! variation of the data set)
+% 	does not provide any further information about the parameter.
+% \end{remark}
+
+\begin{example}\label{eg:bernoulli}
+	Consider an experiment $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in[0,1]})$
+	where $\mathcal{X}=\{0,1\}^{n}$,
+	$\mathcal{F}$ is the power set of $\mathcal{X}$,
+	and $\Pr_{\theta}$ is the joint distribution of $n$ iid $\bernoulli(\theta)$ distributions.
+	Define statistic $T(x)\coloneqq\sum_{i=1}^{n}x_i$ where $x_i$ denotes the $i$-th component of $x$.
+	We check that $T$ is a sufficient statistic:
+	Given any $x\in\mathcal{X}$, let $t\coloneqq T(x)$ and we have
+	\begin{align*}
+		\pr[\theta]{X=x\given T=t}
+		= \frac{ \pr[\theta]{X=x} }{ \pr[\theta]{T=t} }
+		= \frac{ \prod_{i=1}^{n} \theta^{x_i} (1-\theta)^{1-x_i} } { {n\choose t}\theta^{t}(1-\theta)^{n-t} }
+		% &= \frac{ \theta^{\sum_{i=1}^{n}x_i} (1-\theta)^{\sum_{i=1}^{n}(1-x_i)} }{ {n\choose t}\theta^{t}(1-\theta)^{n-t} }
+		= {n\choose t}\inv.
+	\end{align*}
+	Since the conditional distribution does not depend on $\theta$, $T$ is a sufficient statistic.
+	% Consider $\{X_i\}_{i=1}^{n}\iidto\bernoulli(p)$.
+	% and a statistic $Y=\sum_{i=1}^{n}X_i$.
+	% Consider the expression {\ref{sufficient_def}}:
+	% \begin{align*}
+	% 	\pr{X_1=x_1,...,X_n=x_n\given Y=y}
+	% 	&= \frac{ \prod_{i=1}^{n} p^{x_i} (1-p)^{1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
+	% 	&= \frac{ p^{\sum_{i=1}^{n}x_i} (1-p)^{\sum_{i=1}^{n}1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
+	% 	&= \frac{ p^{y}(1-p)^{n-y} }{ {n\choose y}p^{y}(1-p)^{n-y} }
+	% 	= \frac{1}{{n\choose y}}.
+	% \end{align*}
+	% Notice that the result does not depend on $p$.
+	% Therefore, $Y$ is a sufficient statistic for $p$.
+\end{example}
+
+% \begin{remark}
+% 	The name \emph{sufficient statistic} implies that the statistic is ``sufficient'' for inferencing about $\theta$.
+% 	It is ``sufficient'' in the sense that 
+% 	\autoref{eg:bernoulli}
+% \end{remark}
+
+\begin{theorem}[Fisher-Neyman Factorization]\label{thm:fisher-neyman-factorization}
+	Consider a statistical experiment $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in\Theta})$.
+	A statistic $T:(\mathcal{X},\mathcal{F})\to(\mathcal{T},\mathcal{G})$ is a sufficient statistic iff
+	there exists measurable functions $\{g_{\theta}\}_{\theta\in\Theta}$ defined on $(\mathcal{T},\mathcal{G})$ and
+	$h$ defined on $(\mathcal{X},\mathcal{F})$ such that the probability density function can be decomposed as
+	\begin{align}\label{eq:factorization}
+		f(x\given\theta) = g_{\theta}(T(x)) h(x).
 	\end{align}
-	does not depend on $\theta$,
-	then $Y$ is said to be a \textbf{sufficient statistic} for $\theta$
-	or \textbf{sufficient} for $\theta$.
+\end{theorem}
+\begin{proof}
+	We only show the proof for discrete random variables.
+	\footnote{
+		For continuous random variables,
+		one must deal with measure-theoretic technicalities in the proof.
+		One can find a proof for general random variables in
+		\emph{Chapter 2.2 Statistics and Sufficiency} from
+		\cite{shao-1999}.
+	}
+	In this case, we have the probability density function $f(x\given\theta)=\pr[\theta]{X=x}$.
+	\begin{itemize}
+		\item[$(\Rightarrow)$]
+			Suppose that $T$ is sufficient.
+			Given any realization $x\in\mathcal{X}$,
+			let $t\coloneqq T(x)$ and we have the following
+			\begin{align*}
+				\pr[\theta]{X=x}
+				&= \pr[\theta]{X=x,T(X)=t} \\
+				&= \pr[\theta]{X=x\given T(X)=t} \pr[\theta]{T(X)=t} \\
+				&= \underbrace{\pr{X=x\given T(X)=t}}_{h(x)} \underbrace{\pr[\theta]{T(X)=t}}_{g_{\theta}(t)}
+			\end{align*}
+			where the last equality is obtained by the definition of sufficiency.
+		\item[$(\Leftarrow)$]
+			Suppose we have the factorization \eqref{eq:factorization}.
+			Given any realization $x\in\mathcal{X}$,
+			let $t\coloneqq T(x)$ and we have
+			\begin{align*}
+				\pr[\theta]{X=x\given T(X)=t}
+				&= \frac{ \pr[\theta]{X=x,T(X)=t} }{ \pr[\theta]{T(X)=t} } \\
+				&= \frac{ g_{\theta}(t) h(x) }{ \pr[\theta]{T(X)=t} }
+			\end{align*}
+			where the second equality is obtained by using the factorization on the numerator.
+			Now consider the denominator, we have
+			\begin{align*}
+				\pr[\theta]{T(X)=t}
+				= \sum_{x' : T(x')=t} \pr[\theta]{X=x'}
+				= \sum_{x' : T(x')=t} g_{\theta}(t) h(x')
+			\end{align*}
+			where the second equality is obtained by factorization.
+			Substitute the result back and we have
+			\begin{align*}
+				\pr[\theta]{X=x\given T(X)=t}
+				&= \frac{ g_{\theta}(t) h(x) }{\sum_{x' : T(x')=t} g_{\theta}(t) h(x')} \\
+				&= \frac{  h(x) }{\sum_{x' : T(x')=t} h(x')}
+			\end{align*}
+			where the final expression does not depend on $\theta$.
+			Hence $T$ is a sufficient statistic for $\theta$.
+			\qedhere
+	\end{itemize}
+\end{proof}
+
+\begin{example}[\autoref{eg:bernoulli} Continued]
+	Now we check that $T(x)=\sum_{i=1}^{n}x_i$ is a sufficient statistic using \autoref{thm:fisher-neyman-factorization}:
+	\begin{align*}
+		\pr[\theta]{X=x}
+		= \prod_{i=1}^{n} \theta^{x_i} (1-\theta)^{1-x_i}
+		% = \theta^{\sum_{i=1}^{n}x_i} (1-\theta)^{n-\sum_{i=1}^{n}x_i}
+		= \underbrace{\theta^{T(x)} (1-\theta)^{n-T(x)}}_{g_{\theta}(T(x))}.
+	\end{align*}
+	In this case, $h(x)=1$ is a constant function.
+	Hence, $T$ is a sufficient statistic.
+\end{example}
+
+\begin{definition}[Sufficiency Principle]
+	Let $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in\Theta})$ be a statistical experiment and
+	let $T$ be a sufficient statistic.
+	The \emph{sufficiency principle} states that inference about $\theta$ should depend only on $T$.
+	That is, if two samples $x$ and $x'$ satisfies $T(x)=T(x')$,
+	then they should lead to the same inference about $\theta$.
 \end{definition}
 
 \begin{remark}
-	If a sufficient statistic for a parameter is found,
-	then every information about such parameter that can be inferred from the
-	data is capture in that statistic.
-	That is, any other information (e.g.\! variation of the data set)
-	does not provide any further information about the parameter.
+	The concept of sufficient statistic and the sufficiency principle
+	are both due to Sir Ronald Fisher in the early 20th century.
 \end{remark}
 
-\begin{example}
-	Let $\{X_i\}_{i=1}^{n}\iidto\bernoulli{p}$ and a statistic $Y=\sum_{i=1}^{n}X_i$.
-	Consider the expression (\ref{sufficient_def}):
-	\begin{align*}
-		\pr{X_1=x_1,...,X_n=x_n\given Y=y}
-		&= \frac{ \prod_{i=1}^{n} p^{x_i} (1-p)^{1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
-		&= \frac{ p^{\sum_{i=1}^{n}x_i} (1-p)^{\sum_{i=1}^{n}1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
-		&= \frac{ p^{y}(1-p)^{n-y} }{ {n\choose y}p^{y}(1-p)^{n-y} }
-		= \frac{1}{{n\choose y}}.
-	\end{align*}
-	Notice that the result does not depend on $p$.
-	Therefore, $Y$ is a sufficient statistic for $p$.
-\end{example}
-
-\begin{theorem}[Fisher-Neyman Factorisation]
-	$Y$ is sufficient for $\theta$ iff
-	\begin{align*}
-		f(x_1,...,x_n;\theta) = \phi(Y;\theta)h(x_1,...,x_n)
-	\end{align*}
-	where $\phi(\cdot)$ is a function that depends on $x_i$ only through $Y$
-	and $h(\cdot)$ is a function that does not depend on $\theta$.
-\end{theorem}
-
-\vfill
-\section*{References}
-\begin{enumerate}[label = {[\arabic*]}]
-	\item Explanation and examples of sufficient statistics. \url{https://www.youtube.com/watch?v=G5pLCoPXr9g}
-\end{enumerate}
+\printbibliography
 
 \end{document}
