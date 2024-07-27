@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
 \usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
-\usepackage{setspace}\setstretch{1.1} % \begin{spacing}{1.3}
+% \usepackage{setspace}\setstretch{1.1} % \begin{spacing}{1.3}
 % \usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
 %-----------------------------------------------------------------------------%
 \usepackage{settings}
@@ -48,13 +48,20 @@ and \emph{Cramér-Rao bound}, an inequality closely related to Fisher Informatio
 
 The goal is simple:
 \begin{quote}
-	\textit{We want to have a way of measuring ``how informative a parameter is to the likelihood function.''}
+	% \textit{We want to have a way of measuring ``how informative a parameter is to the likelihood function.''}
+	\textit{We want to have a way of measuring ``how sensitive the likelihood function is to a parameter.''}
 \end{quote}
-If a certain parameter is very important in shaping the likelihood function,
-we expect our estimate of it to be more ``precise.''
-In contrast, if a parameter does not change the shape of the likelihood much,
+That is,
+whether a small change in the parameter will have a big impact on the shape of the likelihood function.
+The reasoning behind this goal is:
+If a small change in the parameter changes the shape of the likelihood function by a lot,
+then it is easier to tell two different values of the parameter apart,
+thus leading to more ``precise'' estimates;
+% we expect our estimate of it to be more ``precise,''
+% since it is easier to tell two parameters apart;
+In contrast, if changes in the parameter does not alter the shape of the likelihood function much,
 then we would expect the estimate of such parameter ``poor,''
-since likelihood functions under different true parameters look the same to us.
+since likelihood functions under different values of the parameter look similar to us.
 
 We will later see that \emph{Fisher Information} achieves precisely this purpose
 in the context of maximum likelihood estimation.
@@ -111,9 +118,19 @@ the expected Hessian matrix of the log-likelihood function.
 It turns out $\E\ddot\ell(x\given\theta_0)$ and $\var\dot\ell(x\given\theta_0)$ only differ by a negative sign:
 \begin{align*}
 	\E\ddot\ell(x\given\theta)
-	&= \int_{\mathcal{X}} \left[ \frac{\partial^2}{\partial\theta\partial\theta\T} \log f(x\given\theta) \right] f(x\given\theta) dx \\
-	&= \int_{\mathcal{X}} \left[ \frac{\ddot f(x\given\theta)}{f(x\given\theta)} - \frac{\dot f(x\given\theta)\dot f(x\given\theta)\T}{f(x\given\theta)^2} \right] f(x\given\theta) dx \\
-	&= \underbrace{\frac{\partial^2}{\partial\theta^2} \int_{\mathcal{X}} f(x\given\theta) dx}_{=0} - \int_{\mathcal{X}} \dot\ell(x\given\theta)\dot\ell(x\given\theta)\T f(x\given\theta) dx
+	&= \int_{\mathcal{X}}
+	\left[
+	\frac{\partial^2}{\partial\theta\partial\theta\T} \log f(x\given\theta)
+	\right]
+	f(x\given\theta) dx \\
+	&= \int_{\mathcal{X}}
+	\left[
+	\frac{\ddot f(x\given\theta)}{f(x\given\theta)}
+	- \frac{\dot f(x\given\theta)\dot f(x\given\theta)\T}{f(x\given\theta)^2}
+	\right]
+	f(x\given\theta) dx \\
+	&= \underbrace{\frac{\partial^2}{\partial\theta^2} \int_{\mathcal{X}} f(x\given\theta) dx}_{=0}
+	- \int_{\mathcal{X}} \dot\ell(x\given\theta)\dot\ell(x\given\theta)\T f(x\given\theta) dx
 	= -\var\dot\ell(x\given\theta)
 \end{align*}
 This result is sometimes referred to as \emph{information equality}.
@@ -144,15 +161,19 @@ Then we denote the joint log-likelihood as
 We want to derive the asymptotic distribution of the maximum likelihood estimator $\hat\theta$ as $n\to\infty$.
 By mean value theorem, we have
 \begin{align*}
-	\underbrace{\dot\ell(\{x_i\}\given\hat\theta)}_{=0} - \dot\ell(\{x_i\}\given\theta_{0}) = \ddot\ell(\{x_i\}\given\bar\theta) (\hat\theta - \theta_0)
+	\underbrace{\dot\ell(\{x_i\}\given\hat\theta)}_{=0}
+	- \dot\ell(\{x_i\}\given\theta_{0})
+	= \ddot\ell(\{x_i\}\given\bar\theta) (\hat\theta - \theta_0)
 \end{align*}
 where $\bar\theta$ is a value between $\theta_0$ and $\hat\theta$.
 Supposing we already have the consistency result $\hat\theta\pto\theta_0$,
 we have
 \begin{align*}
 	\sqrt{n} ( \hat\theta - \theta_0 )
-	&= - \left[ \frac{ \ddot\ell(\{x_i\}\given\bar\theta) }{ n } \right]\inv \left( \frac{ \dot\ell(\{x_i\}\given\theta_{0}) }{ \sqrt{n} } \right) \\
-	&\dto - \E\left[\ddot\ell(x\given\theta_0)\right]\inv \mathcal{N}(0,\var\dot\ell(x\given\theta_0)).
+	&=
+	- \left[ \frac{ \ddot\ell(\{x_i\}\given\bar\theta) }{ n } \right]\inv
+	\left( \frac{ \dot\ell(\{x_i\}\given\theta_{0}) }{ \sqrt{n} } \right) \\
+	&\dto - \E\left[ \ddot\ell(x\given\theta_0) \right]\inv \mathcal{N}(0,\var\dot\ell(x\given\theta_0)).
 \end{align*}
 Now we know the asymptotic distribution of $\sqrt{n}(\hat\theta-\theta_0)$ is a normal distribution centered at $0$ with variance
 $\E[\ddot\ell(x\given\theta_0)]\inv\var\dot\ell(x\given\theta_0)\E[\ddot\ell(x\given\theta_0)]\inv$.
@@ -195,7 +216,8 @@ stating that any other unbiased estimation of $\theta_0$ must have variance larg
 
 Suppose $\tilde\theta=t(\{x_i\})$ is an unbiased estimator for $\theta_0$,
 it's straightforward via some algebra to see that
-we have the covariance between $\dot\ell(\{x_i\}\given\theta)$ and $t(\{x_i\})-\theta$ as an identity matrix of dimension $k$:
+we have the covariance between $\dot\ell(\{x_i\}\given\theta)$
+and $t(\{x_i\})-\theta$ as an identity matrix of dimension $k$:
 \begin{align*}
 \E [t(\{x_i\})-\theta] \dot\ell(\{x_i\}\given\theta)\T
 = I_k,
