@@ -58,7 +58,8 @@ header-includes:
 ## Code Stuff
 
 - [**vindent.vim**](https://github.com/jessekelighine/vindent.vim):
-  A *minimal*, *modern* and *highly customizable* Vim plugin that provides indentation-based navigation motions and text objects by me.
+  A *minimal*, *modern* and *highly customizable* Vim plugin
+  that provides indentation-based navigation motions and text objects by me.
 - [**vim-bunttex**](https://github.com/jessekelighine/vim-bunttex):
   Minimal syntax highlighting for $\mathrm{\LaTeX}$.
 - [**del**](https://github.com/jessekelighine/del):
@@ -86,3 +87,7 @@ header-includes:
   申請碩班、博班的心得。
 - [**Gallery**](gallery):
   Some graphics and designs I've created.
+
+<div class="back-to-top">
+<a href="#" class="back-to-top">↑</a>
+</div>

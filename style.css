@@ -151,3 +151,24 @@ th {
 	border-top: 2px solid #666666;
 	border-bottom: 2px solid #666666;
 }
+
+/* BACK TO TOP */
+
+div.back-to-top {
+	position: sticky;
+	bottom: 0%;
+	float: right;
+}
+
+a.back-to-top {
+	background-color: #000;
+	color: #fff;
+	border-radius: 8px;
+	opacity: 0.35;
+}
+
+a.back-to-top:hover {
+	background: #478D99;
+	color: #ffffff;
+	opacity: 1;
+}
