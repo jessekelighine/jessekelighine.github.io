@@ -489,6 +489,5 @@ CV 用最簡短的言語條列式的寫下你的經歷，
   希望後之覽者，亦將有感於斯文。
 
 <div class="back-to-top">
-<a href=".." class="back-to-top">↩︎</a>
 <a href="#" class="back-to-top">↑</a>
 </div>
