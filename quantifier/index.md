@@ -152,5 +152,6 @@ header-includes:
 <!-- [**報告本文**](report/quantifier_linguistics.pdf) -->
 
 <div class="back-to-top">
+<a href=".." class="back-to-top">↩︎</a>
 <a href="#" class="back-to-top">↑</a>
 </div>
