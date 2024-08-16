@@ -1,7 +1,7 @@
 ---
 title:  "《出洋肄習帳》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2024-08-15"
+date:   "2024-08-16"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -290,7 +290,7 @@ Math Camp 真的是頗無聊，
 > King's College Founded in the Province of New York by the Royal Charter in the Reign of George II
 > Perpetuated as Columbia College by the People of the State of New York
 > when They Became Free and Independent -
-> Maintained and Cherished from Generation and Generation
+> Maintained and Cherished from Generation to Generation
 > for the Advancement of the Public Good and the Glory of Almighty God
 
 讀完其實覺得滿感動的，但是同時又覺得有[背景音樂](https://www.youtube.com/watch?v=MhQ5678cJU8)，滿好笑的。
