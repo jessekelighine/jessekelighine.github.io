@@ -1,7 +1,7 @@
 ---
 title:  "《出洋肄習帳》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2024-08-07"
+date:   "2024-08-15"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -16,7 +16,7 @@ header-includes:
 從 `2024-08-01` 到紐約到現在過一個禮拜了，
 記錄一下所見所聞跟心情。
 
-![](figures/IMG_20240802_sandwich.jpg)
+![](figures/sandwich.jpg)
 
 來到紐約的第二天領略到紐約的物價，這個三明治花了我 $17；
 份量確實是很多，但是結帳的時候嚇到。
@@ -30,7 +30,7 @@ header-includes:
 已經把這家店的菜單拿回家，
 準備把大部分的三明治菜單都吃過一遍。
 
-![](figures/IMG_20240802_columbia_out_of_harlem.jpg)
+![](figures/columbia-out-of-harlem.jpg)
 
 哥倫比亞的北方就是 Harlem，是有名的黑人區。
 從機場到哥倫比亞的 Uber 上經過 Harlem 就被警告說這邊比較危險，看起來也是有點恐怖。
@@ -44,7 +44,7 @@ header-includes:
 會往北走是因為要去跟一個朋友的朋友買地毯跟一些東西，
 放到房間變這樣：
 
-![](figures/IMG_20240807_my_room.jpg)
+![](figures/my-room.jpg)
 
 後來又添購了冷氣（也是往北方走去買來二手的），
 落地燈是幹來的，
@@ -53,17 +53,17 @@ header-includes:
 前面提到到 125 街以上氛圍就很不一樣，
 後來有天到時代廣場附近逛逛才知道什麼叫做都市：
 
-![](figures/IMG_20240805_time_square.jpg)
+![](figures/time-square.jpg)
 
 其實時代廣場附近幾個街區（大概是 30 到 50 街多左右，這邊被稱為 midtown）都長這樣，
 那天也去看了洛克斐勒中心（看到 Tonight Show starring Jimmy Fallon 的看板）、中央車站（無聊）、第五大道（往難看滿壯觀的）。
 在附近還看到無印良品還有 Line 商店：
 
-![](figures/IMG_20240805_line_store_in_time_square.jpg)
+![](figures/line-store-in-time-square.jpg)
 
 從外面看裡面全部都是東亞面孔，笑死。我家附近則是長這樣：
 
-![](figures/IMG_20240805_113th_broadway.jpg)
+![](figures/113th-broadway.jpg)
 
 跟曼哈頓 midtwon 完全是兩樣風情，
 甚至都還沒去精華中之精華區 downtown。
@@ -118,7 +118,7 @@ header-includes:
 
 最後附上哥倫比亞大學地鐵站的照片：
 
-![](figures/IMG_20240805_columbia_university_station.jpg)
+![](figures/columbia-university-station.jpg)
 
 紐約的地鐵真的是又髒又臭，
 而且只有部分車廂是有冷氣的，
@@ -127,6 +127,177 @@ header-includes:
 因為還沒有學生證跟迎新導覽，
 所以只到校園裡面快速走過一次。
 等到可以暢行無阻的時候再仔細看跟拍照。
+
+# 2024-08-15
+
+紐約也是很常下雨，而且下雨了就會蠻冷的，大概再20度左右。
+而且蠻多人不撐傘的其實雨也不小，特別是很多白人不撐傘不，太知道為什麼。
+
+過兩個禮拜之後發現在紐約（我想甚至是整個美國）人種劃分是很明確的：
+像是速食店或雜貨店或做工的都是西班牙裔的，
+送外賣啊什麼或零元購商人的很多都是黑人，
+白人真的看起來大部分都在做高級工作，亞洲人也是。
+以下就是零元購交易市場，在中國城附近：
+
+![](figures/zero-dollar-shopping-vendors.jpg)
+
+在哥倫比亞附近聽到很多中文，但應該是因為中國學生多的關係。
+這樣看來紐約或甚至是美國的確是一個蠻讓人覺得沮喪的地方，階級的不流動直接以人種的方式呈現給你看。
+至少在台灣大家看起來都一樣，所以看不出來？
+話說，幾乎都很哪裡都有講西班牙文的機會，果然跟我之前一個同學說的很像：「西班牙文是美國台語」。
+連紐約地鐵的官方告示都有英語西班牙語雙語。
+
+這禮拜第一次煮東西，自己煮下來發現其實跟外面買的價格並不會差很多（但這是給定你把一個三明治分成兩餐吃的情況）。
+自己煮的話大概算了一下就是 \$5 左右，營養比較均衡。範例：
+
+![](figures/daily-meal.jpg)
+
+美國的豬肉確實有股騷味，但是我覺得我能接受。
+
+紐約地鐵真是可以看到形形色色的人的地方。
+第一次在地鐵上看到猶太拉比，也有在地鐵上看到拉丁裔的爸爸跟女兒在賣零食討生活，真的是大熔爐。
+紐約猶太人真的很多，走在路上（特別是越接近金融區的地方）很容易看到公開配戴基帕的人。
+比較智障的是看到告示寫說「Subway surfing is dangerous, please ride in the subway」，
+看起來比較熔爐的地方也比較猴。
+逃票仔也是很多，而且這個感覺不分族裔，大家有機會就逃票？？
+但是我要更正一個上週的觀察，
+就是其實大部分地鐵是有冷氣的，
+只是不知道為什麼第一次做的時候剛好坐到沒冷氣的？
+害我對於沒冷氣的 prior 很強。
+
+有天心血來潮去 IKEA，
+因此第一次到布魯克林區。
+看起來跟北曼哈頓差不多破，但是感覺比哈頓更「有機」一點：街道不是井然有序的網格狀，房屋也是歪七扭八？
+還看到[倉儲挖寶王](https://zh.wikipedia.org/zh-hant/%E5%80%89%E5%84%B2%E6%8C%96%E5%AF%B6%E7%8E%8B)裡面會出現的倉儲。
+因為 IKEA 滿遠的，所以也第一次坐巴士。
+沒特別感覺，只是覺得這種東西好像是很久以前（70 年代？）台灣公車會出現的東西：
+
+![](figures/bus-pull-to-stop.jpg)
+
+IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留學生，到處都在講中文。
+回程的時候地鐵突然燈暗掉很正常，還看到有人把腳踏車鎖在把手上，很屌。
+
+8/9 剛拿到學生證，拿到的第一件事就是去參觀學校附近的大教堂，非常壯觀的教堂，
+跟歐洲有得比，但是裡面有很多美國元素很有趣，
+例如這個有棒球、橄欖球、曲棍球圖樣的彩繪玻璃：
+
+![](figures/st-john-cathedral.jpg)
+
+後來某天去了中國城，
+途中經過紐約大學地體站：
+
+![](figures/nyu-subway.jpg)
+
+紐約大學真的是沒有 campus，滿無聊的，
+就是走在附近會突然看到紫色的旗子：
+
+![](figures/nyu.jpg)
+
+過一陣子又會看到一個，
+就這樣。
+而且途中第一次在大白天看到有人坐在路邊打毒品（針頭打到手臂），嗯。
+
+中國城是個又髒又醜，而且被廣東話佔領，要是能避免的話不會想再去。
+倒是到處都是青天白日滿地紅，滿好笑的。
+
+![](figures/china-town-roc-1.jpg)
+
+![](figures/china-town-roc-2.jpg)
+
+![](figures/china-town-roc-3.jpg)
+
+最後在附近謁見了中山跟仲尼之後便快速離開：
+
+![](figures/sun-yat-sen.jpg)
+
+![](figures/confucius.jpg)
+
+又過了一個禮拜之後發現其實曼哈頓 downtwon 分區也非常明顯：
+說不只是說「uptown 糟糕、downtaon 繁華」，
+因為中國城跟前面拍照到的零元購散貨中心都是在 downtown。
+我也因此發現其實哥倫比亞校區附近真的是很安全，
+感覺一切都光明磊落，又常有學校的公共安全小組（不知道 Public Safty 中文叫什麼）開車巡邏，
+而且又相對安靜，
+不失為是個好地方。
+
+去完中國城就跑去金融區，
+其實金融區反而無聊，就是金牛附近都是人（小女孩沒了）：
+
+![](figures/wall-street-bull.jpg)
+
+旁邊看到一個川普建築跟紐約證交所（川普大樓除了斗大的 Trump Building 字樣就沒啥可看的，就不放照片）：
+
+![](figures/new-york-stock-exchange.jpg)
+
+Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
+我是覺得頗無聊，沒什麼有趣的東西。
+這幾天發現紐約很難跟臺北一樣自己去逛？
+走在路上不是吃的就是一些賣垃圾紀念品的店。
+希望之後多認識一些人之後可以做一些比較有趣的事情。
+
+![](figures/911-memorial.jpg)
+
+晚上跟印度室友出去外面吃飯，
+第一次在晚上到哈林區吃披薩，正宗拿波里披薩，很不錯。
+然後發現他女朋友是蒙古人？？？滿屌的。
+哈林區其實晚上也不是說超級恐怖（但還是滿亂的），要注意就是了。
+
+某天整個中午到晚上都跟某朋友還有他的一些台灣朋友在他家頂樓，滿開心的（過好幾天第一次講這麼多中文？）。
+以下是他家海景（河景？）第一排頂樓的樣子：
+
+![](figures/pool-party.jpg)
+
+轉過身背後就是繁華無比的曼哈頓。
+第一次 shotgun、pickle ball⋯等，族繁不及備載。
+只能說才來沒多久就能在這種地方搞東搞西真是命好。
+
+莫名其妙在一家超市（不是亞超，所以意外）看到伊藤園產地台灣的綠茶：
+
+![](figures/tea-vs-milk.jpg)
+
+價格是一旁牛奶先生的三倍，但還是買了，好喝。
+
+最後這幾天都在認真看一些計量經濟學的文章，
+所以沒做太多有趣的事。
+而且因為 Math Camp 從這禮拜一開始（線上），
+所以早上也不能亂跑。
+Math Camp 真的是頗無聊，
+例如光是集合的包含關係、交集、聯集就講的一個小時。
+所以其實我都是在做自己的事，呵呵。
+但是至少老師跟助教（都是經濟博士生）人非常好，所以我也沒有太多抱怨，
+就當作複習一些基本觀念吧，
+而且之後可能會講的 Kuhn-Tucker 都快忘光的，還是要複習一下。
+
+今天下午偷閒還是跑出來亂晃，
+看到熨斗大夏（整修中）：
+
+![](figures/flat-iron.jpg)
+
+其實原本是先去 [MoMath](https://momath.org/)，
+以為是超 nerdy 的地方（其實算是滿 nerdy），
+但是到了之後發現好像主要是給小朋友玩的（裡面有很多像是士林科教館的東西），
+就沒進去了。
+之後想要找看看紐約有沒有類似誠品這種文創類型的商店，
+但是我半個都沒找到。
+只要經過一些精緻的書店，所以才說紐約很難逛⋯。
+
+最後附上一張哥倫比亞圖書館的照片：
+
+![](figures/alma-mater.jpg)
+
+那天去看才仔細看到上面的刻字，滿霸氣的：
+
+> King's College Founded in the Province of New York by the Royal Charter in the Reign of George II
+> Perpetuated as Columbia College by the People of the State of New York
+> when They Became Free and Independent -
+> Maintained and Cherished from Generation and Generation
+> for the Advancement of the Public Good and the Glory of Almighty God
+
+讀完其實覺得滿感動的，但是同時又覺得有[背景音樂](https://www.youtube.com/watch?v=MhQ5678cJU8)，滿好笑的。
+
+感覺自己越來越像是當地人了，比較不焦慮，也比較之後各種事情的處理方式，
+還打電話去跟洗衣機公司要存錯的 \$15，真的是來紐約還是要當客家人。
+滿期待下週的實體 Math Camp，第一次見到之後朝夕相處的同學，下次再來人物誌。
 
 <div class="back-to-top">
 <a href="#" class="back-to-top">↑</a>
