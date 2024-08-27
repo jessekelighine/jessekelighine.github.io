@@ -12,11 +12,11 @@ header-includes:
 其中一個非常有名的便是 Henry Dudeney 在他 1907 年《The Canterbury Puzzles》書中提到「把正方形切割並拼貼成正三角形」的謎題
 （這個謎題被稱為 Haberdaher's Problem）。
 <div style="padding: 1em 0em 1em 0em">
-<img
-src   = "figures/figure-example.svg"
-alt   = "cartoon"
-style = "max-width: 20em; width: 80vw; display: block; margin: auto;"
-/>
+	<img
+		src   = "figures/figure-example.svg"
+		alt   = "cartoon"
+		style = "max-width: 20em; width: 80vw; display: block; margin: auto;"
+	/>
 </div>
 這些謎題都非常有趣，
 但是能不能把這些謎題都一次解決呢？

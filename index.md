@@ -42,7 +42,7 @@ header-includes:
   A brief introduction to Generalized Method of Moments, aka *GMM*.
 - [**Fisher Information**](fisher-information/fisher-information.pdf):
   A brief introduction to Fisher Information and some related ideas.
-- [**Markov Chain**](markov-chain/article/markov-chain.pdf):
+- [**Markov Chain**](markov-chain):
   Concepts and results related to Markov chain,
   a proof of the Metropolis-Hastings Algorithm,
   and a proof of the Gibbs Sampling Algorithm.
@@ -54,7 +54,7 @@ header-includes:
   Motivating AIC, one of the most popular model selection criterion.
 - [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity/von-neumann-ergodicity.pdf):
   An introduction to von Neumann's Ergodicity Theroem and its connection with convergence of Markov Chains.
-- [**Weak IV**](weak-iv/note/weak-iv-note.pdf):
+- [**Weak IV**](weak-iv):
   An overview of some important concepts in weak instrument variables.
 
 ## Code Stuff

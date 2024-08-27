@@ -17,33 +17,15 @@
 	A \emph{statistical experiment} is a triple $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in\Theta})$ where
 	$\mathcal{X}$ is the sample space,
 	$\mathcal{F}$ is a $\sigma$-algebra on $\mathcal{X}$, and
-	$\{\Pr_{\theta}\}$ is a collection of of probability measures on $\mathcal{X}$ parametrized by $\theta$ in the parameter space $\Theta$.
+	$\{\Pr_{\theta}\}_{\theta\in\Theta}$ is a collection of of probability measures
+	on $\mathcal{X}$ parametrized by $\theta$ in the parameter space $\Theta$.
 \end{definition}
 
 \begin{definition}[Sufficient Statistic]
 	Let $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in\Theta})$ be an statistical experiment.
 	Let a measurable function $T:(\mathcal{X},\mathcal{F})\to(\mathcal{T},\mathcal{G})$ be a statistic.
 	The statistic $T$ is said to be \emph{sufficient} if $\Pr_{\theta}(\cdot\given T)$ does not depend on $\theta$.
-	% Let $\{X_i\}_{i=1}^{n}$ be iid samples from a distribution with
-	% probability mass/density function $f(x;\theta)$ where $\theta$ is
-	% a parameter of the distribution.
-	% Let $Y=g(X_1,...,X_n)$ be a statistic.
-	% If
-	% \begin{align}\label{sufficient_def}
-	% 	\pr{X_1=x_1,...,X_n=x_n\given Y=y}
-	% \end{align}
-	% does not depend on $\theta$,
-	% then $Y$ is said to be a \emph{sufficient statistic} for $\theta$
-	% or \emph{sufficient} for $\theta$.
 \end{definition}
-
-% \begin{remark}
-% 	If a sufficient statistic for a parameter is found,
-% 	then every information about such parameter that can be inferred from the
-% 	data is capture in that statistic.
-% 	That is, any other information (e.g.\! variation of the data set)
-% 	does not provide any further information about the parameter.
-% \end{remark}
 
 \begin{example}\label{eg:bernoulli}
 	Consider an experiment $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in[0,1]})$
@@ -57,29 +39,10 @@
 		\pr[\theta]{X=x\given T=t}
 		= \frac{ \pr[\theta]{X=x} }{ \pr[\theta]{T=t} }
 		= \frac{ \prod_{i=1}^{n} \theta^{x_i} (1-\theta)^{1-x_i} } { {n\choose t}\theta^{t}(1-\theta)^{n-t} }
-		% &= \frac{ \theta^{\sum_{i=1}^{n}x_i} (1-\theta)^{\sum_{i=1}^{n}(1-x_i)} }{ {n\choose t}\theta^{t}(1-\theta)^{n-t} }
 		= {n\choose t}\inv.
 	\end{align*}
 	Since the conditional distribution does not depend on $\theta$, $T$ is a sufficient statistic.
-	% Consider $\{X_i\}_{i=1}^{n}\iidto\bernoulli(p)$.
-	% and a statistic $Y=\sum_{i=1}^{n}X_i$.
-	% Consider the expression {\ref{sufficient_def}}:
-	% \begin{align*}
-	% 	\pr{X_1=x_1,...,X_n=x_n\given Y=y}
-	% 	&= \frac{ \prod_{i=1}^{n} p^{x_i} (1-p)^{1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
-	% 	&= \frac{ p^{\sum_{i=1}^{n}x_i} (1-p)^{\sum_{i=1}^{n}1-x_i} }{ {n\choose y}p^{y}(1-p)^{n-y} } \\
-	% 	&= \frac{ p^{y}(1-p)^{n-y} }{ {n\choose y}p^{y}(1-p)^{n-y} }
-	% 	= \frac{1}{{n\choose y}}.
-	% \end{align*}
-	% Notice that the result does not depend on $p$.
-	% Therefore, $Y$ is a sufficient statistic for $p$.
 \end{example}
-
-% \begin{remark}
-% 	The name \emph{sufficient statistic} implies that the statistic is ``sufficient'' for inferencing about $\theta$.
-% 	It is ``sufficient'' in the sense that 
-% 	\autoref{eg:bernoulli}
-% \end{remark}
 
 \begin{theorem}[Fisher-Neyman Factorization]\label{thm:fisher-neyman-factorization}
 	Consider a statistical experiment $(\mathcal{X},\mathcal{F},\{\Pr_{\theta}\}_{\theta\in\Theta})$.
@@ -125,15 +88,15 @@
 			Now consider the denominator, we have
 			\begin{align*}
 				\pr[\theta]{T=t}
-				= \sum_{x' : T(x')=t} \pr[\theta]{X=x'}
-				= \sum_{x' : T(x')=t} g_{\theta}(t) h(x')
+				= \sum_{x':T(x')=t} \pr[\theta]{X=x'}
+				= \sum_{x':T(x')=t} g_{\theta}(t) h(x')
 			\end{align*}
 			where the second equality is obtained by factorization.
 			Substitute the result back and we have
 			\begin{align*}
 				\pr[\theta]{X=x\given T=t}
-				&= \frac{ g_{\theta}(t) h(x) }{\sum_{x' : T(x')=t} g_{\theta}(t) h(x')} \\
-				&= \frac{  h(x) }{\sum_{x' : T(x')=t} h(x')}
+				&= \frac{ g_{\theta}(t) h(x) }{\sum_{x':T(x')=t} g_{\theta}(t) h(x')} \\
+				&= \frac{  h(x) }{\sum_{x':T(x')=t} h(x')}
 			\end{align*}
 			where the final expression does not depend on $\theta$.
 			Hence $T$ is a sufficient statistic for $\theta$.
@@ -142,7 +105,8 @@
 \end{proof}
 
 \begin{example}[\autoref{eg:bernoulli} Continued]
-	Now we check that $T(x)=\sum_{i=1}^{n}x_i$ is a sufficient statistic using \autoref{thm:fisher-neyman-factorization}:
+	Now we check that $T(x)=\sum_{i=1}^{n}x_i$ is a sufficient statistic using
+	\autoref{thm:fisher-neyman-factorization}:
 	\begin{align*}
 		\pr[\theta]{X=x}
 		= \prod_{i=1}^{n} \theta^{x_i} (1-\theta)^{1-x_i}
