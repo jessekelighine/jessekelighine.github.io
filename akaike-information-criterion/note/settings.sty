@@ -1,11 +1,19 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{settings}
 %-----------------------------------------------------------------------------%
+%%% Color %%%
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
 %%% Section Font %%%
 \usepackage{titlesec}
-\titleformat*{\section}{\normalsize\bfseries\raggedright}
-\titleformat*{\subsection}{\normalsize\bfseries\raggedright}
-% \renewcommand\thesection{（\zhnum{section}）}
+\titleformat*{\section}{\normalsize\bfseries\sffamily\raggedright}
+\titleformat*{\subsection}{\normalsize\bfseries\sffamily\raggedright}
 %-----------------------------------------------------------------------------%
 %%% Page # of # %%%
 \usepackage{fancyhdr,lastpage}
@@ -16,17 +24,12 @@
 %-----------------------------------------------------------------------------%
 %%% Hyper Reference %%%
 \PassOptionsToPackage{hyphens}{url}
-\usepackage[hidelinks,colorlinks=true]{hyperref}
+\usepackage{hyperref}
+\hypersetup{hidelinks,colorlinks=true,
+linkcolor=myred,
+urlcolor=myblue,
+citecolor=myblue}
 % \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
-%-----------------------------------------------------------------------------%
-%%% Color %%%
-\usepackage[dvipsnames]{xcolor}
-\definecolor{myred}{RGB}{229,0,0}
-\definecolor{myblue}{RGB}{0,98,144}
-\definecolor{myyellow}{RGB}{246,182,50}
-\newcommand{\red}[1]{\textcolor{myred}{#1}}
-\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
-\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
 %-----------------------------------------------------------------------------%
 %%% Math %%%
 \usepackage{amsmath,mathtools,amssymb,mathrsfs}
@@ -79,25 +82,10 @@
 %-----------------------------------------------------------------------------%
 %%% Minimal Title %%%
 \makeatletter\def\@maketitle{%
-\noindent{\bfseries\@title}%
+\noindent{\bfseries\sffamily\@title}%
 \hfill\texttt{\@date}\\%
-\raggedleft
-% \ttfamily
-\@author
+\raggedleft\ttfamily\@author%
 \par\vskip1em}\makeatother
-%-----------------------------------------------------------------------------%
-%%% xeCJK %%%
-\usepackage{xeCJK}
-\newcommand{\chmainfont}{GenWanMin TJ L}
-\newcommand{\chsansfont}{Noto Sans CJK KR Regular}
-\newcommand{\chboldfont}{Noto Sans CJK KR Medium}
-\newcommand{\chmonofont}{jf-openhuninn-2.0}
-\newcommand{\chitalfont}{LXGW WenKai Light}
-\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
-\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
-\setCJKmonofont{\chmonofont}
-\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
-\setlength\parindent{2em}
 %-----------------------------------------------------------------------------%
 %%% Glossaries & Acronyms %%%
 \usepackage[style=long,acronym]{glossaries}
@@ -114,4 +102,16 @@
 \usepackage[hyperref=true,backend=biber,style=apa,sorting=ynt,backref=false]{biblatex} 
 \addbibresource{references.bib}\urlstyle{tt}
 %\printbibliography[heading=none,title=\textsf{參考文獻}]
+%-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{GenWanMinTJ-L}
+\newcommand{\chsansfont}{NotoSansCJKkr-Regular}
+\newcommand{\chboldfont}{NotoSansCJKkr-Bold}
+\newcommand{\chmonofont}{jf-openhuninn-2.0}
+\newcommand{\chitalfont}{LXGWWenKaiTC-Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
+\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
 %-----------------------------------------------------------------------------%

@@ -1,9 +1,22 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{settings}
 %-----------------------------------------------------------------------------%
+%%% Color %%%
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
 %%% Hyper Reference %%%
 \PassOptionsToPackage{hyphens}{url}
-\usepackage[hidelinks,colorlinks=true]{hyperref}
+\usepackage{hyperref}
+\hypersetup{hidelinks,colorlinks=true,
+linkcolor=myred,
+urlcolor=myblue,
+citecolor=myblue}
 % \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
 %-----------------------------------------------------------------------------%
 %%% Dinkus %%%

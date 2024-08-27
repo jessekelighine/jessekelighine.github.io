@@ -50,7 +50,7 @@ header-includes:
   Short definition and example of sufficient statistics.
 - [**Mallow's Cp**](mallow-cp):
   Motivating Mallow's $C_p$ criterion, one of the simplest model selection criterion.
-- [**Akaike Information Criterion (AIC)**](akaike-information-criterion/aic.pdf):
+- [**Akaike Information Criterion (AIC)**](akaike-information-criterion):
   Motivating AIC, one of the most popular model selection criterion.
 - [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity/von-neumann-ergodicity.pdf):
   An introduction to von Neumann's Ergodicity Theroem and its connection with convergence of Markov Chains.
