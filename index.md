@@ -42,13 +42,13 @@ header-includes:
   A brief introduction to Generalized Method of Moments, aka *GMM*.
 - [**Fisher Information**](fisher-information/fisher-information.pdf):
   A brief introduction to Fisher Information and some related ideas.
-- [**Markov Chain**](markov-chain):
-  Concepts and results related to Markov chain,
-  a proof of the Metropolis-Hastings Algorithm,
-  and a proof of the Gibbs Sampling Algorithm.
+<!--- [**Markov Chain**](markov-chain):-->
+<!--  Concepts and results related to Markov chain,-->
+<!--  a proof of the Metropolis-Hastings Algorithm,-->
+<!--  and a proof of the Gibbs Sampling Algorithm.-->
 - [**Sufficient Statistics**](sufficient-statistic/sufficient-statistic.pdf):
   Short definition and example of sufficient statistics.
-- [**Mallow's Cp**](mallow-cp/mallow-cp.pdf):
+- [**Mallow's Cp**](mallow-cp):
   Motivating Mallow's $C_p$ criterion, one of the simplest model selection criterion.
 - [**Akaike Information Criterion (AIC)**](akaike-information-criterion/aic.pdf):
   Motivating AIC, one of the most popular model selection criterion.

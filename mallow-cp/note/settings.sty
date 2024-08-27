@@ -26,15 +26,13 @@
 % \usepackage{accents}
 % \usepackage[makeroom]{cancel}
 % \newcommand{\raum}{\phantom{=}{\:\,}}
-\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\#}}
 %-----------------------------------------------------------------------------%
 %%% Minimal Title %%%
 \makeatletter\def\@maketitle{%
-\noindent{\bfseries\@title}%
+\noindent{\bfseries\sffamily\@title}%
 \hfill\texttt{\@date}\\%
-\raggedleft
-% \ttfamily
-\@author
+\raggedleft\ttfamily\@author%
 \par\vskip1em}\makeatother
 %-----------------------------------------------------------------------------%
 %%% Date Time %%%

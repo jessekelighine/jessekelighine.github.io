@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
 % \usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
-\usepackage{setspace}\setstretch{1.2} % \begin{spacing}{1.3}
+% \usepackage{setspace}\setstretch{1.2} % \begin{spacing}{1.3}
 %-----------------------------------------------------------------------------%
 \usepackage{settings}
 %-----------------------------------------------------------------------------%
@@ -18,12 +18,12 @@
 \noindent
 We are given a data set $\{y_{i},\xx_{i}\}_{i=1}^{n}$
 where $\xx_{i}=(x_{i1},...,x_{ik})\T$'s are $k\times 1$ vectors and $y_{i}$'s are scalars.
-It is known that the \gls{dgp} is
+It is known that the \gls*{dgp} is
 \begin{gather*}
 	y_{i} = \mu(\xx_{i}) + \epsilon_{i}
 \end{gather*}
 where $\epsilon_{i}$ is a random variable with mean zero and variance $\sigma^2$.
-That is, for each input $\xx_{i}$, an output $y_i$ is produced with an \gls{iid} error $\epsilon_i$.
+That is, for each input $\xx_{i}$, an output $y_i$ is produced with an \gls*{iid} error $\epsilon_i$.
 However, $\mu$ is an unknown function and it might only utilize a subset of the $k$ inputs.
 We represent the process compactly as $\yy=\mmu+\eepsilon$ where
 $\yy=(y_{1},...,y_{n})\T$,
@@ -37,7 +37,7 @@ That is, we want to find a way to measure how the good the prediction of a speci
 Let $\AA\subseteq\{1,...,k\}$ with $|\AA|=p$ denote a subset of the indices of size $p$
 and let $\XX_{\AA}$ denote the corresponding data matrix $(\xx_{1\AA},...,\xx_{n\AA})\T$.
 That is, $\AA$ denotes the subset of the $k$ independent variables we choose to put in our model.
-The standard \gls{ols} estimator yields the estimator $\hat\bbeta_{\AA}=(\XX_{\AA}\T\XX_{\AA})\inv\XX_{\AA}\T\yy$.
+The standard \gls*{ols} estimator yields the estimator $\hat\bbeta_{\AA}=(\XX_{\AA}\T\XX_{\AA})\inv\XX_{\AA}\T\yy$.
 An intuitive way of measuring prediction quality is to consider the expected sum of square errors:
 \begin{align}\label{eq:in-sample}
 	\E\!\left[ \sum_{i=1}^{n} ( y_{i} - \xx_{i\AA}\T\hat\bbeta_{\AA} )^{2} \right]
@@ -97,7 +97,7 @@ The $C_{p}$ values for different choices of $\AA$ tell us how the fitness of the
 The choice of $\AA$ with the smallest $C_{p}$ is the most preferable.
 \asDemonstrated
 
-\vfill
-\printglossaries
+% \vfill
+% \printglossaries
 
 \end{document}
