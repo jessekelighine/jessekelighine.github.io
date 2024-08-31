@@ -73,6 +73,8 @@ header-includes:
 
 ## Miscellanea
 
+- [**Arrow's Impossibility Theorem**](arrows-impossibility-theorem):
+  A one-page summary of Arrow's Impossibility theroem.
 - [**中文量詞**](quantifier):
   中文裡有很多相似、但是意義卻又微妙不同的量詞，像是「雙、副、對」或「條、根、支」。
   台灣的母語使用者會怎麼在這幾個量詞之間選擇呢？

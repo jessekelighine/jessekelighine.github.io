@@ -1,0 +1,181 @@
+%!TEX program = xelatex
+\documentclass[a4paper]{article}
+\usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
+% \usepackage{setspace}\setstretch{1.3} % \begin{spacing}{1.3}
+\usepackage[a4paper,vmargin={0.8cm,1cm},hmargin={1cm,1cm}]{geometry}
+%-----------------------------------------------------------------------------%
+\usepackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Title %%%
+\title{Arrow's Impossibility Theorem: A One-Page Summary%
+\thanks{This note draws heavily from \textcite{maskin-sen-2014} \citetitle{maskin-sen-2014} and
+\textcite{rubinstein-2006} \citetitle{rubinstein-2006}. This note is essetionally a quick summary
+of some of the results mentioned in both for my own reference.}%
+}
+\author{\href{https://jessekelighine.com}{jessekelighine.com}\\Jesse C. Chen 陳捷}
+\date{\today}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\maketitle
+
+\begin{multicols}{2}
+
+\section{Statement of the Theorem}
+
+\begin{definition}[Preference Relation]
+	Let $\mathcal{X}$ denote a set of alternatives.
+	A binary relation $\succsim$ over $\mathcal{X}$ is said to be a \emph{preference relation}
+	if it satisfies the following properties:
+	\begin{enumerate}
+		\item Completeness:
+			$\forall \{x,y\}\subseteq\mathcal{X}$, $x\not\succsim y$ implies $y\succsim x$.
+		\item Transitivity:
+			$\forall \{x,y,z\}\subseteq\mathcal{X}$, $x\succsim y$ and $y\succsim z$ implies $x\succsim z$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[\gls*{scm}]
+	A \emph{social choice model} consists of the following:
+	\begin{enumerate}
+		\item \textsc{Alternatives}:
+			A set of alternatives $\mathcal{X}$.
+		\item \textsc{Individuals}:
+			A set of finite individuals $\mathcal{N}$ with $|\mathcal{N}|=n$.
+		\item \textsc{Preference Profile}:
+			An $n$-tuple of individual preferences $P=(\succsim_1,...,\succsim_n)$ over alternatives $\mathcal{X}$.
+			Denote the space of all possible preference profiles as $\mathcal{P}$.
+		\item \textsc{\glsentrylong{swf}}:
+			A \gls*{swf}, denoted by $\varphi$,
+			is a function that assigns a preference relation $\succsim_P$ to every possible preference profile $P$.
+			We write the output of $\varphi(P)$ as $\succsim_{P}$.
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	Something to note with \gls*{swf}:
+	\begin{enumerate}
+		\item
+			\gls*{swf} is a way to aggregate preference to form an ``over-all preference'' of the individuals.
+			Note that this means for any profile $P$,
+			$\varphi$ cannot simply spit-out a single element in $\mathcal{X}$ and declare it to be `the' choice.
+			The output has to be a preference relation,
+			which is able to compare every element in the alternatives $\mathcal{X}$.
+		\item
+			We require \gls*{swf} to be a function,
+			i.e., it has to produce a social preference for any possible preference profile.
+			This properties is sometimes referred in the literature as \emph{unrestricted domain}.
+	\end{enumerate}
+	Naturally, we wish an \gls*{swf} to satisfy certain properties we deem ``fair'' or ``obvious.''
+\end{remark}
+
+\begin{axiom}[\gls*{par}]
+	An \gls*{swf} is said to satisfy \emph{\gls*{par}}
+	if for any profile $P=(\succsim_i)_{i\in\mathcal{N}}$ such that $x\succsim_i y$ $\forall i\in\mathcal{N}$,
+	we have $x\succsim_{P} y$.
+\end{axiom}
+
+\begin{remark}
+	That is to say, if everyone prefers $x$ to $y$,
+	then the aggregated social preference should also reflect that.
+\end{remark}
+
+\begin{axiom}[\gls*{iia}]
+	An \gls*{swf} is said to satisfy \emph{\gls*{iia}}
+	if for any two profiles $P=(\succsim_i)_{i\in\mathcal{N}}$ and $P'=(\succsim_i')_{i\in\mathcal{N}}$
+	such that $x\succsim_i y$ iff $x\succsim_i' y$,
+	we have $x\succsim_P y$ iff $x\succsim_{P'}y$.
+\end{axiom}
+
+\begin{remark}
+	That is, if two preference profiles ranks alternatives $x$ and $y$ the same way,
+	then the aggregate preferences should rank $x$ and $y$ the same way,
+	regardless of how other alternatives are ranked in the two profiles.
+\end{remark}
+
+\begin{theorem}[Arrow's Impossibility Theorem]
+	Under an \gls*{scm} with $|\mathcal{X}|\geq3$,
+	any \gls*{swf} $\varphi$ that satisfies \gls*{par} and \gls*{iia} is dictatorial,
+	that is, $\exists i^*\in\mathcal{N}$ such that $\varphi(P)=\mathord{\succsim_{i^*}}$ $\forall P\in\mathcal{P}$.
+\end{theorem}
+
+\section{Proof of the Theorem}
+
+\begin{definition}[Decisiveness]
+	Under an \gls*{scm},
+	a group of individuals $\mathcal{G}\subseteq\mathcal{N}$ is said to be
+	\emph{decisive} over a pair of alternatives $\{x,y\}\subseteq\mathcal{X}$
+	if $x\succsim_{P} y$ whenever preference profile $P$ satisfies $x\succsim_i y$ $\forall i\in\mathcal{G}$.
+\end{definition}
+
+\begin{lemma}[Globally Decisive Group]\label{lem:globally-decisive-group}
+	Suppose an \gls*{swf} satisfies \gls*{par} and \gls*{iia}.
+	If a group $\mathcal{G}$ is decisive over a pair $\{x,y\}\subseteq\mathcal{X}$,
+	then the group is decisive over every pair in $\mathcal{X}$.
+\end{lemma}
+
+\begin{proof}
+	Let $\{a,b\}\subseteq\mathcal{X}$ be different from $\{x,y\}$.
+	Suppose that in a certain profile $P$, we have $a\succsim_i x$ and $y\succsim_i b$ $\forall i\in\mathcal{N}$.
+	By \gls*{par}, we must have $a \succsim_P x$ and $y\succsim_P b$.
+	Further suppose that in profile $P$, we have $x\succsim_i y$ $\forall i\in\mathcal{G}$.
+	Then, since $\mathcal{G}$ is decisive over $\{x,y\}$, we have $x\succsim_P y$.
+	Since $\succsim_P$ must be transitive, we have $a\succsim_P b$.
+	Notice that for the individuals outside of $\mathcal{G}$,
+	the preference relation between $a$ and $b$ is unspecified under $P$.
+	Consider another preference profile $P'$ where the preference relation between $\{a,b\}$
+	is the same as $P$ for all individuals,
+	but the preferences over other alternatives, including $\{x,y\}$, are arbitrary.
+	By \gls*{iia}, we must have $a\succsim_{P'} b$ since $a\succsim_P b$.
+	Hence, the group $\mathcal{G}$ is also decisive over the pair $\{a,b\}$.
+	Similarly, we can consider pairs $\{x,b\}$ or $\{a,y\}$
+	and conclude that $\mathcal{G}$ is decisive over those pairs.
+\end{proof}
+
+\begin{remark}
+	By \autoref{lem:globally-decisive-group},
+	decisiveness over any pair entails decisiveness over every pair.
+	Hence, we will simply refer to groups as \emph{decisive} without specifying the pair of alternatives.
+\end{remark}
+
+\begin{lemma}[Contraction of Decisive Group]\label{lem:contraction-of-decisive-group}
+	Suppose an \gls*{swf} satisfies \gls*{par} and \gls*{iia}.
+	If $\mathcal{G}$ is decisive (with more than one individual),
+	then a proper subset of $\mathcal{G}$ is also decisive.
+\end{lemma}
+
+\begin{proof}
+	Partition the group $\mathcal{G}$ into two non-empty sub-groups: $\mathcal{G}_1$ and $\mathcal{G}_2$.
+	Suppose that we have a profile $P$ such that
+	$x\succsim_i y$ and $x\succsim_i z$ $\forall i \in\mathcal{G}_1$, also
+	$x\succsim_i y$ and $z\succsim_i y$ $\forall i \in\mathcal{G}_2$.
+	Since $\mathcal{G}$ is decisive, we have $x\succsim_P y$.
+	Consider two cases:
+	\begin{itemize}
+		\item
+			Suppose $z\succsim_P x$, then by transitivity we have $z\succsim_P y$.
+			Notice that no assumption about the preference relation over $\{y,z\}$
+			is made apart from the individuals in $\mathcal{G}_2$.
+			Hence, by \gls*{iia}, $\mathcal{G}_2$ is decisive since $\mathcal{G}_2$ is decisive over $\{y,z\}$.
+		\item
+			Suppose $z\not\succsim_P x$, then by completeness we have $x\succsim_P z$.
+			Similarly, no assumption about the preference relation over $\{x,z\}$
+			is made apart from the individuals in $\mathcal{G}_1$.
+			Hence, by \gls*{iia}, $\mathcal{G}_1$ is decisive.
+	\end{itemize}
+	Therefore, between $\mathcal{G}_1$ and $\mathcal{G}_2$, one of which must be decisive.
+\end{proof}
+
+\begin{proof}[Proof of Arrow's Impossibility Theorem]
+	By \gls*{par}, all individuals as a group $\mathcal{N}$ is decisive.
+	By \autoref{lem:contraction-of-decisive-group},
+	we known that a proper subset of $\mathcal{N}$ is, too, decisive.
+	Since $\mathcal{N}$ is finite,
+	this process of `contracting' the decisive group terminates when the decisive group contains only one individual,
+	the dictator.
+\end{proof}
+
+\end{multicols}
+
+\end{document}
