@@ -33,26 +33,26 @@ header-includes:
 
 ## Statistics
 
-- [**Definiteness of Covariance Matrices**](covariance-matrix/covariance-matrix.pdf):
+- [**Definiteness of Covariance Matrices**](covariance-matrix):
   What do we mean when we compare covariances matrices through positive definiteness?
   A short intuitive interpretation.
-- [**James-Stein Estimator**](james-stein_estimator/james-stein_estimator.pdf):
+- [**James-Stein Estimator**](james-stein_estimator):
   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation.
-- [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf):
+- [**Generalized Method of Moments**](gmm):
   A brief introduction to Generalized Method of Moments, aka *GMM*.
-- [**Fisher Information**](fisher-information/fisher-information.pdf):
+- [**Fisher Information**](fisher-information):
   A brief introduction to Fisher Information and some related ideas.
 <!--- [**Markov Chain**](markov-chain):-->
 <!--  Concepts and results related to Markov chain,-->
 <!--  a proof of the Metropolis-Hastings Algorithm,-->
 <!--  and a proof of the Gibbs Sampling Algorithm.-->
-- [**Sufficient Statistics**](sufficient-statistic/sufficient-statistic.pdf):
+- [**Sufficient Statistics**](sufficient-statistic):
   Short definition and example of sufficient statistics.
 - [**Mallow's Cp**](mallow-cp):
   Motivating Mallow's $C_p$ criterion, one of the simplest model selection criterion.
 - [**Akaike Information Criterion (AIC)**](akaike-information-criterion):
   Motivating AIC, one of the most popular model selection criterion.
-- [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity/von-neumann-ergodicity.pdf):
+- [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity):
   An introduction to von Neumann's Ergodicity Theroem and its connection with convergence of Markov Chains.
 - [**Weak IV**](weak-iv):
   An overview of some important concepts in weak instrument variables.
