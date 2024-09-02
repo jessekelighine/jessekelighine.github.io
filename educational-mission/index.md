@@ -16,7 +16,7 @@ header-includes:
 從 `2024-08-01` 到紐約到現在過一個禮拜了，
 記錄一下所見所聞跟心情。
 
-![](figures/sandwich.jpg)
+![](figures/sandwich.jpg){loading = "lazy}
 
 來到紐約的第二天領略到紐約的物價，這個三明治花了我 $17；
 份量確實是很多，但是結帳的時候嚇到。
@@ -30,7 +30,7 @@ header-includes:
 已經把這家店的菜單拿回家，
 準備把大部分的三明治菜單都吃過一遍。
 
-![](figures/columbia-out-of-harlem.jpg)
+![](figures/columbia-out-of-harlem.jpg){loading = "lazy}
 
 哥倫比亞的北方就是 Harlem，是有名的黑人區。
 從機場到哥倫比亞的 Uber 上經過 Harlem 就被警告說這邊比較危險，看起來也是有點恐怖。
@@ -44,7 +44,7 @@ header-includes:
 會往北走是因為要去跟一個朋友的朋友買地毯跟一些東西，
 放到房間變這樣：
 
-![](figures/my-room.jpg)
+![](figures/my-room.jpg){loading = "lazy}
 
 後來又添購了冷氣（也是往北方走去買來二手的），
 落地燈是幹來的，
@@ -53,18 +53,18 @@ header-includes:
 前面提到到 125 街以上氛圍就很不一樣，
 後來有天到時代廣場附近逛逛才知道什麼叫做都市：
 
-![](figures/time-square.jpg)
+![](figures/time-square.jpg){loading = "lazy}
 
 其實時代廣場附近幾個街區（大概是 30 到 50 街多左右，這邊被稱為 midtown）都長這樣，
 那天也去看了洛克斐勒中心（看到 Tonight Show starring Jimmy Fallon 的看板）、
 中央車站（無聊）、第五大道（往南看滿壯觀的）。
 在附近還看到無印良品還有 Line 商店：
 
-![](figures/line-store-in-time-square.jpg)
+![](figures/line-store-in-time-square.jpg){loading = "lazy}
 
 從外面看裡面全部都是東亞面孔，笑死。我家附近則是長這樣：
 
-![](figures/113th-broadway.jpg)
+![](figures/113th-broadway.jpg){loading = "lazy}
 
 跟曼哈頓 midtwon 完全是兩樣風情，
 甚至都還沒去精華中之精華區 downtown。
@@ -119,7 +119,7 @@ header-includes:
 
 最後附上哥倫比亞大學地鐵站的照片：
 
-![](figures/columbia-university-station.jpg)
+![](figures/columbia-university-station.jpg){loading = "lazy}
 
 紐約的地鐵真的是又髒又臭，
 而且只有部分車廂是有冷氣的，
@@ -140,7 +140,7 @@ header-includes:
 白人真的看起來大部分都在做高級工作，亞洲人也是。
 以下就是零元購交易市場，在中國城附近：
 
-![](figures/zero-dollar-shopping-vendors.jpg)
+![](figures/zero-dollar-shopping-vendors.jpg){loading = "lazy}
 
 在哥倫比亞附近聽到很多中文，但應該是因為中國學生多的關係。
 這樣看來紐約或甚至是美國的確是一個蠻讓人覺得沮喪的地方，階級的不流動直接以人種的方式呈現給你看。
@@ -151,7 +151,7 @@ header-includes:
 這禮拜第一次煮東西，自己煮下來發現其實跟外面買的價格並不會差很多（但這是給定你把一個三明治分成兩餐吃的情況）。
 自己煮的話大概算了一下就是 \$5 左右，營養比較均衡。範例：
 
-![](figures/daily-meal.jpg)
+![](figures/daily-meal.jpg){loading = "lazy}
 
 美國的豬肉確實有股騷味，但是我覺得我能接受。
 
@@ -173,7 +173,7 @@ header-includes:
 因為 IKEA 滿遠的，所以也第一次坐巴士。
 沒特別感覺，只是覺得這種東西好像是很久以前（70 年代？）台灣公車會出現的東西：
 
-![](figures/bus-pull-to-stop.jpg)
+![](figures/bus-pull-to-stop.jpg){loading = "lazy}
 
 IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留學生，到處都在講中文。
 回程的時候地鐵突然燈暗掉很正常，還看到有人把腳踏車鎖在把手上，很屌。
@@ -182,17 +182,17 @@ IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留
 跟歐洲有得比，但是裡面有很多美國元素很有趣，
 例如這個有棒球、橄欖球、曲棍球圖樣的彩繪玻璃：
 
-![](figures/st-john-cathedral.jpg)
+![](figures/st-john-cathedral.jpg){loading = "lazy}
 
 後來某天去了中國城，
 途中經過紐約大學地體站：
 
-![](figures/nyu-subway.jpg)
+![](figures/nyu-subway.jpg){loading = "lazy}
 
 紐約大學真的是沒有 campus，滿無聊的，
 就是走在附近會突然看到紫色的旗子：
 
-![](figures/nyu.jpg)
+![](figures/nyu.jpg){loading = "lazy}
 
 過一陣子又會看到一個，
 就這樣。
@@ -201,17 +201,17 @@ IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留
 中國城是個又髒又醜，而且被廣東話佔領，要是能避免的話不會想再去。
 倒是到處都是青天白日滿地紅，滿好笑的。
 
-![](figures/china-town-roc-1.jpg)
+![](figures/china-town-roc-1.jpg){loading = "lazy}
 
-![](figures/china-town-roc-2.jpg)
+![](figures/china-town-roc-2.jpg){loading = "lazy}
 
-![](figures/china-town-roc-3.jpg)
+![](figures/china-town-roc-3.jpg){loading = "lazy}
 
 最後在附近謁見了中山跟仲尼之後便快速離開：
 
-![](figures/sun-yat-sen.jpg)
+![](figures/sun-yat-sen.jpg){loading = "lazy}
 
-![](figures/confucius.jpg)
+![](figures/confucius.jpg){loading = "lazy}
 
 又過了一個禮拜之後發現其實曼哈頓 downtwon 分區也非常明顯：
 說不只是說「uptown 糟糕、downtaon 繁華」，
@@ -224,11 +224,11 @@ IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留
 去完中國城就跑去金融區，
 其實金融區反而無聊，就是金牛附近都是人（小女孩沒了）：
 
-![](figures/wall-street-bull.jpg)
+![](figures/wall-street-bull.jpg){loading = "lazy}
 
 旁邊看到一個川普建築跟紐約證交所（川普大樓除了斗大的 Trump Building 字樣就沒啥可看的，就不放照片）：
 
-![](figures/new-york-stock-exchange.jpg)
+![](figures/new-york-stock-exchange.jpg){loading = "lazy}
 
 Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 我是覺得頗無聊，沒什麼有趣的東西。
@@ -236,7 +236,7 @@ Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 走在路上不是吃的就是一些賣垃圾紀念品的店。
 希望之後多認識一些人之後可以做一些比較有趣的事情。
 
-![](figures/911-memorial.jpg)
+![](figures/911-memorial.jpg){loading = "lazy}
 
 晚上跟印度室友出去外面吃飯，
 第一次在晚上到哈林區吃披薩，正宗拿波里披薩，很不錯。
@@ -246,7 +246,7 @@ Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 某天整個中午到晚上都跟某朋友還有他的一些台灣朋友在他家頂樓，滿開心的（過好幾天第一次講這麼多中文？）。
 以下是他家海景（河景？）第一排頂樓的樣子：
 
-![](figures/pool-party.jpg)
+![](figures/pool-party.jpg){loading = "lazy}
 
 轉過身背後就是繁華無比的曼哈頓。
 第一次 shotgun、pickle ball⋯等，族繁不及備載。
@@ -254,7 +254,7 @@ Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 
 莫名其妙在一家超市（不是亞超，所以意外）看到伊藤園產地台灣的綠茶：
 
-![](figures/tea-vs-milk.jpg)
+![](figures/tea-vs-milk.jpg){loading = "lazy}
 
 價格是一旁牛奶先生的三倍，但還是買了，好喝。
 
@@ -272,7 +272,7 @@ Math Camp 真的是頗無聊，
 今天下午偷閒還是跑出來亂晃，
 看到熨斗大夏（整修中）：
 
-![](figures/flat-iron.jpg)
+![](figures/flat-iron.jpg){loading = "lazy}
 
 其實原本是先去 [MoMath](https://momath.org/)，
 以為是超 nerdy 的地方（其實算是滿 nerdy），
@@ -284,7 +284,7 @@ Math Camp 真的是頗無聊，
 
 最後附上一張哥倫比亞圖書館的照片：
 
-![](figures/alma-mater.jpg)
+![](figures/alma-mater.jpg){loading = "lazy}
 
 那天去看才仔細看到上面的刻字，滿霸氣的：
 
@@ -306,7 +306,7 @@ Math Camp 真的是頗無聊，
 官方的地鐵公告都要三語，
 好笑的是中文是晶晶體：
 
-![](figures/nyc-subway-trilingual.jpg)
+![](figures/nyc-subway-trilingual.jpg){loading = "lazy}
 
 這週開始實體 Math Camp，
 終於見到同學了，
@@ -352,15 +352,15 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 唯一之前沒有太認真學過的東西只有下禮拜要講的 correspondence 吧，
 當然在個論上都講過，但是不太了解一些相關的數學性質。
 
-![](figures/math-camp.jpg)
+![](figures/math-camp.jpg){loading = "lazy}
 
 其中一天去 orientation，滿無聊的，花超多時間再講性騷擾防治跟 consent，
 可能在美國真的是大問題吧？或者是在台灣也是大問題只是沒有這樣超正式的官方宣傳？
 場地倒是非常豪華，是舊圖書館，現在是行政大樓：
 
-![](figures/orientation-top.jpg)
+![](figures/orientation-top.jpg){loading = "lazy}
 
-![](figures/orientation.jpg)
+![](figures/orientation.jpg){loading = "lazy}
 
 週五跟幾乎整個班的人到酒吧喝酒，蠻不錯的。
 有趣的是酒吧是在一艘船上，所以不知道是自己醉還是船在晃，呵呵。
@@ -370,34 +370,34 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 今天還跟有些人去哥大的一個美術館，但是展覽偏無聊，太現代，不太喜歡。
 但是後來又去逛到有名的 Apollo Theater 那邊，有歷史文化感，而且走在路上還看到曼德拉的紀念牌，真的酷。
 
-![](figures/mandela-plaque.jpg)
+![](figures/mandela-plaque.jpg){loading = "lazy}
 
 然後晚上到一個在長島上的地方 Flushing 跟台灣朋友吃烤肉，到了才知道那便是所謂「新」中國城，
 比曼哈頓上的更亂，而且顯然這邊是比較「後來」才來的人，到處都是簡體字。
 我們去吃一個烤串，是滿好吃的，價格也不會太貴，但是進到店裡就被用中文問幾位蠻好笑的。
 
-![](figures/friendship-bbq.jpg)
+![](figures/friendship-bbq.jpg){loading = "lazy}
 
 但是這邊真的有點亂，短期也不會想來，而且其實也沒什麼特別的，只是因為台灣朋友要搭飛機所以才來這邊離機場近的地方。
 前幾天也跟他們去吃一家韓式料理，吃到這個炸魚，跟台灣自助餐吃到的完全一樣，家鄉味：
 
-![](figures/korean-fried-fish.jpg)
+![](figures/korean-fried-fish.jpg){loading = "lazy}
 
 這是某天再來走去拍的卡內基音樂廳，在整修，所以滿廢的：
 
-![](figures/carnegie-hall.jpg)
+![](figures/carnegie-hall.jpg){loading = "lazy}
 
 但是走到那邊途中有看到中央公園的馬，讚：
 
-![](figures/horses-in-central-park.jpg)
+![](figures/horses-in-central-park.jpg){loading = "lazy}
 
 這是跟哥大密切合作的猶太神學院，1920 年代建成，上面寫著斗大「And the Bush was not Consumed」，非常猶太：
 
-![](figures/jewish-theological-seminary.jpg)
+![](figures/jewish-theological-seminary.jpg){loading = "lazy}
 
 某天去坐渡輪，天氣跟風景都超讚：
 
-![](figures/manhattan-from-ferry.jpg)
+![](figures/manhattan-from-ferry.jpg){loading = "lazy}
 
 坐度輪是專門跑去看這個著名的拍照景點，
 但是旁邊藍色鷹架超級大，很煩，
@@ -406,12 +406,12 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 但是被冰淇淋車擋住，
 真的很煩。
 
-![](figures/famous-dumbo-view.jpg)
+![](figures/famous-dumbo-view.jpg){loading = "lazy}
 
 最後附上這幾天才拿到的紐約市立圖書館卡，
 滿好看的，有鑰匙圈也有卡，覺得自己更像是紐約居民了。
 
-![](figures/public-library-key-chain.jpg)
+![](figures/public-library-key-chain.jpg){loading = "lazy}
 
 總體而言這週真的是社交能量消耗殆盡，
 希望之後聊天可以不要一直講一些雞毛涮皮的無聊事情。
@@ -426,12 +426,12 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 也看到以色列對抗巴勒斯坦的示威又有零星的開始，
 遠遠的就可以看到以色列國旗還有很多猶太人：
 
-![](figures/israel-vs-palestine-2.jpg)
+![](figures/israel-vs-palestine-2.jpg){loading = "lazy}
 
 原本以為猶太人是支持以色列，
 但是走近一看發現不是：
 
-![](figures/israel-vs-palestine-3.jpg)
+![](figures/israel-vs-palestine-3.jpg){loading = "lazy}
 
 然後附近超級無敵多警察，呵呵。
 最後沒發生什麼事就是了，真無聊。
@@ -440,32 +440,32 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 今天特地去拍了一些。
 這是校園裡面的小教堂，滿精緻的，據說一些哥大的學生會在這裡結婚。
 
-![](figures/st-pauls-chapel.jpg)
+![](figures/st-pauls-chapel.jpg){loading = "lazy}
 
 這是數學館，名字就叫 Mathematics，其他建築都是有冠名，像是 Pulitzer（我也是這禮拜才知道普立茲攝影獎在哥大頒發）。
 有人笑稱因為唸數學的人都太窮沒有人有錢可以冠名，所以只能叫 Mathematics。
 但是前面有草坪，所以讚。
 
-![](figures/mathematics-building.jpg)
+![](figures/mathematics-building.jpg){loading = "lazy}
 
 據說這是很有名的「學者之獅」，必須說我沒聽過，
 而且不知道為什麼這獅子很瘦。
 
-![](figures/scholars-lion.jpg)
+![](figures/scholars-lion.jpg){loading = "lazy}
 
 這個角落很有名：
 
-![](figures/i-am-something-of-a-scientist-myself-recreation.jpg)
+![](figures/i-am-something-of-a-scientist-myself-recreation.jpg){loading = "lazy}
 
-![](figures/i-am-something-of-a-scientist-myself-original.jpg)
+![](figures/i-am-something-of-a-scientist-myself-original.jpg){loading = "lazy}
 
 嗯。就在現在主要的 Butler 圖書館旁邊：
 
-![](figures/butler-library-exterior.jpg)
+![](figures/butler-library-exterior.jpg){loading = "lazy}
 
 內裝很 old money，而且圖書館裡面有胡適的畫像，下次在去拍：
 
-![](figures/butler-library-interior.jpg)
+![](figures/butler-library-interior.jpg){loading = "lazy}
 
 這個週五 Math Camp 剛結束。
 Math Camp 結束是考了一個試，
@@ -528,16 +528,16 @@ Math Camp 考試早上結束，
 要比歐洲傳統的藝術品又比不過羅浮宮，
 都是一些有名的畫家的不有名作品。
 
-![](figures/the-met.jpg)
+![](figures/the-met.jpg){loading = "lazy}
 
 但倒是有不少跟美國相關的東西就是了，像是這個。
 畫框也超級美國，滿好笑的。
 
-![](figures/washington-crossing-the-delaware.jpg)
+![](figures/washington-crossing-the-delaware.jpg){loading = "lazy}
 
 去完博物館去買東西，人生第一次看到手推車有專用電扶梯，不愧是美國，跟偷懶相關的東西都不讓我失望：
 
-![](figures/escalator-for-carts.jpg)
+![](figures/escalator-for-carts.jpg){loading = "lazy}
 
 這週也把申請 SSN 的事情搞定了，
 其實就是人過去把文件給他而已。
@@ -547,7 +547,7 @@ Math Camp 考試早上結束，
 所以她可能就是扮演這種職責吧。
 後來經過法院，看起來頗氣派。
 
-![](figures/ny-state-court-house.jpg)
+![](figures/ny-state-court-house.jpg){loading = "lazy}
 
 上面刻字：
 
@@ -563,18 +563,18 @@ Math Camp 考試早上結束，
 這邊重現了一個破爛的愛爾蘭平房，
 紀念那些因為飢荒所以移民來美國的人：
 
-![](figures/irish-famine-memorial.jpg)
+![](figures/irish-famine-memorial.jpg){loading = "lazy}
 
 然後附近有一小片柏林圍牆，
 下面有個小牌子寫說這是德國領事館送給這個「公園」的，
 不是送給美國或紐約市，
 有點意義不明。
 
-![](figures/berlin-wall.jpg)
+![](figures/berlin-wall.jpg){loading = "lazy}
 
 最後附上今天午餐照片：
 
-![](figures/lunch-chicken.jpg)
+![](figures/lunch-chicken.jpg){loading = "lazy}
 
 廚藝沒什麼進步，
 進步的倒是知道可以去買日式調味粉灑在菠菜上。
