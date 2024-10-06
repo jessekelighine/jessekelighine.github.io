@@ -350,7 +350,7 @@ There are three approaches in the literature to do fully robust inference \paren
 		but condition it on a computable sufficient statistic so that the conditional distribution does not depend on $\mu^2$.
 \end{enumerate}
 
-Essentially, the first approach basically does not work,
+Essentially, the first approach does not work,
 as the tests devised using this approach does not have any power, i.e., they are too conservative.%
 \footnote{
 	One such procedure, Bonferroni Confidence Region, is discussed in \textcite{staiger-stock-1997}.
@@ -450,10 +450,15 @@ are sufficient for the pair $(\bbeta,\PI)$.%
 \begin{remark}
 	Since $\mathcal{S}$ does not depend on $\PI$ under $\nullhypothesis$,
 	$\mathcal{T}$ is sufficient for $\PI$ under $\nullhypothesis$.
-	It follows that a test of $\bbeta=\bbeta_0$ based on some function $g(\mathcal{S},\mathcal{T})$ is similar
+	It follows that a test of $\bbeta=\bbeta_0$ based on some function $g(\mathcal{S},\mathcal{T})$ is \emph{similar}
 	if its critical value is computed from the conditional distribution of $g(\mathcal{S},\mathcal{T})$ given $\mathcal{T}$.
-	% TODO: why
-	\parencite{stock-wright-yogo-2002}
+	In this context,
+	\emph{similar} simply means that the distribution of the test statistic does not depend on the nuisance parameter $\PI$.
+	\footnote{
+		See \textcite{lehmann-2022} \emph{Chapter 4 Unbiasedness: Theory and First Applications}
+		for details about statically similar tests.
+	}
+	\parencite{moreira-2009,stock-wright-yogo-2002}
 \end{remark}
 
 \begin{remark}
@@ -573,8 +578,8 @@ Now we can rewrite \autoref{dfn:ar-1} as follows
 \section{Further Topics}
 
 \begin{enumerate}
-	\item
-		Complete and Similar tests.
+	% \item
+	% 	Complete and Similar tests.
 	\item
 		\gls*{liml} and $k$-class estimators: A more robust form of \emph{estimation} compared to \gls*{2sls}.
 	\item
