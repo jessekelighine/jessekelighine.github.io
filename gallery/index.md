@@ -1,7 +1,7 @@
 ---
 title:  "Gallery"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2023-12-12"
+date:   "2024-10-06"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -22,6 +22,7 @@ header-includes:
 <img alt="freedom-instrument" src="resources/freedom-instrement-01.png"                         style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
 <img alt="sick" src="resources/sick.png"                         style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
 <img alt="abnehmender-mond" src="resources/abnehmender-mond.png"                         style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
+<img alt="pinkeln"     src ="resources/pythagorean.png"       style ="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
 <!--<img alt="suppression"        src="resources/suppression.png"                                   style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;"> -->
 <!--<img alt="extraction"         src="resources/extraction.png"                                    style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;"> -->
 <img alt="roll"         src="resources/cat_roll.gif"                                    style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
