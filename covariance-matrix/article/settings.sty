@@ -36,9 +36,10 @@
 %<--------------------------------------------------------------------------->%
 %%% Minimal Title %%%
 \makeatletter\def\@maketitle{%
-\noindent{\sffamily\bfseries\@title}%
-\hfill\texttt{\@date}\\{\ }\null\hfill\@author
-\par\vskip1.5em}\makeatother
+\noindent{\bfseries\sffamily\@title}%
+\hfill\texttt{\@date}\\%
+\raggedleft\ttfamily\@author%
+\par\vskip1em}\makeatother
 %-----------------------------------------------------------------------------%
 %%% Date Time %%%
 \usepackage{datetime}
