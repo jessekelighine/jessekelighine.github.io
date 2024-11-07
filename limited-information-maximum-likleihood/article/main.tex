@@ -1,0 +1,452 @@
+%!TEX program = xelatex
+\documentclass[a4paper]{article}
+\usepackage{fontspec}\defaultfontfeatures{Ligatures=TeX}
+\usepackage[a4paper,vmargin={4cm,4cm},hmargin={4cm,4cm}]{geometry}
+%-----------------------------------------------------------------------------%
+\usepackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Title %%%
+\title{Limited Information Maximum Likelihood: A Short Note}
+\author{\href{https://jessekelighine.com}{jessekelighine.com}\\Jesse C.\ Chen\ 陳\,捷}
+\date{\today}
+%-----------------------------------------------------------------------------%
+
+\begin{document}
+
+\maketitle
+
+\begin{remark}
+	\gls*{liml} is a method first formally introduced by \textcite{anderson-rubin-1949} to solve for \gls*{sem}.
+	In this note,
+	we will focus on a specific application of \gls*{sem}: \gls*{iv} regression,
+	and how \gls*{liml} is used in this specific application.
+\end{remark}
+
+\begin{definition}[\glsentrylong{iv} Model]\label{dfn:iv}
+	Data is of the form $\{y_t,\xx_t,\zz_t,\ww_t\}_{t=1}^{T}$ where
+	$y_t$ is a scalar outcome variable,
+	$\xx_t$ is a $N\times 1$ vector of potentially endogenous variable,
+	$\zz_t$ is a $K\times 1$ vector of \gls*{iv},
+	$\ww_t$ is a $R\times 1$ vector of exogenous control variables.
+	The model assumes the (matrix) form
+	\begin{align}
+		\underset{(T\times 1)}{\yy}
+		&= \underset{(T\times N)}{\XX}\bbeta + \underset{(T\times R)}{\WW}\PSI + \underset{(T\times 1)}{\uu}
+		\label{eq:structural} \\
+		\underset{(T\times N)}{\XX}
+		&= \underset{(T\times K)}{\ZZ}\PI + \underset{(T\times R)}{\WW}\PHI + \underset{(T\times N)}{\vv}
+		\label{eq:first-stage}
+	\end{align}
+	$\yy=(\yy_1,...,\yy_T)\T$,
+	$\XX=(\xx_1,...,\xx_T)\T$,
+	$\WW=(\ww_1,...,\ww_T)\T$,
+	$\ZZ=(\zz_1,...,\zz_T)\T$;
+	$\uu=(\uu_1,...,\uu_T)\T$ and $\vv=(\vv_1,...,\vv_T)\T$ are error terms;
+	$\bbeta$, $\PSI$, $\PI$, and $\PHI$ are parameters.
+	\autoref{eq:structural} is the so-called \emph{structural equation} and
+	\autoref{eq:first-stage} is a linear projection, so-called \emph{first stage}.
+\end{definition}
+
+\section{Simultaneous Equation Models}
+
+\begin{definition}[\glsentrylong{sem}]\label{dfn:sem}
+	An \gls*{sem} model is given in the following form
+	\begin{align}\label{eq:sem}
+		\underset{(T\times N)}{\AA}
+		\underset{(N\times N)}{\GAMMA}
+		=
+		\underset{(T\times K)}{\BB}
+		\underset{(K\times N)}{\XI}
+		+
+		\underset{(T\times N)}{\UU}
+	\end{align}
+	where
+	$T$ is the number of observations,
+	$N$ is the number of potentially endogenous variables
+	($N$ is also the number of model equations),
+	$\AA$ is the matrix of potentially endogenous variables,
+	$\BB$ is the matrix of exogenous variables,
+	$\UU$ is the matrix of errors,
+	$\GAMMA$ and $\XI$ are the parameters.
+\end{definition}
+
+\begin{remark}
+	In addition, we require $\GAMMA$ to be invertible and
+	write the reduced form as
+	\begin{align*}
+		\AA
+		= \BB\XI\GAMMA\inv + \UU\GAMMA\inv
+		= \BB\OMEGA + \VV.
+	\end{align*}
+\end{remark}
+
+\begin{remark}
+	For each endogenous variable/model equation $n=1,...,N$,
+	we require that we can write
+	\begin{gather}
+		\underset{(T\times 1)}{\AA_{\bullet n}}
+		=
+		\underset{(T\times(N-1))}{\AA_{-\bullet n}}
+		\underset{((N-1)\times 1)}{\ggamma_{\bullet n}}
+		+
+		\BB
+		{\XI_{\bullet n}}
+		+
+		\UU_{\bullet n} \label{eq:sem-one-equation}
+		\shortintertext{where}
+		\ggamma_n
+		=
+		[
+		-\GAMMA_{1n},
+		\cdots,
+		-\GAMMA_{(n-1)n},
+		-\GAMMA_{(n+1)n},
+		\cdots,
+		-\GAMMA_{nn}
+		]\T. \label{eq:small-gamma}
+	\end{gather}
+	and $\AA_{\bullet n}$, $\XI_{\bullet n}$, $\UU_{\bullet n}$ denote the $n$-th column of the respective matrices
+	and $\AA_{-\bullet n}$ denotes the matrix $\AA$ with $n$-th column removed.
+	That is, we do not allow any endogenous variable to influence itself.
+	This mean the diagonal of $\GAMMA$ are all ones.
+	In our \gls*{iv} application, we will have this formulation automatically.
+\end{remark}
+
+\begin{example}[\gls*{iv} as \gls*{sem}]\label{eg:iv-into-sem}
+	We can rewrite the formulation in \autoref{dfn:iv} as an \gls*{sem}:
+	\begin{align}\label{eq:iv-into-sem}
+		[\yy,\XX]
+		\begin{bmatrix}
+			1 & \zero \\
+			-\bbeta & \II
+		\end{bmatrix}
+		=
+		[\WW,\ZZ]
+		\begin{bmatrix}
+			\PSI & \PHI \\
+			\zero & \PI
+		\end{bmatrix}
+		+
+		[\uu,\vv].
+	\end{align}
+	Notice that we put both $\yy$ and $\XX$ on the left-hand side
+	and $\diag(\GAMMA)=\one$.
+\end{example}
+
+\begin{remark}
+	In the \gls*{iv} model,
+	our main goal is to estimate the parameter $\bbeta$.
+	This means that in formulation \eqref{eq:iv-into-sem},
+	we only really care about the estimation of one of the model equations,
+	namely the first column of $\GAMMA$ where $\bbeta$ is present.
+\end{remark}
+
+\begin{remark}
+	There are two general approaches to estimating \gls*{sem}:
+	\gls*{gmm} and \gls*{ml}.
+	Specifically,
+	in general \gls*{sem},
+	we talk about \gls*{3sls} and \gls*{fiml};
+	and when we are talking about \gls*{iv} estimator,
+	we usually talk about \gls*{2sls} and \gls*{liml}.
+
+	To use \gls*{3sls} or \gls*{fiml},
+	one has to specify the entire structure of \gls*{sem}, hence the name \gls*{fiml}.
+	This is in contrast to what we have done in \autoref{eg:iv-into-sem},
+	where we really only specified the ``second-stage'' model,
+	and for the ``first-stage'' we simply used the reduced form.
+	Hence, we have the name \gls*{liml},
+	where only some equations in the \gls*{sem} are structural.
+	% In particular, \gls*{liml} is able to exploit the structure of
+	% matrix $\GAMMA$ and $\XI$
+	% to obtain a closed-form solution.
+	% In this note, we will not talk about \gls*{fiml} and \gls*{3sls}
+	% since we are focused on \gls*{sem}'s relation to \gls*{iv} estimators.
+	% (An excellent reference is, of course, \textcite{hayashi-2001})
+\end{remark}
+
+\subsection{\glsentrylong{2sls}}
+
+\begin{definition}[\glsentrylong{2sls}]\label{dfn:2sls}
+	Suppose we have the \gls*{sem} as in \eqref{eq:iv-into-sem}
+	and the first equation is the structure equation of interest.
+	We proceed as follows to obtain estimate of $\bbeta$,
+	as defined in \eqref{eq:small-gamma}:
+	\begin{itemize}
+		\item(\textsc{Stage 1})
+			Regress $\XX$ on $\WW$ and $\ZZ$
+			and obtain the predicted values $\hat\XX$.
+		\item(\textsc{Stage 2})
+			Regress $\yy$ on $\hat\XX$, $\WW$, and $\ZZ$ to obtain estimates of $\bbeta$.
+	\end{itemize}
+	The explicit formula for \gls*{2sls} estimator is given by
+	\begin{align}\label{eq:2sls-estimator}
+		\begin{bmatrix}
+			\hat\bbeta \\ \hat\PI
+		\end{bmatrix}
+		&=
+		(
+		[\XX,\ZZ]\T
+		\PP
+		[\XX,\ZZ]
+		)\inv
+		{[\XX,\ZZ]}\T
+		\PP
+		\yy
+		\shortintertext{where}
+		\PP &= [\WW,\ZZ]([\WW,\ZZ]\T[\WW,\ZZ])\inv{[\WW,\ZZ]}\T. \nonumber
+	\end{align}
+\end{definition}
+
+% \begin{remark}
+% 	In \autoref{eg:iv-into-sem},
+% 	this procedure is simply the usual \gls*{2sls} for \nameref{dfn:iv}
+% 	with $n=1$.
+% \end{remark}
+
+\begin{remark}
+	Remember that \gls*{2sls} is not robust to heteroskedastic errors.
+	That is, \gls*{2sls} estimator for variance is only for the case that $\E(\uu_t^2\given \ww_t,\zz_t)$ does not depend on $t$.
+	For heteroskedastic errors, \gls*{gmm} estimator are needed.
+\end{remark}
+
+\subsection{\glsentrylong{liml}}
+
+\begin{remark}[Excerpt from \textcite{hayashi-2001}, p.538]
+	The advantage of the \gls*{fiml} estimator is that
+	it allows you to exploit all the information afforded by the complete system of simultaneous equations.
+	This, however, is also a weakness because, as is true with any other system or joint estimation procedure,
+	the estimator is not consistent if any part of the system is misspecified.
+	If you are confident that the equation in question is correctly specified but not so sure about the rest of the system,
+	you may well prefer to employ single-equation methods such as \gls*{2sls}.
+	The rest of this section derives the \gls*{ml} estimator called the \gls*{liml} estimator,
+	which is the \gls*{ml} counterpart of \gls*{2sls}.
+\end{remark}
+
+\begin{remark}
+	Thus, in the end, there is nothing special about \gls*{liml},
+	it can be viewed as an \gls*{fiml} estimator with some of the structure replaced by reduced form parameters.
+	However, there is a lot to gain in terms of the actual computation of \gls*{liml},
+	since the form of $\GAMMA$ and $\XI$ is very particular.
+	For \gls*{fiml}, we have to resort to numerical methods to obtain the estimator,
+	whereas with \gls*{liml}, there is a closed form solution.
+\end{remark}
+
+\begin{example}[\nameref{eg:iv-into-sem} Continued]
+	For each sample, we have the \gls*{sem} as
+	\begin{align}
+		(y_t,\xx_t)
+		\begin{bmatrix}
+			1 & \zero \\
+			-\bbeta & \II
+		\end{bmatrix}
+		=
+		(\ww_t,\zz_t)
+		\begin{bmatrix}
+			\PSI & \PHI \\
+			\zero & \PI
+		\end{bmatrix}
+		+
+		(\uu_t,\vv_t).
+	\end{align}
+	where $(\uu_t,\vv_t)\given(\ww_t,\zz_t)\sim\mathcal{N}(\zero,\SIGMA_0)$.
+	The log-likelihood function is given by
+	\begin{align}\label{eq:log-likleihood-function}
+		\begin{aligned}
+			\ell(\GAMMA,\XI,\SIGMA)
+			&=
+			-\frac{TN}{2}\ln(2\pi)
+			-\frac{T}2\ln|\SIGMA| \\
+			&\mathrel{\phantom{=}}
+			- \frac1{2} \sum_{t=1}^{T} [(y_t,\xx_t)\GAMMA + (\ww_t,\zz_t)\XI] \SIGMA\inv{[(y_t,\xx_t)\GAMMA + (\ww_t,\zz_t)\XI]}\T.
+		\end{aligned}
+	\end{align}
+\end{example}
+
+\begin{definition}[\glsentrylong{liml}]\label{dfn:liml}
+	Define the following projection and annihilator matrices:
+	\begin{align*}
+		\PP_\WW = \WW(\WW\T\WW)\inv\WW\T \text{ and } \MM_\WW = \II - \PP_\WW.
+	\end{align*}
+	Also, define $\MM=\II-\PP$.
+	The \gls*{liml} estimator for $\bbeta$ is
+	\begin{align}\label{eq:liml-estimator}
+		\begin{bmatrix}
+			\hat\bbeta \\ \hat\PI
+		\end{bmatrix}
+		&=
+		(
+		[\XX,\ZZ]\T
+		(\II - k\MM)
+		[\XX,\ZZ]
+		)\inv
+		{[\XX,\ZZ]}\T
+		(\II - k\MM)
+		\yy.
+	\end{align}
+	where $k$ is the smallest eigenvalue of
+	\begin{align*}
+		\Bigl([\yy,\XX]\T\MM[\yy,\XX]\Bigr)\inv[1/2]
+		[\yy,\XX]\T\MM_\WW[\yy,\XX]
+		\Bigl([\yy,\XX]\T\MM[\yy,\XX]\Bigr)\inv[1/2].
+	\end{align*}
+\end{definition}
+
+\begin{remark}
+	Some tedious algebra is needed to derive \eqref{eq:liml-estimator},
+	even \textcite{hayashi-2001} did not bother to write down the derivation.
+	Here I will present the outline of the algebra needed.
+\end{remark}
+
+\begin{proof}[Sketch of Proof for \autoref{dfn:liml}](\textcite{davidson-mackinnon-1993}, pp.644--649)
+	We derive the form \eqref{eq:liml-estimator} with the following steps:
+	\begin{enumerate}
+		\item
+			We rewrite the log-likelihood function \eqref{eq:log-likleihood-function} as
+			the concentrated log-likelihood function, i.e., 
+			we replace the $\SIGMA$ in the model with
+			\begin{align*}
+				\SIGMA(\XI,\GAMMA)
+				= \frac1T(\AA\GAMMA-\BB\XI)\T(\AA\GAMMA-\BB\XI).
+			\end{align*}
+			This concentration is obtain by first order condition.
+			Hence, we have the concentrated log-likelihood function as
+			\begin{align*}
+				\ell^{\complement}(\XI,\GAMMA)
+				&= -\frac{TN}{2}(\ln(2\pi) + 1) - \frac{T}{2} \ln\left|\frac1T(\AA\GAMMA-\BB\XI)\T(\AA\GAMMA-\BB\XI)\right| \\
+				&= -\frac{TN}{2}(\ln(2\pi) + 1) - \frac{T}{2} \ln\left|\frac1T(\AA-\BB\XI\GAMMA\inv)\T(\AA-\BB\XI\GAMMA\inv)\right|
+			\end{align*}
+			where we used the fact that $|\GAMMA|=1$.
+			Thus, it is clear the objective now is to minimize the determinant.
+		\item
+			Notice that we have the expression
+			\begin{align*}
+				\XI\GAMMA\inv
+				=
+				\begin{bmatrix}
+					\PSI & \PHI \\
+					\zero & \PI
+				\end{bmatrix}
+				\begin{bmatrix}
+					1 & \zero \\
+					\bbeta & \II
+				\end{bmatrix}
+				=
+				\begin{bmatrix}
+					\PSI + \PHI\bbeta & \PHI \\
+					\PI\bbeta & \PI
+				\end{bmatrix}.
+			\end{align*}
+			Note that the columns corresponding to the first stage regression does not have any restrictions.
+			Hence, to minimize the determinant, we should simply use the \gls*{ols} estimators for that column.
+			We can simply consider the model with those variables partialled out:
+			\begin{align*}
+				|(\AA\GAMMA-\BB\XI)\T\MM_{\WW}(\AA\GAMMA-\BB\XI)|
+			\end{align*}
+			Another way of understanding this is to invoke the Frisch-Waugh-Lovell theorem before writing the likelihood function.
+		\item
+			Through some tedious algebra,
+			the determinant can be reduced to
+			\begin{align}\label{eq:penultimate-determinant}
+				\begin{gathered}
+					(1,-\bbeta\T)\AA\T\MM_{\WW}\AA(1,-\bbeta\T)\T \cdot \\
+					|(\MM_\WW\XX - \MM_\WW\ZZ\PI)\T\MM_{\MM_\WW\AA(1,-\bbeta\T)\T}(\MM_\WW\XX - \MM_\WW\ZZ\PI)|
+				\end{gathered}
+			\end{align}
+			where $\MM_{\MM_\WW\AA(1,-\bbeta\T)\T}$ denotes, as usual,
+			the projection on to the orthogonal space of $\MM_\WW\AA(1,-\bbeta\T)\T$.
+			Since $\PI$ only appears in the second term and it is in a quadratic form,
+			we know the \gls*{ols} estimator should be chosen to minimize the determinant.
+			Hence, the second term, through some more tedious algebra, reduces to
+			\begin{align*}
+				|\XX\T\MM_{\WW}\MM_{\MM_\WW\AA(1,-\bbeta\T)\T,\MM_{\WW}\ZZ}\MM_{\WW}\XX|
+				=
+				\frac{|\AA\T\MM\AA|}{(1,-\bbeta\T)\T\AA\T\MM\AA(1,-\bbeta\T)\T}.
+			\end{align*}
+		\item
+			Plug the result back in \eqref{eq:penultimate-determinant} and we have that
+			\begin{align*}
+				\underbrace{
+				\frac
+				{ (1,-\bbeta\T)\AA\T\MM_{\WW}\AA(1,-\bbeta\T)\T }
+				{ (1,-\bbeta\T)\T\AA\T\MM\AA(1,-\bbeta\T)\T }
+				}_{\kappa}
+				|\AA\T\MM\AA|.
+			\end{align*}
+			Notice that $\bbeta$ only appears in $\kappa$ and $|\AA\T\MM\AA|$ is determined.
+			Therefore, minimizing the determinant boils down to minimizing $\kappa$.
+			Note tat $\kappa$ is something like a Rayleigh quotient,
+			thus, the minimum value achievable is the smallest eigenvalue
+			of the matrix
+			\begin{align*}
+				\Bigl([\yy,\XX]\T\MM[\yy,\XX]\Bigr)\inv[1/2]
+				[\yy,\XX]\T\MM_\WW[\yy,\XX]
+				\Bigl([\yy,\XX]\T\MM[\yy,\XX]\Bigr)\inv[1/2].
+			\end{align*}
+			Notice that the eigenvalue is at least one.
+		\item
+			Lastly, to obtain the estimator for $\bbeta$,
+			we simply take the first order condition of $\kappa$ with respect to $(1,-\bbeta\T)$
+			and plug in the minimum eigenvalue:
+			\begin{align*}
+				\hat\bbeta =
+				[\XX\T(\MM_\WW-k \MM)\XX]\inv\XX\T(\MM_\WW-k\MM)\yy.
+			\end{align*}
+			Written together with the estimator for $\PI$ and we have
+			\begin{align*}
+				\begin{bmatrix}
+					\hat\bbeta \\ \hat\PI
+				\end{bmatrix}
+				&=
+				(
+				[\XX,\ZZ]\T
+				(\II - k\MM)
+				[\XX,\ZZ]
+				)\inv
+				{[\XX,\ZZ]}\T
+				(\II - k\MM)
+				\yy.
+				\tag*{\qedhere}
+			\end{align*}
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}[Excerpt from \textcite{hayashi-2001}, p.541]
+	If we do not necessarily require $k$ to be as just defined,
+	the estimator \eqref{eq:liml-estimator} is called a \emph{$k$-class estimator}.
+	The \gls*{liml} estimator is thus a $k$-class estimator with $k$ defined above.
+	Inspection of the \gls*{2sls} formula in terms of data matrices \eqref{eq:2sls-estimator} immediately shows that
+	the \gls*{2sls} estimator is a $k$-class estimator with $k = 1$,
+	and the \gls*{ols} estimator is a $k$-class estimator with $k = 0$.
+	It follows that \gls*{liml} and \gls*{2sls} are numerically the same when the equation is just identified (so that $k= 1$). % TODO: why?
+\end{remark}
+
+\begin{remark}
+	Since \gls*{liml} is a special case of \gls*{liml},
+	the asymptotic properties follows from standard assumptions on $m$-estimators.
+\end{remark}
+
+\begin{remark}[Excerpt from \textcite{davidson-mackinnon-1993}, p.541]
+	It can be shown that $k$-class estimators are consistent whenever $k$ tends to $1$ asymptotically at rate $o(n^{-1/2})$.
+\end{remark}
+
+\begin{remark}[Excerpt from \textcite{hayashi-2001}, p.542]
+	Since \gls*{liml} and \gls*{2sls} share the same asymptotic distribution,
+	you cannot prefer one over the other on asymptotic grounds.
+	For any finite sample, \gls*{liml} has the invariance property,
+	while \gls*{2sls} is not invariant.
+	Furthermore, the conclusion one could draw from the large literature on finite-sample properties
+	(see, e.g., Judge et al., 1985, Section 15.4) is that \gls*{liml} should be preferred to \gls*{2sls}.
+\end{remark}
+
+\begin{remark}
+	Under weak \gls*{iv} asymptotics,
+	developed by \textcite{staiger-stock-1997},
+	the \gls*{liml} estimator is not consistent,
+	and is different from \gls*{2sls} asymptotically.
+\end{remark}
+
+\printglossaries
+\printbibliography
+
+\end{document}

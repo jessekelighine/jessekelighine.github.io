@@ -1,0 +1,201 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{settings}
+%-----------------------------------------------------------------------------%
+%%% Enumerate %%%
+\usepackage{enumitem}
+\setlist{listparindent=\parindent,parsep=0pt,nosep} % paragraph indent 
+\makeatletter % \item[\itemlabel{label}{item name}]
+\def\itemlabel#1#2%
+{\begingroup#2\def\@currentlabel{#2}%
+\phantomsection\label{#1}\endgroup}%
+\makeatother
+%-----------------------------------------------------------------------------%
+%%% Graphics %%%
+\usepackage{graphicx}
+\usepackage{subcaption}
+%-----------------------------------------------------------------------------%
+%%% Section Font %%%
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries\raggedright}
+\titleformat*{\subsection}{\normalsize\bfseries\raggedright}
+% \newcommand{\marginsecnumber}[1]{\makebox[0pt][r]{#1\hspace{6pt}}}
+% \titleformat{\section}{\normalsize\bfseries\raggedright}{\marginsecnumber\thesection}{0pt}{}
+% \titleformat{\subsection}{\normalsize\bfseries\raggedright}{\marginsecnumber\thesubsection}{0pt}{}
+% \renewcommand\thesection{（\zhnum{section}）}
+%-----------------------------------------------------------------------------%
+%%% Color %%%
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
+%%% Hyper Reference %%%
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks,colorlinks=true,
+linkcolor=myred,
+urlcolor=myblue,
+citecolor=myblue}
+% \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
+%-----------------------------------------------------------------------------%
+%%% Date Time %%%
+\usepackage{datetime}
+\newtimeformat{mytime}%
+{\twodigit{\THEHOUR}:\twodigit{\THEMINUTE}} % \THESECOND
+\settimeformat{mytime}%
+\newdateformat{mydate}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\mydate}
+%-----------------------------------------------------------------------------%
+%%% Minimal Title %%%
+\makeatletter\def\@maketitle{%
+\noindent{\bfseries\sffamily\@title}%
+\hfill\texttt{\@date}\\%
+\raggedleft\ttfamily\@author%
+\par\vskip1em}\makeatother
+%-----------------------------------------------------------------------------%
+%%% Math %%%
+\usepackage{amsmath,mathtools,amssymb,mathrsfs}
+% \usepackage{centernot}
+% \usepackage{accents}
+% \usepackage[makeroom]{cancel}
+% \newcommand{\raum}{\mathrel{\phantom{=}}}
+% \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blacksquare}}
+\DeclareMathOperator{\vect}{vec}
+\DeclareMathOperator*{\plim}{plim}
+\newcommand{\nullhypothesis}{\mathrm{H}_0}
+%-----------------------------------------------------------------------------%
+%%% Probability %%%
+\let\Pr\relax
+\DeclareMathOperator{\Pr}{\text{\textrm{\upshape\textbf{P}}}}
+\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
+\DeclareMathOperator{\var}{\text{\textrm{\upshape\textbf{Var}}}}
+\DeclareMathOperator{\cov}{\text{\textrm{\upshape\textbf{Cov}}}}
+\DeclareMathOperator{\corr}{\text{\textrm{\upshape\textbf{Corr}}}}
+\newcommand{\iidto}{\overset{\text{\scriptsize iid}}{\sim}}
+\newcommand{\asto}{\overset{as}{\longrightarrow}}
+\newcommand{\pto}{\overset{p}{\longrightarrow}}
+\newcommand{\dto}{\overset{d}{\longrightarrow}}
+\newcommand{\pr}[1]{\Pr\!\left\{#1\right\}}
+\newcommand{\given}[1][]{\,#1|\,}
+%-----------------------------------------------------------------------------%
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\XX}{\mathbf{X}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\BB}{\mathbf{B}}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\YY}{\mathbf{Y}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\PI}{\boldsymbol{\Pi}}
+\newcommand{\XI}{\boldsymbol{\Xi}}
+\newcommand{\GAMMA}{\boldsymbol{\Gamma}}
+\newcommand{\ggamma}{\boldsymbol{\gamma}}
+\newcommand{\PHI}{\boldsymbol{\Phi}}
+\newcommand{\PSI}{\boldsymbol{\Psi}}
+\newcommand{\SIGMA}{\boldsymbol{\Sigma}}
+\newcommand{\OMEGA}{\boldsymbol{\Omega}}
+\newcommand{\Tsymb}{\top}
+\newcommand{\T}{^\Tsymb}
+\newcommand{\inv}[1][1]{^{-{#1}}}
+\newcommand{\zero}{\mathbf{0}}
+\newcommand{\one}{\mathbf{1}}
+\DeclareMathOperator{\diag}{diag}
+%-----------------------------------------------------------------------------%
+%%% Math Notes %%%
+\usepackage{amsthm}
+\usepackage{thmtools}
+\newtheoremstyle{this}{}{}{}{}{\bfseries}{.}{.5em}{}\theoremstyle{this}
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newtheoremstyle{that}{}{}{}{}{\bfseries}{.}{.5em}{\thmname{#1} \thmnote{#3}}\theoremstyle{that}
+\newtheorem*{assumption*}{Assumption}
+\renewcommand{\qedsymbol}{$\#$}
+\newcommand{\exmpleautorefname}{Example}
+% \newcommand{\remarkautorefname}{Remark}
+% \newcommand{\assumptionautorefname}{Assumption}
+%-----------------------------------------------------------------------------%
+%%% TikZ Color Box %%%
+\usepackage[breakable]{tcolorbox}
+\tcbuselibrary{theorems,skins}
+\makeatletter
+\tcbset{mycolorbox/.style={
+enhanced,sharp corners,frame hidden,boxrule=0sp,
+left=8pt,right=4pt,top=4pt,bottom=4pt,
+colback=#1!5,borderline west={3pt}{0pt}{#1}}}
+\tcolorboxenvironment{definition}{mycolorbox={myred}}
+\tcolorboxenvironment{assumption*}{mycolorbox={myblue}}
+\tcolorboxenvironment{example}{mycolorbox={black}}
+% \tcolorboxenvironment{corollary}{mycolorbox={myred}}
+% \tcolorboxenvironment{lemma}{mycolorbox={myred}}
+\makeatother
+%-----------------------------------------------------------------------------%
+%%% Glossaries & Acronyms %%%
+\usepackage[style=long,acronym]{glossaries}
+\renewcommand{\glossarypreamble}{\vspace*{-\baselineskip}}
+\renewcommand{\glsnamefont}[1]{\textbf{#1}}
+\renewcommand*{\glsgroupskip}{}
+\setlength\LTleft{0pt}
+\makeglossaries % \printglossaries
+\newacronym{iv}{IV}{Instrument Variable}
+\newacronym{2sls}{2SLS}{Two Stage Least Square}
+\newacronym{3sls}{3SLS}{Three Stage Least Square}
+\newacronym{liml}{LIML}{Limited Information Maximum Likelihood}
+\newacronym{fiml}{FIML}{Full Information Maximum Likelihood}
+\newacronym{ml}{ML}{Maximum Likelihood}
+\newacronym{sem}{SEM}{Simultaneous Equations Model}
+\newacronym{gmm}{GMM}{Generalized Method of Moments}
+\newacronym{ols}{OLS}{Orfdinary Least Squares}
+%-----------------------------------------------------------------------------%
+%%% Biblatex %%%
+\usepackage[hyperref=true,backend=biber,style=authoryear,sorting=nyt,backref=false,uniquename=mininit]{biblatex} 
+\addbibresource{references.bib}\urlstyle{tt}
+%\printbibliography[heading=none,title=\textsf{參考文獻}]
+%-----------------------------------------------------------------------------%
+%%% xeCJK %%%
+\usepackage{xeCJK}
+\newcommand{\chmainfont}{GenWanMinTJ-L}
+\newcommand{\chsansfont}{NotoSansCJKkr-Regular}
+\newcommand{\chboldfont}{NotoSansCJKkr-Bold}
+\newcommand{\chmonofont}{jf-openhuninn-2.0}
+\newcommand{\chitalfont}{LXGWWenKaiTC-Regular}
+\setCJKmainfont{\chmainfont}[BoldFont=\chboldfont,ItalicFont=\chitalfont]
+\setCJKsansfont{\chsansfont}[BoldFont=\chboldfont]
+\setCJKmonofont{\chmonofont}
+\xeCJKsetup{PunctStyle=kaiming,CheckFullRight=true,CJKmath=true}
+\setlength\parindent{2em}
+%-----------------------------------------------------------------------------%
+%%% Dinkus %%%
+\newcommand{\dinkus}{\vspace{1em}\centerline{$*\ *\ *$}\vspace{1em}}
+%-----------------------------------------------------------------------------%
+%%% Fancy Header & Footer %%%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+% \fancyhf[HL]{Left}
+% \fancyhf[HR]{Right}
+\fancyhf[FC]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\pagestyle{fancy}} % Also make first page fancy
+%-----------------------------------------------------------------------------%
