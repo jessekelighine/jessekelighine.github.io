@@ -59,9 +59,9 @@ header-includes:
 
 ## Code Stuff
 
-- [**vindent.vim**](https://github.com/jessekelighine/vindent.vim):
-  A *minimal*, *modern* and *highly customizable* Vim plugin
-  that provides indentation-based navigation motions and text objects by me.
+- [**vindent.nvim**](https://github.com/jessekelighine/vindent.nvim):
+  A *minimal*, *modern* and *highly customizable* Neovim plugin
+  that provides indentation-based navigation motions and text objects.
 - [**vim-bunttex**](https://github.com/jessekelighine/vim-bunttex):
   Minimal syntax highlighting for $\mathrm{\LaTeX}$.
 - [**del**](https://github.com/jessekelighine/del):
