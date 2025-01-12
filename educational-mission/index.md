@@ -1,12 +1,16 @@
 ---
 title:  "《出洋肄習錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2024-12-25"
+date:   "2025-01-11"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
 
 # 序
+
+> 奏為擬選聰穎子弟，前赴泰西各國，肄習技藝，以培人才，恭折仰祈聖鑒事。
+>
+> <p align="right">曾國藩〈擬選子弟出洋學藝折〉同治十年（1871）</p>
 
 單純記錄一些在紐約的所見所聞還有心情，
 所以以意識流（俗稱流水帳）的體例寫作。
