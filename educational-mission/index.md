@@ -1304,11 +1304,20 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 # 留言板
 
-<script src="https://utteranc.es/client.js"
-        repo="jessekelighine/jessekelighine.github.io"
-        issue-term="educational-mission-comments"
-        label="educational-mission-comments"
-        theme="github-light"
+<script src="https://giscus.app/client.js"
+        data-repo="jessekelighine/jessekelighine.github.io"
+        data-repo-id="R_kgDOLmNjDQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOLmNjDc4CmBxS"
+        data-mapping="specific"
+        data-term="educational-mission-comments"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
         crossorigin="anonymous"
         async>
 </script>
