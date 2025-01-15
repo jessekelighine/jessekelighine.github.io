@@ -1,7 +1,7 @@
 ---
 title:  "《出洋肄習錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2025-01-12"
+date:   "2025-01-15"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -1301,6 +1301,17 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 於戲哀哉，希望等一下整得到中午就飛過去的行李。台灣見。
 
 ![](figures/chirstmas-cookies.jpg){loading=lazy}
+
+# 留言板
+
+<script src="https://utteranc.es/client.js"
+        repo="jessekelighine/jessekelighine.github.io"
+        issue-term="educational-mission-comments"
+        label="educational-mission-comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
 <div class="back-to-top">
 <a href="#" class="back-to-top">↑</a>
