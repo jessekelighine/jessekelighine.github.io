@@ -1,7 +1,7 @@
 ---
 title:  "Gallery"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2024-10-06"
+date:   "2025-01-15"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -26,3 +26,7 @@ header-includes:
 <!--<img alt="suppression"        src="resources/suppression.png"                                   style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;"> -->
 <!--<img alt="extraction"         src="resources/extraction.png"                                    style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;"> -->
 <img alt="roll"         src="resources/cat_roll.gif"                                    style="min-width: 12.5em; padding: 0.5em; max-width: 70%; width: 70%; display: block; margin: auto;">
+
+<div class="back-to-top">
+<a href="#" class="back-to-top">↑</a>
+</div>
