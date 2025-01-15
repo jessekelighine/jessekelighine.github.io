@@ -24,19 +24,20 @@ It is known that the \gls*{dgp} is
 \end{gather*}
 where $\epsilon_{i}$ is a random variable with mean zero and variance $\sigma^2$.
 That is, for each input $\xx_{i}$, an output $y_i$ is produced with an \gls*{iid} error $\epsilon_i$.
-However, $\mu$ is an unknown function and it might only utilize a subset of the $k$ inputs.
+However, $\mu$ is an unknown function and it might only depend a subset of the $k$ inputs.
 We represent the process compactly as $\yy=\mmu+\eepsilon$ where
 $\yy=(y_{1},...,y_{n})\T$,
 $\mmu=(\mu(\xx_{1}),...,\mu(\xx_{n}))\T$, and
 $\eepsilon=(\epsilon_{1},...,\epsilon_{n})\T$.
 
 Our job is simple: predict $y_{i}$ with $\xx_{i}$ using a linear model.
-However, how do we know which of $k$ the inputs of $\xx_{i}$ should we put in our model?
-That is, we want to find a way to measure how the good the prediction of a specific model would be.
+However, how do we know which of the $k$ inputs in $\xx_{i}$ should we put in our model?
+We want to find a way to measure how good the prediction of a specific model would be, i.e.,
+a goodness of fit.
 
 Let $\AA\subseteq\{1,...,k\}$ with $|\AA|=p$ denote a subset of the indices of size $p$
 and let $\XX_{\AA}$ denote the corresponding data matrix $(\xx_{1\AA},...,\xx_{n\AA})\T$.
-That is, $\AA$ denotes the subset of the $k$ independent variables we choose to put in our model.
+That is, $\AA$ denotes a subset of the $k$ independent variables we choose to put in our model.
 The standard \gls*{ols} estimator yields the estimator $\hat\bbeta_{\AA}=(\XX_{\AA}\T\XX_{\AA})\inv\XX_{\AA}\T\yy$.
 An intuitive way of measuring prediction quality is to consider the expected sum of square errors:
 \begin{align}\label{eq:in-sample}
@@ -52,18 +53,19 @@ and the square error will decrease!
 Therefore, this expected sum of squares error is not a good measure for how good the model will perform.
 
 However, notice this this is only the case when we are doing ``in-sample'' prediction, i.e.,
-evaluating sum of squares error with the data set that is used to produce the estimate $\hat\beta_{\AA}$.
+evaluating sum of squares error with the data set that is used to produce the estimator $\hat\bbeta_{\AA}$.
 We can consider calculating the prediction error with a \emph{hypothetical out-sample data set},
 that is, a data set $\{y_{i}^{\text{out}},\xx_{i}\}_{i=1}^{n}$ where
 \begin{align*}
-	y_{i}^{\text{out}} &= \mu(\xx_{i}) + \epsilon_{i}^{\text{out}}.
+	y_{i}^{\text{out}} &= \mu(\xx_{i}) + \epsilon_{i}^{\text{out}}
 \end{align*}
+for some new errors $\epsilon_i^{\text{out}}$.
 This hypothetical data set is essentially ``a set of regenerated $y_i$'s with the same $\xx_i$'s.''
 Using the new data set,
 we can compute the ``out-sample'' prediction error associated with the ``in-sample'' estimate $\hat\bbeta_{\AA}$:
 \begin{align}\label{eq:out-sample}
 	\E\!\left[ \sum_{i=1}^{n} ( y_{i}^{\text{out}} - \xx_{i\AA}\T\hat\bbeta_{\AA} )^{2} \right]
-	&= \E (\yy^{\text{out}}-\XX_{\AA}\hat\beta)\T(\yy^{\text{out}}-\XX_{\AA}\hat\bbeta_{\AA}) \nonumber\\
+	&= \E (\yy^{\text{out}}-\XX_{\AA}\hat\bbeta)\T(\yy^{\text{out}}-\XX_{\AA}\hat\bbeta_{\AA}) \nonumber\\
 	&= n\sigma^{2} + p\sigma^{2} + \mmu\T(\II_n-\PP_{\AA})\mmu. \tag{out}
 \end{align}
 Notice how the out-sample prediction error increases as $p$, number of independent variables in our model, increases.
@@ -76,7 +78,7 @@ In fact, \eqref{eq:in-sample} and \eqref{eq:out-sample} are related by the simpl
 \begin{align}\label{eq:relation}
 	\eqref{eq:out-sample} = \eqref{eq:in-sample} + 2p\sigma^2.
 \end{align}
-The term $2p\sigma^2$ can be viewed as an error correction term to \eqref{eq:in-sample}.
+The term $2p\sigma^2$ can be viewed as a correction term to \eqref{eq:in-sample}.
 We can replace $\sigma^{2}$ by some estimator $\hat\sigma^{2}$ to obtain an estimate of \eqref{eq:out-sample}.
 And that's basically it!
 
