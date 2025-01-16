@@ -24,3 +24,4 @@ index.html: index.md $(CSS_ALL)
 		--css $(CSS_IMG) \
 		--css $(CSS) \
 		--output $@
+	# Update RSS feed: new <item>, <pubDate>, and <lastBuildDate>
