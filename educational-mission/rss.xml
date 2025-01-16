@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+	<title>《出洋肄習錄》</title>
+	<link>https://jessekelighine.com/educational-mission</link>
+	<description>在紐約所見所聞的流水帳。</description>
+	<item>
+		<title>測試</title>
+		<link>https://jessekelighine.com/educational-mission</link>
+		<description>這是個測試。</description>
+	</item>
+</channel>
+
+</rss> 
