@@ -5,13 +5,13 @@ header-includes:
 	<link rel="icon" href="resources/sheep_color.png">
 ---
 
-<img class="front_pic"
+<img class="front_pic" 
 	alt="cover-image"
 	src="resources/griechisch-lateinisches-quadrat-ordnung.webp"
 	style="
 		width: 100%;
 		display: block;
-		padding: 1em 0em;
+		padding: 0em 0em 0em 0em;
 		margin-right: auto;
 		margin-left: auto;
 		"
@@ -93,6 +93,11 @@ header-includes:
   申請碩班、博班的心得。
 - [**Gallery**](gallery):
   Some graphics and designs I've created.
+
+> <div id="analects-chapter" style="font-weight: 600"></div><br/>
+> <div id="analects-verse"></div>
+> <script src="confucius-said.js"></script>
+> <button onclick="confucius_said()" style="margin-right:0; margin-left:auto;">↻</button>
 
 <div class="back-to-top">
 <a href="#" class="back-to-top">↑</a>

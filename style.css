@@ -27,6 +27,22 @@
 	border-radius: 8px;
 }
 
+button {
+	background-color: #f9f9f9;
+	color: #478D99;
+	border: none;
+	border-radius: 16pt;
+	font-size: 16pt;
+	display: block;
+	padding: 0em 0.3em;
+	font-family: "IBM Plex Mono", "Noto Sans KR", "Noto Sans TC", monospace;
+}
+
+button:hover {
+	background: #478D99;
+	color: #ffffff;
+}
+
 /* TOC */
 
 #TOC ul {
@@ -118,7 +134,7 @@ code {
 blockquote {
 	background: #f9f9f9;
 	border-left: 10px solid #ccc;
-	margin: 10px 10px;
+	margin: 10px 0px;
 	padding: 10px 20px;
 }
 
