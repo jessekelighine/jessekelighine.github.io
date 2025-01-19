@@ -20,7 +20,7 @@ header-includes:
 > <div id="analects-chapter" style="font-weight: 600"></div><br/>
 > <div id="analects-verse"></div>
 > <script src="confucius-said.js"></script>
-> <button onclick="confucius_said()" style="margin-right:0; margin-left:auto;">↻</button>
+> <button id="confucius-said" onclick="confucius_said()" style="margin-right:0; margin-left:auto;">↻</button>
 
 ## Popular Mathematics
 
