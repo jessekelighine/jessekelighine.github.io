@@ -17,6 +17,11 @@ header-includes:
 		"
 />
 
+> <div id="analects-chapter" style="font-weight: 600"></div><br/>
+> <div id="analects-verse"></div>
+> <script src="confucius-said.js"></script>
+> <button onclick="confucius_said()" style="margin-right:0; margin-left:auto;">↻</button>
+
 ## Popular Mathematics
 
 - [**《塔木德》中的公平**](talmud):
@@ -93,11 +98,6 @@ header-includes:
   申請碩班、博班的心得。
 - [**Gallery**](gallery):
   Some graphics and designs I've created.
-
-> <div id="analects-chapter" style="font-weight: 600"></div><br/>
-> <div id="analects-verse"></div>
-> <script src="confucius-said.js"></script>
-> <button onclick="confucius_said()" style="margin-right:0; margin-left:auto;">↻</button>
 
 <div class="back-to-top">
 <a href="#" class="back-to-top">↑</a>
