@@ -61,6 +61,8 @@ header-includes:
   An introduction to von Neumann's Ergodicity Theroem and its connection with convergence of Markov Chains.
 - [**Weak IV**](weak-iv):
   An overview of some important concepts in weak instrument variables.
+- [**Shannon Entropy**](shannon-entropy):
+  Motivating the definition of *entropy* in information theroy.
 
 ## Code Stuff
 
