@@ -5,7 +5,7 @@ header-includes:
 	<link rel="icon" href="resources/sheep_color.png">
 ---
 
-<img class="front_pic" 
+<img class="front_pic"
 	alt="cover-image"
 	src="resources/griechisch-lateinisches-quadrat-ordnung.webp"
 	style="
@@ -17,10 +17,22 @@ header-includes:
 		"
 />
 
-> <div id="analects-chapter" style="font-weight: 600"></div><br/>
-> <div id="analects-verse"></div>
-> <script src="confucius-said.js"></script>
-> <button id="confucius-said" onclick="confucius_said()" style="margin-right:0; margin-left:auto;">↻</button>
+<blockquote>
+    <script src="confucius-said.js"></script>
+    <table style="width: 100%; padding: 0px;">
+        <tbody>
+            <tr style="border-bottom: 0px;">
+                <td style="padding: 0px; padding-bottom: 0.5em;">
+                    <div id="analects-chapter" style="font-weight: bold;"></div>
+                </td>
+                <td style="padding: 0px; padding-bottom: 0.5em; text-align: right;">
+                    <button id="confucius-said" onclick="confucius_said()">↻</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="analects-verse"></div>
+</blockquote>
 
 ## Popular Mathematics
 
