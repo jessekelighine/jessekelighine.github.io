@@ -5,5 +5,5 @@
 	exit 1
 }
 
-mogrify -quality 30% "${1}"
+mogrify -quality 20% "${1}"
 exit 0
