@@ -1,7 +1,7 @@
 ---
 title:  "《申請覺迷錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2024-07-23"
+date:   "2025-02-06"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -123,7 +123,8 @@ header-includes:
 以下是我申請的經濟學博士班的列表。
 全部都是美國的學校，
 因為我覺得經濟學好像只有在美國念才比較有意義。
-完全沒投所謂「Top 5」（但在 US News 上[好像有 8 間都是 Top 5？](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings)），
+完全沒投所謂「Top 5」
+（但在 US News 上[好像有 8 間都是 Top 5？](https://www.usnews.com/best-graduate-schools/top-humanities-schools/economics-rankings)），
 我自己感覺如果沒有一些跟那些學校的關係或是一些特殊經歷，
 申請了就只是浪費錢，所以就都沒丟。
 
@@ -339,7 +340,7 @@ CV 用最簡短的言語條列式的寫下你的經歷，
 因為你有可能會忘記改其中一個地方，
 或是你更新的其中學校的 SoP，
 但是忘記在其他學校的版本中也要更新。
-是故我強烈建議使用 $\mathrm{\LaTeX}$ 配合 `Makefile` 把這部分工作自動化。 [^makefile]
+是故我強烈建議使用 $\mathrm{\LaTeX}$ 配合 `Makefile` 把這部分工作自動化。 [^makefile] [^update-customization]
 
 [^customize]: 
 	Personal Statement 也是需要客製化，
@@ -348,6 +349,13 @@ CV 用最簡短的言語條列式的寫下你的經歷，
 [^makefile]:
 	對這部分有興趣的可以參見我寫的一個[*簡單的介紹*](https://github.com/jessekelighine/makefile-for-economists)。
 	我也有在[相關檔案](#相關檔案)那邊附上我統計學用 $\mathrm{\LaTeX}$ 配合 `Makefile` 客製化 SoP 的實際範例。
+
+[^update-customization]:
+    **更新** (`2025-02-06`)：
+    我朋友跟我說在客製化的時候可能不要寫教授的名字比較好，
+    因為如果你想要跟的教授不在招生委員會裡面，
+    或甚至被系上其他教授討厭的話你寫教授的名字會有反效果。
+    所以說除非你有那個學校的內線消息，不然還是不要點名教授比較好。
 
 **補充一點**：
 其實*大可不必認真的在 CV 或 SoP 裡面用超連結*，
