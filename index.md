@@ -1,6 +1,6 @@
 ---
 title:  "陳捷	Jesse C. Chen"
-author: "jcc at jessekelighine dot com"
+author: "[`jessekelighine.com`](https://jessekelighine.com)"
 header-includes:
 	<link rel="icon" href="resources/sheep_color.png">
 ---
