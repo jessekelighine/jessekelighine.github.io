@@ -1,7 +1,7 @@
 ---
 title:  "《出洋肄習錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2025-02-01"
+date:   "2025-04-06"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -1433,6 +1433,87 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 ![](figures/healthy-meal.jpg){loading=lazy}
 
+# 2025-04-06 {#2025-04-06}
+
+真的越來越懶了，
+但其中一個原因是因為不知道為什麼開學發瘋今年就多休了一個博二的課，
+搞到現在覺得每天都好累。
+雖然一開始是我奧地利同學問我要不要一起修，
+但是現在只能怪我自己太大意，於戲！
+話說他真的很厲害，又可以多修一堂課，
+又可以參加合唱團（據說一週要團練兩次），
+還可以報 Colloquium，不得了了。
+
+不太想寫上學學了什麼，因為就是經濟學那些東西，我就快速帶過：
+個論在講機制設計，算是我覺得有趣的課，畢竟之前沒有學過；
+總論在講不平等跟財富分配，有算是有趣，因為也沒學過，而且是連續時間所以酷酷的；
+計論在講因果推論，我覺得這個老師講得很好，我以前也有些東西沒有從頭想過，所以也覺得不錯。
+至於那堂博二的計量現在還搞了一個 "coding club"，就是我們要想辦法重現一篇文章的機器學習方法，
+好累 😫
+
+來分享些有趣的事，
+春假跟班上四、五個同學一起去了佛羅里達，
+真的是滿爽的，主在同學的同學的度假別墅，超讚。
+而且旁邊走五分鐘就到海灘。
+但是他們很執意每天都要去一個不一樣的海灘。
+但是其實每個都長得差不多，像是這樣
+
+<!-- ![](figures/nice-beach-2.jpg){loading=lazy} -->
+![](figures/nice-beach.jpg){loading=lazy}
+
+或是這樣（但是這邊因為是高級飯店後面所以看起來完全沒有人），
+而且其實川普的 Mar-a-lago 就在這邊附近，
+所以這邊的人可能都不屑來海灘？
+
+![](figures/fancy-empty-beach.jpg){loading=lazy}
+
+去不同海灘還要被那幾個白人調侃說我跟日本人都包緊緊都不曬太陽 🙄。
+其中一天去了一個佛羅里達同學家裡作客，
+真不愧是有錢人，家旁邊就有人造湖，
+真的是不得了：
+
+![](figures/gated-soceity.jpg){loading=lazy}
+
+而且我同學們真的滿喜歡煮東西的，連到美國同學家裡也要煮東西，
+反正我是滿爽的，坐享其成：
+
+![](figures/surf-and-surf.jpg){loading=lazy}
+
+我們還有特別去邁阿密（又是為了去另外一個海灘⋯），但是到的時候真的覺得自己置身《俠盜獵車手》：
+
+![](figures/miami-is-gta.jpg){loading=lazy}
+
+去邁阿密的時候還有去買 + 抽古巴雪茄，
+但是感覺不太適合放在這裡，哈哈，
+所以就跟 working in progress 的 paper 一樣 available upon request to the owner 好了
+（還有一些其他奇怪的照片 呵呵）～
+確實這在邊講西班牙語又比紐約更多，
+而且這邊的有錢人都在炫富，各種跑車、誇張的穿著跟飾品（而且有錢的都是白人），
+感覺跟紐約很不一樣（天氣也很不一樣，那邊 15~20 度左右，超舒服），
+或者是說紐約跟佛羅里達都不是正常的美國，哈哈。
+
+我們還有去一個國家公園的沼澤滑獨木舟，
+看到很多鱷魚，感覺沒有很大，但是我們滑到一半不小些直接碾壓一隻，
+幸好它沒有衝到船上咬我：
+
+![](figures/gater.jpg){loading=lazy}
+
+在那邊遇到的人說他們會早上來滑獨木舟，感覺確實很愜意，
+只是太陽有點太大，差點變成烤蕃薯（或是芋頭？）。
+
+![](figures/swamp.jpg){loading=lazy}
+
+最後附上我在公園玩搖搖馬的照片：
+
+![](figures/me-on-spring-horse.jpg){loading=lazy}
+
+最近真的是雜務頗多，
+看看在暑假之前還能不能再寫一次吧？
+感覺這學期一切都變得非常 routine，
+沒有上學期那種沖勁。
+可能真的是有把自己搞到有點累，希望暑假趕快來。
+然後現在感覺暑假應該是可以回台灣吧，但是這個到時候再說。
+
 # 留言板 {#comments}
 
 <script src="https://giscus.app/client.js"
@@ -1454,5 +1535,6 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 </script>
 
 <div class="back-to-top">
+<a href='rss.xml' class="back-to-top"><img src="resources/rss.svg" style="display: inline; width: 1em;"></a>
 <a href="#" class="back-to-top">↑</a>
 </div>
