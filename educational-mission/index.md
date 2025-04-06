@@ -1535,6 +1535,5 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 </script>
 
 <div class="back-to-top">
-<a href='rss.xml' class="back-to-top"><img src="resources/rss.svg" style="display: inline; width: 1em;"></a>
 <a href="#" class="back-to-top">↑</a>
 </div>
