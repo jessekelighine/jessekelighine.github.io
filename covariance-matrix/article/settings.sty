@@ -1,13 +1,28 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{settings}
 %-----------------------------------------------------------------------------%
+%%% Color %%%
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{229,0,0}
+\definecolor{myblue}{RGB}{0,98,144}
+\definecolor{myyellow}{RGB}{246,182,50}
+\definecolor{mygreen}{RGB}{75,108,89}
+\newcommand{\red}[1]{\textcolor{myred}{#1}}
+\newcommand{\blue}[1]{\textcolor{myblue}{#1}}
+\newcommand{\yellow}[1]{\textcolor{myyellow}{#1}}
+%-----------------------------------------------------------------------------%
 %%% Column %%%
 \usepackage{multicol}  % \begin{multicols*}{3}[例外]字\end{multicols*}
 \usepackage[english]{babel}
 %<--------------------------------------------------------------------------->%
 %%% Hyper Reference %%%
 \PassOptionsToPackage{hyphens}{url}
-\usepackage[hidelinks,colorlinks=true]{hyperref}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+colorlinks=true,
+linkcolor=myred,
+urlcolor=myblue,
+citecolor=myblue}
 % \newcommand{\supref}[1]{\ref{#1} (p.\pageref{#1})}
 %-----------------------------------------------------------------------------%
 %%% Math %%%
@@ -17,7 +32,7 @@
 \newcommand{\E}[2][]{\Exp_{#1}[#2]}
 \newcommand{\var}[2][]{\Var_{#1}[#2]}
 \newcommand{\raum}{\phantom{=}{\:\,}}
-\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\#}}
+\newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blue{\blacksquare}}}
 %<--------------------------------------------------------------------------->%
 \newcommand{\T}{^{\top}}
 \newcommand{\vv}{\mathbf{v}}

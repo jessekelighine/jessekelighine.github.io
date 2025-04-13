@@ -8,8 +8,8 @@
 # Last Modified: 2024-09-01                                                   #
 ###############################################################################
 
-output="index.html"
-placeholder="THIS_IS_A_PLACEHOLDER_THAT_CONTAINS_NO_SPECIAL_CHARACTERS"
+output="index-output.html"
+placeholder="THIS_IS_A_UNIQUE_PLACEHOLDER_THAT_CONTAINS_NO_SPECIAL_CHARACTERS"
 template=$(cat << EOF
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@ EOF
 )
 
 [ $# -eq 0 ] && {
-	echo "insufficient arguments"
+	echo "error: insufficient arguments"
 	echo "usage: $0 [PATH/URL]"
 	exit 1
 }
