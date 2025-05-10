@@ -1,0 +1,48 @@
+.reveal h1 { font-family: "Fira Sans", "Noto Sans KR", "Noto Sans TC", sans-serif; font-size: 30pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
+.reveal h2 { font-family: "Fira Sans", "Noto Sans KR", "Noto Sans TC", sans-serif; font-size: 30pt; font-style: normal; font-variant: normal; font-weight: 600; color: #333; }
+
+.author, .date {
+	font-family: "IBM Plex Mono", "Noto Sans KR", "Noto Sans TC", monospace;
+	border-radius: 10px;
+}
+
+.slides {
+	font-family: "Fira Sans", "Noto Sans KR", "Noto Sans TC", sans-serif;
+}
+
+.reveal pre {
+	font-family: "IBM Plex Mono", "Noto Sans KR", "Noto Sans TC", monospace;
+	background-color: #f1f1f1;
+	border-radius: 8px;
+	box-shadow: none !important;
+}
+
+.reveal pre code {
+	font-family: "IBM Plex Mono", "Noto Sans KR", "Noto Sans TC", monospace;
+	background-color: #f1f1f1;
+	border-radius: 8px;
+	box-shadow: none !important;
+}
+
+.reveal code {
+	font-family: "IBM Plex Mono", "Noto Sans KR", "Noto Sans TC", monospace;
+	background-color: #f1f1f1;
+	border-radius: 8px;
+	box-shadow: none !important;
+}
+
+.reveal em {
+	color: #478D99;
+}
+
+.reveal strong {
+	color: #C76669;
+	font-weight: 600;
+}
+
+.slides {
+	font-family: "Fira Sans", "Noto Sans KR", "Noto Sans TC", sans-serif;
+	font-size: 24pt;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.6);
+}
