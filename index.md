@@ -89,6 +89,8 @@ header-includes:
   Run a command whenever a file/directory is changed.
 - [**Makefile for Economists**](https://github.com/jessekelighine/makefile-for-economists):
   A practical introduction to `Makefile` for economists.
+- [**LaTeX Setup in Vim/Neovim**](latex-neovim-setup):
+  A brief description of my $\mathrm{\LaTeX}$ setup in Vim/Neovim.
 
 ## Miscellanea
 
