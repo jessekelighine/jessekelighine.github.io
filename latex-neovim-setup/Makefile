@@ -1,3 +1,3 @@
 .PHONY: all
 all:
-	gh gist edit -f index.md 852a8208125ca254982d351c3dc9f163
+	gh gist edit --filename latex-neovim-setup.md b95ac720112fc2cecf7468a2762950ea
