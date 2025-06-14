@@ -59,10 +59,8 @@ header-includes:
   A brief introduction to Generalized Method of Moments, aka *GMM*.
 - [**Fisher Information**](fisher-information):
   A brief introduction to Fisher Information and some related ideas.
-<!--- [**Markov Chain**](markov-chain):-->
-<!--  Concepts and results related to Markov chain,-->
-<!--  a proof of the Metropolis-Hastings Algorithm,-->
-<!--  and a proof of the Gibbs Sampling Algorithm.-->
+- [**Metropolis-Hastings Algorithm**](metropolis-hastings-algorithm):
+  An explanation and demonstration of the Metropolis-Hastings algorithm.
 - [**Sufficient Statistics**](sufficient-statistic):
   Short definition and example of sufficient statistics.
 - [**Mallow's Cp**](mallow-cp):

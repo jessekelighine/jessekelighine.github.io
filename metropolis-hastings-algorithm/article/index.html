@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="jessekelighine.com">
+<meta name="dcterms.date" content="2025-06-14">
+
+<title>Metropolis-Hastings Algorithm: An Explanation with Demonstration</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="10">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#metropolis-hastings-algorithm" id="toc-metropolis-hastings-algorithm" class="nav-link active" data-scroll-target="#metropolis-hastings-algorithm">Metropolis-Hastings Algorithm</a>
+  <ul>
+  <li><a href="#demonstration" id="toc-demonstration" class="nav-link" data-scroll-target="#demonstration">Demonstration</a></li>
+  </ul></li>
+  <li><a href="#gibbs-sampling" id="toc-gibbs-sampling" class="nav-link" data-scroll-target="#gibbs-sampling">Gibbs Sampling</a>
+  <ul>
+  <li><a href="#demonstration-1" id="toc-demonstration-1" class="nav-link" data-scroll-target="#demonstration-1">Demonstration</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Metropolis-Hastings Algorithm: An Explanation with Demonstration</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://jessekelighine.com"><code>jessekelighine.com</code></a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Let <span class="math inline">\(\pi\)</span> be a probability distribution on a finite state space <span class="math inline">\(S=\{1,...,n\}\)</span>, i.e., <span class="math inline">\(\pi(i)\)</span> denotes the probability of being in state <span class="math inline">\(i\in S\)</span>. We want to construct a Markov chain<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that takes value on the state space <span class="math inline">\(S\)</span> such that its stationary distribution is <span class="math inline">\(\pi\)</span>. That is, we want to find transition probabilities <span class="math inline">\(\{P_{ij}\}_{i,j}\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> such that <span id="eq-global-balance-equation"><span class="math display">\[
+\sum_{i=1}^{n} \pi(i) P_{ij} = \pi(j) \quad \forall j\in S
+\tag{1}\]</span></span> holds. <a href="#eq-global-balance-equation" class="quarto-xref">Equation&nbsp;1</a> is known as the <em>Global Balance Equation</em>. It is <em>global</em> in the sense that it sums over all states <span class="math inline">\(i\)</span>. Note that this <em>balance</em> equation means that if one starts in state <span class="math inline">\(i\)</span> with probability <span class="math inline">\(\pi(i)\)</span> and transitions to state <span class="math inline">\(j\)</span> with probability <span class="math inline">\(P_{ij}\)</span>, then the probability of being in state <span class="math inline">\(j\)</span> after one step is exactly <span class="math inline">\(\pi(j)\)</span>. That is, <span class="math inline">\(P_{ij}\)</span> has stationary distribution <span class="math inline">\(\pi\)</span> by definition.</p>
+<p>However, finding <span class="math inline">\(P_{ij}\)</span> that satisfies <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> can be difficult to satisfy in practice, since <span class="math inline">\(n\)</span> might be so large that it is infeasible to compute the sum over all states <span class="math inline">\(i\)</span>. There is another notion of balance that is easier to satisfy, known as the <em>Detailed Balance Equation</em>: <span id="eq-detailed-balance-equation"><span class="math display">\[
+\pi(i) P_{ij} = \pi(j) P_{ji} \quad \forall i,j\in S
+\tag{2}\]</span></span> <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> is <em>detailed</em> in the sense that it only requires a balance between two states <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. Notice that <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> implies <a href="#eq-global-balance-equation" class="quarto-xref">Equation&nbsp;1</a>: <span class="math display">\[
+\sum_{i=1}^{n} \pi(i) P_{ij} = \sum_{i=1}^{n} \pi(j) P_{ji} = \pi(j) \sum_{i=1}^{n} P_{ji} = \pi(j)
+\]</span> Since <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> is stated locally for each pair of states <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, it is much easier to construct the required probabilities <span class="math inline">\(P_{ij}\)</span> and <span class="math inline">\(P_{ji}\)</span>. Another remarkable property of <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> is that we don’t even have to know the stationary distribution <span class="math inline">\(\pi\)</span> exactly, we just need to know the ratio <span class="math inline">\(\pi(j)/\pi(i)\)</span> for any two states <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. This motivates the <strong>Metropolis-Hastings algorithm</strong>.</p>
+<section id="metropolis-hastings-algorithm" class="level1">
+<h1>Metropolis-Hastings Algorithm</h1>
+<div id="thm-metropolis-hastings" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Metropolis-Hastings Algorithm)</strong></span> Given the target distribution <span class="math inline">\(\pi\)</span>, construct a Markov chains as follows: Arbitrarily fix an initial state <span class="math inline">\(I_0=i_0\in S\)</span>. Suppose that at time <span class="math inline">\(t\geq 0\)</span>, the current state is <span class="math inline">\(I_t=i\)</span>. Then, the next state <span class="math inline">\(I_{t+1}\)</span> is generated as follows:</p>
+<ol type="1">
+<li>Generate <span class="math inline">\(J\sim\{\tilde{P}_{ij}\}\)</span> where <span class="math inline">\(\{\tilde{P}_{ij}\}\)</span> is an arbitrary transition probability<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> on <span class="math inline">\(S\)</span>. Let <span class="math inline">\(j\)</span> denote the realized state of <span class="math inline">\(j\)</span>. That is, <span class="math inline">\(J\)</span> satisfies <span class="math display">\[
+\Pr\{J=j\,|\,I_t=i\} = \tilde{P}_{ij}.
+\]</span></li>
+<li>Set the state of <span class="math inline">\(I_{t+1}\)</span> according to the following rule: <span id="eq-metropolis-hastings-transition-rule"><span class="math display">\[
+I_{t+1} =
+\begin{cases*}
+j &amp; \text{ with probability $\alpha(i,j)$ } \\
+i &amp; \text{ otherwise}
+\end{cases*}
+\tag{3}\]</span></span> where <span id="eq-metropolis-hastings-acceptance-ratio"><span class="math display">\[
+\alpha(i,j) = \min\left\{1, \frac{\pi(j) \tilde{P}_{ji}}{\pi(i) \tilde{P}_{ij}}\right\}.
+\tag{4}\]</span></span></li>
+</ol>
+<p>Then, the chain <span class="math inline">\(\{I_t\}_{t\geq 0}\)</span> is a Markov chain with stationary distribution <span class="math inline">\(\pi\)</span>.</p>
+</div>
+<p>In other words, the transition probabilities <span class="math inline">\(\{P_{ij}\}\)</span> where <span class="math inline">\(P_{ij}\coloneqq\alpha(i,j)\tilde{P}_{ij}\)</span> has stationary distribution <span class="math inline">\(\pi\)</span>. One immediately sees that there is something magical about the acceptance ratio <span class="math inline">\(\alpha(i,j)\)</span> defined in <a href="#eq-metropolis-hastings-acceptance-ratio" class="quarto-xref">Equation&nbsp;4</a>, as it turns an arbitrary proposal distribution <span class="math inline">\(\{\tilde{P}_{ij}\}\)</span> into a transition probability with the desired stationary distribution. <a href="#eq-metropolis-hastings-acceptance-ratio" class="quarto-xref">Equation&nbsp;4</a> is known as the <em>Metropolis-Hastings acceptance ratio</em>, or simply the <em>acceptance ratio</em>. Its importance can be seen in the proof for <a href="#thm-metropolis-hastings" class="quarto-xref">Theorem&nbsp;1</a>:</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(i,j\in S\)</span> be two arbitrary states. We have <span class="math inline">\(P_{ij}=\alpha(i,j)\tilde{P}_{ij}\)</span>. We show that <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> holds: <span class="math display">\[
+\pi(i) P_{ij}
+= \pi(i) \alpha(i,j) \tilde{P}_{ij}
+= \pi(i) \min\left\{1, \frac{\pi(j) \tilde{P}_{ji}}{\pi(i) \tilde{P}_{ij}}\right\} \tilde{P}_{ij}
+= \begin{cases}
+  \pi(j) \tilde{P}_{ji} &amp; \text{ if } \pi(j)\tilde{P}_{ji} \leq \pi(i)\tilde{P}_{ij} \\
+  \pi(i) \tilde{P}_{ij} &amp; \text{ otherwise. }
+\end{cases}
+\]</span> On the other hand, we have <span class="math display">\[
+\pi(j) P_{ji}
+= \pi(j) \alpha(j,i) \tilde{P}_{ji}
+= \pi(j) \min\left\{1, \frac{\pi(i) \tilde{P}_{ij}}{\pi(j) \tilde{P}_{ji}}\right\} \tilde{P}_{ji}
+= \begin{cases}
+  \pi(i) \tilde{P}_{ij} &amp; \text{ if } \pi(i)\tilde{P}_{ij} \leq \pi(j)\tilde{P}_{ji} \\
+  \pi(j) \tilde{P}_{ji} &amp; \text{ otherwise. }
+\end{cases}
+\]</span> Therefore, <span class="math inline">\(\pi(i) P_{ij} = \pi(j) P_{ji}\)</span> holds for all <span class="math inline">\(i,j\in S\)</span>, i.e., the detailed balance equation (<a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a>) is satisfied. And since detailed balance equation implies global balance equation (<a href="#eq-global-balance-equation" class="quarto-xref">Equation&nbsp;1</a>), this completes the proof. #</p>
+</div>
+<p>In the proof, we see that the acceptance ratio <span class="math inline">\(\alpha(i,j)\)</span> is designed to ensure that the detailed balance equation holds. In many applications, the proposal distribution is not drawn from a Markov chain, but from a proposal distribution, say with probability mass function <span class="math inline">\(\tilde{f}\)</span>, independently and identically. Hence, acceptance ratio can be simplified to <span class="math display">\[
+\alpha(i,j) = \min\left\{1, \frac{\pi(j) \tilde{f}(i)}{\pi(i) \tilde{f}(j)}\right\}.
+\]</span> One can more easily interpret acceptance ratio <span class="math inline">\(\alpha(i,j)\)</span> in this simplified context: if the <em>proposed</em> state <span class="math inline">\(j\)</span> has a high probability in <span class="math inline">\(\pi\)</span>, then we are more likely to accept it, however, if <span class="math inline">\(\pi(j)\)</span> is low and we proposed <span class="math inline">\(j\)</span> simply because <span class="math inline">\(\tilde{f}(j)\)</span> is high, then we are less likely to accept it. This trade-off perfectly modifies proposal distribution <span class="math inline">\(\tilde{f}\)</span> so that the detailed balance equation holds.</p>
+<section id="demonstration" class="level2">
+<h2 class="anchored" data-anchor-id="demonstration">Demonstration</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999999</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tidyverse.quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(conflicted)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s see how the Metropolis-Hastings algorithm works in practice. Say that we have the following target distribution with density <code>dtriangle2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dtriangle2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">&lt;</span> <span class="fl">0.00</span> <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">&lt;</span> <span class="fl">0.25</span> <span class="sc">~</span> <span class="dv">8</span> <span class="sc">*</span> x,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">&lt;</span> <span class="fl">0.50</span> <span class="sc">~</span> <span class="dv">4</span> <span class="sc">-</span> <span class="dv">8</span> <span class="sc">*</span> x,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">&lt;</span> <span class="fl">0.75</span> <span class="sc">~</span> <span class="sc">-</span><span class="dv">4</span> <span class="sc">+</span> <span class="dv">8</span> <span class="sc">*</span> x,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">&lt;</span> <span class="fl">1.00</span> <span class="sc">~</span> <span class="dv">8</span> <span class="sc">-</span> <span class="dv">8</span> <span class="sc">*</span> x,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.default =</span> <span class="dv">0</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Its density function looks like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> dtriangle2) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>One can see that this non-standard distribution is two humped, making it difficult to sample from. Hence, we want to make use of the Metropolis-Hastings algorithm to create a Markov chain with <code>dtriangle2</code> as its stationary distribution.</p>
+<p>The Metropolis-Hastings algorithm can be implemented as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a>metropolis_hastings_algorithm <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a>  target_density,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2">2</button><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a>  propose,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3">3</button><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a>  proposal_density,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4">4</button><span id="annotated-cell-4-5" class="code-annotation-target"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a>  inital_state,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="5">5</button><span id="annotated-cell-4-6" class="code-annotation-target"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">length_of_chain =</span> <span class="dv">1000</span></span>
+<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a>  output_chain <span class="ot">&lt;-</span> <span class="fu">numeric</span>(length_of_chain)</span>
+<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a>  output_chain[<span class="dv">1</span>] <span class="ot">&lt;-</span> inital_state</span>
+<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a>  state <span class="ot">&lt;-</span> inital_state</span>
+<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (trial <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>length_of_chain) {</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="6">6</button><span id="annotated-cell-4-12" class="code-annotation-target"><a href="#annotated-cell-4-12" aria-hidden="true" tabindex="-1"></a>    proposal <span class="ot">&lt;-</span> <span class="fu">propose</span>(state)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="7">7</button><span id="annotated-cell-4-13" class="code-annotation-target"><a href="#annotated-cell-4-13" aria-hidden="true" tabindex="-1"></a>    log_metropolis_ratio <span class="ot">&lt;-</span></span>
+<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">log</span>(<span class="fu">target_density</span>(proposal)) <span class="sc">+</span></span>
+<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">log</span>(<span class="fu">proposal_density</span>(proposal, state)) <span class="sc">-</span></span>
+<span id="annotated-cell-4-16"><a href="#annotated-cell-4-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">log</span>(<span class="fu">target_density</span>(state)) <span class="sc">-</span></span>
+<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">log</span>(<span class="fu">proposal_density</span>(state, proposal))</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="8">8</button><span id="annotated-cell-4-18" class="code-annotation-target"><a href="#annotated-cell-4-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">log</span>(<span class="fu">runif</span>(<span class="dv">1</span>)) <span class="sc">&lt;</span> log_metropolis_ratio) state <span class="ot">&lt;-</span> proposal</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="9">9</button><span id="annotated-cell-4-19" class="code-annotation-target"><a href="#annotated-cell-4-19" aria-hidden="true" tabindex="-1"></a>    output_chain[trial] <span class="ot">&lt;-</span> state</span>
+<span id="annotated-cell-4-20"><a href="#annotated-cell-4-20" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="annotated-cell-4-21"><a href="#annotated-cell-4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_chain)</span>
+<span id="annotated-cell-4-22"><a href="#annotated-cell-4-22" aria-hidden="true" tabindex="-1"></a>}</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1"><code>target_density</code> is the target distribution we want to sample from. In this case, it is <code>dtriangle2</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2"><code>propose</code> is a function that generates a proposal state given the current state. That is, it draws the <span class="math inline">\(J\)</span> in <a href="#thm-metropolis-hastings" class="quarto-xref">Theorem&nbsp;1</a>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="3"><code>proposal_density</code> is the probability of proposing <span class="math inline">\(j\)</span> given state <span class="math inline">\(i\)</span>, i.e., <span class="math inline">\(\tilde{P}_{ij}\)</span>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="5" data-code-annotation="4"><code>inital_state</code> is the initial state of the Markov chain, i.e., <span class="math inline">\(I_0\)</span>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="6" data-code-annotation="5"><code>length_of_chain</code> is the length of the Markov chain, i.e., how many states we want to generate.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="12" data-code-annotation="6">For each trial, first we generate a proposal given the current state.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="7">7</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="13,14,15,16,17" data-code-annotation="7">Then, we compute the Metropolis-Hastings acceptance ratio <span class="math inline">\(\alpha(i,j)\)</span>. Note that we use the logarithm of the ratio to avoid numerical underflow.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="8">8</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="18" data-code-annotation="8">We accept the proposal according to <a href="#eq-metropolis-hastings-transition-rule" class="quarto-xref">Equation&nbsp;3</a>: If the ratio is greater than 1, we accept the proposal; if it is less than 1, we accept it with probability equal to the ratio.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="9">9</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="19" data-code-annotation="9">Finally, we store the state in the output chain.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>Now let’s run the Metropolis-Hastings algorithm and see its output. We use a simple proposal distribution that draws a proposal iid from a uniform distribution on the interval <span class="math inline">\([0,1]\)</span>. That is, the proposal density <span class="math inline">\(\tilde{f}\)</span> is a constant function equal to <span class="math inline">\(1\)</span> on the interval <span class="math inline">\([0,1]\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a>output_chain <span class="ot">&lt;-</span> <span class="fu">metropolis_hastings_algorithm</span>(</span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">target_density =</span> dtriangle2,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">propose =</span> <span class="cf">function</span>(state) <span class="fu">runif</span>(<span class="dv">1</span>),</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="2">2</button><span id="annotated-cell-5-4" class="code-annotation-target"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">proposal_density =</span> <span class="cf">function</span>(i, j) <span class="dv">1</span>,</span>
+<span id="annotated-cell-5-5"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">inital_state =</span> <span class="fl">0.2</span></span>
+<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(output_chain)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="1">We draw a proposal iid from a uniform distribution.</span>
+</dd>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="4" data-code-annotation="2">The proposal density is a constant function since we draw the proposal iid from a uniform distribution.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2000000 0.2000000 0.2000000 0.8609154 0.8609154 0.6660838</code></pre>
+</div>
+</div>
+<p>One can see that since <code>dtriangle2</code> at <code>inital_state = 0.2</code> has relatively high density, it took several trials before a proapsal was accepted and the chain started to explore the state space. Let’s visualize the output chain by a density plot of the values in the chain:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">x =</span> output_chain) <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> x) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> dtriangle2, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"density"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As expected, the density of the output chain matches the target distribution <code>dtriangle2</code> very well.</p>
+</section>
+</section>
+<section id="gibbs-sampling" class="level1">
+<h1>Gibbs Sampling</h1>
+<p>Gibbs sampling is a variation of the Metropolis-Hastings algorithm that makes sampling high-dimensional distributions more efficient.</p>
+<p>For illustration, let <span class="math inline">\(\pi(a,b)\)</span> be a distribution on <span class="math inline">\(S\times S\)</span> for <span class="math inline">\(a\in S\)</span> and <span class="math inline">\(b\in S\)</span>. Following the Metropolis-Hasting algorithm, we can view the pair <span class="math inline">\((a,b)\)</span> as a single state and perform the sampling. However, if <span class="math inline">\(\pi(a\,|\,b)\)</span> and <span class="math inline">\(\pi(b\,|\,a)\)</span> are easy to sample from, then we can sample <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in alternation. And the Gibbs sampling algorithm guarantees that the resulting Markov chain has stationary distribution <span class="math inline">\(\pi(a,b)\)</span>.</p>
+<div id="thm-gibbs-sampling" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2 (Gibbs Sampling)</strong></span> Given a target distribution <span class="math inline">\(\pi(a,b)\)</span>, construct a Markov chain as follows. Arbitrarily fix an initial state <span class="math inline">\((a_0,b_0)\)</span>. In the iteration at time <span class="math inline">\(t\)</span>, perform the following:</p>
+<ol type="1">
+<li>Sample <span class="math inline">\(a_{t+1}\)</span> from <span class="math inline">\(\pi(a\,|\,b_{t})\)</span></li>
+<li>Sample <span class="math inline">\(b_{t+1}\)</span> from <span class="math inline">\(\pi(b\,|\,a_{t+1})\)</span></li>
+</ol>
+<p>Then, Markov chain <span class="math inline">\(\{(a_t,b_t)\}_{t\geq 0}\)</span> has stationary distribution <span class="math inline">\(\pi\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Following the proof of <a href="#thm-metropolis-hastings" class="quarto-xref">Theorem&nbsp;1</a>, note that <span class="math inline">\(\pi(a\,|\,b)\)</span> and <span class="math inline">\(\pi(b\,|\,a)\)</span> are proposal distributions. Thus, we only have to show that under these proposal distributions, we always accept the proposed state, i.e., the acceptance ratio <span class="math inline">\(\alpha(i,j)\)</span> is always <span class="math inline">\(1\)</span>.</p>
+<p>Let <span class="math inline">\((a,b)\)</span> be the current state and let <span class="math inline">\(a'\sim\pi(a\,|\,b)\)</span> be the proposal. Consider the following: <span class="math display">\[
+\begin{aligned}
+\alpha((a,b),(a',b))
+&amp;= \min\left\{\frac{\pi(a',b)}{\pi(a,b)}\frac{\pi(a\,|\,b)}{\pi(a'\,|\,b)},1\right\} \\
+&amp;= \min\left\{\frac{\pi(a'\,|\,b)\pi(b)}{\pi(a\,|\,b)\pi(b)}\frac{\pi(a\,|\,b)}{\pi(a'\,|\,b)},1\right\}
+= 1.
+\end{aligned}
+\]</span> Similarly, we can also show that the proposed <span class="math inline">\(b'\sim\pi(b\,|\,a)\)</span> is also always accepted. Therefore, <span class="math inline">\(\{(a_t,b_t)\}_{t\geq 0}\)</span> is a Markov chain with stationary distribution <span class="math inline">\(\pi(a,b)\)</span>, and this completes the proof. #</p>
+</div>
+<p>It is remarkable that Gibbs sampling never rejects a proposal. In many practical cases, the conditional distributions <span class="math inline">\(\pi(a\,|\,b)\)</span> and <span class="math inline">\(\pi(b\,|\,a)\)</span> are known and easy to sample from, but the joint distribution <span class="math inline">\(\pi(a,b)\)</span> is not. Even if we don’t know how to sample from either <span class="math inline">\(\pi(a\,|\,b)\)</span> or <span class="math inline">\(\pi(b\,|\,a)\)</span>, we can always turn to the Metropolis-Hastings algorithm. That is, we can replace the sampling steps in Gibbs sampling with the Metropolis-Hastings algorithm. This is known as the <strong>Metropolis-Hastings within Gibbs</strong> method, which is a common method to general samples from high-dimensional distributions efficiently.</p>
+<section id="demonstration-1" class="level2">
+<h2 class="anchored" data-anchor-id="demonstration-1">Demonstration</h2>
+<p>Let’s see how Gibbs sampling works in practice. Consider the following Bayesian estimation problem: We are given iid samples <span class="math inline">\(\{X_t\}_{t=1}^{T}\)</span> drawn from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. With prior distributions <span class="math inline">\(p(\mu)\)</span> where <span class="math inline">\(p\)</span> is the standard normal density and <span class="math inline">\(q(\sigma^2)\)</span> where <span class="math inline">\(q\)</span> is the inverse gamma distribution, we want to compute the posterior mean of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> to serve as point estimates. In this case, the target distribution is the posterior distribution <span class="math inline">\(\pi(\mu,\sigma^2\,|\,\{X_t\})\)</span>.</p>
+<p>First, we set up the parameters of the problem and generate the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1">1</button><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>true_params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">mu =</span> <span class="dv">5</span>, <span class="at">sigma2 =</span> <span class="dv">5</span>)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2">2</button><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>prior_params <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">mu =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">0</span>, <span class="at">variance =</span> <span class="dv">1</span>),</span>
+<span id="annotated-cell-7-4"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sigma2 =</span> <span class="fu">list</span>(<span class="at">shape =</span> <span class="dv">1</span>, <span class="at">scale =</span> <span class="dv">1</span>)</span>
+<span id="annotated-cell-7-5"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">The true parameters of the normal distribution we want to estimate.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="2,3,4,5" data-code-annotation="2">The hyper-parameters of the prior distributions. We use a standard normal distribution as the prior for <span class="math inline">\(\mu\)</span> and an inverse gamma distribution as the prior for <span class="math inline">\(\sigma^2\)</span>.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(</span>
+<span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">100</span>,</span>
+<span id="annotated-cell-8-3"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> true_params<span class="sc">$</span>mu,</span>
+<span id="annotated-cell-8-4"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="fu">sqrt</span>(true_params<span class="sc">$</span>sigma2)</span>
+<span id="annotated-cell-8-5"><a href="#annotated-cell-8-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-8-6"><a href="#annotated-cell-8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-8-7"><a href="#annotated-cell-8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="1,2,3,4,5" data-code-annotation="1">Generate iid samples from a normal distribution with the true parameters.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.003478 2.304793 5.674100 1.558367 6.420732 6.571848</code></pre>
+</div>
+</div>
+<p>Since we deliberately pick conjugate priors, we know how to draw from both conditional distribution <span class="math inline">\(\pi(\mu\,|\,\{X_t\},\sigma^2)\)</span> and <span class="math inline">\(\pi(\sigma^2\,|\,\{X_t\},\mu)\)</span> directly.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> We summarize how to sample from the conditional distributions in the following two functions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a>sample_posterior_mu <span class="ot">&lt;-</span> <span class="cf">function</span>(params, data) {</span>
+<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a>  posterior_variance <span class="ot">&lt;-</span> <span class="fu">solve</span>(</span>
+<span id="annotated-cell-9-3"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span> <span class="sc">/</span> prior_params<span class="sc">$</span>mu<span class="sc">$</span>variance <span class="sc">+</span> <span class="fu">length</span>(data) <span class="sc">/</span> params<span class="sc">$</span>sigma2</span>
+<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="annotated-cell-9-5"><a href="#annotated-cell-9-5" aria-hidden="true" tabindex="-1"></a>  posterior_mean <span class="ot">&lt;-</span> posterior_variance <span class="sc">*</span> (</span>
+<span id="annotated-cell-9-6"><a href="#annotated-cell-9-6" aria-hidden="true" tabindex="-1"></a>    prior_params<span class="sc">$</span>mu<span class="sc">$</span>mean <span class="sc">/</span> prior_params<span class="sc">$</span>mu<span class="sc">$</span>variance <span class="sc">+</span></span>
+<span id="annotated-cell-9-7"><a href="#annotated-cell-9-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">sum</span>(data) <span class="sc">/</span> params<span class="sc">$</span>sigma2</span>
+<span id="annotated-cell-9-8"><a href="#annotated-cell-9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="annotated-cell-9-9"><a href="#annotated-cell-9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> posterior_mean, <span class="at">sd =</span> <span class="fu">sqrt</span>(posterior_variance))</span>
+<span id="annotated-cell-9-10"><a href="#annotated-cell-9-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="annotated-cell-9-11"><a href="#annotated-cell-9-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="annotated-cell-9-12"><a href="#annotated-cell-9-12" aria-hidden="true" tabindex="-1"></a>sample_posterior_sigma2 <span class="ot">&lt;-</span> <span class="cf">function</span>(params, data) {</span>
+<span id="annotated-cell-9-13"><a href="#annotated-cell-9-13" aria-hidden="true" tabindex="-1"></a>  posterior_shape <span class="ot">&lt;-</span> prior_params<span class="sc">$</span>sigma2<span class="sc">$</span>shape <span class="sc">+</span> <span class="fu">length</span>(data) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="annotated-cell-9-14"><a href="#annotated-cell-9-14" aria-hidden="true" tabindex="-1"></a>  posterior_scale <span class="ot">&lt;-</span> prior_params<span class="sc">$</span>sigma2<span class="sc">$</span>scale <span class="sc">+</span> <span class="fu">sum</span>((data <span class="sc">-</span> params<span class="sc">$</span>mu)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-15" class="code-annotation-target"><a href="#annotated-cell-9-15" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">/</span> <span class="fu">rgamma</span>(<span class="dv">1</span>, <span class="at">shape =</span> posterior_shape, <span class="at">scale =</span> <span class="dv">1</span> <span class="sc">/</span> posterior_scale)</span>
+<span id="annotated-cell-9-16"><a href="#annotated-cell-9-16" aria-hidden="true" tabindex="-1"></a>}</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="15" data-code-annotation="1">This bit samples from the inverse gamma distribution.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>The input <code>params</code> is a list (containing <code>mu</code> and <code>sigma2</code>) that represents the current state of the Markov chain. Note that these two function uses information from the <code>params</code> input. That is, <code>sample_posterior_mu</code> uses <code>params$sigma2</code> in its definition and <code>sample_posterior_sigma2</code> uses <code>params$mu</code>. This is precisely how Gibbs sampling as defined in <a href="#thm-gibbs-sampling" class="quarto-xref">Theorem&nbsp;2</a> works.</p>
+<p>Finally, we can implement the Gibbs sampling algorithm as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1" aria-hidden="true" tabindex="-1"></a>gibbs_sampling <span class="ot">&lt;-</span> <span class="cf">function</span>(</span>
+<span id="annotated-cell-10-2"><a href="#annotated-cell-10-2" aria-hidden="true" tabindex="-1"></a>  data,</span>
+<span id="annotated-cell-10-3"><a href="#annotated-cell-10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">initial_params =</span> <span class="fu">list</span>(<span class="at">mu =</span> <span class="dv">0</span>, <span class="at">sigma2 =</span> <span class="dv">1</span>),</span>
+<span id="annotated-cell-10-4"><a href="#annotated-cell-10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">length_of_chain =</span> <span class="dv">1000</span></span>
+<span id="annotated-cell-10-5"><a href="#annotated-cell-10-5" aria-hidden="true" tabindex="-1"></a>) {</span>
+<span id="annotated-cell-10-6"><a href="#annotated-cell-10-6" aria-hidden="true" tabindex="-1"></a>  output_chain <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> length_of_chain)</span>
+<span id="annotated-cell-10-7"><a href="#annotated-cell-10-7" aria-hidden="true" tabindex="-1"></a>  output_chain[[<span class="dv">1</span>]] <span class="ot">&lt;-</span> initial_params</span>
+<span id="annotated-cell-10-8"><a href="#annotated-cell-10-8" aria-hidden="true" tabindex="-1"></a>  params <span class="ot">&lt;-</span> initial_params</span>
+<span id="annotated-cell-10-9"><a href="#annotated-cell-10-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (trial <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>length_of_chain) {</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-10" class="code-annotation-target"><a href="#annotated-cell-10-10" aria-hidden="true" tabindex="-1"></a>    params<span class="sc">$</span>mu <span class="ot">&lt;-</span> <span class="fu">sample_posterior_mu</span>(params, data)</span>
+<span id="annotated-cell-10-11"><a href="#annotated-cell-10-11" aria-hidden="true" tabindex="-1"></a>    params<span class="sc">$</span>sigma2 <span class="ot">&lt;-</span> <span class="fu">sample_posterior_sigma2</span>(params, data)</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="2">2</button><span id="annotated-cell-10-12" class="code-annotation-target"><a href="#annotated-cell-10-12" aria-hidden="true" tabindex="-1"></a>    output_chain[[trial]] <span class="ot">&lt;-</span> params</span>
+<span id="annotated-cell-10-13"><a href="#annotated-cell-10-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="annotated-cell-10-14"><a href="#annotated-cell-10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_chain)</span>
+<span id="annotated-cell-10-15"><a href="#annotated-cell-10-15" aria-hidden="true" tabindex="-1"></a>}</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="10,11" data-code-annotation="1">The state (<code>params</code>) is updated one parameter at a time, first sampling <span class="math inline">\(\mu\)</span> given the current <span class="math inline">\(\sigma^2\)</span> and then sampling <span class="math inline">\(\sigma^2\)</span> given the current <span class="math inline">\(\mu\)</span>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-10" data-code-lines="12" data-code-annotation="2">The updated state is then stored in the output chain.</span>
+</dd>
+</dl>
+</div>
+</div>
+<p>Let’s run the Gibbs sampling algorithm and calculate the posterior means:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-11-1"><a href="#annotated-cell-11-1" aria-hidden="true" tabindex="-1"></a>gibbs_chain <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>(</span>
+<span id="annotated-cell-11-2"><a href="#annotated-cell-11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="annotated-cell-11-3"><a href="#annotated-cell-11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">initial_params =</span> <span class="fu">list</span>(<span class="at">mu =</span> <span class="dv">0</span>, <span class="at">sigma2 =</span> <span class="dv">1</span>)</span>
+<span id="annotated-cell-11-4"><a href="#annotated-cell-11-4" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="1">1</button><span id="annotated-cell-11-5" class="code-annotation-target"><a href="#annotated-cell-11-5" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">map_df</span>(<span class="cf">function</span>(x) <span class="fu">as_tibble</span>(x))</span>
+<span id="annotated-cell-11-6"><a href="#annotated-cell-11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-11-7"><a href="#annotated-cell-11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gibbs_chain<span class="sc">$</span>mu)</span>
+<span id="annotated-cell-11-8"><a href="#annotated-cell-11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gibbs_chain<span class="sc">$</span>sigma2)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-11" data-code-lines="5" data-code-annotation="1">Turn the output chain into a data frame for easier manipulation and visualization.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.606705
+[1] 4.215542</code></pre>
+</div>
+</div>
+<p>As expected, the posterior means of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are close to the true parameters. Now let’s visualize the output chain.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gibbs_chain <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> mu, <span class="at">y =</span> sigma2) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xintercept =</span> true_params<span class="sc">$</span>mu,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">yintercept =</span> true_params<span class="sc">$</span>sigma2,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, true_params<span class="sc">$</span>sigma2 <span class="sc">+</span> <span class="dv">2</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, true_params<span class="sc">$</span>mu <span class="sc">+</span> <span class="dv">1</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Usually in practice, remove the first few states in the chain to avoid the initial state bias. In high-dimensional problems, it might take a while for the Markov chain to converge to the stationary distribution, hence the first few states in the chain might not be representative of the stationary distribution. This period is known as the <strong>burn-in period</strong>. For demonstration purposes, we do not remove any burn-in period here, so you can see that our sampling path starts from the initial state <span class="math inline">\(\mu=1\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. Also, since our model is very simple, the Markov chain converges very quickly. Of course, this example is a bit silly since we can simply do</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.802238</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.18167</code></pre>
+</div>
+</div>
+<p>to get good estimates of the parameters, but you get the idea.</p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>The virtue of the Metropolis-Hastings algorithm is that it can sample from any distribution <span class="math inline">\(\pi\)</span> (discrete or continuous) as long as we can compute the ratio <span class="math inline">\(\pi(j)/\pi(i)\)</span> for any two states <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, but it might suffer from slow convergence in high-dimensional problems. Gibbs sampling is a special case of the Metropolis-Hastings algorithm where the proposal distribution is the conditional distribution of one variable given the other.</p>
+<p>Metropolis-Hastings algorithm and Gibbs sample are but two of the many sampling algorithms that are used in practice. In general, these methods that utilizes properties of Markov chains to sample from distributions are called <strong>Markov Chain Monte Carlo (MCMC)</strong> methods.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Nicholas Metropolis first invented its most basic form (known as <em>Metropolis algorithm</em>) in 1950s during the Manhattan Project. It was later generalized by W. K. Hastings in 1970s, hence it is now known as Metropolis-Hastings algorithm.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> Understanding the concepts behind the Metropolis-Hastings algorithm — <em>global/detailed balance equation</em> and <em>acceptance ratio</em> — is crucial for understanding many other MCMC methods.</p>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>A Markov chain is a stochastic process that satisfies the Markov property, meaning the future state depends only on the current state and not on the sequence of events that preceded it. For this demonstration, one just needs to know that it is a sequence of random variables jumping from state to state with transition probabilities.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Transition probabilities <span class="math inline">\(P_{ij}\)</span> denote the probability of moving from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span> in one step.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The transition probabilities <span class="math inline">\(\{\tilde{P}_{ij}\}\)</span> is called the <em>proposal distribution</em>. It is arbitrary in the sense that it does not need to satisfy <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Conjugate priors are prior distributions that, when combined with a likelihood function, yield a posterior distribution of the same family as the prior. These type of priors simplify the Bayesian estimation process, as the posterior distribution can be easily computed and sampled from. For the exact formulae you can look them up on <a href="https://en.wikipedia.org/wiki/Conjugate_prior">Wikipedia</a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>The <em>Monte Carlo</em> part simply means that we use random sampling to approximate the desired distribution. John von Neumann and Stanislaw Ulam first introduced the term <em>Monte Carlo simulation</em> in the 1940s to describe method utilizing random sampling to solve problems.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>The original Metropolis algorithm is a special case of the Metropolis-Hastings algorithm where the proposal distribution is symmetric, i.e., <span class="math inline">\(\tilde{P}_{ij} = \tilde{P}_{ji}\)</span>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+        for (let i=0; i<annoteTargets.length; i++) {
+          const annoteTarget = annoteTargets[i];
+          const targetCell = annoteTarget.getAttribute("data-target-cell");
+          const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+          const contentFn = () => {
+            const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            if (content) {
+              const tipContent = content.cloneNode(true);
+              tipContent.classList.add("code-annotation-tip-content");
+              return tipContent.outerHTML;
+            }
+          }
+          const config = {
+            allowHTML: true,
+            content: contentFn,
+            onShow: (instance) => {
+              selectCodeLines(instance.reference);
+              instance.reference.classList.add('code-annotation-active');
+              window.tippy.hideAll();
+            },
+            onHide: (instance) => {
+              unselectCodeLines();
+              instance.reference.classList.remove('code-annotation-active');
+            },
+            maxWidth: 300,
+            delay: [50, 0],
+            duration: [200, 0],
+            offset: [5, 10],
+            arrow: true,
+            appendTo: function(el) {
+              return el.parentElement.parentElement.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'right',
+            popperOptions: {
+              modifiers: [
+              {
+                name: 'flip',
+                options: {
+                  flipVariations: false, // true by default
+                  allowedAutoPlacements: ['right'],
+                  fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                },
+              },
+              {
+                name: 'preventOverflow',
+                options: {
+                  mainAxis: false,
+                  altAxis: false
+                }
+              }
+              ]        
+            }      
+          };
+          window.tippy(annoteTarget, config); 
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
