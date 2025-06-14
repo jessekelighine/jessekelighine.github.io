@@ -1,7 +1,7 @@
 ---
 title: "Metropolis-Hastings Algorithm: An Explanation with Demonstration"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date: "2025-06-14"
+date: "2025-06-15"
 format:
   html:
     code-annotations: hover
@@ -167,9 +167,7 @@ ggplot() +
   xlim(0, 1) +
   ylab("density")
 ```
-One can see that this non-standard distribution is two humped,
-making it difficult to sample from.
-Hence, we want to make use of the Metropolis-Hastings algorithm to create a Markov chain with `dtriangle2` as its stationary distribution.
+We want to make use of the Metropolis-Hastings algorithm to create a Markov chain with `dtriangle2` as its stationary distribution.
 
 The Metropolis-Hastings algorithm can be implemented as follows:
 ```{r}
