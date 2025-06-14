@@ -109,7 +109,7 @@ window.Quarto = {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="10">
+  <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -385,8 +385,8 @@ i &amp; \text{ otherwise}
 <p>It is remarkable that Gibbs sampling never rejects a proposal. In many practical cases, the conditional distributions <span class="math inline">\(\pi(a\,|\,b)\)</span> and <span class="math inline">\(\pi(b\,|\,a)\)</span> are known and easy to sample from, but the joint distribution <span class="math inline">\(\pi(a,b)\)</span> is not. Even if we don’t know how to sample from either <span class="math inline">\(\pi(a\,|\,b)\)</span> or <span class="math inline">\(\pi(b\,|\,a)\)</span>, we can always turn to the Metropolis-Hastings algorithm. That is, we can replace the sampling steps in Gibbs sampling with the Metropolis-Hastings algorithm. This is known as the <strong>Metropolis-Hastings within Gibbs</strong> method, which is a common method to general samples from high-dimensional distributions efficiently.</p>
 <section id="demonstration-1" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="demonstration-1">Demonstration</h2>
-<p>Let’s see how Gibbs sampling works in practice. Consider the following Bayesian estimation problem: We are given iid samples <span class="math inline">\(\{X_t\}_{t=1}^{T}\)</span> drawn from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. With prior distributions <span class="math inline">\(p(\mu)\)</span> where <span class="math inline">\(p\)</span> is the standard normal density and <span class="math inline">\(q(\sigma^2)\)</span> where <span class="math inline">\(q\)</span> is the inverse gamma distribution, we want to compute the posterior mean of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> to serve as point estimates. In this case, the target distribution is the posterior distribution <span class="math inline">\(\pi(\mu,\sigma^2\,|\,\{X_t\})\)</span>.</p>
-<p>First, we set up the parameters of the problem and generate the data.</p>
+<p>Let’s see how Gibbs sampling works in practice. Consider the following Bayesian estimation problem: We are given iid samples <span class="math inline">\(\{X_t\}_{t=1}^{T}\)</span> drawn from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. With prior distributions on <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>, we want to compute the posterior mean of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> to serve as point estimates. In this case, the target distribution is the posterior distribution <span class="math inline">\(\pi(\mu,\sigma^2\,|\,\{X_t\})\)</span>.</p>
+<p>First, we set up the parameters of the problem:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1">1</button><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a>true_params <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">mu =</span> <span class="dv">5</span>, <span class="at">sigma2 =</span> <span class="dv">5</span>)</span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="2">2</button><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a>prior_params <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
@@ -401,11 +401,12 @@ i &amp; \text{ otherwise}
 </dd>
 <dt data-target-cell="annotated-cell-7" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="2,3,4,5" data-code-annotation="2">The hyper-parameters of the prior distributions. We use a standard normal distribution as the prior for <span class="math inline">\(\mu\)</span> and an inverse gamma distribution as the prior for <span class="math inline">\(\sigma^2\)</span>.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="2,3,4,5" data-code-annotation="2">The hyper-parameters of the prior distributions. We use a standard normal distribution as the prior for <span class="math inline">\(\mu\)</span> and an inverse gamma distribution as the prior for <span class="math inline">\(\sigma^2\)</span> with shape and scale parameter both equal to 1.</span>
 </dd>
 </dl>
 </div>
 </div>
+<p>And generate the data accordingly:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(</span>
 <span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">100</span>,</span>
@@ -426,7 +427,7 @@ i &amp; \text{ otherwise}
 <pre><code>[1] 4.003478 2.304793 5.674100 1.558367 6.420732 6.571848</code></pre>
 </div>
 </div>
-<p>Since we deliberately pick conjugate priors, we know how to draw from both conditional distribution <span class="math inline">\(\pi(\mu\,|\,\{X_t\},\sigma^2)\)</span> and <span class="math inline">\(\pi(\sigma^2\,|\,\{X_t\},\mu)\)</span> directly.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> We summarize how to sample from the conditional distributions in the following two functions:</p>
+<p>Since we deliberately pick conjugate priors (normal-normal and inverse gamma-normal conjugacy), we know how to draw from both conditional distribution <span class="math inline">\(\pi(\mu\,|\,\{X_t\},\sigma^2)\)</span> and <span class="math inline">\(\pi(\sigma^2\,|\,\{X_t\},\mu)\)</span> directly.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> We summarize how to sample from the conditional distributions in the following two functions:</p>
 <div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Conjugate priors are prior distributions that, when combined with a likelihood function, yield a posterior distribution of the same family as the prior. These type of priors simplify the Bayesian estimation process, as the posterior distribution can be easily computed and sampled from. For the exact formulae you can look them up on <a href="https://en.wikipedia.org/wiki/Conjugate_prior">Wikipedia</a>.</p></div></div><div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a>sample_posterior_mu <span class="ot">&lt;-</span> <span class="cf">function</span>(params, data) {</span>
 <span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a>  posterior_variance <span class="ot">&lt;-</span> <span class="fu">solve</span>(</span>
@@ -438,7 +439,7 @@ i &amp; \text{ otherwise}
 <span id="annotated-cell-9-8"><a href="#annotated-cell-9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="annotated-cell-9-9"><a href="#annotated-cell-9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean =</span> posterior_mean, <span class="at">sd =</span> <span class="fu">sqrt</span>(posterior_variance))</span>
 <span id="annotated-cell-9-10"><a href="#annotated-cell-9-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="annotated-cell-9-11"><a href="#annotated-cell-9-11" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="annotated-cell-9-11"><a href="#annotated-cell-9-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-9-12"><a href="#annotated-cell-9-12" aria-hidden="true" tabindex="-1"></a>sample_posterior_sigma2 <span class="ot">&lt;-</span> <span class="cf">function</span>(params, data) {</span>
 <span id="annotated-cell-9-13"><a href="#annotated-cell-9-13" aria-hidden="true" tabindex="-1"></a>  posterior_shape <span class="ot">&lt;-</span> prior_params<span class="sc">$</span>sigma2<span class="sc">$</span>shape <span class="sc">+</span> <span class="fu">length</span>(data) <span class="sc">/</span> <span class="dv">2</span></span>
 <span id="annotated-cell-9-14"><a href="#annotated-cell-9-14" aria-hidden="true" tabindex="-1"></a>  posterior_scale <span class="ot">&lt;-</span> prior_params<span class="sc">$</span>sigma2<span class="sc">$</span>scale <span class="sc">+</span> <span class="fu">sum</span>((data <span class="sc">-</span> params<span class="sc">$</span>mu)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="dv">2</span></span>
@@ -534,7 +535,7 @@ i &amp; \text{ otherwise}
 </div>
 </div>
 </div>
-<p>Usually in practice, remove the first few states in the chain to avoid the initial state bias. In high-dimensional problems, it might take a while for the Markov chain to converge to the stationary distribution, hence the first few states in the chain might not be representative of the stationary distribution. This period is known as the <strong>burn-in period</strong>. For demonstration purposes, we do not remove any burn-in period here, so you can see that our sampling path starts from the initial state <span class="math inline">\(\mu=1\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. Also, since our model is very simple, the Markov chain converges very quickly. Of course, this example is a bit silly since we can simply do</p>
+<p>Usually in practice, remove the first few states in the chain to avoid the initial state bias. In high-dimensional problems, it might take a while for the Markov chain to converge to the stationary distribution, hence the first few states in the chain might not be representative of the stationary distribution. This period is known as the <strong>burn-in period</strong>. For demonstration purposes, we do not remove any burn-in period here, so you can see that our sampling path starts from the initial state <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. Also, since our model is very simple, the Markov chain converges very quickly. Of course, this example is a bit silly since we can simply do</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
