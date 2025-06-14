@@ -6,7 +6,7 @@ format:
   html:
     code-annotations: hover
     css: style.css
-    # reference-location: margin
+    reference-location: margin
     toc: true
     toc-depth: 10
     toc-expand: 10
