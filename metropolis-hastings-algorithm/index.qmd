@@ -41,7 +41,7 @@ That is, $P_{ij}$ has stationary distribution $\pi$ by definition.
 
 However, finding $P_{ij}$ that satisfies @eq-detailed-balance-equation can be difficult to satisfy in practice,
 since $n$ might be so large that it is infeasible to compute the sum over all states $i$.
-There is another notion of balance that is easier to satisfy, known as the *Detailed Balance Equation*:
+To address this, we turn to a more tractable alternative, known as the *Detailed Balance Equation*:
 $$
 \pi(i) P_{ij} = \pi(j) P_{ji} \quad \forall i,j\in S
 $$ {#eq-detailed-balance-equation}
@@ -146,7 +146,7 @@ however, if $\pi(j)$ is low and we proposed $j$ simply because $\tilde{f}(j)$ is
 then we are less likely to accept it.
 This trade-off perfectly modifies proposal distribution $\tilde{f}$ so that the detailed balance equation holds.
 
-## Demonstration: Sample from a Unnormalized Density Function
+## Demonstration: Sample from an Unnormalized Density Function
 
 ```{r}
 options(scipen = 999999)
@@ -157,7 +157,7 @@ set.seed(1234)
 ```
 
 Let's see how the Metropolis-Hastings algorithm works in practice.
-Say that we have the following target distribution with density `dtriangle2`:
+Say that we have the following (non-standard) target distribution with density `dtriangle2`:
 ```{r}
 dtriangle2 <- function(x) {
   dplyr::case_when(
@@ -184,8 +184,8 @@ That is, we can perform the Metropolis-Hastings algorithm with a non-normalized 
 For this demonstration,
 let's suppose that we we only have `dtriangle2_unnormalized` and do not know `dtriangle2`:[^non-normalized-density]
 ```{r}
-totally_arbitrary_constant <- 69420
-dtriangle2_unnormalized <- function(x) totally_arbitrary_constant * dtriangle2(x)
+totally_random_number <- 69420
+dtriangle2_unnormalized <- function(x) totally_random_number * dtriangle2(x)
 ```
 We want to make use of the Metropolis-Hastings algorithm
 to create a Markov chain with `dtriangle2` as its stationary distribution.
@@ -384,7 +384,7 @@ First, we set up the true parameters and the prior parameters of the problem:
 
 ```{r}
 true_params <- list( # <1>
-  mu = 5, # <1>
+  mu = 1, # <1>
   sigma2 = 5 # <1>
 ) # <1>
 
@@ -432,8 +432,10 @@ sample_posterior_mu <- function(
 }
 ```
 
-1. We bind `data` and `prior_params` to the function directly.
-   This is because a conditional distribution sampler should simple take the current state of the Markov chain
+1. We bind `data` and `prior_params` to the function directly
+   so that we don't have to pass them as arguments later on.
+   The conditional distribution sampler should
+   take the current state of the Markov chain as input
    and return a sample from the conditional distribution.
 
 ```{r}
@@ -474,7 +476,7 @@ gibbs_sampling <- function(
 }
 ```
 
-1. An note on `gibbs_sampling`'s implementation:
+1. A note on `gibbs_sampling`'s implementation:
    it does not take `data` or `prior_params` as input arguments.
    As detailed in @thm-gibbs-sampling,
    what Gibbs sampling is doing is simply taking samples from the conditional distributions.
@@ -491,14 +493,22 @@ Let's run the Gibbs sampling algorithm and calculate the posterior means:
 gibbs_chain <- gibbs_sampling() %>%
   purrr::map_df(function(x) as_tibble(x)) # <1>
 
-mean(gibbs_chain$mu)
-mean(gibbs_chain$sigma2)
+list(
+  posterior_mean_mu = mean(gibbs_chain$mu),
+  posterior_mean_sigma2 = mean(gibbs_chain$sigma2)
+)
 ```
 
 1. Format the output chain as a data frame for easier manipulation.
 
 As expected, the posterior means of $\mu$ and $\sigma^2$ are close to the true parameters.
 Now let's visualize the output chain.
+
+```{r, warning=FALSE, message=FALSE}
+library(ggside) # <1>
+```
+
+1. An excelent package to add side plots to `ggplot2` figures!
 
 ```{r}
 gibbs_chain %>%
@@ -507,7 +517,7 @@ gibbs_chain %>%
   geom_vline(
     xintercept = true_params$mu,
     linetype = "dashed",
-    color = "red"
+    color = "blue"
   ) +
   geom_hline(
     yintercept = true_params$sigma2,
@@ -515,19 +525,20 @@ gibbs_chain %>%
     color = "red"
   ) +
   geom_path(alpha = 0.2) +
-  geom_point(alpha = 0.6) +
-  xlab("Posterior Mean") +
-  ylab("Posterior Variance") +
-  scale_y_continuous(breaks = seq(1, true_params$sigma2 + 2, 1)) +
-  scale_x_continuous(breaks = seq(0, true_params$mu + 1, 1))
+  geom_point(alpha = 0.3) +
+  scale_x_continuous(breaks = seq(0, true_params$mu + 1, 0.5)) +
+  scale_y_continuous(breaks = seq(1, true_params$sigma2 + 3, 1)) +
+  geom_xsidehistogram(fill = "blue", alpha = 0.5, binwidth = 0.05) +
+  geom_ysidehistogram(fill = "red", alpha = 0.5, binwidth = 0.2) +
+  scale_ysidex_continuous(guide = guide_axis(angle = -90))
 ```
 
-Usually in practice,
-remove the first few states in the chain to avoid the initial state bias.
+In practice,
+people usually remove some states in the chain to avoid the initial state bias.
 In high-dimensional problems,
 it might take a while for the Markov chain to converge to the stationary distribution,
 hence the first few states in the chain might not be representative of the stationary distribution.
-This period is known as the **burn-in period**.
+The removed period is known as the **burn-in period**.
 For demonstration purposes, we do not remove any burn-in period here,
 so you can see that our sampling path starts from the initial state $\mu=0$ and $\sigma^2=1$.
 Also, since our model is very simple,
@@ -535,8 +546,10 @@ the Markov chain converges very quickly.
 
 Of course, this example is a bit silly since we can simply do
 ```{r}
-mean(data)
-var(data)
+list(
+  sample_analog_mu = mean(data),
+  sample_analog_sigma2 = var(data)
+)
 ```
 to get good estimates of the parameters, but you get the idea.
 

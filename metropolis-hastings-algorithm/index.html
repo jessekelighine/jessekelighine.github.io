@@ -115,7 +115,7 @@ window.Quarto = {
   <ul>
   <li><a href="#metropolis-hastings-algorithm" id="toc-metropolis-hastings-algorithm" class="nav-link active" data-scroll-target="#metropolis-hastings-algorithm">Metropolis-Hastings Algorithm</a>
   <ul>
-  <li><a href="#demonstration-sample-from-a-unnormalized-density-function" id="toc-demonstration-sample-from-a-unnormalized-density-function" class="nav-link" data-scroll-target="#demonstration-sample-from-a-unnormalized-density-function">Demonstration: Sample from a Unnormalized Density Function</a></li>
+  <li><a href="#demonstration-sample-from-an-unnormalized-density-function" id="toc-demonstration-sample-from-an-unnormalized-density-function" class="nav-link" data-scroll-target="#demonstration-sample-from-an-unnormalized-density-function">Demonstration: Sample from an Unnormalized Density Function</a></li>
   </ul></li>
   <li><a href="#gibbs-sampling" id="toc-gibbs-sampling" class="nav-link" data-scroll-target="#gibbs-sampling">Gibbs Sampling</a>
   <ul>
@@ -161,7 +161,7 @@ window.Quarto = {
 <p>Let <span class="math inline">\(\pi\)</span> be a probability distribution on a finite state space <span class="math inline">\(S=\{1,...,n\}\)</span>, i.e., <span class="math inline">\(\pi(i)\)</span> denotes the probability of being in state <span class="math inline">\(i\in S\)</span>. We want to construct a Markov chain<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that takes value on the state space <span class="math inline">\(S\)</span> such that its stationary distribution is <span class="math inline">\(\pi\)</span>. That is, we want to find transition probabilities <span class="math inline">\(\{P_{ij}\}_{i,j}\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> such that <span id="eq-global-balance-equation"><span class="math display">\[
 \sum_{i=1}^{n} \pi(i) P_{ij} = \pi(j) \quad \forall j\in S
 \tag{1}\]</span></span> holds. <a href="#eq-global-balance-equation" class="quarto-xref">Equation&nbsp;1</a> is known as the <em>Global Balance Equation</em>. It is <em>global</em> in the sense that it sums over all states <span class="math inline">\(i\)</span>. Note that this <em>balance</em> equation means that if one starts in state <span class="math inline">\(i\)</span> with probability <span class="math inline">\(\pi(i)\)</span> and transitions to state <span class="math inline">\(j\)</span> with probability <span class="math inline">\(P_{ij}\)</span>, then the probability of being in state <span class="math inline">\(j\)</span> after one step is exactly <span class="math inline">\(\pi(j)\)</span>. That is, <span class="math inline">\(P_{ij}\)</span> has stationary distribution <span class="math inline">\(\pi\)</span> by definition.</p>
-<p>However, finding <span class="math inline">\(P_{ij}\)</span> that satisfies <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> can be difficult to satisfy in practice, since <span class="math inline">\(n\)</span> might be so large that it is infeasible to compute the sum over all states <span class="math inline">\(i\)</span>. There is another notion of balance that is easier to satisfy, known as the <em>Detailed Balance Equation</em>: <span id="eq-detailed-balance-equation"><span class="math display">\[
+<p>However, finding <span class="math inline">\(P_{ij}\)</span> that satisfies <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> can be difficult to satisfy in practice, since <span class="math inline">\(n\)</span> might be so large that it is infeasible to compute the sum over all states <span class="math inline">\(i\)</span>. To address this, we turn to a more tractable alternative, known as the <em>Detailed Balance Equation</em>: <span id="eq-detailed-balance-equation"><span class="math display">\[
 \pi(i) P_{ij} = \pi(j) P_{ji} \quad \forall i,j\in S
 \tag{2}\]</span></span> <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> is <em>detailed</em> in the sense that it only requires a balance between two states <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. Notice that <a href="#eq-detailed-balance-equation" class="quarto-xref">Equation&nbsp;2</a> implies <a href="#eq-global-balance-equation" class="quarto-xref">Equation&nbsp;1</a>: <span class="math display">\[
 \sum_{i=1}^{n} \pi(i) P_{ij} = \sum_{i=1}^{n} \pi(j) P_{ji} = \pi(j) \sum_{i=1}^{n} P_{ji} = \pi(j)
@@ -209,8 +209,8 @@ i &amp; \text{ otherwise}
 <p>In the proof, we see that the acceptance ratio <span class="math inline">\(\alpha(i,j)\)</span> is designed to ensure that the detailed balance equation holds. In many applications, the proposal distribution is not drawn from a Markov chain, but from a proposal distribution, say with probability mass function <span class="math inline">\(\tilde{f}\)</span>, independently and identically. Hence, acceptance ratio can be simplified to <span class="math display">\[
 \alpha(i,j) = \min\left\{1, \frac{\pi(j) \tilde{f}(i)}{\pi(i) \tilde{f}(j)}\right\}.
 \]</span> One can more easily interpret acceptance ratio <span class="math inline">\(\alpha(i,j)\)</span> in this simplified context: if the <em>proposed</em> state <span class="math inline">\(j\)</span> has a high probability in <span class="math inline">\(\pi\)</span>, then we are more likely to accept it, however, if <span class="math inline">\(\pi(j)\)</span> is low and we proposed <span class="math inline">\(j\)</span> simply because <span class="math inline">\(\tilde{f}(j)\)</span> is high, then we are less likely to accept it. This trade-off perfectly modifies proposal distribution <span class="math inline">\(\tilde{f}\)</span> so that the detailed balance equation holds.</p>
-<section id="demonstration-sample-from-a-unnormalized-density-function" class="level2">
-<h2 class="anchored" data-anchor-id="demonstration-sample-from-a-unnormalized-density-function">Demonstration: Sample from a Unnormalized Density Function</h2>
+<section id="demonstration-sample-from-an-unnormalized-density-function" class="level2">
+<h2 class="anchored" data-anchor-id="demonstration-sample-from-an-unnormalized-density-function">Demonstration: Sample from an Unnormalized Density Function</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999999</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tidyverse.quiet =</span> <span class="cn">TRUE</span>)</span>
@@ -218,7 +218,7 @@ i &amp; \text{ otherwise}
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Let’s see how the Metropolis-Hastings algorithm works in practice. Say that we have the following target distribution with density <code>dtriangle2</code>:</p>
+<p>Let’s see how the Metropolis-Hastings algorithm works in practice. Say that we have the following (non-standard) target distribution with density <code>dtriangle2</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dtriangle2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">case_when</span>(</span>
@@ -247,8 +247,8 @@ i &amp; \text{ otherwise}
 </div>
 <p>As we stated before, we don’t actually need to know the normalization constant of the density function. That is, we can perform the Metropolis-Hastings algorithm with a non-normalized density function. For this demonstration, let’s suppose that we we only have <code>dtriangle2_unnormalized</code> and do not know <code>dtriangle2</code>:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>totally_arbitrary_constant <span class="ot">&lt;-</span> <span class="dv">69420</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dtriangle2_unnormalized <span class="ot">&lt;-</span> <span class="cf">function</span>(x) totally_arbitrary_constant <span class="sc">*</span> <span class="fu">dtriangle2</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>totally_random_number <span class="ot">&lt;-</span> <span class="dv">69420</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dtriangle2_unnormalized <span class="ot">&lt;-</span> <span class="cf">function</span>(x) totally_random_number <span class="sc">*</span> <span class="fu">dtriangle2</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We want to make use of the Metropolis-Hastings algorithm to create a Markov chain with <code>dtriangle2</code> as its stationary distribution.</p>
 <p>The Metropolis-Hastings algorithm can be implemented as follows:</p>
@@ -424,7 +424,7 @@ i &amp; \text{ otherwise}
 <p>First, we set up the true parameters and the prior parameters of the problem:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a>true_params <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mu =</span> <span class="dv">5</span>,</span>
+<span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">mu =</span> <span class="dv">1</span>,</span>
 <span id="annotated-cell-8-3"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">sigma2 =</span> <span class="dv">5</span></span>
 <span id="annotated-cell-8-4"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="annotated-cell-8-5"><a href="#annotated-cell-8-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -463,7 +463,7 @@ i &amp; \text{ otherwise}
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.356458 3.154921 5.776292 2.942610 4.357496 3.767635</code></pre>
+<pre><code>[1]  0.3564577 -0.8450785  1.7762917 -1.0573904  0.3574961 -0.2323648</code></pre>
 </div>
 </div>
 <p>We summarize how to sample from the conditional distributions in the following two functions:</p>
@@ -486,7 +486,7 @@ i &amp; \text{ otherwise}
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-lines="2,3,4" data-code-annotation="1">We bind <code>data</code> and <code>prior_params</code> to the function directly. This is because a conditional distribution sampler should simple take the current state of the Markov chain and return a sample from the conditional distribution.</span>
+<span data-code-cell="annotated-cell-10" data-code-lines="2,3,4" data-code-annotation="1">We bind <code>data</code> and <code>prior_params</code> to the function directly so that we don’t have to pass them as arguments later on. The conditional distribution sampler should take the current state of the Markov chain as input and return a sample from the conditional distribution.</span>
 </dd>
 </dl>
 </div>
@@ -531,7 +531,7 @@ i &amp; \text{ otherwise}
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-12" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-12" data-code-lines="2,3" data-code-annotation="1">An note on <code>gibbs_sampling</code>’s implementation: it does not take <code>data</code> or <code>prior_params</code> as input arguments. As detailed in <a href="#thm-gibbs-sampling" class="quarto-xref">Theorem&nbsp;2</a>, what Gibbs sampling is doing is simply taking samples from the conditional distributions. Thus, it makes more sense to let the conditional distribution samplers <code>sample_posterior_mu</code> and <code>sample_posterior_sigma2</code> to handle <code>data</code> and <code>prior_params</code>.</span>
+<span data-code-cell="annotated-cell-12" data-code-lines="2,3" data-code-annotation="1">A note on <code>gibbs_sampling</code>’s implementation: it does not take <code>data</code> or <code>prior_params</code> as input arguments. As detailed in <a href="#thm-gibbs-sampling" class="quarto-xref">Theorem&nbsp;2</a>, what Gibbs sampling is doing is simply taking samples from the conditional distributions. Thus, it makes more sense to let the conditional distribution samplers <code>sample_posterior_mu</code> and <code>sample_posterior_sigma2</code> to handle <code>data</code> and <code>prior_params</code>.</span>
 </dd>
 <dt data-target-cell="annotated-cell-12" data-target-annotation="2">2</dt>
 <dd>
@@ -549,8 +549,10 @@ i &amp; \text{ otherwise}
 <div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-13-1"><a href="#annotated-cell-13-1" aria-hidden="true" tabindex="-1"></a>gibbs_chain <span class="ot">&lt;-</span> <span class="fu">gibbs_sampling</span>() <span class="sc">%&gt;%</span></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1">1</button><span id="annotated-cell-13-2" class="code-annotation-target"><a href="#annotated-cell-13-2" aria-hidden="true" tabindex="-1"></a>  purrr<span class="sc">::</span><span class="fu">map_df</span>(<span class="cf">function</span>(x) <span class="fu">as_tibble</span>(x))</span>
 <span id="annotated-cell-13-3"><a href="#annotated-cell-13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-13-4"><a href="#annotated-cell-13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gibbs_chain<span class="sc">$</span>mu)</span>
-<span id="annotated-cell-13-5"><a href="#annotated-cell-13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gibbs_chain<span class="sc">$</span>sigma2)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-13-4"><a href="#annotated-cell-13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="annotated-cell-13-5"><a href="#annotated-cell-13-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">posterior_mean_mu =</span> <span class="fu">mean</span>(gibbs_chain<span class="sc">$</span>mu),</span>
+<span id="annotated-cell-13-6"><a href="#annotated-cell-13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">posterior_mean_sigma2 =</span> <span class="fu">mean</span>(gibbs_chain<span class="sc">$</span>sigma2)</span>
+<span id="annotated-cell-13-7"><a href="#annotated-cell-13-7" aria-hidden="true" tabindex="-1"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
@@ -560,11 +562,25 @@ i &amp; \text{ otherwise}
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.869174
-[1] 5.378123</code></pre>
+<pre><code>$posterior_mean_mu
+[1] 1.077547
+
+$posterior_mean_sigma2
+[1] 5.31286</code></pre>
 </div>
 </div>
 <p>As expected, the posterior means of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span> are close to the true parameters. Now let’s visualize the output chain.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-14"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><button class="code-annotation-anchor" data-target-cell="annotated-cell-14" data-target-annotation="1">1</button><span id="annotated-cell-14-1" class="code-annotation-target"><a href="#annotated-cell-14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggside)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-14" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-14" data-code-lines="1" data-code-annotation="1">An excelent package to add side plots to <code>ggplot2</code> figures!</span>
+</dd>
+</dl>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gibbs_chain <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
@@ -572,7 +588,7 @@ i &amp; \text{ otherwise}
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xintercept =</span> true_params<span class="sc">$</span>mu,</span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">"dashed"</span>,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"blue"</span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">yintercept =</span> true_params<span class="sc">$</span>sigma2,</span>
@@ -580,29 +596,33 @@ i &amp; \text{ otherwise}
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"red"</span></span>
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Posterior Mean"</span>) <span class="sc">+</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Posterior Variance"</span>) <span class="sc">+</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, true_params<span class="sc">$</span>sigma2 <span class="sc">+</span> <span class="dv">2</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, true_params<span class="sc">$</span>mu <span class="sc">+</span> <span class="dv">1</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, true_params<span class="sc">$</span>mu <span class="sc">+</span> <span class="dv">1</span>, <span class="fl">0.5</span>)) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, true_params<span class="sc">$</span>sigma2 <span class="sc">+</span> <span class="dv">3</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_xsidehistogram</span>(<span class="at">fill =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">binwidth =</span> <span class="fl">0.05</span>) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ysidehistogram</span>(<span class="at">fill =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">binwidth =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_ysidex_continuous</span>(<span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">angle =</span> <span class="sc">-</span><span class="dv">90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Usually in practice, remove the first few states in the chain to avoid the initial state bias. In high-dimensional problems, it might take a while for the Markov chain to converge to the stationary distribution, hence the first few states in the chain might not be representative of the stationary distribution. This period is known as the <strong>burn-in period</strong>. For demonstration purposes, we do not remove any burn-in period here, so you can see that our sampling path starts from the initial state <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. Also, since our model is very simple, the Markov chain converges very quickly.</p>
+<p>In practice, people usually remove some states in the chain to avoid the initial state bias. In high-dimensional problems, it might take a while for the Markov chain to converge to the stationary distribution, hence the first few states in the chain might not be representative of the stationary distribution. The removed period is known as the <strong>burn-in period</strong>. For demonstration purposes, we do not remove any burn-in period here, so you can see that our sampling path starts from the initial state <span class="math inline">\(\mu=0\)</span> and <span class="math inline">\(\sigma^2=1\)</span>. Also, since our model is very simple, the Markov chain converges very quickly.</p>
 <p>Of course, this example is a bit silly since we can simply do</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample_analog_mu =</span> <span class="fu">mean</span>(data),</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample_analog_sigma2 =</span> <span class="fu">var</span>(data)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.131481</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.338915</code></pre>
+<pre><code>$sample_analog_mu
+[1] 1.131481
+
+$sample_analog_sigma2
+[1] 5.338915</code></pre>
 </div>
 </div>
 <p>to get good estimates of the parameters, but you get the idea.</p>
