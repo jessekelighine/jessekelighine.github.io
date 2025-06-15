@@ -1,12 +1,12 @@
 ---
 title: "Metropolis-Hastings Algorithm: An Explanation with Demonstration"
-author: "[`jessekelighine.com`](https://jessekelighine.com)"
+author: "Jesse Chieh Chen<br/>[`jessekelighine.com`](https://jessekelighine.com)"
 date: "2025-06-15"
 format:
   html:
     code-annotations: hover
     css: style.css
-    reference-location: margin
+    # reference-location: margin
     toc: true
     toc-depth: 10
     # toc-expand: 10
@@ -19,7 +19,8 @@ format:
 
 Let $\pi$ be a probability distribution on a finite state space $S=\{1,...,n\}$,
 i.e., $\pi(i)$ denotes the probability of being in state $i\in S$.
-We want to construct a Markov chain[^1] that takes value on the state space $S$ such that its stationary distribution is $\pi$.
+We want to construct a Markov chain[^1] that takes value on the state space $S$
+such that its stationary distribution is $\pi$.
 That is, we want to find transition probabilities $\{P_{ij}\}_{i,j}$[^2] such that
 $$
 \sum_{i=1}^{n} \pi(i) P_{ij} = \pi(j) \quad \forall j\in S
@@ -27,12 +28,15 @@ $$ {#eq-global-balance-equation}
 holds.
 @eq-global-balance-equation is known as the *Global Balance Equation*.
 It is *global* in the sense that it sums over all states $i$.
-Note that this *balance* equation means that if one starts in state $i$ with probability $\pi(i)$ and transitions to state $j$ with probability $P_{ij}$,
+Note that this *balance* equation means that
+if one starts in state $i$ with probability $\pi(i)$ and transitions to state $j$ with probability $P_{ij}$,
 then the probability of being in state $j$ after one step is exactly $\pi(j)$.
 That is, $P_{ij}$ has stationary distribution $\pi$ by definition.
 
-[^1]: A Markov chain is a stochastic process that satisfies the Markov property, meaning the future state depends only on the current state and not on the sequence of events that preceded it.
-  For this demonstration, one just needs to know that it is a sequence of random variables jumping from state to state with transition probabilities.
+[^1]: A Markov chain is a stochastic process that satisfies the Markov property,
+  meaning the future state depends only on the current state and not on the sequence of events that preceded it.
+  For this demonstration, one just needs to know that it is a sequence of random variables
+  jumping from state to state with transition probabilities.
 [^2]: Transition probabilities $P_{ij}$ denote the probability of moving from state $i$ to state $j$ in one step.
 
 However, finding $P_{ij}$ that satisfies @eq-detailed-balance-equation can be difficult to satisfy in practice,
@@ -41,14 +45,16 @@ There is another notion of balance that is easier to satisfy, known as the *Deta
 $$
 \pi(i) P_{ij} = \pi(j) P_{ji} \quad \forall i,j\in S
 $$ {#eq-detailed-balance-equation}
-@eq-detailed-balance-equation is *detailed* in the sense that it only requires a balance between two states $i$ and $j$.
+@eq-detailed-balance-equation is *detailed* in the sense that
+it only requires a balance between two states $i$ and $j$.
 Notice that @eq-detailed-balance-equation implies @eq-global-balance-equation:
 $$
 \sum_{i=1}^{n} \pi(i) P_{ij} = \sum_{i=1}^{n} \pi(j) P_{ji} = \pi(j) \sum_{i=1}^{n} P_{ji} = \pi(j)
 $$
 Since @eq-detailed-balance-equation is stated locally for each pair of states $i$ and $j$,
 it is much easier to construct the required probabilities $P_{ij}$ and $P_{ji}$.
-Another remarkable property of @eq-detailed-balance-equation is that we don't even have to know the stationary distribution $\pi$ exactly,
+Another remarkable property of @eq-detailed-balance-equation is that
+we don't even have to know the stationary distribution $\pi$ exactly,
 we just need to know the ratio $\pi(j)/\pi(i)$ for any two states $i$ and $j$.
 This motivates the **Metropolis-Hastings algorithm**.
 
@@ -86,10 +92,14 @@ Then, the chain $\{I_t\}_{t\geq 0}$ is a Markov chain with stationary distributi
   It is arbitrary in the sense that it does not need to satisfy @eq-detailed-balance-equation.
 
 In other words,
-the transition probabilities $\{P_{ij}\}$ where $P_{ij}\coloneqq\alpha(i,j)\tilde{P}_{ij}$ has stationary distribution $\pi$.
-One immediately sees that there is something magical about the acceptance ratio $\alpha(i,j)$ defined in @eq-metropolis-hastings-acceptance-ratio,
-as it turns an arbitrary proposal distribution $\{\tilde{P}_{ij}\}$ into a transition probability with the desired stationary distribution.
-@eq-metropolis-hastings-acceptance-ratio is known as the *Metropolis-Hastings acceptance ratio*, or simply the *acceptance ratio*.
+the transition probabilities $\{P_{ij}\}$ where $P_{ij}\coloneqq\alpha(i,j)\tilde{P}_{ij}$
+has stationary distribution $\pi$.
+One immediately sees that there is something magical about the acceptance ratio $\alpha(i,j)$
+defined in @eq-metropolis-hastings-acceptance-ratio,
+as it turns an arbitrary proposal distribution $\{\tilde{P}_{ij}\}$
+into a transition probability with the desired stationary distribution.
+@eq-metropolis-hastings-acceptance-ratio is known as the *Metropolis-Hastings acceptance ratio*,
+or simply the *acceptance ratio*.
 Its importance can be seen in the proof for @thm-metropolis-hastings:
 
 ::: {.proof}
@@ -136,7 +146,7 @@ however, if $\pi(j)$ is low and we proposed $j$ simply because $\tilde{f}(j)$ is
 then we are less likely to accept it.
 This trade-off perfectly modifies proposal distribution $\tilde{f}$ so that the detailed balance equation holds.
 
-## Demonstration
+## Demonstration: Sample from a Unnormalized Density Function
 
 ```{r}
 options(scipen = 999999)
@@ -167,7 +177,27 @@ ggplot() +
   xlim(0, 1) +
   ylab("density")
 ```
-We want to make use of the Metropolis-Hastings algorithm to create a Markov chain with `dtriangle2` as its stationary distribution.
+
+As we stated before,
+we don't actually need to know the normalization constant of the density function.
+That is, we can perform the Metropolis-Hastings algorithm with a non-normalized density function.
+For this demonstration,
+let's suppose that we we only have `dtriangle2_unnormalized` and do not know `dtriangle2`:[^non-normalized-density]
+```{r}
+totally_arbitrary_constant <- 69420
+dtriangle2_unnormalized <- function(x) totally_arbitrary_constant * dtriangle2(x)
+```
+We want to make use of the Metropolis-Hastings algorithm
+to create a Markov chain with `dtriangle2` as its stationary distribution.
+
+[^non-normalized-density]:
+  These situations are more common than you think.
+  The reason why we might not know the normalization constant
+  and can only work with a scaled version of the density function
+  is that an integration over the sample space
+  is needed to calculate normalizing constant.
+  This is very common in Bayesian statistics,
+  where the posterior distribution is often known only up to a constant factor.
 
 The Metropolis-Hastings algorithm can be implemented as follows:
 ```{r}
@@ -176,7 +206,7 @@ metropolis_hastings_algorithm <- function(
   propose, # <2>
   proposal_density, # <3>
   inital_state, # <4>
-  length_of_chain = 1000 # <5>
+  length_of_chain = 5000 # <5>
 ) {
   output_chain <- numeric(length_of_chain)
   output_chain[1] <- inital_state
@@ -215,17 +245,18 @@ That is, the proposal density $\tilde{f}$ is a constant function equal to $1$ on
 
 ```{r}
 output_chain <- metropolis_hastings_algorithm(
-  target_density = dtriangle2,
-  propose = function(state) runif(1), # <1>
-  proposal_density = function(i, j) 1, # <2>
+  target_density = dtriangle2_unnormalized, # <1>
+  propose = function(state) runif(1), # <2>
+  proposal_density = function(i, j) 1, # <3>
   inital_state = 0.2
 )
 
 head(output_chain)
 ```
 
-1. We draw a proposal iid from a uniform distribution.
-2. The proposal density is a constant function since we draw the proposal iid from a uniform distribution.
+1. Note that the unnormalized `dtriangle2_unnormalized` is passed.
+2. We draw a proposal iid from a uniform distribution.
+3. The proposal density is a constant function since we draw the proposal iid from a uniform distribution.
 
 One can see that since `dtriangle2` at `inital_state = 0.2` has relatively high density,
 it took several trials before a proapsal was accepted and the chain started to explore the state space.
@@ -236,12 +267,18 @@ list(x = output_chain) %>%
   as_tibble() %>%
   ggplot() +
   aes(x = x) +
-  geom_function(fun = dtriangle2, linetype = "dashed", color = "red") +
+  geom_function(
+    fun = dtriangle2, # <1>
+    linetype = "dashed",
+    color = "red"
+  ) +
   geom_density() +
   xlim(0, 1) +
   xlab("") +
   ylab("density")
 ```
+
+1. We plot against the true density function `dtriangle2` for comparison.
 
 As expected,
 the density of the output chain matches the target distribution `dtriangle2` very well.
@@ -253,7 +290,8 @@ that makes sampling high-dimensional distributions more efficient.
 
 For illustration, let $\pi(a,b)$ be a distribution on $S\times S$ for $a\in S$ and $b\in S$.
 Following the Metropolis-Hasting algorithm, we can view the pair $(a,b)$ as a single state and perform the sampling.
-However, if $\pi(a\given b)$ and $\pi(b\given a)$ are easy to sample from, then we can sample $a$ and $b$ in alternation.
+However, if $\pi(a\given b)$ and $\pi(b\given a)$ are easy to sample from,
+then we can sample $a$ and $b$ in alternation.
 And the Gibbs sampling algorithm guarantees that the resulting Markov chain has stationary distribution $\pi(a,b)$.
 
 ::: {#thm-gibbs-sampling name="Gibbs Sampling"}
@@ -297,21 +335,59 @@ Even if we don't know how to sample from either $\pi(a\given b)$ or $\pi(b\given
 we can always turn to the Metropolis-Hastings algorithm.
 That is, we can replace the sampling steps in Gibbs sampling with the Metropolis-Hastings algorithm.
 This is known as the **Metropolis-Hastings within Gibbs** method,
-which is a common method to general samples from high-dimensional distributions efficiently.
+which is a common method to generate samples from high-dimensional distributions efficiently.
 
-## Demonstration
+## Demonstration: Application in Bayesian Computation
 
 Let's see how Gibbs sampling works in practice.
 Consider the following Bayesian estimation problem:
-We are given iid samples $\{X_t\}_{t=1}^{T}$ drawn from a normal distribution with unknown mean $\mu$ and variance $\sigma^2$.
+We are given iid samples $\{X_t\}_{t=1}^{T}$
+drawn from a normal distribution --- with density function denoted as $\phi$ --- with unknown mean $\mu$ and variance $\sigma^2$.
 With prior distributions on $\mu$ and $\sigma^2$,
 we want to compute the posterior mean of $\mu$ and $\sigma^2$ to serve as point estimates.
 In this case, the target distribution is the posterior distribution $\pi(\mu,\sigma^2\given \{X_t\})$.
 
-First, we set up the parameters of the problem:
+To make things simple, let's consider conjugate priors for $\mu$ and $\sigma^2$.[^4]
+Let $\pi_{\mu}(\mu)$ and $\pi_{\sigma^2}(\sigma^2)$ denote the prior distribution of $\mu$ and $\sigma^2$ respectively.
+In particular, let $\pi_{\mu}(\mu)$ be a normal distribution and
+let $\pi_{\sigma^2}(\sigma^2)$ be an inverse gamma distribution.
+Then, we have the conditional distributions
+$$
+\pi(\mu\given\sigma^2,\{X_t\})
+\propto
+\phi(\{X_t\}\given\mu,\sigma^2) \pi_{\mu}(\mu)
+\sim
+\text{Normal Distribution}
+$$
+and
+$$
+\pi(\sigma^2\given\mu,\{X_t\})
+\propto
+\phi(\{X_t\}\given\mu,\sigma^2) \pi_{\sigma^2}(\sigma^2)
+\sim
+\text{Inverse Gamma Distribution}
+$$
+
+[^4]:
+  Conjugate priors are prior distributions that,
+  when combined with a likelihood function, yield a posterior distribution of the same family as the prior.
+  These type of priors simplify the Bayesian estimation process,
+  as the posterior distribution can be easily computed and sampled from.
+  For the exact formulae you can look them up on [Wikipedia](https://en.wikipedia.org/wiki/Conjugate_prior).
+
+To use Gibbs sampling as detailed in @thm-gibbs-sampling,
+rather than sampling from $\pi(\mu,\sigma^2\given\{X_t\})$ directly,
+we sample from the conditional distributions
+$\pi(\mu\given\sigma^2,\{X_t\})$ and $\pi(\sigma^2\given\mu,\{X_t\})$ in alternation.
+
+First, we set up the true parameters and the prior parameters of the problem:
 
 ```{r}
-true_params <- list(mu = 5, sigma2 = 5) # <1>
+true_params <- list( # <1>
+  mu = 5, # <1>
+  sigma2 = 5 # <1>
+) # <1>
+
 prior_params <- list( # <2>
   mu = list(mean = 0, variance = 1), # <2>
   sigma2 = list(shape = 1, scale = 1) # <2>
@@ -337,30 +413,37 @@ head(data)
 
 1. Generate iid samples from a normal distribution with the true parameters.
 
-Since we deliberately pick conjugate priors (normal-normal and inverse gamma-normal conjugacy),
-we know how to draw from both conditional distribution $\pi(\mu\given\{X_t\},\sigma^2)$ and $\pi(\sigma^2\given\{X_t\},\mu)$ directly.[^4]
 We summarize how to sample from the conditional distributions in the following two functions:
 
-[^4]:
-  Conjugate priors are prior distributions that, when combined with a likelihood function, yield a posterior distribution of the same family as the prior.
-  These type of priors simplify the Bayesian estimation process, as the posterior distribution can be easily computed and sampled from.
-  For the exact formulae you can look them up on [Wikipedia](https://en.wikipedia.org/wiki/Conjugate_prior).
-
 ```{r}
-sample_posterior_mu <- function(params, data) {
+sample_posterior_mu <- function(
+  params, # <1>
+  .data = data, # <1>
+  .prior_params = prior_params # <1>
+) {
   posterior_variance <- solve(
-    1 / prior_params$mu$variance + length(data) / params$sigma2
+    1 / .prior_params$mu$variance + length(.data) / params$sigma2
   )
   posterior_mean <- posterior_variance * (
-    prior_params$mu$mean / prior_params$mu$variance +
-      sum(data) / params$sigma2
+    .prior_params$mu$mean / .prior_params$mu$variance +
+      sum(.data) / params$sigma2
   )
   rnorm(1, mean = posterior_mean, sd = sqrt(posterior_variance))
 }
+```
 
-sample_posterior_sigma2 <- function(params, data) {
-  posterior_shape <- prior_params$sigma2$shape + length(data) / 2
-  posterior_scale <- prior_params$sigma2$scale + sum((data - params$mu)^2) / 2
+1. We bind `data` and `prior_params` to the function directly.
+   This is because a conditional distribution sampler should simple take the current state of the Markov chain
+   and return a sample from the conditional distribution.
+
+```{r}
+sample_posterior_sigma2 <- function(
+  params,
+  .data = data,
+  .prior_params = prior_params
+) {
+  posterior_shape <- .prior_params$sigma2$shape + length(.data) / 2
+  posterior_scale <- .prior_params$sigma2$scale + sum((.data - params$mu)^2) / 2
   1 / rgamma(1, shape = posterior_shape, scale = 1 / posterior_scale) # <1>
 }
 ```
@@ -368,48 +451,51 @@ sample_posterior_sigma2 <- function(params, data) {
 1. This bit samples from the inverse gamma distribution.
 
 The input `params` is a list (containing `mu` and `sigma2`) that represents the current state of the Markov chain.
-Note that these two function uses information from the `params` input.
-That is, `sample_posterior_mu` uses `params$sigma2` in its definition and `sample_posterior_sigma2` uses `params$mu`.
+Note how these two function uses information from the `params` input:
+`sample_posterior_mu` uses `params$sigma2` and `sample_posterior_sigma2` uses `params$mu`.
 This is precisely how Gibbs sampling as defined in @thm-gibbs-sampling works.
 
 Finally, we can implement the Gibbs sampling algorithm as follows:
 
 ```{r}
 gibbs_sampling <- function(
-  data,
-  initial_params = list(mu = 0, sigma2 = 1),
-  length_of_chain = 1000
+  initial_params = list(mu = 0, sigma2 = 1), # <1>
+  length_of_chain = 1000 # <1>
 ) {
   output_chain <- vector(mode = "list", length = length_of_chain)
   output_chain[[1]] <- initial_params
   params <- initial_params
   for (trial in 2:length_of_chain) {
-    params$mu <- sample_posterior_mu(params, data) # <1>
-    params$sigma2 <- sample_posterior_sigma2(params, data) # <1>
-    output_chain[[trial]] <- params # <2>
+    params$mu <- sample_posterior_mu(params) # <2>
+    params$sigma2 <- sample_posterior_sigma2(params) # <2>
+    output_chain[[trial]] <- params # <3>
   }
   return(output_chain)
 }
 ```
 
-1. The state (`params`) is updated one parameter at a time,
+1. An note on `gibbs_sampling`'s implementation:
+   it does not take `data` or `prior_params` as input arguments.
+   As detailed in @thm-gibbs-sampling,
+   what Gibbs sampling is doing is simply taking samples from the conditional distributions.
+   Thus, it makes more sense to let the conditional distribution samplers
+   `sample_posterior_mu` and `sample_posterior_sigma2`
+   to handle `data` and `prior_params`.
+2. The state (`params`) is updated one parameter at a time,
    first sampling $\mu$ given the current $\sigma^2$ and then sampling $\sigma^2$ given the current $\mu$.
-2. The updated state is then stored in the output chain.
+3. The updated state is then stored in the output chain.
 
 Let's run the Gibbs sampling algorithm and calculate the posterior means:
 
 ```{r}
-gibbs_chain <- gibbs_sampling(
-  data = data,
-  initial_params = list(mu = 0, sigma2 = 1)
-) %>%
+gibbs_chain <- gibbs_sampling() %>%
   purrr::map_df(function(x) as_tibble(x)) # <1>
 
 mean(gibbs_chain$mu)
 mean(gibbs_chain$sigma2)
 ```
 
-1. Turn the output chain into a data frame for easier manipulation and visualization.
+1. Format the output chain as a data frame for easier manipulation.
 
 As expected, the posterior means of $\mu$ and $\sigma^2$ are close to the true parameters.
 Now let's visualize the output chain.
@@ -430,6 +516,8 @@ gibbs_chain %>%
   ) +
   geom_path(alpha = 0.2) +
   geom_point(alpha = 0.6) +
+  xlab("Posterior Mean") +
+  ylab("Posterior Variance") +
   scale_y_continuous(breaks = seq(1, true_params$sigma2 + 2, 1)) +
   scale_x_continuous(breaks = seq(0, true_params$mu + 1, 1))
 ```
@@ -444,6 +532,7 @@ For demonstration purposes, we do not remove any burn-in period here,
 so you can see that our sampling path starts from the initial state $\mu=0$ and $\sigma^2=1$.
 Also, since our model is very simple,
 the Markov chain converges very quickly.
+
 Of course, this example is a bit silly since we can simply do
 ```{r}
 mean(data)
@@ -453,21 +542,31 @@ to get good estimates of the parameters, but you get the idea.
 
 # Conclusion
 
-The virtue of the Metropolis-Hastings algorithm is that it can sample from any distribution $\pi$ (discrete or continuous)
-as long as we can compute the ratio $\pi(j)/\pi(i)$ for any two states $i$ and $j$,
-but it might suffer from slow convergence in high-dimensional problems.
-Gibbs sampling is a special case of the Metropolis-Hastings algorithm
+The virtue of the Metropolis-Hastings algorithm is that
+it can sample from any distribution $\pi$ (discrete or continuous)
+as long as we can compute the ratio $\pi(j)/\pi(i)$ for any two states $i$ and $j$.
+However, it can suffer from slow convergence and high rejection in high-dimensional problems.
+This is when there are more dimensions to explore,
+it is harder for the proposal distribution to propose a state that is acceptable.
+Gibbs sampling on the other hand is a special case of the Metropolis-Hastings algorithm,
 where the proposal distribution is the conditional distribution of one variable given the other.
+And since we are only moving only one dimension at a time,[^4.9]
+the sampling is much more efficient.
 
 Metropolis-Hastings algorithm and Gibbs sample are but two of the many sampling algorithms that are used in practice.
 In general, these methods that utilizes properties of Markov chains to sample from distributions
 are called **Markov Chain Monte Carlo (MCMC)** methods.[^5]
-Nicholas Metropolis first invented its most basic form (known as *Metropolis algorithm*) in 1950s during the Manhattan Project.
+Nicholas Metropolis first invented its most basic form (known as *Metropolis algorithm*)
+in 1950s during the Manhattan Project.
 It was later generalized by W. K. Hastings in 1970s, hence it is now known as Metropolis-Hastings algorithm.[^6]
-Understanding the concepts behind the Metropolis-Hastings algorithm --- *global/detailed balance equation* and *acceptance ratio* ---
+Understanding the concepts behind the Metropolis-Hastings algorithm
+--- *global/detailed balance equation* and *acceptance ratio* ---
 is crucial for understanding many other MCMC methods.
 
+[^4.9]: Rather I should say we are only moving one *variable* at a time,
+  since each step in the Gibbs sampling algorithm can itself be high-dimensional.
 [^5]: The *Monte Carlo* part simply means that we use random sampling to approximate the desired distribution.
-  John von Neumann and Stanislaw Ulam first introduced the term *Monte Carlo simulation* in the 1940s to describe method utilizing random sampling to solve problems.
+  John von Neumann and Stanislaw Ulam first introduced the term *Monte Carlo simulation* in the 1940s
+  to describe method utilizing random sampling to solve problems.
 [^6]: The original Metropolis algorithm is a special case of the Metropolis-Hastings algorithm
   where the proposal distribution is symmetric, i.e., $\tilde{P}_{ij} = \tilde{P}_{ji}$.
