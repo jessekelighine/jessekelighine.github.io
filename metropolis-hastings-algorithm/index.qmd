@@ -1,7 +1,7 @@
 ---
 title: "Metropolis-Hastings Algorithm: An Explanation with Demonstration"
 author: "Jesse Chieh Chen<br/>[`jessekelighine.com`](https://jessekelighine.com)"
-date: "2025-06-15"
+date: "2025-06-16"
 format:
   html:
     code-annotations: hover
@@ -149,26 +149,23 @@ This trade-off perfectly modifies proposal distribution $\tilde{f}$ so that the 
 ## Demonstration: Sample from an Unnormalized Density Function
 
 ```{r}
-options(scipen = 999999)
-options(tidyverse.quiet = TRUE)
-library(conflicted)
-library(tidyverse)
+library(ggplot2)
 set.seed(1234)
 ```
 
 Let's see how the Metropolis-Hastings algorithm works in practice.
 Say that we have the following (non-standard) target distribution with density `dtriangle2`:
 ```{r}
-dtriangle2 <- function(x) {
-  dplyr::case_when(
-    x < 0.00 ~ 0,
-    x < 0.25 ~ 8 * x,
-    x < 0.50 ~ 4 - 8 * x,
-    x < 0.75 ~ -4 + 8 * x,
-    x < 1.00 ~ 8 - 8 * x,
-    .default = 0
-  )
-}
+dtriangle2 <- Vectorize(
+  function(x) {
+    if (x < 0) return(0)
+    if (x < 0.25) return(8 * x)
+    if (x < 0.50) return(4 - 8 * x)
+    if (x < 0.75) return(-4 + 8 * x)
+    if (x < 1.00) return(8 - 8 * x)
+    return(0)
+  }
+)
 ```
 Its density function looks like this:
 ```{r}
@@ -263,8 +260,8 @@ it took several trials before a proapsal was accepted and the chain started to e
 Let's visualize the output chain by a density plot of the values in the chain:
 
 ```{r}
-list(x = output_chain) %>%
-  as_tibble() %>%
+list(x = output_chain) |>
+  as.data.frame() |>
   ggplot() +
   aes(x = x) +
   geom_function(
@@ -277,8 +274,6 @@ list(x = output_chain) %>%
   xlab("") +
   ylab("density")
 ```
-
-1. We plot against the true density function `dtriangle2` for comparison.
 
 As expected,
 the density of the output chain matches the target distribution `dtriangle2` very well.
@@ -380,38 +375,22 @@ rather than sampling from $\pi(\mu,\sigma^2\given\{X_t\})$ directly,
 we sample from the conditional distributions
 $\pi(\mu\given\sigma^2,\{X_t\})$ and $\pi(\sigma^2\given\mu,\{X_t\})$ in alternation.
 
-First, we set up the true parameters and the prior parameters of the problem:
+First, we set up the true parameters and generate the data accordingly:
 
 ```{r}
-true_params <- list( # <1>
-  mu = 1, # <1>
-  sigma2 = 5 # <1>
-) # <1>
+true_params <- list(
+  mu = 1,
+  sigma2 = 5
+)
 
-prior_params <- list( # <2>
-  mu = list(mean = 0, variance = 1), # <2>
-  sigma2 = list(shape = 1, scale = 1) # <2>
-) # <2>
-```
-
-1. The true parameters of the normal distribution we want to estimate.
-2. The hyper-parameters of the prior distributions.
-   We use a standard normal distribution as the prior for $\mu$ and
-   an inverse gamma distribution as the prior for $\sigma^2$ with shape and scale parameter both equal to 1.
-
-And generate the data accordingly:
-
-```{r}
-data <- rnorm( # <1>
-  n = 100, # <1>
-  mean = true_params$mu, # <1>
-  sd = sqrt(true_params$sigma2) # <1>
-) # <1>
+data <- rnorm(
+  n = 100,
+  mean = true_params$mu,
+  sd = sqrt(true_params$sigma2)
+)
 
 head(data)
 ```
-
-1. Generate iid samples from a normal distribution with the true parameters.
 
 We summarize how to sample from the conditional distributions in the following two functions:
 
@@ -419,22 +398,22 @@ We summarize how to sample from the conditional distributions in the following t
 sample_posterior_mu <- function(
   params, # <1>
   .data = data, # <1>
-  .prior_params = prior_params # <1>
+  .prior_params = list(mean = 0, variance = 1) # <1>
 ) {
   posterior_variance <- solve(
-    1 / .prior_params$mu$variance + length(.data) / params$sigma2
+    1 / .prior_params$variance + length(.data) / params$sigma2
   )
   posterior_mean <- posterior_variance * (
-    .prior_params$mu$mean / .prior_params$mu$variance +
+    .prior_params$mean / .prior_params$variance +
       sum(.data) / params$sigma2
   )
   rnorm(1, mean = posterior_mean, sd = sqrt(posterior_variance))
 }
 ```
 
-1. We bind `data` and `prior_params` to the function directly
-   so that we don't have to pass them as arguments later on.
-   The conditional distribution sampler should
+1. We bind `data` to the sampling function directly
+   so that we don't have to pass it as an argument later on.
+   The conditional distribution sampler should simply
    take the current state of the Markov chain as input
    and return a sample from the conditional distribution.
 
@@ -442,10 +421,10 @@ sample_posterior_mu <- function(
 sample_posterior_sigma2 <- function(
   params,
   .data = data,
-  .prior_params = prior_params
+  .prior_params = list(shape = 1, scale = 1)
 ) {
-  posterior_shape <- .prior_params$sigma2$shape + length(.data) / 2
-  posterior_scale <- .prior_params$sigma2$scale + sum((.data - params$mu)^2) / 2
+  posterior_shape <- .prior_params$shape + length(.data) / 2
+  posterior_scale <- .prior_params$scale + sum((.data - params$mu)^2) / 2
   1 / rgamma(1, shape = posterior_shape, scale = 1 / posterior_scale) # <1>
 }
 ```
@@ -477,12 +456,11 @@ gibbs_sampling <- function(
 ```
 
 1. A note on `gibbs_sampling`'s implementation:
-   it does not take `data` or `prior_params` as input arguments.
+   it does not take `data` as an input argument.
    As detailed in @thm-gibbs-sampling,
    what Gibbs sampling is doing is simply taking samples from the conditional distributions.
    Thus, it makes more sense to let the conditional distribution samplers
-   `sample_posterior_mu` and `sample_posterior_sigma2`
-   to handle `data` and `prior_params`.
+   `sample_posterior_mu` and `sample_posterior_sigma2` to handle `data`.
 2. The state (`params`) is updated one parameter at a time,
    first sampling $\mu$ given the current $\sigma^2$ and then sampling $\sigma^2$ given the current $\mu$.
 3. The updated state is then stored in the output chain.
@@ -490,8 +468,9 @@ gibbs_sampling <- function(
 Let's run the Gibbs sampling algorithm and calculate the posterior means:
 
 ```{r}
-gibbs_chain <- gibbs_sampling() %>%
-  purrr::map_df(function(x) as_tibble(x)) # <1>
+gibbs_chain <- gibbs_sampling() |>
+  lapply(function(x) as.data.frame(x)) |> # <1>
+  do.call(rbind, args = _) # <1>
 
 list(
   posterior_mean_mu = mean(gibbs_chain$mu),
@@ -511,7 +490,7 @@ library(ggside) # <1>
 1. An excelent package to add side plots to `ggplot2` figures!
 
 ```{r}
-gibbs_chain %>%
+gibbs_chain |>
   ggplot() +
   aes(x = mu, y = sigma2) +
   geom_vline(
