@@ -1,6 +1,6 @@
 img {
 	max-width: 40em;
-	width: 80vw;
+	min-width:100%;
+	width: 0;
 	display: block;
-	margin: auto;
 }

@@ -1553,11 +1553,12 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 太陽超級無敵大。
 都不懂如果紐約就有這麼大的太陽跟這樣的海灘為什麼有錢然還是拼命去佛羅里達？
 可能就是因為冬天在紐約真的太冷了吧。
+
+![](figures/coney-island-beach.jpg){loading=lazy}
+
 我身爲一個台灣人，絕對是不會去海灘曬太陽的，
 所以在整個海灘上就我一個人在撐傘，
 在沙灘上也是物理防禦點滿：
-
-![](figures/coney-island-beach.jpg){loading=lazy}
 
 ![](figures/asian-shade.jpg){loading=lazy}
 
