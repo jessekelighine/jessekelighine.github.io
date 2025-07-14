@@ -1,7 +1,7 @@
 ---
 title:  "《出洋肄習錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2025-07-12"
+date:   "2025-07-14"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -13,7 +13,7 @@ header-includes:
 > <p align="right">曾國藩〈擬選子弟出洋學藝折〉同治十年（1871）</p>
 
 單純記錄一些在紐約的所見所聞還有心情，
-所以以<ruby><rb>意</rb><rb>識</rb><rb>流</rb><rp>（</rp><rt>流</rt><rt>水</rt><rt>帳</rt><rp>）</rp></ruby>的體例寫作。
+所以以<ruby><rb>意識流</rb><rp>（</rp><rt>流水帳</rt><rp>）</rp></ruby>的體例寫作。
 
 # 2024-08-07 {#2024-08-07}
 
