@@ -113,6 +113,12 @@ code {
 	border-radius: 8px;
 }
 
+.sourceCode {
+	font-family: "IBM Plex Mono", "Noto Sans KR", "Noto Sans TC", monospace;
+	background-color: #f9f9f9;
+	padding: 2px;
+}
+
 /* QUOTES */
 
 blockquote {

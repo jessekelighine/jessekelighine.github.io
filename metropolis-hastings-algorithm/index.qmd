@@ -1,7 +1,7 @@
 ---
 title: "Metropolis-Hastings Algorithm: An Explanation with Demonstration"
 author: "Jesse Chieh Chen<br/>[`jessekelighine.com`](https://jessekelighine.com)"
-date: "2025-06-16"
+date: "2025-07-23"
 format:
   html:
     code-annotations: hover
@@ -156,7 +156,7 @@ set.seed(1234)
 Let's see how the Metropolis-Hastings algorithm works in practice.
 Say that we have the following (non-standard) target distribution with density `dtriangle2`:
 ```{r}
-dtriangle2 <- Vectorize(
+dtriangle2 <- Vectorize( # <1>
   function(x) {
     if (x < 0) return(0)
     if (x < 0.25) return(8 * x)
@@ -167,6 +167,10 @@ dtriangle2 <- Vectorize(
   }
 )
 ```
+
+1. `Vectorize` is used to make `dtriangle2` be able to handle vector inputs,
+    which is useful for plotting.
+
 Its density function looks like this:
 ```{r}
 ggplot() +
@@ -205,7 +209,7 @@ metropolis_hastings_algorithm <- function(
   inital_state, # <4>
   length_of_chain = 5000 # <5>
 ) {
-  output_chain <- numeric(length_of_chain)
+  output_chain <- vector(mode = "numeric", length = length_of_chain)
   output_chain[1] <- inital_state
   state <- inital_state
   for (trial in 2:length_of_chain) {
@@ -489,7 +493,7 @@ library(ggside) # <1>
 
 1. An excelent package to add side plots to `ggplot2` figures!
 
-```{r}
+```{r, warning=FALSE}
 gibbs_chain |>
   ggplot() +
   aes(x = mu, y = sigma2) +
