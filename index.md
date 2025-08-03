@@ -79,6 +79,8 @@ header-includes:
 - [**vindent.nvim**](https://github.com/jessekelighine/vindent.nvim):
   A *minimal*, *modern* and *highly customizable* Neovim plugin
   that provides indentation-based navigation motions and text objects.
+- [**up.nvim**](https://github.com/jessekelighine/up.nvim):
+  A Neovim plugin that provides a simple way to navigate up the directory tree.
 - [**vim-bunttex**](https://github.com/jessekelighine/vim-bunttex):
   Minimal syntax highlighting for $\mathrm{\LaTeX}$.
 - [**del**](https://github.com/jessekelighine/del):
