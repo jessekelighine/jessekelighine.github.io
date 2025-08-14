@@ -4,3 +4,10 @@ img {
 	width: 0;
 	display: block;
 }
+
+video {
+	max-width: 40em;
+	min-width:100%;
+	width: 0;
+	display: block;
+}
