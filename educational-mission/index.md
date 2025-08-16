@@ -1,7 +1,7 @@
 ---
 title:  "《出洋肄習錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2025-08-14"
+date:   "2025-08-16"
 header-includes:
 	<link rel="icon" href="../resources/sheep_color.png">
 ---
@@ -1600,7 +1600,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 這個月根本什麼都沒做，只能記錄自己怎麼在紐約浪費時間。
 但這也不能怪我，自從上次更新之後寒舍已經接待兩個朋友了，
-其中一個第一次來紐約，所以為盡地主之誼我<ruby><rb>被迫</rb><rp>（</rp><rt>自願</rt><rp>）</rp></ruby>帶他在紐約遊山玩水。
+其中一個第一次來紐約，所以為盡地主之誼我<ruby><rb>自願</rb><rp>（</rp><rt>ㄅㄟˋ ㄆㄛˋ</rt><rp>）</rp></ruby>帶他在紐約遊山玩水。
 很多都是以前介紹過的景點了，所以只放我這個月去的新的景點。
 
 首先是洋基球場，
@@ -1696,7 +1696,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 ![](figures/un-charter.jpg){loading=lazy}
 
-臨表泣涕，不知所云。
+臨表涕泣，不知所云。
 
 最後介紹一下寒舍的新成員：九層塔。
 某天心血來潮在超市買了一盆回來種，
