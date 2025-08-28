@@ -2,6 +2,7 @@
 
 CSS := style.css
 CSS_IMPORT := style-imports.css
+CSS_CONFUCIUS_SAID := style-confucius-said.css
 
 .PHONY: all clean
 
@@ -15,6 +16,7 @@ index.html: index.md $(CSS) $(CSS_IMPORT) confucius-said.js
 		--from markdown+east_asian_line_breaks \
 		--toc \
 		--standalone --mathjax \
+		--css $(CSS_CONFUCIUS_SAID) \
 		--css $(CSS_IMPORT) \
 		--css $(CSS) \
 		--output $@

@@ -1,9 +1,9 @@
 ---
 title:  "《出洋肄習錄》"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-date:   "2025-08-16"
+date:   "2025-09-01"
 header-includes:
-	<link rel="icon" href="../resources/sheep_color.png">
+	<link rel="icon" href="resources/sheep_color.png">
 ---
 
 # 序 {#prologue}
@@ -20,7 +20,7 @@ header-includes:
 從 `2024-08-01` 到紐約到現在過一個禮拜了，
 記錄一下所見所聞跟心情。
 
-![](figures/sandwich.jpg){loading=lazy}
+<img src="figures/sandwich.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 來到紐約的第二天領略到紐約的物價，這個三明治花了我 $17；
 份量確實是很多，但是結帳的時候嚇到。
@@ -34,21 +34,21 @@ header-includes:
 已經把這家店的菜單拿回家，
 準備把大部分的三明治菜單都吃過一遍。
 
-![](figures/columbia-out-of-harlem.jpg){loading=lazy}
+<img src="figures/columbia-out-of-harlem.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 哥倫比亞的北方就是 Harlem，是有名的黑人區。
 從機場到哥倫比亞的 Uber 上經過 Harlem 就被警告說這邊比較危險，看起來也是有點恐怖。
 傍晚稍微往北邊走的時候就看到橋墩上有「COLUMBIA OUT of HARLEM NOW!」的塗鴉。
-哥倫比亞在 1896 年移到現在的校址（原本在洛克斐勒中心旁邊，更早之前在馬哈頓更南方），
+哥倫比亞在 1896 年移到現在的校址（原本在洛克斐勒中心旁邊，更早之前在曼哈頓更南方），
 過了一百多年還是格格不入。
 走在路上也有明確的感覺，
 一旦往北到 125 街左右就明顯感受到街上的氛圍變得很不一樣。
-通常這種地方應該要仕紳化吧？或許是 Harlem 的基因太強了。
+通常這種地方應該要士紳化吧？或許是 Harlem 的基因太強了。
 
 會往北走是因為要去跟一個朋友的朋友買地毯跟一些東西，
 放到房間變這樣：
 
-![](figures/my-room.jpg){loading=lazy}
+<img src="figures/my-room.jpg" loading="lazy" style="aspect-ratio: 3264/1470;" />
 
 後來又添購了冷氣（也是往北方走去買來二手的），
 落地燈是幹來的，
@@ -57,20 +57,20 @@ header-includes:
 前面提到到 125 街以上氛圍就很不一樣，
 後來有天到時代廣場附近逛逛才知道什麼叫做都市：
 
-![](figures/time-square.jpg){loading=lazy}
+<img src="figures/time-square.jpg" loading="lazy" style="aspect-ratio: 3264/1470;" />
 
 其實時代廣場附近幾個街區（大概是 30 到 50 街多左右，這邊被稱為 midtown）都長這樣，
 那天也去看了洛克斐勒中心（看到 Tonight Show starring Jimmy Fallon 的看板）、
 中央車站（無聊）、第五大道（往南看滿壯觀的）。
 在附近還看到無印良品還有 Line 商店：
 
-![](figures/line-store-in-time-square.jpg){loading=lazy}
+<img src="figures/line-store-in-time-square.jpg" loading="lazy" style="aspect-ratio: 3264/1470;" />
 
 從外面看裡面全部都是東亞面孔，笑死。我家附近則是長這樣：
 
-![](figures/113th-broadway.jpg){loading=lazy}
+<img src="figures/113th-broadway.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-跟曼哈頓 midtwon 完全是兩樣風情，
+跟曼哈頓 midtown 完全是兩樣風情，
 甚至都還沒去精華中之精華區 downtown。
 後來聽朋友說他覺得其實 80 街以上就有點 sketchy（哥倫比亞在 110 到 120 街左右），
 我算是同意，
@@ -123,7 +123,7 @@ header-includes:
 
 最後附上哥倫比亞大學地鐵站的照片：
 
-![](figures/columbia-university-station.jpg){loading=lazy}
+<img src="figures/columbia-university-station.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 紐約的地鐵真的是又髒又臭，
 而且只有部分車廂是有冷氣的，
@@ -135,8 +135,8 @@ header-includes:
 
 # 2024-08-15 {#2024-08-15}
 
-紐約也是很常下雨，而且下雨了就會蠻冷的，大概再20度左右。
-而且蠻多人不撐傘的其實雨也不小，特別是很多白人不撐傘不，太知道為什麼。
+紐約也是很常下雨，而且下雨了就會蠻冷的，大概在20度左右。
+而且蠻多人不撐傘的，其實雨也不小，特別是很多白人不撐傘，不太知道為什麼。
 
 過兩個禮拜之後發現在紐約（我想甚至是整個美國）人種劃分是很明確的：
 像是速食店或雜貨店或做工的都是西班牙裔的，
@@ -144,18 +144,18 @@ header-includes:
 白人真的看起來大部分都在做高級工作，亞洲人也是。
 以下就是零元購交易市場，在中國城附近：
 
-![](figures/zero-dollar-shopping-vendors.jpg){loading=lazy}
+<img src="figures/zero-dollar-shopping-vendors.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 在哥倫比亞附近聽到很多中文，但應該是因為中國學生多的關係。
 這樣看來紐約或甚至是美國的確是一個蠻讓人覺得沮喪的地方，階級的不流動直接以人種的方式呈現給你看。
 至少在台灣大家看起來都一樣，所以看不出來？
-話說，幾乎都很哪裡都有講西班牙文的機會，果然跟我之前一個同學說的很像：「西班牙文是美國台語」。
+話說，幾乎哪裡都有講西班牙文的機會，果然跟我之前一個同學說的很像：「西班牙文是美國台語」。
 連紐約地鐵的官方告示都有英語西班牙語雙語。
 
 這禮拜第一次煮東西，自己煮下來發現其實跟外面買的價格並不會差很多（但這是給定你把一個三明治分成兩餐吃的情況）。
 自己煮的話大概算了一下就是 \$5 左右，營養比較均衡。範例：
 
-![](figures/daily-meal.jpg){loading=lazy}
+<img src="figures/daily-meal.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 美國的豬肉確實有股騷味，但是我覺得我能接受。
 
@@ -167,17 +167,17 @@ header-includes:
 逃票仔也是很多，而且這個感覺不分族裔，大家有機會就逃票？？
 但是我要更正一個上週的觀察，
 就是其實大部分地鐵是有冷氣的，
-只是不知道為什麼第一次做的時候剛好坐到沒冷氣的？
+只是不知道為什麼第一次坐的時候剛好坐到沒冷氣的？
 害我對於沒冷氣的 prior 很強。
 
 有天心血來潮去 IKEA，
 因此第一次到布魯克林區。
-看起來跟北曼哈頓差不多破，但是感覺比哈頓更「有機」一點：街道不是井然有序的網格狀，房屋也是歪七扭八？
+看起來跟北曼哈頓差不多破，但是感覺比曼哈頓更「有機」一點：街道不是井然有序的網格狀，房屋也是歪七扭八？
 還看到[倉儲挖寶王](https://zh.wikipedia.org/zh-hant/%E5%80%89%E5%84%B2%E6%8C%96%E5%AF%B6%E7%8E%8B)裡面會出現的倉儲。
 因為 IKEA 滿遠的，所以也第一次坐巴士。
 沒特別感覺，只是覺得這種東西好像是很久以前（70 年代？）台灣公車會出現的東西：
 
-![](figures/bus-pull-to-stop.jpg){loading=lazy}
+<img src="figures/bus-pull-to-stop.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留學生，到處都在講中文。
 回程的時候地鐵突然燈暗掉很正常，還看到有人把腳踏車鎖在把手上，很屌。
@@ -186,17 +186,17 @@ IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留
 跟歐洲有得比，但是裡面有很多美國元素很有趣，
 例如這個有棒球、橄欖球、曲棍球圖樣的彩繪玻璃：
 
-![](figures/st-john-cathedral.jpg){loading=lazy}
+<img src="figures/st-john-cathedral.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 後來某天去了中國城，
-途中經過紐約大學地體站：
+途中經過紐約大學地鐵站：
 
-![](figures/nyu-subway.jpg){loading=lazy}
+<img src="figures/nyu-subway.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 紐約大學真的是沒有 campus，滿無聊的，
 就是走在附近會突然看到紫色的旗子：
 
-![](figures/nyu.jpg){loading=lazy}
+<img src="figures/nyu.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 過一陣子又會看到一個，
 就這樣。
@@ -205,34 +205,34 @@ IKEA 東西好便宜，可能中國留學生也知道，店裡面超多中國留
 中國城是個又髒又醜，而且被廣東話佔領，要是能避免的話不會想再去。
 倒是到處都是青天白日滿地紅，滿好笑的。
 
-![](figures/china-town-roc-1.jpg){loading=lazy}
+<img src="figures/china-town-roc-1.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/china-town-roc-2.jpg){loading=lazy}
+<img src="figures/china-town-roc-2.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/china-town-roc-3.jpg){loading=lazy}
+<img src="figures/china-town-roc-3.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 最後在附近謁見了中山跟仲尼之後便快速離開：
 
-![](figures/sun-yat-sen.jpg){loading=lazy}
+<img src="figures/sun-yat-sen.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/confucius.jpg){loading=lazy}
+<img src="figures/confucius.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-又過了一個禮拜之後發現其實曼哈頓 downtwon 分區也非常明顯：
-說不只是說「uptown 糟糕、downtaon 繁華」，
+又過了一個禮拜之後發現其實曼哈頓 downtown 分區也非常明顯：
+說不只是說「uptown 糟糕、downtown 繁華」，
 因為中國城跟前面拍照到的零元購散貨中心都是在 downtown。
 我也因此發現其實哥倫比亞校區附近真的是很安全，
-感覺一切都光明磊落，又常有學校的公共安全小組（不知道 Public Safty 中文叫什麼）開車巡邏，
+感覺一切都光明磊落，又常有學校的公共安全小組（不知道 Public Safety 中文叫什麼）開車巡邏，
 而且又相對安靜，
 不失為是個好地方。
 
 去完中國城就跑去金融區，
 其實金融區反而無聊，就是金牛附近都是人（小女孩沒了）：
 
-![](figures/wall-street-bull.jpg){loading=lazy}
+<img src="figures/wall-street-bull.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 旁邊看到一個川普建築跟紐約證交所（川普大樓除了斗大的 Trump Building 字樣就沒啥可看的，就不放照片）：
 
-![](figures/new-york-stock-exchange.jpg){loading=lazy}
+<img src="figures/new-york-stock-exchange.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 我是覺得頗無聊，沒什麼有趣的東西。
@@ -240,7 +240,7 @@ Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 走在路上不是吃的就是一些賣垃圾紀念品的店。
 希望之後多認識一些人之後可以做一些比較有趣的事情。
 
-![](figures/911-memorial.jpg){loading=lazy}
+<img src="figures/911-memorial.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 晚上跟印度室友出去外面吃飯，
 第一次在晚上到哈林區吃披薩，正宗拿波里披薩，很不錯。
@@ -250,7 +250,7 @@ Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 某天整個中午到晚上都跟某朋友還有他的一些台灣朋友在他家頂樓，滿開心的（過好幾天第一次講這麼多中文？）。
 以下是他家海景（河景？）第一排頂樓的樣子：
 
-![](figures/pool-party.jpg){loading=lazy}
+<img src="figures/pool-party.jpg" loading="lazy" style="aspect-ratio: 3024/1909;" />
 
 轉過身背後就是繁華無比的曼哈頓。
 第一次 shotgun、pickle ball⋯等，族繁不及備載。
@@ -258,7 +258,7 @@ Meh，還去了原本世貿中心，現在是 911 紀念公園的地方。
 
 莫名其妙在一家超市（不是亞超，所以意外）看到伊藤園產地台灣的綠茶：
 
-![](figures/tea-vs-milk.jpg){loading=lazy}
+<img src="figures/tea-vs-milk.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 價格是一旁牛奶先生的三倍，但還是買了，好喝。
 
@@ -274,9 +274,9 @@ Math Camp 真的是頗無聊，
 而且之後可能會講的 Kuhn-Tucker 都快忘光的，還是要複習一下。
 
 今天下午偷閒還是跑出來亂晃，
-看到熨斗大夏（整修中）：
+看到熨斗大廈（整修中）：
 
-![](figures/flat-iron.jpg){loading=lazy}
+<img src="figures/flat-iron.jpg" loading="lazy" style="aspect-ratio: 3264/1470;" />
 
 其實原本是先去 [MoMath](https://momath.org/)，
 以為是超 nerdy 的地方（其實算是滿 nerdy），
@@ -288,7 +288,7 @@ Math Camp 真的是頗無聊，
 
 最後附上一張哥倫比亞圖書館的照片：
 
-![](figures/alma-mater.jpg){loading=lazy}
+<img src="figures/alma-mater.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 那天去看才仔細看到上面的刻字，滿霸氣的：
 
@@ -310,14 +310,14 @@ Math Camp 真的是頗無聊，
 官方的地鐵公告都要三語，
 好笑的是中文是晶晶體：
 
-![](figures/nyc-subway-trilingual.jpg){loading=lazy}
+<img src="figures/nyc-subway-trilingual.jpg" loading="lazy" style="aspect-ratio: 1592/3048;" />
 
 這週開始實體 Math Camp，
 終於見到同學了，
 但是也重新發現社交真的很累人。
 不是說英語說得不好，
 而是要一直尬聊真的很燒腦，
-要一直想一些雞毛涮皮的事情來填空，
+要一直想一些雞毛蒜皮的事情來填空，
 諸如：「你有沒有寵物？」、「你喜歡什麼音樂？」⋯不及備載。
 當然也有比較務實的：「到底什麼時候需要給小費？」，
 至少這個時候非美國人就可以統一戰線討論公制系統的優越性。
@@ -356,15 +356,15 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 唯一之前沒有太認真學過的東西只有下禮拜要講的 correspondence 吧，
 當然在個論上都講過，但是不太了解一些相關的數學性質。
 
-![](figures/math-camp.jpg){loading=lazy}
+<img src="figures/math-camp.jpg" loading="lazy" style="aspect-ratio: 3264/1470;" />
 
 其中一天去 orientation，滿無聊的，花超多時間再講性騷擾防治跟 consent，
 可能在美國真的是大問題吧？或者是在台灣也是大問題只是沒有這樣超正式的官方宣傳？
 場地倒是非常豪華，是舊圖書館，現在是行政大樓：
 
-![](figures/orientation-top.jpg){loading=lazy}
+<img src="figures/orientation-top.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/orientation.jpg){loading=lazy}
+<img src="figures/orientation.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 週五跟幾乎整個班的人到酒吧喝酒，蠻不錯的。
 有趣的是酒吧是在一艘船上，所以不知道是自己醉還是船在晃，呵呵。
@@ -374,48 +374,48 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 今天還跟有些人去哥大的一個美術館，但是展覽偏無聊，太現代，不太喜歡。
 但是後來又去逛到有名的 Apollo Theater 那邊，有歷史文化感，而且走在路上還看到曼德拉的紀念牌，真的酷。
 
-![](figures/mandela-plaque.jpg){loading=lazy}
+<img src="figures/mandela-plaque.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 然後晚上到一個在長島上的地方 Flushing 跟台灣朋友吃烤肉，到了才知道那便是所謂「新」中國城，
 比曼哈頓上的更亂，而且顯然這邊是比較「後來」才來的人，到處都是簡體字。
 我們去吃一個烤串，是滿好吃的，價格也不會太貴，但是進到店裡就被用中文問幾位蠻好笑的。
 
-![](figures/friendship-bbq.jpg){loading=lazy}
+<img src="figures/friendship-bbq.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 但是這邊真的有點亂，短期也不會想來，而且其實也沒什麼特別的，只是因為台灣朋友要搭飛機所以才來這邊離機場近的地方。
 前幾天也跟他們去吃一家韓式料理，吃到這個炸魚，跟台灣自助餐吃到的完全一樣，家鄉味：
 
-![](figures/korean-fried-fish.jpg){loading=lazy}
+<img src="figures/korean-fried-fish.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 這是某天再來走去拍的卡內基音樂廳，在整修，所以滿廢的：
 
-![](figures/carnegie-hall.jpg){loading=lazy}
+<img src="figures/carnegie-hall.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 但是走到那邊途中有看到中央公園的馬，讚：
 
-![](figures/horses-in-central-park.jpg){loading=lazy}
+<img src="figures/horses-in-central-park.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 這是跟哥大密切合作的猶太神學院，1920 年代建成，上面寫著斗大「And the Bush was not Consumed」，非常猶太：
 
-![](figures/jewish-theological-seminary.jpg){loading=lazy}
+<img src="figures/jewish-theological-seminary.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 某天去坐渡輪，天氣跟風景都超讚：
 
-![](figures/manhattan-from-ferry.jpg){loading=lazy}
+<img src="figures/manhattan-from-ferry.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-坐度輪是專門跑去看這個著名的拍照景點，
+坐渡輪是專門跑去看這個著名的拍照景點，
 但是旁邊藍色鷹架超級大，很煩，
 不知道為什麼我去的地方好多都在整修。
 照理來說在橋墩中間可以看到帝國大廈，
 但是被冰淇淋車擋住，
 真的很煩。
 
-![](figures/famous-dumbo-view.jpg){loading=lazy}
+<img src="figures/famous-dumbo-view.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 最後附上這幾天才拿到的紐約市立圖書館卡，
 滿好看的，有鑰匙圈也有卡，覺得自己更像是紐約居民了。
 
-![](figures/public-library-key-chain.jpg){loading=lazy}
+<img src="figures/public-library-key-chain.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 總體而言這週真的是社交能量消耗殆盡，
 希望之後聊天可以不要一直講一些雞毛涮皮的無聊事情。
@@ -430,12 +430,12 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 也看到以色列對抗巴勒斯坦的示威又有零星的開始，
 遠遠的就可以看到以色列國旗還有很多猶太人：
 
-![](figures/israel-vs-palestine-2.jpg){loading=lazy}
+<img src="figures/israel-vs-palestine-2.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 原本以為猶太人是支持以色列，
 但是走近一看發現不是：
 
-![](figures/israel-vs-palestine-3.jpg){loading=lazy}
+<img src="figures/israel-vs-palestine-3.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 然後附近超級無敵多警察，呵呵。
 最後沒發生什麼事就是了，真無聊。
@@ -444,32 +444,32 @@ Math Camp 滿無聊的，基本上都是你有上大學就應該要會的東西�
 今天特地去拍了一些。
 這是校園裡面的小教堂，滿精緻的，據說一些哥大的學生會在這裡結婚。
 
-![](figures/st-pauls-chapel.jpg){loading=lazy}
+<img src="figures/st-pauls-chapel.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 這是數學館，名字就叫 Mathematics，其他建築都是有冠名，像是 Pulitzer（我也是這禮拜才知道普立茲攝影獎在哥大頒發）。
 有人笑稱因為唸數學的人都太窮沒有人有錢可以冠名，所以只能叫 Mathematics。
 但是前面有草坪，所以讚。
 
-![](figures/mathematics-building.jpg){loading=lazy}
+<img src="figures/mathematics-building.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 據說這是很有名的「學者之獅」，必須說我沒聽過，
 而且不知道為什麼這獅子很瘦。
 
-![](figures/scholars-lion.jpg){loading=lazy}
+<img src="figures/scholars-lion.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 這個角落很有名：
 
-![](figures/i-am-something-of-a-scientist-myself-recreation.jpg){loading=lazy}
+<img src="figures/i-am-something-of-a-scientist-myself-recreation.jpg" loading="lazy" style="aspect-ratio: 1453/825;" />
 
-![](figures/i-am-something-of-a-scientist-myself-original.jpg){loading=lazy}
+<img src="figures/i-am-something-of-a-scientist-myself-original.jpg" loading="lazy" style="aspect-ratio: 945/609;" />
 
 嗯。就在現在主要的 Butler 圖書館旁邊：
 
-![](figures/butler-library-exterior.jpg){loading=lazy}
+<img src="figures/butler-library-exterior.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-內裝很 old money，而且圖書館裡面有胡適的畫像，下次在去拍：
+內裝很 old money，而且圖書館裡面有胡適的畫像，下次再去拍：
 
-![](figures/butler-library-interior.jpg){loading=lazy}
+<img src="figures/butler-library-interior.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 這個週五 Math Camp 剛結束。
 Math Camp 結束是考了一個試，
@@ -532,16 +532,16 @@ Math Camp 考試早上結束，
 要比歐洲傳統的藝術品又比不過羅浮宮，
 都是一些有名的畫家的不有名作品。
 
-![](figures/the-met.jpg){loading=lazy}
+<img src="figures/the-met.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 但倒是有不少跟美國相關的東西就是了，像是這個。
 畫框也超級美國，滿好笑的。
 
-![](figures/washington-crossing-the-delaware.jpg){loading=lazy}
+<img src="figures/washington-crossing-the-delaware.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 去完博物館去買東西，人生第一次看到手推車有專用電扶梯，不愧是美國，跟偷懶相關的東西都不讓我失望：
 
-![](figures/escalator-for-carts.jpg){loading=lazy}
+<img src="figures/escalator-for-carts.jpg" loading="lazy" style="aspect-ratio: 2088/3235;" />
 
 這週也把申請 SSN 的事情搞定了，
 其實就是人過去把文件給他而已。
@@ -551,7 +551,7 @@ Math Camp 考試早上結束，
 所以她可能就是扮演這種職責吧。
 後來經過法院，看起來頗氣派。
 
-![](figures/ny-state-court-house.jpg){loading=lazy}
+<img src="figures/ny-state-court-house.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 上面刻字：
 
@@ -567,18 +567,18 @@ Math Camp 考試早上結束，
 這邊重現了一個破爛的愛爾蘭平房，
 紀念那些因為飢荒所以移民來美國的人：
 
-![](figures/irish-famine-memorial.jpg){loading=lazy}
+<img src="figures/irish-famine-memorial.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 然後附近有一小片柏林圍牆，
 下面有個小牌子寫說這是德國領事館送給這個「公園」的，
 不是送給美國或紐約市，
 有點意義不明。
 
-![](figures/berlin-wall.jpg){loading=lazy}
+<img src="figures/berlin-wall.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 最後附上今天午餐照片：
 
-![](figures/lunch-chicken.jpg){loading=lazy}
+<img src="figures/lunch-chicken.jpg" loading="lazy" style="aspect-ratio: 2900/2088;" />
 
 廚藝沒什麼進步，
 進步的倒是知道可以去買日式調味粉灑在菠菜上。
@@ -594,7 +594,7 @@ Math Camp 考試早上結束，
 開學到現在都滿無聊的，個體、總體、計論都是已經上過的東西，
 只有總體感覺會教得比較扎實，其他都超無聊。
 我還有上一門 Gelman 開的統計學課，
-內容比較務實，基本就就是講授統計學的智慧而非技術。
+內容比較務實，基本就是講授統計學的智慧而非技術。
 Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實作跟討論的環節，受益良多。
 感覺自己之前都在學統計學的技術，非常缺乏統計學的智慧，所以非常喜歡堂課。
 只是有點不想寫作業，所以考慮旁聽。
@@ -622,7 +622,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 那天我倒是中英文都沒說幾句，幾乎都只跟同梯講話而已，大部分時間只有在聽。
 
 禮拜天第一次跟美國人看美式足球。
-朋友中有一個是邁阿密海豚對的忠實粉絲，
+朋友中有一個是邁阿密海豚隊的忠實粉絲，
 所以他就號招大家去他家看球賽。
 我覺得美式足球算是好看，整場比賽不會太長，中間也有很多亮點，
 但是比較奇怪的點就是鮮少傳球，都是大家抱的一個東西跑來跑去，跟橄欖球很不一樣。
@@ -632,7 +632,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 這週就沒什麼照片了，附上我們晚宴杯盤狼籍前的樣子：
 
-![](figures/first-week-banquet.jpg){loading=lazy}
+<img src="figures/first-week-banquet.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 **補記**：
 忘記紀錄一件事：
@@ -656,7 +656,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 而且題目都超長，也不是說超級難（有些確實不容易），但是超級無敵花時間，
 都不知道其他沒學過的同學怎麼熬過來的。
 （好啦我知道，要嘛看以前留下來的答案，或是問我😂）
-其他的作業到是先對來說比較簡單，
+其他的作業倒是相對來說比較簡單，
 只是要花時間做而已。
 
 上上個週末為了慶祝一個人生日不少人一起去中央公園跑步，
@@ -667,7 +667,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 確實超好吃，
 只是很貴就是了，花了我 23 鎂（加咖啡）。
 
-![](figures/salmon-bagel.jpeg){loading=lazy}
+<img src="figures/salmon-bagel.jpeg" loading="lazy" style="aspect-ratio: 2088/2699;" />
 
 上週五去吃印度菜，
 但嚴格來說是中餐跟印度料理的混合體，
@@ -683,7 +683,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 然後這週跟大家聊天又更加順暢了，
 但是也透露出我偏自由派的本⋯。
 在吃完印度餐之後大家在酒吧聊天，
-然後叫討論到政治光譜，
+然後就討論到政治光譜，
 就突然說道我應該是出現在右下角⋯。
 我知道我在跑步那天有跟別人講到一些政治，
 但是真的是有這麼明顯嗎 = =。
@@ -705,14 +705,14 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 上上週還坐船去了 IKEA，沿途風光確實不錯，但是時間還是很久（時間要快兩個小時），所以應該不會常常去。
 
-![](figures/ikea-cruise-1.jpeg){loading=lazy}
+<img src="figures/ikea-cruise-1.jpeg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/ikea-cruise-2.jpeg){loading=lazy}
+<img src="figures/ikea-cruise-2.jpeg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 而且這邊 IKEA 的餐廳實在是乏善可陳，跟台灣的完全不能比。
 以下這樣就花我 18 鎂，真的是不太 ok。
 
-![](figures/ikea-meal.jpeg){loading=lazy}
+<img src="figures/ikea-meal.jpeg" loading="lazy" style="aspect-ratio: 3410/1918;" />
 
 然後又看了更多美式足球，
 還看到有人當場腦震盪，其實真的不太敢看。
@@ -720,16 +720,16 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 另外上週給 cohort 每個人發一台 iPad，是退休的 Jagdish Bhagwati 教授送大家的。
 感覺自己德不配位，還不知道 Bhagwati 是誰，一查之後嚇一跳，覺得自己更是無面目見江東父老。
-感覺現在我就差換一台 iPhone 就是 100% 的頻果人了，呵呵。
+感覺現在我就差換一台 iPhone 就是 100% 的蘋果人了，呵呵。
 
 最後因為今天第一次算是製作出能吃的照燒雞腿，拍照以茲紀念。
 
-![](figures/teriyaki-chicken.jpeg){loading=lazy}
+<img src="figures/teriyaki-chicken.jpeg" loading="lazy" style="aspect-ratio: 2536/1987;" />
 
 # 2024-10-12 {#2024-10-12}
 
-下禮拜就叫期中考了。
-但是發現其實在考試之前好像飯而還清閒一點，
+下禮拜就要期中考了。
+但是發現其實在考試之前好像反而還清閒一點，
 因為沒什麼社交活動，哈哈哈，
 不然平常假日不是在吃飯酒吧就是在看美式足球。
 
@@ -746,7 +746,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 - **個論**：
   用 Rubinstein 的課本，因為老師是紐約大學的博士。
   所以都是已經學過的東西。
-  只是這個老師偏愛 Choice Theory 的 Decision Theroy，
+  只是這個老師偏愛 Choice Theory 的 Decision Theory，
   所以講這兩個東西特別來勁，
   作業的模型也是千奇百怪，每次都要想超久，感覺根本就是在做益智遊戲。
   但是上課步調慢，因為同學一直問（有時候不著邊際的）問題。
@@ -755,7 +755,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
   老師感覺不太熱衷於教學，
   應該是因為這些東西太簡單了，
   這也導致了上課步調賊快，
-  已經上了 inomplete market 還有 firm dynamics。
+  已經上了 incomplete market 還有 firm dynamics。
   但是他介紹非常多衍伸的模型，
   所以算是有趣？
 - **計論**：
@@ -808,14 +808,14 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 過然還滿道地的，非常滿意。
 說到吃了，經濟系每週有一天還會幫第一年的博士生訂午餐。
 
-![](figures/thursday-lunch.jpg){loading=lazy}
+<img src="figures/thursday-lunch.jpg" loading="lazy" style="aspect-ratio: 900/1031;" />
 
 但是必須還是有一些美國人吃的東西我吃不習慣。
 我最看不懂的一次是吃沙拉，
 吃沙拉就算了，
 有菠菜、有芹菜、有胡蘿蔔、有花椰菜，
 但是沒有一樣菜式有煮的。
-生的華椰菜我真的是第一次吃，
+生的花椰菜我真的是第一次吃，
 而且還基本上沒什麼切，
 一大朵一大朵的，
 搞得我好像是兔子一樣。
@@ -839,13 +839,13 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 最近天氣轉涼，有時候早上只有 10 度左右，
 所以想去買些衣服。
-但是尺忖實在是很難找，
+但是尺寸實在是很難找，
 即使是去 Muji 試穿女生 xs 的尺寸還是有點嫌大，
 看來是真的得要去童裝部門找衣服了。
 另外，10 月 7 日是蛤蟆絲攻擊以色列滿一週年，
 學校裡面也是敲鑼打鼓地有活動：
 
-![](figures/protest-israel.jpg){loading=lazy}
+<img src="figures/protest-israel.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 好笑的是你看以色列的國旗這麼大，
 左邊的好多攤位都是以色列方的。
@@ -855,7 +855,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 喔，應該是上禮拜吧，班上有同學已經發上 QJE，不得了了，那我在幹嘛？
 我在煎牛排：
 
-![](figures/steak-dinner.jpg){loading=lazy}
+<img src="figures/steak-dinner.jpg" loading="lazy" style="aspect-ratio: 3925/2088;" />
 
 做飯沒什麼進步，學業也沒什麼進步，但是牛排好ㄘ。
 另外感覺是要多拍點照，
@@ -869,7 +869,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 突然想起來好像沒有放過這邊經濟系大樓的照片，
 跟台大一樣的水泥風格，不太知道為什麼。
 
-![](figures/international-affairs-building.jpg){loading=lazy}
+<img src="figures/international-affairs-building.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 自從上次到現在最重要的事應該就是期中考。
 現在是都考完了，除了數量方法之外都已經知道結果了。
@@ -880,14 +880,14 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
   其他該拿分的都有拿到。
   總共有三題：
   1. *Consumer Theory*：需求函數之類的。但是這題也最煩，因為要算微積分。
-  2. *Choice Theroy*：可能因為我們教授是 Rubinstein 的學生，所以特別好這口，
+  2. *Choice Theory*：可能因為我們教授是 Rubinstein 的學生，所以特別好這口，
      作業幾乎周周都在搞一些奇怪的 Choice Model。
      這題也是裡面摻雜各種奇怪的模型要我們刻畫。
   3. *Analysis\?*：給我們一個長得奇形怪狀的度量空間，在上面定義一個偏好，然後要證明一些性質。
      基本上就是應用分析。
 - **總論**：
   因為是帶回家寫，所以壓力小很多。
-  難度不是很大，就是中規中舉的新古典成長模型跟異質性個體的交換經濟模型。
+  難度不是很大，就是中規中矩的新古典成長模型跟異質性個體的交換經濟模型。
 - **計論**：
   基本上是我認為可以給大二修計量導論的學生的考卷。
   我因為把 $p$-value 看錯看成 $t$-statistic 跟忘記檢驗 heteroskedasticity 的 test 是什麼所以沒有滿分。
@@ -903,14 +903,14 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 也是在美國第一次吃 Shake Shack。
 不錯吃，偏過，然後奶昔甜死。
 
-![](figures/shake-shack.jpg){loading=lazy}
+<img src="figures/shake-shack.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 期中考結束那天下午（星期五）大家去附近的公園烤肉。
 烤肉這種事情果然是需要南美洲人才幹得來，
 又熱情又知道要怎麼調味，
 而且不吃肉好像會死一樣，
 所以肉很多，哈哈哈。
-（不像是跟我們一起上課的永續發展博士生，五個有四個吃 vegan（我甚至不知道中文是什麼））
+（不像是跟我們一起上課的永續發展博士生，五個有四個吃 vegan）
 我基本上除了一開始副命去買木炭之外就是在那邊坐享其成，
 我們在公園喝酒的時候還有警察經過，
 原本意為我們會被驅離，
@@ -951,7 +951,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 我差點以為這個沒護照的疑似非法移民老兄就要這樣橫死在美國街頭了。
 
 其他活動有像是參加我們 cohort 的印度人辦排燈節的派對，有吃到一些有趣的印度食物（但是名字我是一個都想不起來，哈哈哈）；
-義大利人煮的完整 three-course meal（很厲害的鯷魚起司邊包前菜、南瓜燉飯、手工提拉米蘇），過然不愧為義大利人；
+義大利人煮的完整 three-course meal（很厲害的鯷魚起司麵包前菜、南瓜燉飯、手工提拉米蘇），過然不愧為義大利人；
 還有跟紐約大學的經濟博士生一起去酒吧。
 感覺他們教的東西要比我們要扎實很多，哈哈哈，
 畢竟個論是 Rubinstein 教、
@@ -1003,22 +1003,22 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 白天溫度在 0\~10°C 之間（但是這幾天又比較熱，溫度在 10\~20°C 之間），
 真的是秋高氣爽，
 不會覺得很冷。
-是內也開始有暖氣，
+室內也開始有暖氣，
 但是有時候暖氣有點太強，
 又不能調節所以有點討厭。
-美國人告訴我他在暖氣太強的時後會開冷氣，
+美國人告訴我他在暖氣太強的時候會開冷氣，
 果然美國人的問題需要美國人的解法，
-沒有什麼事情是累費解決不了的。
+沒有什麼事情是浪費解決不了的。
 但是也因為天氣開始變冷所以在試著買衣服，
 因為手太短所以目前找不到任何合身的襯衫，
 試過的所有牌子 XS 都太大。
-不知道知後要怎麼活。
+不知道之後要怎麼活。
 附上中央公園還有我家旁邊的教堂的照片，
 秋天真棒！
 
-![](figures/autumn-central-park.jpg){loading=lazy}
+<img src="figures/autumn-central-park.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/autumn-cathedral.jpg){loading=lazy}
+<img src="figures/autumn-cathedral.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 # 2024-12-25 {#2024-12-25}
 
@@ -1030,23 +1030,23 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 但是玩得有點太累了不想寫，
 所以就拖到現在在飛機上寫。
 這次搭飛機真的有夠衰，
-這個最再說。
+這個最後再說。
 
 在上次寫完不久之後我第一次出遠門了！
 是坐著灰狗巴士一路到耶魯大學找在那邊做 predoc 的朋友。
 身為在美國的天龍人要離開紐約到郊區真的是特別有感觸，
 新英格蘭果然是我覺得美國應該長的樣子：
 大部分木造平房、少數石頭教堂、到處都是楓葉。
-或許是我 Family Guy 看太多吧，但是紐約跟整個美國比起來確實是異類。 
+或許是我 Family Guy 看太多吧，但是紐約跟整個美國比起來確實是異類。
 
 到了 New Haven 之後給我的第一印象就是這邊怎麼這麼荒涼，
-好像這做小鎮除了耶魯之外就什麼都沒有了。
-或許是因為跟恩節前夕吧，但是我感覺因為校地面積非常大，所以人煙稀少好像很正常。
+好像這座小鎮除了耶魯之外就什麼都沒有了。
+或許是因為感恩節前夕吧，但是我感覺因為校地面積非常大，所以人煙稀少好像很正常。
 另外主要的感覺就是這邊就是美國的牛津或劍橋，
 只是所有的建築都變大了，超級美國風格。
 像是我覺得這根就很粗：
 
-![](figures/yale.jpg){loading=lazy}
+<img src="figures/yale.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 我基本上花了一整天的時間在那邊看來看去，
 去了經濟系、圖書館、教堂、墓園、管院、還有美國都最大的（大學附設的）自然歷史博物館。
@@ -1063,33 +1063,33 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 剩下的國際學生就各自準備一些食物一起過感恩節（據說這叫做 Friendsgiving）。
 義大利人準備千層麵、日本人準備烏龍麵、中國人準備蕃茄炒蛋（？）之類的，
 
-![](figures/friendsgiving-udon.jpg){loading=lazy}
+<img src="figures/friendsgiving-udon.jpg" loading="lazy" style="aspect-ratio: 2048/1536;" />
 
-![](figures/friendsgiving-italian.jpg){loading=lazy}
+<img src="figures/friendsgiving-italian.jpg" loading="lazy" style="aspect-ratio: 2048/1190;" />
 
 我自己則是做了三杯雞（其實還有肉鬆麵包，但是銷路不佳⋯，我覺得主要問題是這邊的美乃滋都是偏酸的，找不太到台灣的那種沙拉醬），
 如圖：
 
-![](figures/three-cup-chicken.jpg){loading=lazy}
+<img src="figures/three-cup-chicken.jpg" loading="lazy" style="aspect-ratio: 3350/2084;" />
 
 看起來是有模有樣啦（自己說，哈哈哈），
 而且最後被吃個精光，還有義大利人跑來問我怎麼做的，
 這應該是料理界最高的表揚了吧，呵呵。
 我還有圖片證明真的很熱銷：
 
-![](figures/friendsgiving-proof.jpg){loading=lazy}
+<img src="figures/friendsgiving-proof.jpg" loading="lazy" style="aspect-ratio: 1276/690;" />
 
 除了 Friendsgiving 之外，
 我們國際食物巡禮到俄羅斯的時候我們的俄羅斯同學邀請我們到他家吃他準備的東西，
-有提魚沙拉、魚子醬、羅宋湯⋯⋯各各都是不得了的菜品。
+有提魚沙拉、魚子醬、羅宋湯⋯⋯個個都是不得了的菜品。
 
-![](figures/russian-dinner.jpg){loading=lazy}
+<img src="figures/russian-dinner.jpg" loading="lazy" style="aspect-ratio: 1536/803;" />
 
 而且我們俄羅斯同學還有一個四歲的女兒，
 在他家的時候我好像花很多時間玩她女兒的玩具，
 跟個自閉兒一樣⋯。
 
-![](figures/russian-icosahedron.jpg){loading=lazy}
+<img src="figures/russian-icosahedron.jpg" loading="lazy" style="aspect-ratio: 1536/961;" />
 
 其實感恩節說穿了就是溫書假，
 因為放完感恩節之後上一週的課之後馬上就要期末考了。
@@ -1097,26 +1097,26 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 去之前先去吃哥大附近很有名的匈牙利糕餅店的早餐，
 跟西班牙同學的一個今年上 job market 的麻省理工朋友聊天：
 
-![](figures/hungarian-pastry-shop.jpg){loading=lazy}
+<img src="figures/hungarian-pastry-shop.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 吃完之後就驅車去球場，
 這次去我第一次知道原來在曼哈頓的最北端有一個美式足球場。
 坐地鐵大概要半個小時才到得了。
 
-![](figures/columbia-football-field.jpg){loading=lazy}
+<img src="figures/columbia-football-field.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-到這麼北端就補教不像是在紐約了，
+到這麼北端就比較不像是在紐約了，
 旁邊有更多樹木，
 房子也變得稀疏。
 而且我發現跟之前在籃球場看到的一樣，
-哥大已經好就沒有在常春藤連盟裡面贏得美式足球比賽了，
+哥大已經好久沒有在常春藤連盟裡面贏得美式足球比賽了，
 上次贏都已經是 1960 年代的事了，
 不知道還哪來的臉面掛著，哈哈哈。
 
 期末考之前的活動之二是去聽我們奧地利同學的期末合唱團演出。
-地點是在哥大學校裡面的小教堂，說實話頗爲正式：
+地點是在哥大學校裡面的小教堂，說實話頗為正式：
 
-![](figures/choir-in-columbia-chaple.jpg){loading=lazy}
+<img src="figures/choir-in-columbia-chaple.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 但是不知道是因為教堂設計的關係還是怎麼樣，
 感覺回音特別大，聲音很不集中，
@@ -1130,10 +1130,10 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 - **個論**：
   我覺得無聊到不行，教*一般均衡理論*。
   每次上課都是在拉格朗日，
-  感就就是另外一堂總體課。
+  感覺就是另外一堂總體課。
   可能這堂課的目的就是要告訴你為什麼總體整天拉格朗日是合法的吧？
-  但是我的得我沒學到太多東西。
-  期末考抹名其妙都不給 functional form，
+  但是我覺得我沒學到太多東西。
+  期末考莫名其妙都不給 functional form，
   一大堆性質都是很繁瑣的隱函數微分，
   感覺答案都八九不離十，
   但是計算錯誤應該不少。
@@ -1147,7 +1147,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
   技術部分也能提供很多直觀。
   期末考的話我是覺得難度適中，
   不敢說我答得很好，
-  但是我自記覺得該有的重要觀念我都有抓到。
+  但是我自己覺得該有的重要觀念我都有抓到。
 - **計論**：一如往常的簡單，沒有學到什麼東西。內容雜七雜八，但是都是輕輕帶過，沒有細講：
   Regularized Regression、Bootstrap、工具變數、GMM、Panel Data。
   考試很簡單，沒有難度可言。
@@ -1176,7 +1176,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 《漢納・鄂蘭與以賽雅・柏林》跟一個看起來很呆的鵝。
 顯然地，我比較喜歡的禮物是這個：
 
-![](figures/silly-goose.jpg){loading=lazy}
+<img src="figures/silly-goose.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 有一美國同學說我的氣質跟這隻鵝很匹配？
 或許吧，如果真的是這樣的話，這隻鵝就是我在紐約的吉祥物了～
@@ -1204,28 +1204,28 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 日本人也都互相認識，
 所以我的日本同學也跟著一起紐約巡禮，
 我就理所當然的成為紐約地陪。
-其實上次耶魯的陪有來的時候就已經當過一次專業嚮導了，
+其實上次耶魯的朋友來的時候就已經當過一次專業嚮導了，
 再上次也勉強算是第一次當哥大校區解說員。
 現在紐約地標該怎麼走，什麼東西比較有趣，怎麼樣走比較順都完全掌握了。
 上次從哥大校園出發，走路跨過中央公園到第五大道，往下到中國城吃午餐（有點髒但是就是因為有點髒才好吃的燒臘），
 
-![](figures/china-town-lunch.jpg){loading=lazy}
+<img src="figures/china-town-lunch.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-再到最南端的金融區，最後再做渡輪到布魯克林拍照吃晚餐。
-這次大概反過來，先橫跨布魯克林大橋，在做船到金融區，往上到第五大道吃午餐（道地日料，訂位用日文），回到哥大參觀校園，
+再到最南端的金融區，最後再坐渡輪到布魯克林拍照吃晚餐。
+這次大概反過來，先橫跨布魯克林大橋，在坐船到金融區，往上到第五大道吃午餐（道地日料，訂位用日文），回到哥大參觀校園，
 最後到大都會美術館。
 當然途中一定要路過鼎鼎大名了洛克斐勒聖誕樹：
 
-![](figures/rockefeller-center-xmas-tree.jpg){loading=lazy}
+<img src="figures/rockefeller-center-xmas-tree.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-一天走四萬部的奇蹟。
+一天走四萬步的奇蹟。
 下次開始有人要來紐約要我帶路要開始收費了。
 去布魯克林大橋那天超冷，算是紐約今天第一次下雪，但實則雨雪交加，很想死。
 隔天就真的下雪了，非常漂亮。
 
-![](figures/columbia-in-snow.jpg){loading=lazy}
+<img src="figures/columbia-in-snow.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/winter-cathedral.jpg){loading=lazy}
+<img src="figures/winter-cathedral.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 巡禮到哥大校園的時候發生一件有趣的事：
 我們一起進到學校裡面的一家咖啡店買咖啡，
@@ -1240,7 +1240,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 說到他自己也不過聖誕節所以好奇，
 也聊到放假各自要去哪裡之類的，
 還調侃另一個日本同學說臉怎麼這麼嚴肅很像是 CEO，
-最後當然要以 first bump 結尾，還送我一塊蛋糕。
+最後當然要以 fist bump 結尾，還送我一塊蛋糕。
 對我來說他就是那種非常和善的黑人大媽，
 在紐約是稀疏平常。
 事後出店的時候日本同學就問我剛剛那種情況如何應對，
@@ -1259,11 +1259,11 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 原本想說看完火車之後可以到戶外看看，
 但是最後買了簡單的紀念品之後就匆匆離去。
 
-![](figures/nybg-train-set.jpg){loading=lazy}
+<img src="figures/nybg-train-set.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/nybg-skyline.jpg){loading=lazy}
+<img src="figures/nybg-skyline.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
-![](figures/nybg-brooklyn-bridge.jpg){loading=lazy}
+<img src="figures/nybg-brooklyn-bridge.jpg" loading="lazy" style="aspect-ratio: 4640/2088;" />
 
 好，乾，最後要說到我現的處境。
 從來紐約之前就聽說紐澤西很破，又帶賽（當然，超級天龍人觀點）。
@@ -1277,7 +1277,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 結果後來航空公司跟我說改成隔天早上九點的飛機，
 這就代表我從紐澤西要先回帶曼哈頓的宿舍時就已經七點多要八點了，
 然後因為是聖誕夜怕叫不到 Uber，
-只能半夜三點就爬起來做固定班表到紐澤西的火車。
+只能半夜三點就爬起來坐固定班表到紐澤西的火車。
 最後幸好 Uber 司機有出現，不用扛行李上上下下。
 到機場時間充裕，雖然累是累了一點但是還算是從容，只在 Instagram 上小抱怨一下（萬年沒用的限動就這樣被啟動了），
 但是結果到登機的時候發現不知道為什麼那邊的轉機有問題，
@@ -1287,7 +1287,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 因為早早就 check in，所以托運行李中午就莫名其妙被寄過來，等一下落地之後還要先跑去找。
 可能是真的睡太少，連破大防了力氣都沒有，工作人員跟我解釋的時候我也只是一直回答「嗯」。
 但是剛剛在機場真的是越想越氣，
-昨天說好的今天早上突然跟我說不行，感覺就是空公司昨天沒有真的把票訂下來，
+昨天說好的今天早上突然跟我說不行，感覺就是航空公司昨天沒有真的把票訂下來，
 結果今天大出包。
 原本行幫取消就算了，畢竟昨天好像很多航空公司都有系統問題，
 但是今天又讓我在機場乾等 12 小時航空公司真的是責無旁貸。
@@ -1298,9 +1298,9 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 在機場只購買一片什麼料都沒有的起司披薩還有一瓶可樂。
 至少昨天聖誕夜回去我室友的女朋友剛好烤了好吃的巧克力餅乾就請我吃了兩片，
 不然真的賭爛到不行。
-於戲哀哉，希望等一下整得到中午就飛過去的行李。台灣見。
+於戲哀哉，希望等一下找得到中午就飛過去的行李。台灣見。
 
-![](figures/chirstmas-cookies.jpg){loading=lazy}
+<img src="figures/christmas-cookies.jpg" loading="lazy" style="aspect-ratio: 4640/1920;" />
 
 # 2025-02-01 {#2025-02-01}
 
@@ -1312,7 +1312,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 而且這班是跟韓國瑜一起搭，滿有趣的。
 
 這次回紐約一切都有種莫名其妙的熟悉感，
-明明只菜這邊還待不到半年，
+明明只在這邊還待不到半年，
 卻可以好像一見如故一樣輕易地找到該去的地鐵站，
 或是不用想就知道用完的衛生紙要走到宿舍附近的藥局買最便宜。
 但是突然說英文又有點不習慣，
@@ -1321,7 +1321,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 回到紐約第一個活動是去 Jazz Bar。
 雖然說是紐約必要活動，但是拖到現在才去。
 
-![](figures/jass-bar.jpg){loading=lazy}
+<img src="figures/jazz-bar.jpg" loading="lazy" style="aspect-ratio: 4032/3024;" />
 
 氛圍不錯，但是我只能說不是非常合我胃口，
 我實在是沒有太大興趣只在那邊聽音樂，
@@ -1341,7 +1341,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 隨便轉頭就看到超有名的畢卡索、克林姆、米羅、達利，族繁不及備載。
 還有看到杜象的真跡，不得了了：
 
-![](figures/duchamp-bicycle-wheel.jpg){loading=lazy}
+<img src="figures/duchamp-bicycle-wheel.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 滿好笑的，這個東西現在看還是跟垃圾一樣，
 在博物館裡面也沒什麼人駐足觀看。
@@ -1352,7 +1352,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 這學期最有趣的課是一堂叫做 Perspectives 的課，
 這堂課的內容就是聽 Stiglitz（還有另外一個教授）講說他覺得該怎麼做經濟學：
 
-![](figures/stiglitz.jpg){loading=lazy}
+<img src="figures/stiglitz.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 這張是上課前拍的所以人很少。
 第一次聽真的是很好笑，
@@ -1363,10 +1363,10 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 - 他之前出席歐巴馬的白宮記者晚宴（他超愛歐巴馬）的時候就坐在川普旁邊，
   那個時候歐巴馬就用獅子王的片段來嘲笑川普質疑他的美國身份，
   讓川普很難堪，所以他覺得川普就是在那個時候打定主意選總統。
-- 「今天天美國會選出川普都是因為芝加哥學派跟新自由主義的錯！」
+- 「今天美國會選出川普都是因為芝加哥學派跟新自由主義的錯！」
 - 他說他記得年輕的時候跟馬丁路德金恩一起上街遊行過。
 - 「Top journals try to make you fascist!」（因為我們看了一個不同其他的政治請向光譜）
-- 他是之前肯林頓創建北美自由貿易協定的幕僚，而且扮演的是忠誠的反對黨。
+- 他是之前克林頓創建北美自由貿易協定的幕僚，而且扮演的是忠誠的反對黨。
 - 之前碳稅是每噸 20 來美元，他說根據他的計算，每噸應該要超過 100 美元，他跟拜登提議之後漲到 50 美元，現在換到川普就又歸零了。
 - 「你們覺得當經濟學家是要當 Revolutionist 還是幫川普規劃 Optimal Deportation Mechanism 的 Engineer？」
 - 他很討厭 United 跟 Delta 航空（我忘記理由是什麼⋯）
@@ -1385,7 +1385,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 有種奇怪的感覺。
 來之前特別帶了紙跟毛筆幫自己宿舍的門寫個東西：
 
-![](figures/spring-festival.jpg){loading=lazy}
+<img src="figures/spring-festival.jpg" loading="lazy" style="aspect-ratio: 5582/2801;" />
 
 除此之外還有跟班上的中國同學去吃飯，
 點了個芋頭鮮奶，超爆難喝，但是菜不錯吃。
@@ -1395,7 +1395,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 學校裡面也出現不少春節裝飾，
 像是我在學校食堂裡（也是我第一次去學校的食堂）看到這個：
 
-![](figures/dining-hall-decor.jpg){loading=lazy}
+<img src="figures/dining-hall-decor.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 還沒出現中國同學把這個扯下來有點意外。
 但是我看到處都是把春節翻譯成「Lunar New Year」，
@@ -1403,7 +1403,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 因為不只有 "Chinese" 會過春節。
 我的回答如下：
 
-> 我自己是強烈地覺得講 Lunar New Year 一點道理都沒有， 
+> 我自己是強烈地覺得講 Lunar New Year 一點道理都沒有，
 > 首先農曆是陰陽合曆，所以講 Lunar 不正錯，
 > 再者縱使是陰曆也不代表過節時間跟農曆一樣，
 > 像是伊斯蘭曆就是陰曆，印度曆是陽曆，過節的時間都不相同。
@@ -1413,7 +1413,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 反正我就跟他說這個，嗯，消消氣放個學餐照片：
 
-![](figures/dining-hall-food.jpg){loading=lazy}
+<img src="figures/dining-hall-food.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 中規中矩。
 據說如果沒有買 meal plan 的話一餐要花 17 鎂，很不便宜，
@@ -1431,12 +1431,12 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 我宿舍附近還找買得到紫米真感動，
 可以開低 GI 廚房了。
 
-![](figures/healthy-meal.jpg){loading=lazy}
+<img src="figures/healthy-meal.jpg" loading="lazy" style="aspect-ratio: 4085/3215;" />
 
 # 2025-04-06 {#2025-04-06}
 
 真的越來越懶了，
-但其中一個原因是因為不知道為什麼開學發瘋今年就多休了一個博二的課，
+但其中一個原因是因為不知道為什麼開學發瘋今年就多休了一堂博二的課，
 搞到現在覺得每天都好累。
 雖然一開始是我奧地利同學問我要不要一起修，
 但是現在只能怪我自己太大意，於戲！
@@ -1453,35 +1453,35 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 
 來分享些有趣的事，
 春假跟班上四、五個同學一起去了佛羅里達，
-真的是滿爽的，主在同學的同學的度假別墅，超讚。
+真的是滿爽的，住在同學的同學的度假別墅，超讚。
 而且旁邊走五分鐘就到海灘。
 但是他們很執意每天都要去一個不一樣的海灘。
 但是其實每個都長得差不多，像是這樣
 
-<!-- ![](figures/nice-beach-2.jpg){loading=lazy} -->
-![](figures/nice-beach.jpg){loading=lazy}
+<!-- <img src="figures/nice-beach-2.jpg " loading="lazy" style="aspect-ratio: 5712/3213;" />-->
+<img src="figures/nice-beach.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 或是這樣（但是這邊因為是高級飯店後面所以看起來完全沒有人），
 而且其實川普的 Mar-a-lago 就在這邊附近，
 所以這邊的人可能都不屑來海灘？
 
-![](figures/fancy-empty-beach.jpg){loading=lazy}
+<img src="figures/fancy-empty-beach.jpg" loading="lazy" style="aspect-ratio: 4032/2268;" />
 
 去不同海灘還要被那幾個白人調侃說我跟日本人都包緊緊都不曬太陽 🙄。
 其中一天去了一個佛羅里達同學家裡作客，
 真不愧是有錢人，家旁邊就有人造湖，
 真的是不得了：
 
-![](figures/gated-soceity.jpg){loading=lazy}
+<img src="figures/gated-society.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 而且我同學們真的滿喜歡煮東西的，連到美國同學家裡也要煮東西，
 反正我是滿爽的，坐享其成：
 
-![](figures/surf-and-surf.jpg){loading=lazy}
+<img src="figures/surf-and-surf.jpg" loading="lazy" style="aspect-ratio: 3227/2694;" />
 
 我們還有特別去邁阿密（又是為了去另外一個海灘⋯），但是到的時候真的覺得自己置身《俠盜獵車手》：
 
-![](figures/miami-is-gta.jpg){loading=lazy}
+<img src="figures/miami-is-gta.jpg" loading="lazy" style="aspect-ratio: 1600/1200;" />
 
 去邁阿密的時候還有去買 + 抽古巴雪茄，
 但是感覺不太適合放在這裡，哈哈，
@@ -1493,19 +1493,19 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 或者是說紐約跟佛羅里達都不是正常的美國，哈哈。
 
 我們還有去一個國家公園的沼澤滑獨木舟，
-看到很多鱷魚，感覺沒有很大，但是我們滑到一半不小些直接碾壓一隻，
+看到很多鱷魚，感覺沒有很大，但是我們滑到一半不小心直接碾壓一隻，
 幸好它沒有衝到船上咬我：
 
-![](figures/gater.jpg){loading=lazy}
+<img src="figures/gator.jpg" loading="lazy" style="aspect-ratio: 5712/2544;" />
 
 在那邊遇到的人說他們會早上來滑獨木舟，感覺確實很愜意，
 只是太陽有點太大，差點變成烤蕃薯（或是芋頭？）。
 
-![](figures/swamp.jpg){loading=lazy}
+<img src="figures/swamp.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 最後附上我在公園玩搖搖馬的照片：
 
-![](figures/me-on-spring-horse.jpg){loading=lazy}
+<img src="figures/me-on-spring-horse.jpg" loading="lazy" style="aspect-ratio: 4042/4068;" />
 
 最近真的是雜務頗多，
 看看在暑假之前還能不能再寫一次吧？
@@ -1531,7 +1531,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 但我倒是有一面租房的房客留下來的美國國旗，
 我就在這天把它掛在宿舍裡面慶祝一下：
 
-![](figures/star-spangled-banner.jpg){loading=lazy}
+<img src="figures/star-spangled-banner.jpg" loading="lazy" style="aspect-ratio: 2268/1907;" />
 
 原本也想說要不要去看一下煙火（今年是在布魯克林橋那邊），
 但是後來想說算了，
@@ -1540,40 +1540,40 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 另外比較好玩的是我隔幾天去 Coney Island 那邊看看。
 畢竟有百年歷史的海灘不是到處都有：
 
-![](figures/coney-island-station.jpg){loading=lazy}
+<img src="figures/coney-island-station.jpg" loading="lazy" style="aspect-ratio: 3082/2984;" />
 
 後面那個是百年老字號的熱狗店 Nathan's，
-隨隨便便點了兩個狗味：Chilli 跟 Cheese and Bacon。
+隨隨便便點了兩個口味：Chili 跟 Cheese and Bacon。
 覺得以熱狗來說還算是滿不錯的，
 如果之後去會再買來吃。
 
-![](figures/nathans-hotdog-bitten.jpg){loading=lazy}
+<img src="figures/nathans-hotdog-bitten.jpg" loading="lazy" style="aspect-ratio: 3213/3081;" />
 
 大家去主要就是要去海灘，
 太陽超級無敵大。
-都不懂如果紐約就有這麼大的太陽跟這樣的海灘為什麼有錢然還是拼命去佛羅里達？
+都不懂如果紐約就有這麼大的太陽跟這樣的海灘為什麼有錢人還是拼命去佛羅里達？
 可能就是因為冬天在紐約真的太冷了吧。
 
-![](figures/coney-island-beach.jpg){loading=lazy}
+<img src="figures/coney-island-beach.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
-我身爲一個台灣人，絕對是不會去海灘曬太陽的，
+我身為一個台灣人，絕對是不會去海灘曬太陽的，
 所以在整個海灘上就我一個人在撐傘，
 在沙灘上也是物理防禦點滿：
 
-![](figures/asian-shade.jpg){loading=lazy}
+<img src="figures/asian-shade.jpg" loading="lazy" style="aspect-ratio: 3840/1563;" />
 
 另外一個在 Coney Island 的必去景點就是一樣有百年歷史的雲霄飛車 Cyclone：
 
-<!-- ![](figures/colorful-tree.jpg){loading=lazy} -->
-![](figures/cyclone.jpg){loading=lazy}
+<!-- <img src="figures/colorful-tree.jpg " loading="lazy" style="aspect-ratio: 2518/3022;" />-->
+<img src="figures/cyclone.jpg" loading="lazy" style="aspect-ratio: 3213/3161;" />
 
 搭一次 10 鎂，基本上不太需要排隊。
 從下面看滿可怕的，不是因為有多高，
 而是因為很明顯看得出來這些軌道都很老，
 而且有很多地方都是木造的。
-每排可以做一到兩個人，整個雲霄飛車大概就坐 10 到 20 個人左右。
+每排可以坐一到兩個人，整個雲霄飛車大概就坐 10 到 20 個人左右。
 我自己一個人坐一排，
-但是坐上去之後發現他的安全柵欄沒有辦法完全扣緊（可能考慮到普遍美國人比較厚？），
+但是坐上去之後發現他的安全柵欄沒有辦法完全扣緊（可能考慮到普遍美國人比較<ruby><rb>厚</rb><rp>（</rp><rt>ㄆㄤˋ</rt><rp>）</rp></ruby>？），
 身體基本上完全沒有被固定住，
 所以整個過程就是在座位上被甩來甩去，
 而且雖然整個雲霄飛車沒有很高，
@@ -1589,12 +1589,12 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 上禮拜壓了一些豬肉做滷肉飯，
 這禮拜壓了一些牛肉做蕃茄燉牛肉，
 蔬菜就是冷凍蔬菜直接微波。
-去買菜的時候順便滿了一株羅勒，
-已經對他動手動腳拔掉一些來吃了，
+去買菜的時候順便買了一株羅勒，
+已經對它動手動腳拔掉一些來吃了，
 剩下的希望可以養得活，呵呵。
 
-<!-- ![](figures/sunset.jpg){loading=lazy} -->
-![](figures/stew-beef.jpg){loading=lazy}
+<!-- <img src="figures/sunset.jpg " loading="lazy" style="aspect-ratio: 2914/2695;" />-->
+<img src="figures/stew-beef.jpg" loading="lazy" style="aspect-ratio: 3813/3079;" />
 
 # 2025-08-13 {#2025-08-13}
 
@@ -1606,13 +1606,13 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 首先是洋基球場，
 其實離我家超近，
 坐車大概 20 分鐘就到了，
-但畢盡因為不是棒球迷，
+但畢竟因為不是棒球迷，
 所以一直都沒有來過。
 因為都沒在看棒球，
 所以裡面的文物都是朋友跟我解說之後才知道是什麼。
 唯一個看得懂的就是這個王建民簽名球。
 
-![](figures/chien-ming-wang.jpg){loading=lazy}
+<img src="figures/chien-ming-wang.jpg" loading="lazy" style="aspect-ratio: 2821/1869;" />
 
 這也不是我第一次到大聯盟的球場，
 之前高中的時候去過白襪隊的主場，
@@ -1622,19 +1622,19 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 反正我完全不在意，
 只覺得這個座位的視野真好：
 
-![](figures/yankee-stadium.jpg){loading=lazy}
+<img src="figures/yankee-stadium.jpg" loading="lazy" style="aspect-ratio: 4032/2268;" />
 
 一開始天氣好，但是後來就開始雨橫瘋狂，
 雨下到他們拿出防水布把球場蓋起來，
-我們就匆忙離場，會到家超狼狽。
+我們就匆忙離場，回到家超狼狽。
 然後可能是因為腦袋被雨打到，
 所以就決定去吃 Panda Express。
 這是一家在美國非常有名的中式快餐連鎖店，
 雖然在我家附近就有，但是我從來沒吃過。
 
-<!-- ![](figures/panda-express-bag.jpg){loading=lazy} -->
+<!-- <img src="figures/panda-express-bag.jpg " loading="lazy" style="aspect-ratio: 3213/2013;" />-->
 
-![](figures/panda-express.jpg){loading=lazy}
+<img src="figures/panda-express.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 結果非常悲劇，
 我在紐約從來沒有吃過這麼難吃的中式料理：
@@ -1650,9 +1650,9 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 坐車大概 15 分鐘就到了。
 外觀看起來就是非常普通的美國鄉下房子長相：
 
-![](figures/hamilton-house.jpg){loading=lazy}
+<img src="figures/hamilton-house.jpg" loading="lazy" style="aspect-ratio: 3213/2237;" />
 
-![](figures/hamilton-house-decor.jpg){loading=lazy}
+<img src="figures/hamilton-house-decor.jpg" loading="lazy" style="aspect-ratio: 3213/1958;" />
 
 內裝有點華麗，但是又不是特華麗。
 家具大部分都不是原裝的，
@@ -1667,7 +1667,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 大部分景點之前都看過了，就不多介紹。
 比較有趣的是有拍到超級月亮：
 
-![](figures/super-moon-tramway.jpg){loading=lazy}
+<img src="figures/super-moon-tramway.jpg" loading="lazy" style="aspect-ratio: 2723/1893;" />
 
 然後不知道是不是因為有超級月亮，
 公園裡面聚集超級多加拿大鵝。
@@ -1675,7 +1675,7 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 確實有人告誡我不要靠近牠們，
 不然會被咬：
 
-![](figures/geese.jpg){loading=lazy}
+<img src="figures/geese.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
 
 最有趣的景點就是聯合國。
 為什麼我明明持有某聯合國創始會員國兼安理會常任理事國的護照但是現在已經不是成員國了所以不能進去參觀但是最後又進得去呢？
@@ -1683,18 +1683,20 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 所以我就只能持有另一個聯合國創始會員國兼安理會常任理事國核發的證件進去，於戲。
 但是為了阿 Q 精神拉滿，所以還是把護照帶偷渡進去了：
 
-![](figures/back-to-un.mp4){loading=lazy}
+<video src="figures/back-to-un.mp4" loading="lazy" type="video/mp4" style="aspect-ratio: 1080/694;" controls="">
+  <a href="figures/back-to-un.mp4"></a>
+</video>
 
 這次參觀的裡面有一個從波多黎各來的團員，
 一直問導覽員很多關於波多黎各地為還有其他 "敏感" 政治問題。
 我都有點想插嘴說你要不要看看我的護照？
 但是只記得讓護照跟聯合國大會拍照，忘記幫護照跟安理會拍照了，殘念。
 
-![](figures/un-security-council.jpg){loading=lazy}
+<img src="figures/un-security-council.jpg" loading="lazy" style="aspect-ratio: 3213/1860;" />
 
 但是還是可以阿 Q 一下：
 
-![](figures/un-charter.jpg){loading=lazy}
+<img src="figures/un-charter.jpg" loading="lazy" style="aspect-ratio: 3213/1695;" />
 
 臨表涕泣，不知所云。
 
@@ -1706,7 +1708,745 @@ Gelman 是個非常注重教學的人，所以上課都很好玩，有很多實�
 沒想到現在還活了，還長得滿好的，害我有點捨不得吃。
 等他們長到超大再磨刀霍霍好了。
 
-![](figures/basil.jpg){loading=lazy}
+<img src="figures/basil.jpg" loading="lazy" style="aspect-ratio: 4882/3057;" />
+
+# 李鴻章特輯 {#li-hung-chang-in-new-york}
+
+<style>
+.li-hung-chang-container { display: flex; }
+.li-hung-chang-container p { margin-bottom: 0; }
+@media (max-width: 35em) { .li-hung-chang-container { flex-direction: column; } }
+</style>
+
+今天是 2025 年 8 月 28 日，
+在 129 年前的今天，
+李鴻章以欽差大臣的身份抵達紐約。
+在 1895 年甲午戰敗後，
+清廷真正開始意識到自身的處境。
+梁啟超說：
+
+> 吾國四千餘年大夢之喚醒，實自甲午戰敗，割臺灣，償二百兆以後始也。
+
+也就是在這樣的背景下，
+清廷第一次有誠意地派欽差大臣出使歐美。
+第一次出使歐洲的欽差大臣是[郭嵩燾](https://zh.wikipedia.org/zh-cn/%E9%83%AD%E5%B5%A9%E7%84%98)：
+但以實際上朝廷的態度，與其說是欽差，
+不如說是流放。
+再者，郭嵩燾在甲午戰爭之前就去世了，
+朝中能夠勝任出使各國任務的選擇實在不多。
+於是，清廷只能欽定剛剛簽完*《馬關條約》*，臉上還卡著一顆子彈的洋務派大臣李鴻章出使泰西各國。
+李鴻章的行程一路從 1896 年 4 月底抵達聖彼得堡開始，
+後來經過普魯士、荷蘭、比利時、法國最後到倫敦，
+於 8 月 22 日從英國南安普敦出發，
+在六天後 8 月 28 日抵達紐約。
+
+李鴻章的出訪可以說是萬眾矚目，
+用萬人空巷來形容也不過分。
+[*《李傅相歷聘歐美記》*](https://hdl.handle.net/2027/hvd.32044067626119?urlappend=%3Bseq=61%3Bownerid=27021597766956710-65)記載，
+當李鴻章抵達港口時，美國人稱讚說：「觀其憑舷顧盼，竟不覺海行之苦，矍鑠哉是翁也！」
+不過，李鴻章實際上應該是非常疲憊的，
+因為在*《李傅相歷聘歐美記》*接下來的描述與在李鴻章日記[*《傅相游歷各國日記》*](https://hdl.handle.net/2027/hvd.32044067626101?urlappend=%3Bseq=101%3Bownerid=27021597766957301-14)中的紀錄就寫道，
+李鴻章因為長途航行太過勞累，所以在下榻的飯店休息了一整天。
+從港口到下榻飯店的路上場面非常盛大，
+不但在港口響起廿一聲禮炮，
+上岸後又有高規格的儀仗隊迎接，
+路邊更是「人多如蟻」，
+顯示李鴻章的訪問在美國確實是一件大事。
+
+> <img src="figures/li-hung-chang/li-at-washington-square-park.jpg" loading="lazy" style="aspect-ratio: 2236/1394;" /><br/>
+> 李鴻章經過[華盛頓廣場公園](https://zh.wikipedia.org/zh-hant/%E8%8F%AF%E7%9B%9B%E9%A0%93%E5%BB%A3%E5%A0%B4%E5%85%AC%E5%9C%92)前往下榻的處所。
+> 圖片取自 *Harper's Weekly* 在 1896 年 9 月 12 日的報導，由[美國國會圖書館](https://www.loc.gov/item/95519221/)掃描。
+
+李鴻章的隊伍穿過[華盛頓廣場公園](https://zh.wikipedia.org/zh-hant/%E8%8F%AF%E7%9B%9B%E9%A0%93%E5%BB%A3%E5%A0%B4%E5%85%AC%E5%9C%92)，
+沿著熱鬧的[第五大道](https://zh.wikipedia.org/zh-hans/%E7%AC%AC%E4%BA%94%E5%A4%A7%E9%81%93)北上。
+華盛頓廣場公園周邊就是著名的[紐約大學](https://www.nyu.edu/)，
+不過在李鴻章來訪的時候可能名氣還不大；
+就算已經有點名氣，他路過時大概也不太容易注意到。
+即便是今天如果不是看到建築物上有掛[紫色的旗子](https://www.nyu.edu/employees/resources-and-services/media-and-communications/nyu-brand-guidelines/designing-in-our-style/nyu-logos-and-university-seal.html)，
+也不容易分辨哪一棟是紐約大學的建築。
+
+<img src="figures/li-hung-chang/washington-square-park.jpg" loading="lazy" style="aspect-ratio: 3145/2044;" />
+
+李鴻章下榻的地方是在第五大道和 34 街交叉口的 Waldorf 飯店。
+[這家飯店在 1893 年才剛開幕](https://en.wikipedia.org/wiki/Waldorf-Astoria_(1893%E2%80%931929))，
+當時是紐約最豪華的旅館。
+在*《李傅相歷聘歐美記》*裡，
+它的名字被翻成「華大府」，
+很能襯托出那份氣派。
+
+<!-- > <img src="figures/li-hung-chang/awaiting-li-at-the-waldorf.jpg" loading="lazy" style="aspect-ratio: 1203/803;" /><br/> -->
+<!-- > 在 Waldorf 飯店外（5th Ave & 34th St.）等待李鴻章抵達的儀仗隊。 -->
+<!-- > 圖片取自 [Museum of the City of New York: Collections; ID: MNY40245](https://collections.mcny.org/CS.aspx?VP3=DamView&VBID=24UP1GZ34V5JB&SMLS=1&RW=1920&RH=995)。 -->
+
+> <img src="figures/li-hung-chang/li-arriving-at-waldorf.jpg" loading="lazy" style="aspect-ratio: 1901/1142;" /><br/>
+> 李鴻章在 Waldorf 飯店門口乘坐馬車。當時他幾乎都是身著黃馬褂、頭戴花翎出行，在人群中格外醒目。
+> 圖片取自 [Museum of the City of New York: Collections; ID: MNY67860](https://collections.mcny.org/CS.aspx?VP3=DamView&VBID=24UP1GZ34VTDO&SMLS=1&RW=1920&RH=995)。
+
+這家飯店今天還在，在李鴻章訪美[隔年改名為 Waldorf-Astoria 飯店](https://en.wikipedia.org/wiki/Waldorf-Astoria_(1893%E2%80%931929))。
+不過它在 1929 年就搬離了原來的位置，
+而舊址——第五大道和 34 街的交叉口——其實就是現在鼎鼎大名的[帝國大廈所在地](https://en.wikipedia.org/wiki/Empire_State_Building#History)，
+[當年的儀仗隊](https://collections.mcny.org/CS.aspx?VP3=DamView&VBID=24UP1GZ34V5JB&SMLS=1&RW=1920&RH=995)就是在這裏迎接李鴻章的。
+
+<img src="figures/li-hung-chang/empire-state.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
+
+李鴻章在紐約的行程很多，
+不過最重要的外交任務，
+大概就是向當時的美國總統克利夫蘭（Grover Cleveland）遞交國書。
+特別的是，克利夫蘭不是在華府接見他，而是親自在紐約見了李鴻章，
+地點在前任海部大臣 Whitney 位在中央公園東側的別墅 [William C. Whitney House](https://en.wikipedia.org/wiki/William_C._Whitney_House)。
+可惜這棟別墅在 1942 年被拆除，現在完全看不出來以前是棟別墅。
+[*《李傅相歷聘歐美記》*](https://hdl.handle.net/2027/hvd.32044067626119)裡記載，
+克利夫蘭總統「今聞中堂至美，將遞國書，不欲使有跋涉之勞，即日紆尊遠至」，
+可以見得對於李鴻章的來訪是非常重視的。
+不過話說回來，八月的時候美國國會正在放暑假，同時在放假的總統克利夫蘭剛好也在紐約逭暑，所以也不排除只是順道安排了這場會面。
+
+在紐約的這段時間，李鴻章與各界人士都有接觸，包括美國官員、各國外交使節⋯等。
+比較有趣的行程是李鴻章期間親自接受美國記者的採訪，地點就是在 Waldorf 飯店裏。
+採訪的內容刊登在 [1896 年 9 月 3 日的*《紐約時報》*](https://nyti.ms/4fZnd17)，
+標題是 "Li on American Hatred"。
+
+> <img alt="li-on-american-hatred.png" src="figures/li-hung-chang/li-on-american-hatred.png" loading="lazy" style="aspect-ratio: 1384/508;" /><br/>
+> 李鴻章在*《紐約時報》*採訪的標題：
+> 「李鴻章說：『中國勞工有更好的工作倫理』」。
+> 圖片取自 [*《紐約時報》*](https://nyti.ms/4fZnd17)。
+
+這篇採訪的全文可以直接在[*《紐約時報》*的網站](https://nyti.ms/4fZnd17)上找到，
+裡面談到的主題很廣，
+包含李鴻章對於中西教育制度比較、*《排華法案》*、外國資本進入中國、在華報紙的發行量與言論自由⋯等的看法。
+採訪裡還有一些有趣的小細節，
+例如李鴻章驚訝紐約的高樓竟然能蓋到二十多層樓，
+這是他在歐洲也沒有見過的景象，
+不過又覺得如果沒有電梯會很不方便，
+還擔心如果蓋在中國的話颱風會把它們吹倒。
+顯然李鴻章不知道美國也有颶風。
+還有，李鴻章問美國是不是也有玉石，得知產量不多後，似乎因為中國獨占這種資源而有點得意。
+而跟李鴻章晚年形象最相關的，
+就是他的痰盂跟抽大煙的習慣了，
+*《紐約時報》*的記者記錄了李鴻章身邊的侍者一邊遞痰盂給他吐痰，一邊遞菸給他抽的情形，
+不知道這個痰盂跟簽*《馬關條約》*時用的痰盂是不是同一個？
+記者們對於這些光景似乎非常感興趣。
+
+李鴻章在採訪中的態度不卑不亢，
+而且表示對於美國的印象非常好。
+比較意外的是，
+他對於一些嚴肅問題的回答格外地現代以及大膽。
+李鴻章直言：中國境內的報紙遠不如美國報紙敢講真話，
+甚至批評中國的編輯「吝惜於說真話」，並且他們都「只說部分事實」。
+
+> The editors in China are great economizers of the truth; they tell only part of it.
+
+此外，從李鴻章的回答看得出來他對現代的經濟運作有一定的了解。
+他不只提到說需要有「資本、人力、土地」三者的結合才能發展經濟，
+也提到華人移工能夠為美國提供低廉的勞動力，
+美國人如果以自己的「自由」為傲，就不應該排斥華人移工；
+再者，低廉的勞動力能夠讓美國的商品在國際上更有競爭力，
+讓美國的實力超過歐洲列強。
+李鴻章甚至還點評說英國只不過是「世界工廠」，
+而美國才是創新力量的來源，如果能夠善用華人移工的話，美國的實力將會更強大。
+這些觀點顯示，他對市場經濟和器物層面的理解，遠超出當時大多數清朝官員。
+
+另外，李鴻章特別針對[*《排華法案》*](https://en.wikipedia.org/wiki/Chinese_Exclusion_Act)以及加州的[*《吉利法案》*（*Geary Act*）](https://en.wikipedia.org/wiki/Geary_Act)做出批評，
+認為這些法案嚴重剝奪了華人的權益，而在加州尤其嚴重。
+在採訪中，李鴻章直言*《排華法案》*是 "The Most Unfair Law"，
+並點出這背後是因為愛爾蘭裔勞工和其他工人想壟斷勞動力市場。
+他用「美國的自由精神」結合「經濟利益」來駁斥這項法案，
+論點相當犀利：
+
+> Your States represent the best type of modern civilization. You are proud of
+> your liberty and your freedom; but is this freedom? This is not liberty,
+> because you are prevented from utilizing cheap labor in your manufactories and
+> on your farms.
+
+除此之外，他更來講出一句在當時背景以及他個人身份下極為驚人的話：
+
+> Do not consider me as a high Chinese official, but as a cosmopolitan; not as
+> a Mandarin, but as a plain citizen of China and of the world, [...]
+
+這樣的觀點，在十九世紀末的中國語境裡無疑是相當新穎的，
+更何況它是出自天朝上國的欽差大臣之口。
+我非常好奇當時李鴻章中文是怎麼說的：
+像是 "cosmopolitan" 或是 "citizen of the world" 這些詞彙在當時的中文裡不敢說沒有，
+但我猜除了李鴻章之外沒有被任何官員用來自我定位。
+而李鴻章卻能夠用這樣的詞彙來表達他的想法，
+也顯示出他對於西方思想的理解。
+當然，
+不排除翻譯在其中做了潤飾，
+也不知道相信「中體西用」的李鴻章是否真的認同這樣的觀念；
+不過比較可以確定的是，李鴻章確實知道這些概念，
+他使用這些觀念在討論華工問題上讓這個議題不只停留在經濟制度層面，
+而是試著把它提升到理念的層次。
+無論怎麼說，李鴻章對*《排華法案》*痛心是真切的。
+訪談紀錄中提到，李鴻章在整場採訪裡始終神情鎮定、舉止從容，毫無高官的架子；
+唯獨在談到*《排華法案》*時，臉色明顯沉不住氣，甚至揮動起手臂在空中比劃。
+可惜的是，美國並沒有給這位來自中國的欽差這個面子，
+某些排華法案一直持續到二戰後都還在施行。
+
+李鴻章對經濟制度的理解算是到位，
+但在政治制度上就顯得有些盲點。
+在採訪中，
+李鴻章提到接下來馬上要發生的總統大選以及美國政黨政治，
+在幾天後 [9 月 10 日 *The Cleveland Leader* 的頭版](https://www.newspapers.com/article/the-cleveland-leader-li-hung-chang-predi/179701735/)更提到李鴻章對於選舉結果的預測
+（事後看來是正確的預測）：
+他認為民主黨將會失勢，共和黨的麥金利（William McKinley）將會當選。
+這說明他對美國政治確實有一定的掌握。
+不過，李鴻章似乎沒有把握民主政治的核心，
+他天真地問記者：「為什麼不能把兩個政黨統合起來，一起為國家服務呢？」
+李鴻章畢竟是滿清重臣，
+最熟悉的就是極權政治跟官場的邏輯。
+這大概也是為什麼他喜歡君主專斷的普魯士，
+而無法真正理解民主共和制的美國。
+對此，美國記者們尷尬又不失禮貌的微笑被*《紐約時報》*記錄了下來：
+
+> The naïveté of the suggestion to a people that thinks that its safety depends
+> upon the beneficent attrition of political parties brought a smile to the
+> faces of the reporters [...]
+
+看到這些觀點也讓人覺得有些哀傷，
+一百多年前的李鴻章就看得清楚了——華人勞工俗擱大碗，報紙也沒辦法講真話；
+盲點也很清楚——不清處民主共和的理念，相信集權才是高效、正確的政治形式。
+一個世紀過去了，這些情況似乎沒有太大的改變。
+
+其他刊物也有報導李鴻章的紐約行，而且很多以漫畫的方式呈現。
+例如在 9 月 6 日由哥倫比亞大學新聞學院創辦人普利茲所發行的
+[*《紐約世界報》*](https://en.wikipedia.org/wiki/New_York_World)上，
+就刊登了一幅李鴻章穿著黃袍、坐著轎子出現在中國城的漫畫。
+
+> <img src="figures/li-hung-chang/the-yellow-kid.jpg" loading="lazy" style="aspect-ratio: 2630/3159;" /><br/>
+> 李鴻章穿著黃袍坐著轎子出現在中國城的漫畫。
+> 出現在*《紐約世界報》* 9 月 6 日的漫畫 [*The Yellow Kid*](https://en.wikipedia.org/wiki/The_Yellow_Kid) 中。
+> 圖片取自 [The Ohio State University Libraries: The Yellow Kid](https://cartoons.osu.edu/digital_albums/yellowkid/1896/1896.htm)。
+
+這幅漫畫大概是參考當時李鴻章在中國城時的一些照片所繪製的：
+
+> <img src="figures/li-hung-chang/li-in-chinatown.jpg" loading="lazy" style="aspect-ratio: 2210/1406;" /><br/>
+> 李鴻章造訪紐約中國城（拍攝地點：[勿街](https://zh.wikipedia.org/wiki/%E5%8B%BF%E8%A1%97)）。
+> 圖片取自 *Harper's Weekly* 在 1896 年 9 月 12 日的報導，由[美國國會圖書館](https://www.loc.gov/item/95519221/)掃描。
+
+今天的勿街長這樣：房子有些變化，但是大抵上跟一百年前看起來差不多，連街上的結綵看起來都很像。
+現在除了多出青天白日滿地紅，還有[中國國民黨駐美東支部](https://www.kmter.org/)的招牌：
+
+<img src="figures/li-hung-chang/mott-street.jpg" loading="lazy" style="aspect-ratio: 2194/1617;" />
+
+好笑的是，在造訪中國城的時候出現了一個小插曲：
+李鴻章在中國城的時候，
+因為人實在是太多了，
+車子無法前進，
+李鴻章只好下車步行。
+後來要重新上車時，
+他的手指指甲被他乘坐的車的車門夾到，
+「痛不可忍」，
+以至於無法參加原本當地華人為他準備的晚宴。
+而他手指被夾到的新聞就出現在[隔天的*《紐約時報》*採訪](https://nyti.ms/4fZnd17)中。
+除了華人圈以外，
+也有報刊用李鴻章的名字來宣傳自己的報紙，可見當時李鴻章訪美的熱度。
+
+> <img src="figures/li-hung-chang/li-never-misses-the-sunday-journal.jpg" loading="lazy" style="aspect-ratio: 848/606;" /><br/>
+> 身穿黃馬掛、頭戴花翎的李鴻章被畫成 [*New York Journal*](https://en.wikipedia.org/wiki/New_York_Journal-American) 週日報紙的廣告。
+> 圖片取自[美國國會圖書館](https://www.loc.gov/item/93511361)。
+
+李鴻章自己似乎也有看過一些這種漫畫，
+在*《紐約時報》*記者問他對於這些漫畫的想法時，
+他說「這些漫畫一點都不像我」，同時擺出一個奇怪的表情。
+*《紐約時報》*的記者認為這是他有美式幽默感的展現，
+我倒覺得這是美國人想太多。
+
+除了跟記者的採訪之外，
+李鴻章還特別跟基督教領袖會晤，
+地點一樣是在 Waldorf 飯店。
+這大概是因為除了列強政府以外，
+教會是當時在中國最有影響力的組織。
+在這場會晤中對話不多，
+主要就是宣讀預先寫好的講稿。
+有趣的是李鴻章在其中表達了他對基督教的理解，並且與儒家思想對照。
+以下是他比較基督教與儒家的中文原文以及英文譯文的節錄：
+
+> <div class="li-hung-chang-container">
+>   <p style="margin-right: 0.5em;">
+>     若以大道言之，本大臣恆謂基督之福音，實近於吾儒之聖道。
+>     惟儒教謂「己所不欲，勿施於人」，基督教則謂「己之所欲，必施諸人」，用意似頗相反。
+>   </p>
+>   <p>
+>     In a philosophical point of view,
+>     as far as I have been enabled to appreciate,
+>     Christianity does not differ much from Confucianism,
+>     as the Golden Rule is expressed in a positive form in one,
+>     while it is expressed in the negative form in another.
+>   </p>
+> </div>
+> <div class="li-hung-chang-container">
+>   <p style="margin-right: 0.5em; flex-basis: 300%;">
+>     要其旨歸之所在，縱有異同出入，一任他人之評論，本大臣惟主二教相近一語而已。
+>   </p>
+>   <p>
+>     Logically speaking,
+>     whether these two forms of expressing the same truth cover exactly the same ground or not,
+>     I leave it to the investigations of those who have more philosophical tastes.
+>     It is, at the present,
+>     enough to conclude that there exists not much difference between the wise sayings of the two greatest teachers,
+>     on the foundations of which the whole structure of the two systems of morality is built.
+>   </p>
+> </div>
+> <div class="li-hung-chang-container">
+>   <p style="margin-right: 0.5em;">
+>     又考貴國人論道之真源，每曰人一而可分為三：人身一也、人性二也、人靈三也。
+>     所惜救靈一說，儒教奉孔子「未知生，焉知死」之訓詞以為圭臬，故至今存而不論。
+>     本大臣亦不甚了了，不必多言。
+>   </p>
+>   <p>
+>     As man is composed of soul, intellect and body, I highly appreciate that your eminent Boards,
+>     in your arduous and much esteemed work in the field of China, have neglected none of the three.
+>     I need not say much about the first,
+>     being an unknowable mystery of which our greatest Confucius had only an active knowledge.
+>   </p>
+> </div>
+> <hr/>
+> <p>
+>   中文取自：<a href="https://hdl.handle.net/2027/hvd.32044067626119"><em>《李傅相歷聘歐美記》</em></a>。<br/>
+>   英文取自：<a href="https://hdl.handle.net/2027/nnc2.ark:/13960/t2s51qt5f"><em>Interview with His Excellency Li Hung Chang</em></a>。
+> </p>
+
+另外，在李鴻章的日記[*《傅相游歷各國日記》*](https://hdl.handle.net/2027/hvd.32044067626101)中還有一段他與教會領袖的對話：
+
+<!-- <details> -->
+<!--   <summary><strong>《傅相游歷各國日記》節錄</strong></summary> -->
+<!--   總理教會大善士數十人，公謁使節，為言久仰盛名，幸辱賜顧，且謝保護在華之教會，俾傳道之士歷年免於阻撓之害。節相謙遜不遑。 -->
+<!---->
+<!--   因其縱言及於大道，節相謂： -->
+<!--   「孔子之道與基督之道，大略相同。 -->
+<!--   惟一則『己所不欲，勿施於人』； -->
+<!--   一則『己所欲者，必施諸人』。 -->
+<!--   差有廣狹之別。 -->
+<!--   然孔子不又云：『仁者，己欲立而立人，己欲達而達人』乎？」 -->
+<!---->
+<!--   某西士對曰： -->
+<!--   「中堂特專就人事立論，自爾莫不相同。 -->
+<!--   然人與人相接，僅人之一倫耳。 -->
+<!--   基督之教，括天、人、物三大倫，廣遠高深，天下實無其匹。 -->
+<!--   是故分人倫而為五，於天無涉，於物無與，而向有人力所不能盡之處，人事遂退處於無權。 -->
+<!--   耶穌教人，不但使之治人而已。 -->
+<!--   凡人分之所應為，神即與之以能力，使之登峰造極，必有大奏奇效之一候。 -->
+<!--   故其命弟子曰：『汝往哉！偏傳福音。上天下地之權，盡賜汝矣。』 -->
+<!--   諸弟子衍其薪傳將二千載，即遇極惡之人、極難之事，而賴神力以默為佑助。 -->
+<!--   積時成歲，閱人成世，必使萬惡盡歸一善，萬難盡歸一易，而後已焉。 -->
+<!--   夫孔子之道，猶車輪也；人知車輪之能轉，而不知其何以轉。 -->
+<!--   耶穌之道，猶御者也；御者轉其車輪，行乎萬里。 -->
+<!--   耶穌傳其教法，偏乎五洲，歐美之典基於此矣。」 -->
+<!---->
+<!--   觀西士言，雖曰道其所道，其亦有道乎哉！ -->
+<!-- </details> -->
+
+> 因其縱言及於大道，節相謂：「孔子之道與基督之道，大略相同。惟一則『己所不欲，勿施於人』，一則『己所欲者，必施諸人』，差有廣狹之別。
+> 然孔子不又云『仁者，己欲立而立人，己欲達而達人』乎？」
+
+教士的回答非常精彩：
+
+> [...]
+> 就人事立論，自爾莫不相同。
+> 然人與人相接，僅人之一倫耳。
+> 基督之教，括天、人、物三大倫，廣遠高深，天下實無其匹。
+> [...]
+> 夫孔子之道，猶車輪也；人知車輪之能轉，而不知其何以轉。
+> 耶穌之道，猶御者也；御者轉其車輪，行乎萬里。
+
+李鴻章畢竟不是哲學家，
+他自己也說他對這些東西「不甚了了」，
+所以應該是講不贏這些教士。
+在教士回答完之後李鴻章的評論是「雖曰道其所道，其亦有道乎哉」，
+我猜就是懶得繼續說下去了。
+不過李鴻章能比較基督教跟儒家思想還是挺有意思的。
+
+除此之外，李鴻章還對於教會在中國的建設表示感謝，
+其中包含感謝建造西式醫院與學校，
+並且說到這分別是對「人身」與「人性」的照顧。
+李鴻章也特別針對教會在鴉片問題上的努力表示感謝：
+在鴉片戰爭爆發之前，
+是英國教會的力量最積極地在英國國會中反對發動鴉片戰爭，
+後來也是教會積極的協助華人戒除菸癮。
+<!-- 他說：「各貴會深知其害，不但立禁煙會婆心苦口以勸英人，且思代除菸癮之法以救華人。」 -->
+最後，李鴻章特別感謝了教會對於他個人的關心：
+
+> <div class="li-hung-chang-container">
+>   <!-- <p style="width: 39%; display: inline-block; vertical-align: top;"> -->
+>   <!--   至於救性之善，貴國人來我國設塾甚多，俾華人得獲讀書之機會。 -->
+>   <!--   且由是而知格致之學，兼能以一藝名家者，亦復不勝僂指。 -->
+>   <!--   又若救身者，貴教會多設醫院於我華，以施醫給諸功德，濟行醫賣藥之窮。 -->
+>   <!--   要之救性救身，實與救靈相輔而行也。 -->
+>   <!-- </p> -->
+>   <!-- <p style="width: 59%; display: inline-block; vertical-align: top;"> -->
+>   <!--   As for intellect, -->
+>   <!--   you have started numerous educational establishments which have served as the best means -->
+>   <!--   to enable our countrymen to acquire a fair knowledge of the modern arts and sciences of the West. -->
+>   <!--   As for the material part of our constitution, -->
+>   <!--   your societies have started hospitals and dispensaries to save not only the souls but also the bodies of our countrymen. -->
+>   <!-- </p> -->
+>   <!-- <p style="width: 39%; display: inline-block; vertical-align: top;"> -->
+>   <!--   猶未已也。 -->
+>   <!--   我華前遘奇荒，貴會友親往放賑，不憚辛苦，不惜軀命。 -->
+>   <!--   貴國富家善族，則裒集多金，以助成功。 -->
+>   <!--   此皆諸君之鼎力，本大臣至今感之。 -->
+>   <!-- </p> -->
+>   <!-- <p style="width: 59%; display: inline-block; vertical-align: top;"> -->
+>   <!--   I have also to add that in the time of famine in some of the provinces -->
+>   <!--   you have done your best to the greatest number of the sufferers to keep their bodies and souls together. -->
+>   <!-- </p> -->
+>   <!-- <p> -->
+>   <!--   Before I bring my reply to a conclusion I have only two things to mention.  -->
+>   <!-- </p> -->
+>   <!-- <p style="width: 39%; display: inline-block; vertical-align: top;"> -->
+>   <!--   又有種販鴉片之事，流毒吾華至無窮無盡。 -->
+>   <!--   各貴會深知其害，不但立禁煙會婆心苦口以勸英人，且思代除菸癮之法以救華人。 -->
+>   <!--   及遇誠心受教之人，必令先戒洋煙，始許列名教籍。華人受益，尤在無形。 -->
+>   <!-- </p> -->
+>   <!-- <p style="width: 59%; display: inline-block; vertical-align: top;"> -->
+>   <!--   The first, the opium smoking, -->
+>   <!--   being a great curse to the Chinese population, -->
+>   <!--   your societies have tried your best not only as anti-opium societies, -->
+>   <!--   but to afford the best means to stop the craving for the opium; -->
+>   <!--   and also you receive none as your converts who are opium smokers.  -->
+>   <!-- </p> -->
+>   <p style="margin-right: 0.5em;">
+>     若夫本大臣一己之事，更於貴會有深感者。
+>     本大臣前在日本猝受夷傷，乃蒙貴會在遠不遺，代禱上帝默垂蔭庇；
+>     本大臣得讀禱文，深銘肺腑。
+>     文中且有冀望我　君我民我國從此出水火而登衽席語，果蒙皇天恩佑一切轉危為安。
+>     此種風義實令人天欽感，本國與本大臣何修而得之於諸君哉。
+>   </p>
+>   <p>
+>     I have to render, in my own name,
+>     my best thanks for your most effective prayers to God to spare my life
+>     when it was imperilled by the assassin's bullet,
+>     and for your most kind wishes which you have just now so ably expressed
+>     in the interests of my sovereign, my country and people.
+>   </p>
+> </div>
+> <hr/>
+> <p>
+>   中文取自：<a href="https://hdl.handle.net/2027/hvd.32044067626119"><em>《李傅相歷聘歐美記》</em></a>。<br/>
+>   英文取自：<a href="https://hdl.handle.net/2027/nnc2.ark:/13960/t2s51qt5f"><em>Interview with His Excellency Li Hung Chang</em></a>。
+> </p>
+
+英文翻譯顯然是直接跳過「果蒙皇天恩佑一切轉危為安」這句以及後面的客套話。
+[1896 年 9 月 12 日的*《科學人》*副刊](https://www.scientificamerican.com/issue/supplements/1896/09-12/)中詳細的報導李鴻章的紐約行程中就有報導這段會晤。
+這是一篇關於李鴻章的專題報導，出現在那天*《科學人》*副刊的頭版。
+報導中介紹了李鴻章的生平事蹟，也介紹了他在紐約的行程，並且同樣摘錄了以上他比較基督教與儒家的內容，
+顯然美國人對於這樣的比較也非常感興趣。
+
+*《科學人》*報導中還提到了他跟當時已故[美國總統格蘭特（Ulysses S. Grant）](https://en.wikipedia.org/wiki/Ulysses_S._Grant)的深厚情誼，
+因此，
+李鴻章在紐約行程中特意撥冗前往格蘭特墓園致哀。
+我相信對李鴻章個人來說，這是一個非常重要並且莊嚴的行程：
+當時格蘭特已經去世超過十年了，李鴻章到了墓園後，見到周遭已經舊草叢生，感慨萬千。
+[隔天*《紐約時報》*](https://nyti.ms/4myVHKk)說道，
+就在連隨行之人都未曾預料的時刻，李鴻章對著格蘭特的靈柩悲傷且莊重地說 **"VALE!"**。
+不知他當時李鴻章中文是怎麼說的，但我想「永別了」最能貼近他當時的心情。
+<!-- 李鴻章臨行之際停下腳步，再次向格蘭特鞠躬致敬，方才離開。 -->
+
+> <img src="figures/li-hung-chang/li-visits-grant-tomb.png" loading="lazy" style="aspect-ratio: 1760/1210;" /><br/>
+> 李鴻章憑弔格蘭特總統的墓。
+> *《李傅相歷聘歐美記》*記載：「中堂出自紐約行臺，至前民主格蘭德寢園。有宿草矣，為愴然者久之。從者以鮮花環進，敬懸墓門，循西方禮也。」
+> 圖片取自 *Harper's Weekly* 在 1896 年 9 月 12 日的報導，由[美國國會圖書館](https://www.loc.gov/item/95519221/)掃描。
+
+在[*《紐約時報》*的採訪](https://nyti.ms/4fZnd17)中，
+李鴻章自己也有提到他曾經跟格蘭特見面：
+格蘭特勸中國應引進歐美資本以振興經濟，
+這個觀點李鴻章十分贊同。
+這場會談發生在 1879 年，當時格蘭特卸任美國總統後展開[環球旅行](https://lccn.loc.gov/05027043)。
+在他訪華期間，與時擔任直隸總督兼北洋通商大臣的李鴻章在天津會晤，
+還有[合影留念](https://www.loc.gov/item/2016647812/)。
+兩人聊得很投緣，原因之一是他們都有平定內亂的經歷：
+格蘭特打敗了[南方州邦聯](https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%88%A9%E5%A0%85%E8%81%AF%E7%9B%9F%E5%9C%8B)，
+李鴻章則鎮壓了[太平軍](https://zh.wikipedia.org/zh-tw/%E5%A4%AA%E5%B9%B3%E5%A4%A9%E5%9B%BD)。
+因為這樣共同的背景，讓彼此能相互理解，也給彼此都留下了極好的印象。
+格蘭特甚至盛讚[李鴻章能與俾斯麥齊名](https://nyti.ms/4lyGXJZ)。
+<!-- 李鴻章當時還托他在訪日時出面協助調停[琉球案](https://zh.wikipedia.org/wiki/%E7%90%89%E7%90%83%E6%A1%88)， -->
+<!-- 希望能借助格蘭特的威望來解決琉球問題。 -->
+<!-- 格蘭特在日本也確實有協助調停琉球案， -->
+<!-- 但是從[*《格蘭特將軍的環球之旅》*](https://lccn.loc.gov/05027043)裡的紀錄來看， -->
+<!-- 他的態度傾向認為中國與日本應該自行透過外交途徑解決，而非透過外國勢力介入。 -->
+<!-- 琉球案後來不了了之，直至甲午戰爭後，清廷再也無力插手。 -->
+格蘭特將軍在 1885 年於紐約去世，
+他的陵墓就在今天哥倫比亞大學旁的[河濱公園](https://en.wikipedia.org/wiki/Riverside_Park_(Manhattan))中，
+現在是[格蘭特紀念館](https://en.wikipedia.org/wiki/Grant%27s_Tomb)。
+
+<img src="figures/li-hung-chang/grant-memorial.jpg" loading="lazy" style="aspect-ratio: 5618/3160;" />
+
+紀念館的外觀採用古典的希臘羅馬風格，
+特別是[參考了羅馬萬神殿的設計](https://en.wikipedia.org/wiki/Grant%27s_Tomb#Description)；
+至於內部，中央的地穴則是仿照[拿破崙的陵墓](https://en.wikipedia.org/wiki/Napoleon%27s_tomb)而建。
+不過，為什麼當時的建築師要選擇模仿拿破崙的墓則[不得而知](https://www.nps.gov/gegr/learn/historyculture/places.htm)。
+
+<img src="figures/li-hung-chang/grant-memorial-interior.jpg" loading="lazy" style="aspect-ratio: 2268/2061;" />
+
+如拿破崙的陵墓一般，地穴中央安放著格蘭特夫婦的石棺；
+格蘭特的妻子 Julia D. Grant 是到 1902 年過世後，才與格蘭特的石棺[一同安葬在此](https://www.whitehousehistory.org/bios/julia-grant)。
+
+<img src="figures/li-hung-chang/grant-tomb.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
+
+<!-- 當天李鴻章的出行一樣造成轟動， -->
+<!-- [*The Sun* 在 8 月 31 日的報導](https://www.nyshistoricnewspapers.org/?a=d&d=sun18960831-01.1.1&e=-------en-20--1--txt-txIN----------)紀錄到， -->
+<!-- 李鴻章從 Waldorf 飯店到格蘭特墓園的路上身穿黃馬褂，路邊全部都來看他的人。 -->
+<!-- [*《紐約時報》*隔天的報導](https://nyti.ms/4myVHKk)甚至說 -->
+<!-- 當天有五十萬人看到李鴻章穿著黃馬褂的樣子。 -->
+<!-- 我是覺得這個數字實在是太誇張了，但足見李鴻章在紐約引發的轟動。 -->
+<!-- 據說當人群見到有美國警察抬著李鴻章的轎子走向墓園時，更是沸騰歡呼，不絕於耳。 -->
+
+> <img src="figures/li-hung-chang/li-hung-chang-carried-to-grants-tomb.jpg" loading="lazy" style="aspect-ratio: 753/561;" /> <br/>
+> 美國警察抬著李鴻章的轎子前往格蘭特墓園的另一個角度。
+> [*The Sun* 在 8 月 31 日](https://www.nyshistoricnewspapers.org/?a=d&d=sun18960831-01.1.1&e=-------en-20--1--txt-txIN----------)報導到，
+> 人群先是因為這滑稽的場面笑了起來，但很快又在看到警察們抬得十分輕鬆時，轉而爆發出熱烈的歡呼。
+> [*《紐約時報》*隔天的報導](https://nyti.ms/4myVHKk)宣稱有五十萬人來看李鴻章當天的行程，
+> 這個數字顯然是誇大了，但是確實看得到這張照片的背景中滿滿的都是人。
+> 圖片取自[*《西洋镜：海外史料看李鸿章》*](https://special.rhky.com/mobile/mooc/tocard/355693906?courseId=214677656&name=%E6%A0%BC%E5%85%B0%E7%89%B9%E7%9A%84%E5%A2%93%E5%9C%B0&code=&btype=tushu&user_token=123&DSSTASH_LOG=&UID=&_uid=&fid=&vc3=&_d=&uf=&_industry=)一書中，
+> 但是沒有標示這張圖片的出處。
+> 經查後發現這張照片其中一版收藏於 [紐約現代藝術博物館](https://www.moma.org/collection/works/417695)，物品編號 F1938.1.14。
+
+除了獻上花圈與默哀之外，
+李鴻章還希望以更長久的方式紀念與格蘭特的友誼。
+因此，李鴻章特意贈送了一顆銀杏樹，種在格蘭特紀念館後方。
+但是「種樹」可能不是李鴻章自己的主意：
+根據 [*San Francisco Call* 的報導](https://cdnc.ucr.edu/?a=d&d=SFC18970508.2.11)，
+他當時只是表示了想用一種比較永久的方式紀念與格蘭特的友誼，
+有人就建議他可以種一棵樹，他便欣然同意。
+今天仍能看得到這棵銀杏樹，是柵欄中右側，高大參天的那棵：
+<!-- 至於後來落地生根的是一株銀杏，恐怕連李鴻章自己都不知道。 -->
+<!-- 無論如何， -->
+
+<img src="figures/li-hung-chang/li-hung-chang-tree.jpg" loading="lazy" style="aspect-ratio: 4032/2268;" />
+
+在柵欄裡面這棵銀杏樹前，
+有面中英雙語的紀念碑，上面寫道：
+
+<img src="figures/li-hung-chang/li-hung-chang-tree-tablet.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
+
+> <div class="li-hung-chang-container">
+>   <p style="margin-right: 0.5em;">
+>     大清光緒二十有三年，歲在子酉，孟夏初吉，
+>     太子太傅文華殿大學士一等肅毅伯合肥李鴻章，敬為　
+>     大美國前伯理璽天德葛蘭脫墓道種樹，用志景慕。
+>     出使大臣二品銜都察院左副都御史鐵嶺楊儒謹題。
+>   </p>
+>   <p style="margin-bottom: 0.9em;">
+>     This Tree is Planted at the Side of the Tomb of General U. S. Grant,
+>     Ex-President of the United States of America.
+>     For the Purpose of Commemorating His Greatness by Li Hung Chang,
+>     Guardian of the Prince, Grand Secretary of State, Earl of the First Order.
+>     Yang Yu, Envoy Extraordinary and Minister [Plenipotentiary](https://en.wikipedia.org/wiki/Plenipotentiary) of China, Vice President of the Board of Censors.
+>     Kwang Hsu 23rd Year, 4th Moon, May 1897.
+>   </p>
+> </div>
+
+李鴻章來訪時，
+格蘭特的墓尚只是一座未完工的陵墓，
+要等到隔年 1897 年才會建成紀念館。
+李鴻章似乎早已得知此計畫，
+自己也捐了五百美金以贊助紀念館的修建。
+好笑的是，
+李鴻章大概以為這與中國習俗相同，
+是要幫格蘭特修一座廟，
+所以他問身邊的美國人這是不是要蓋成一個 "Temple"，
+美國人連忙回答說不是，[只是一個 "Tomb" 而已](https://trove.nla.gov.au/newspaper/article/268160957)。
+反正碑文上雖然寫得看起來是李鴻章親自種的，
+但實際上應該是事先託付當時駐美公使楊儒在紀念館建成後代為種下的。
+這件事情[*《紐約時報》*也有報導](https://nyti.ms/41IccLr)：
+楊儒在隔年為「李鴻章樹」的種植舉行了儀式，為它鏟了第一鍬土。
+百餘年來，這棵樹仍然矗立在紀念館旁，歷經風雨滄桑：
+*《紐約時報》*報導過有人在剝它的樹皮當作紀念，故[亟需圍欄來保護](https://nyti.ms/4oEq8zZ)；
+後來也有報導說它的[根都凍爛了](https://nyti.ms/45Vy0Ws)，相關人員正在努力搶救這棵樹，但表示希望渺茫。
+
+> <img src="figures/li-hung-chang/li-hung-chang-tree-100-years-ago.jpg" loading="lazy" style="aspect-ratio: 1488/1192;" /> <br/>
+> 李鴻章樹及其紀念碑一百年前的樣子。
+> 圖片取自 [Grant Monument Association](https://grantstomb.org/burial-construction-early-history/)。
+
+格蘭特將軍在 1879 年拜訪李鴻章後前往日本，
+[在長崎親手種下一棵樹](https://www.grantcottage.org/blog/2019/4/16/firmly-planted)（至於是什麼樹眾說紛紜，無花果樹、橡樹、榕樹都有人說），
+以為美日友誼之象徵。
+然而，[那棵樹已經在二戰中被摧毀了](https://www.nps.gov/articles/ulysses-s-grant-international-arbitrator.htm)。
+這邊的銀杏依然亭亭而立，
+我至今仍可撿起它的落葉，
+證明它活得很好，
+願它能再活上一百年：
+
+<img src="figures/li-hung-chang/li-hung-chang-tree-railing-with-leaf.jpg" loading="lazy" style="aspect-ratio: 5712/3213;" />
+
+在紐約停留大約一週後，
+李鴻章繼續前往費城與華府，
+所到之處同樣引發熱烈關注與轟動。
+其中當然不免還是有些[荒謬的小插曲](https://ctext.org/library.pl?if=gb&file=196493&page=64)：
+李鴻章抵達華盛頓火車站時，
+恰逢站務主管為愛爾蘭裔，
+因得知他在*《紐約時報》*上對愛爾蘭人的批評，
+嚴令不許他的下屬為他抬轎，
+害得李鴻章只能緩慢步行出火車站。
+此後，他選擇不再前往美國西岸。
+正如他在*《紐約時報》*採訪中對於加州與愛爾蘭人的批評，
+他深知當地華人長期遭受不公待遇，
+因此李鴻章完全不想經過那裡。
+於是，他在結束華府的訪問後便離開美國到多倫多，
+隨後沿陸路前往溫哥華，
+並在 10 月 3 日從溫哥華搭船返回中國。
+這趟清末最重要、為期五個月的外交使節任務，
+也就此結束。
+
+*Harper's Weekly* 9 月 12 日報導中梳理了李鴻章在紐約的行程，
+並在最後給予他極高的評價，
+然而字裡行間卻流露出即便是美國人也能感受到的無可奈何。
+報導寫道：
+
+> <div class="li-hung-chang-container">
+>   <p style="margin-right: 0.5em;">
+>     如果李鴻章年輕二十五歲，中國就會重獲新生。
+>     從這個角度看，人們不難感到這位偉人來訪中帶有一絲悲劇意味。
+>     它無疑記錄了中華文明最終的衰亡。
+>   </p>
+>   <p>
+>     [I]f Li Hung-Chang were twenty-five years younger, China would be born again.
+>     In the light of that view one did not find it difficult to see an element of tragedy in the great man's visit.
+>     It undoubtedly records the ultimate doom of Chinese civilisation.
+>   </p>
+> </div>
+> <hr/>
+> 英文為<a href="https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073"><em>Harper's Weekly</em> 1896 年 9 月 12 日報導</a>原文，
+> 中文為<ruby><rb>筆者</rb><rp>（</rp><rt>ChatGPT 幫忙</rt><rp>）</rp></ruby>翻譯。
+
+李鴻章自返國至去世前，還要經歷戊戌變法、庚子拳亂與八國聯軍，並推動東南互保；
+臨終前兩月，又奉命簽署*《辛丑條約》*幫慈禧和朝中大臣擦屁股。
+在 1901 年，這位晚清最具影響力的重臣逝世，諡號文忠，
+然而在當時很多百姓、官員乃至知識分子心中，他卻被視為首屈一指的賣國賊。
+[*《紐約時報》*1901 年 11 月 7 日的頭版頭條](https://nyti.ms/4lyGXJZ)報導了李鴻章去世的消息，
+其中的評述帶有跨越時空的先見之明：
+
+> <div class="li-hung-chang-container">
+>   <p style="margin-right: 0.5em;">
+>     雖然他成為中國對日戰爭失敗以及失去臺灣的替罪羊，
+>     但他既未建議，也未贊同那場戰爭。
+>     即便百姓已經接受了改革，這位改革者仍然被憎恨。
+>     因此，即便在死後，李鴻章也不太可能得到人民的感激。
+>     不會有人為他立祠牌，不會有人前往其墓地朝拜，也不會有人為他奉獻祭品。
+>     然而，他一次又一次以自己的才智、耐心、幽默感與對人性的洞察，
+>     將中國從愚昧的朝廷官員和謀臣所拖入的極度恥辱中拯救出來。
+>   </p>
+>   <p>
+>     Although he was the scapegoat for the disastrous war of China against Japan and the loss of Formosa
+>     he neither counseled nor countenanced that war.
+>     The reformer is hated, even if the people accepted the reform.
+>     So it is not likely that even in death Li Hung [Chang] will find his people grateful.
+>     There will be no tablets erected to him, no pilgrimages to his tomb,
+>     no offerings to his memory, although time and again by his genius, his patience, his good humor and knowledge of men,
+>     he saved China from the lowest depths of humiliation into which her foolish Court officials and advisers have plunged her.
+>   </p>
+> </div>
+> <hr/>
+> 英文為<a href="https://nyti.ms/4lyGXJZ"><em>《紐約時報》</em>1901 年 11 月 7 日報導</a>原文，
+> 中文為<ruby><rb>筆者</rb><rp>（</rp><rt>ChatGPT 幫忙</rt><rp>）</rp></ruby>翻譯。
+
+*《紐約時報》*對李鴻章死後的預測終究還是過於樂觀。
+在文化大革命期間，群眾把李鴻章墳墓刨開，戮屍洩憤，
+甚至把他還穿著黃馬褂的屍體綁在拖拉機後面拽行，直到屍骨散盡方才罷休。
+格蘭特將軍在去世後，大家集資為他在紐約修建紀念館，讓他能長受眾人景仰；
+李鴻章不僅為了這座紀念館捐了錢，還在留下了一顆銀杏樹以誌與這位美國英雄的情誼。
+然而，這位曾被格蘭特將軍譽為「東方俾斯麥」的大臣卻落得如此下場，不勝唏噓。
+
+<details>
+<summary><strong>《李傅相歷聘歐美記》中紀錄的紐約行程</strong></summary>
+
+  以下行程主要是根據[*《李傅相歷聘歐美記・美軺載筆》*](https://hdl.handle.net/2027/hvd.32044067626119)以及美國報紙的紀錄整理而成。
+  但是有一個問題：
+  1896 年 8 月 31 日的行程在*《李傅相歷聘歐美記》*中沒有紀錄。
+  該書主要以光緒年號紀年，偶爾附註西曆。
+  雖然光緒紀年的日期是連續的，但對照西曆卻跳過了 8 月 31 日。
+  我傾向認為這是編者在中西曆轉換時出現了錯誤。
+  相比之下，美國方面的記錄更為完整。
+  例如[*《科學人》*在 1896 年 9 月 12 日的副刊](https://www.scientificamerican.com/issue/supplements/1896/09-12/)以及
+  [*Harper's Weekly* 在 1896 年 9 月 12 日的報導](https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073)都相對詳細地記載了李鴻章在紐約的行程。
+  好笑的是，在跟美國各報紙的紀錄對照後，
+  發現*《李傅相歷聘歐美記》*中的光緒紀年確有錯誤，但西曆紀日反而是正確的。
+  此外，[*《西洋镜：海外史料看李鸿章》*](https://special.rhky.com/mobile/mooc/tocourse/214677656?user_token=123&DSSTASH_LOG=&UID=&_uid=&fid=&vc3=&_d=&uf=&_industry=)
+  一書也整理了不少關於李鴻章的外國報導，
+  但是有其中一些資料紀錄不完整，有一些報導則難以查證，
+  因此，下列行程我盡量以能找到的一手資料為憑。
+
+  * `1896-08-28` 李鴻章抵達紐約，港口鳴放廿一響禮炮，儀仗隊夾道歡迎。李鴻章沿著第五大道，經過華盛頓廣場公園到華大府飯店下榻。由於坐船太累，當天沒有其他活動。
+    <!-- - [SS St. Louis 的航程紀錄](https://www.norwayheritage.com/p_ship.asp?sh=stlou)：李鴻章從英國到美國搭乘的蒸汽船。 -->
+    - *New York Passenger Arrival Lists (Ellis Island), 1892-1924*，由 [`familysearch.com` 資料庫](https://www.familysearch.org/en/search/collection/1368704)提供。李鴻章名字見於該資料庫中 [Roll 664, 24 Aug 1896-11 Sep 1896 中 Image 288 of 897](https://www.familysearch.org/ark:/61903/3:1:33S7-91DC-HZF?wc=4FMB-78F%3A1600272313%26cc%3D1368704&cc=1368704&lang=en&i=287)：李鴻章一行人於 1896 年 8 月 28 日抵達紐約的入境紀錄。
+    - [*Harper's Weekly* 在 1896 年 9 月 12 日的圖片](https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073)，圖片由[美國國會圖書館](https://www.loc.gov/item/95519221/)掃描：李鴻章抵岸的照片。
+    - [*《紐約時報》*在隔天 8 月 29 日的報導](https://nyti.ms/4mIYPmf)：李鴻章抵達紐約時的情況。
+  * `1896-08-29` 時任美國總統克利夫蘭在前任海部大臣 [W. C. Whitney 在紐約的別墅](https://en.wikipedia.org/wiki/William_C._Whitney_House)親自迎接李鴻章。李鴻章在遞交國書後與紐約市長、前駐華公使以及曾經居住於中國的美國人士會晤。
+    - [*Harper's Weekly* 在 1896 年 9 月 12 日的報導](https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073)，圖片由[美國國會圖書館](https://www.loc.gov/item/95519275/)掃描：李鴻章遞交國書的照片。
+    - [*《科學人》*副刊在 9 月 12 日的報導](https://www.scientificamerican.com/issue/supplements/1896/09-12/)：克利夫蘭接見李鴻章的對話。
+  * `1896-08-30` 李鴻章先前往格蘭特將軍墓憑弔，隨後由其遺孀與長子接待。途中貫穿中央公園，最後抵達格蘭特長子位於東 62 街的住所。格蘭特本人過世前曾居於附近東 66 街 3 號，不過舊宅早已改建，如今只剩下[門口一塊紀念牌](https://www.hmdb.org/m.asp?m=146259)。
+    - [*Harper's Weekly* 在 1896 年 9 月 12 日的報導](https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073)，圖片由[美國國會圖書館](https://www.loc.gov/item/95519221/)掃描：李鴻章憑弔格蘭特將軍墓以及接受接待。
+    - [*The Sun* 在 8 月 31 日的報導](https://www.nyshistoricnewspapers.org/?a=d&d=sun18960831-01.1.1&e=-------en-20--1--txt-txIN----------)頭版：詳細記載李鴻章憑弔格蘭特墓園的始末，並記錄接受接待地點。
+    - [*《科學人》*副刊在 9 月 12 日的報導](https://www.scientificamerican.com/issue/supplements/1896/09-12/)：李鴻章憑弔格蘭特墓。
+    - [*《紐約時報》*在 8 月 31 日的報導](https://nyti.ms/4myVHKk)：李鴻章憑弔格蘭特墓。
+  * `1896-08-31` 李鴻章自 East River 登船，船上懸掛黃龍旗，途經布魯克林大橋，後沿哈德遜河逆流而上前往西點軍校。原定安排有軍隊操練展示，但因當日大雨，他最終未能登岸參觀。為了一睹他的身影，沿途河岸與水面上聚集了大批人群與船隻。
+    - [*Harper's Weekly* 在 1896 年 9 月 12 日的報導](https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073)：李鴻章坐船去西點軍校，報導稱這天行程頗失敗。
+    - [*The Sun* 在 8 月 31 日的報導](https://www.nyshistoricnewspapers.org/?a=d&d=sun18960831-01.1.1&e=-------en-20--1--txt-txIN----------)：提到今天預計去西點軍校的行程。
+    - [*The Daily Herald* 在 1896 年 9 月 2 日的報導（第二頁）](https://digmichnews.cmich.edu/?a=d&d=MenomineeDH18960902-01.1.2&e=-------en-10--1--txt-txIN-hung-------MenomineeDH18960902%252D01--)：完整報導當天李鴻章坐船去西點軍校始末。
+    - [*《科學人》*副刊在 9 月 12 日的報導](https://www.scientificamerican.com/issue/supplements/1896/09-12/)：李鴻章坐船去西點軍校。
+  * `1896-09-01` 李鴻章與美國基督教會人士於華大府飯店會晤。結束後在 Merchants' Club 吃午餐，[地點](https://en.wikipedia.org/wiki/108_Leonard)就位在中國城附近。用餐結束後前往中國城參觀，在李鴻章離開後中國城內華人放鞭炮慶祝，許多美國人似乎是第一次聽到鞭炮聲。結束後再到 [Union Square](https://en.wikipedia.org/wiki/Union_Square,_Manhattan) 觀看紐約消防隊的展示。由於李鴻章在中國城上車時手指指甲夾到，所以沒能參加華人晚上辦的宴席。也有一說是因為行程太累所以沒出席。
+    - [*Interview with His Excellency Li Hung Chang*](https://hdl.handle.net/2027/nnc2.ark:/13960/t2s51qt5f)：李鴻章與教會人士會晤的英文紀錄。
+    - [*Harper's Weekly* 在 1896 年 9 月 12 日的報導](https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073)：李鴻章當天完整行程。
+    - [*《紐約時報》* 在 9 月 3 日的報導](https://nyti.ms/4fZnd17)：提到李鴻章手指被夾到。
+    - [*《科學人》*副刊在 9 月 12 日的報導](https://www.scientificamerican.com/issue/supplements/1896/09-12/)：李鴻章在 Merchants' Club 吃午餐時，他的其中一位翻譯聽到一位與會美國商人說他在哈佛大學時參與過划船比賽，這位翻譯小聲地說他也在同場比賽中擔任艇長，並且贏得該年的比賽冠軍。這位翻譯是當年在哈佛大學的華人學生，可惜沒有記下他的名字。
+  * `1896-09-02` 李鴻章接受美國記者採訪，結束後前往布魯克林的 [Union League Club](https://en.wikipedia.org/wiki/Union_League_Club) 參加宴會，並注意到俱樂部外才剛剛樹立不久的[格蘭特紀念像](https://thereconstructionera.com/ulysses-s-grant-in-brooklyn/)。
+    - [*Harper's Weekly* 在 1896 年 9 月 12 日的報導](https://archive.org/details/sim_harpers-weekly_1896-09-12_40_2073)：李鴻章在接受完採訪後前往 Union League Club 參加宴會。
+    - [*《紐約時報》*在 9 月 3 日的採訪報導](https://nyti.ms/4fZnd17)：明確紀錄是在 9 月 2 日進行採訪。
+    - [*《李傅相歷聘歐美記》*](https://hdl.handle.net/2027/hvd.32044067626119)在這天有記錄一個其他地方都沒說的小插曲：李鴻章與前駐華公使聊天。聊到前駐華公使現在在從事人壽保險，李鴻章問能不能也幫他保，前公使連忙說依照公司規定，沒有辦法幫李中堂承保；李鴻章旋即回問：「以余年邁而保不住耶？」。兩人大笑而別。沒有講到地點，但很有可能是在 Union League Club。
+  * `1896-09-03` 李鴻章一早便動身離開紐約前往費城、華府。
+
+</details>
+
+<details>
+<summary><strong>《紐約時報》中與李鴻章紐約行相關報導</strong></summary>
+
+  * `1896-08-23` [*Li Hung Chang has Sailed*](https://nyti.ms/4moqyJk):
+    報導李鴻章已從英國登船前往美國。
+    裡面記錄了一個小插曲：
+    李鴻章常直言不諱，遇到覺得奇怪的地方也會直接指出。
+    有一次他以為當時英國殖民地事務大臣[約瑟夫・張伯倫](https://zh.wikipedia.org/wiki/%E7%BA%A6%E7%91%9F%E5%A4%AB%C2%B7%E5%BC%A0%E4%BC%AF%E4%BC%A6)失去一眼的視力，
+    所以向他表達誠心的慰問。
+    這是個大烏龍，李鴻章大概沒見過單片眼鏡，所以誤以為張伯倫只戴一邊的眼鏡是因為一隻眼失明，
+    這搞得張伯倫有點尷尬。
+  * `1896-08-29` [*Li Hung Chang*](https://nyti.ms/4mIYPmf):
+    報導李鴻章抵達紐約，但是報導文中表示對迎接李鴻章的規格感到失望，
+    說儀仗隊沒有完全清空街道，還說船艦穿過港口時的路徑不對，沒有從是邊部署好的戰艦之間穿過。
+    最後說到美國人民希望李鴻章能有個愉快的美國之行，
+    並且想看看這位來自東方的使者能夠把古老的中國帶到現代文明的行列。
+  * `1896-08-31` [*Earl Li at Grant's Tomb*](https://nyti.ms/4myVHKk):
+    報導李鴻章憑弔格蘭特將軍墓的情況，頭版頭條。
+  * `1896-09-03` [*Li on American Hatred*](https://nyti.ms/4fZnd17):
+    李鴻章接受*《紐約時報》*採訪的全文。
+  * `1896-09-03` [*Li Hung Chang's Manifesto*](https://nyti.ms/3HGpL7g):
+    一篇回應李鴻章採訪的社論。
+    這篇社論的論點充滿美國精神，
+    我認為其論述的高度甚至超過李鴻章本人的回答。
+    首先，
+    社論指出李鴻章選擇透過媒體向美國人民傳達訊息，
+    顯示他理解美國輿論與新聞自由的重要性。
+    其次，
+    雖然社論同意李鴻章的觀點——華人工資低廉卻勞動力品質高——在經濟學上無可挑剔，
+    但仍然認為美國不應只因經濟利益而接納華人移民。
+    社論指出，移民問題不僅是經濟問題，
+    更關乎<ruby><rb>公民</rb><rp>（</rp><rt>civics</rt><rp>）</rp></ruby>與融入美國社會的能力，
+    因此不能僅憑經濟利益決定。
+    它同時承認，雖然華工數量從未對美國社會構成嚴重威脅，但若未來可能如此，美國社會仍有權決定是否接納華人移民。
+    然而，社論也嚴厲批判*《排華法案》*是非常愚蠢、懦弱並且蠱惑人心的法案（原文：stupid and cowardly pieces of demagogism）。
+    無論華人移工是否多到會影響美國社會，
+    美國都不應該屢次背棄對華條約，
+    任由華人——特別是西岸的華人——遭受各種<ruby><rb>可惡</rb><rp>（</rp><rt>outrageous</rt><rp>）</rp></ruby>且<ruby><rb>卑劣</rb><rp>（</rp><rt>dastardly</rt><rp>）</rp></ruby>的對待。
+    在這個層面上，社論完全同意李鴻章的立場，
+    並在結尾明言美國在*《排華法案》*問題上大錯特錯（原文：entirely in the wrong），應為自身的殘酷與背信感到羞恥。
+  * `1897-05-08` [*Li Hung Chang's Tree*](https://nyti.ms/41IccLr):
+    報導在李鴻章離開一年後，楊儒在格蘭特紀念館為李鴻章贈送的銀杏樹舉行種植儀式。
+  * `1901-11-07` [*Death of Li Hung Chang*](https://nyti.ms/4lyGXJZ):
+    報導李鴻章去世的消息，頭版頭條。
+  * `1902-06-12` [*Li Hung Chang Tree Exposed*](https://nyti.ms/4oEq8zZ):
+    報導李鴻章贈送的銀杏樹被人剝樹皮當作紀念品的事情，並且請求要加設圍欄來保護這棵樹。
+  * `1918-05-18` [*Li Hung Chang Tree Dying*](https://nyti.ms/45Vy0Ws):
+    報導李鴻章贈送的銀杏樹的部分根部在寒冬中凍死，
+    相關人員正在努力搶救這棵樹，但是表示情況不樂觀。
+
+</details>
 
 # 留言板 {#comments}
 

@@ -1,13 +1,20 @@
 img {
 	max-width: 40em;
-	min-width:100%;
+	min-width: 100%;
+	height: auto;
 	width: 0;
 	display: block;
 }
 
 video {
 	max-width: 40em;
-	min-width:100%;
+	min-width: 100%;
+	height: auto;
 	width: 0;
 	display: block;
+}
+
+figure {
+	margin: 0;
+	min-width: 100%;
 }

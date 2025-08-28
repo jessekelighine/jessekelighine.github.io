@@ -1,6 +1,8 @@
-/* Descrption: Minimal CSS for Markdown Generated Website.
- * Author: Jesse C. Chen (jessekelighine.com)
- * */
+/******************************************************************************
+ * DESCRIPTION: Minimal CSS for Pandoc Generated Website from Markdown.       *
+ * AUTHOR: Jesse C. Chen (https://jessekelighine.com)                         *
+ *                                                                            *
+ *****************************************************************************/
 
 .title {
 	font-size: 30px;
@@ -64,7 +66,7 @@ sup {
 
 em {
 	color: #478D99;
-	font-style: normal;
+	font-synthesis: none; /* Disable faux italic */
 }
 
 strong {
@@ -177,20 +179,4 @@ a.back-to-top:hover {
 	background: #478D99;
 	color: #ffffff;
 	opacity: 1;
-}
-
-/* CONFUCIUS SAID BUTTON */
-
-#confucius-said {
-	color: #478D99;
-	border: none;
-	border-radius: 16pt;
-	font-size: 18pt;
-	padding: 0em 0.35em;
-	font-family: "IBM Plex Mono", "Noto Sans KR", "Noto Sans TC", monospace;
-}
-
-#confucius-said:hover {
-	background: #478D99;
-	color: #ffffff;
 }

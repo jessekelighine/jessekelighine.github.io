@@ -8,22 +8,25 @@ CSS_ALL := \
 	   $(shell realpath $(CSS_IMPORT)) \
 	   $(shell realpath $(CSS_IMG))
 
-.PHONY: all clean
-
+.PHONY: all
 all: index.html
 
+.PHONY: clean
 clean:
 	rm -rf index.html
 
 index.html: index.md $(CSS_ALL)
 	pandoc $< \
 		--from markdown+east_asian_line_breaks \
-		--toc --toc-depth=2 \
+		--toc --toc-depth=1 \
 		--standalone --mathjax \
 		--css $(CSS_IMPORT) \
 		--css $(CSS_IMG) \
 		--css $(CSS) \
 		--output $@
-	# Update RSS feed:
-	#	- new <item>, <pubDate>, and <lastBuildDate>
-	#	- date format: date -R
+	# Run `make rss` to generate RSS feed
+
+.PHONY: rss
+rss:
+	# Run `make` to generate index.html first
+	./update-rss.sh
