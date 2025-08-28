@@ -6,32 +6,26 @@ header-includes:
 ---
 
 <img class="front_pic"
-	alt="cover-image"
-	src="resources/griechisch-lateinisches-quadrat-ordnung.webp"
-	style="
-		width: 100%;
-		display: block;
-		padding: 0em 0em 0em 0em;
-		margin-right: auto;
-		margin-left: auto;
-		"
+  alt="cover-image"
+  src="resources/griechisch-lateinisches-quadrat-ordnung.webp"
+  style="width: 100%;"
 />
 
 <blockquote>
-    <script src="confucius-said.js"></script>
-    <table style="width: 100%; padding: 0px;">
-        <tbody>
-            <tr style="border-bottom: 0px;">
-                <td style="padding: 0px; padding-bottom: 0.5em;">
-                    <div id="analects-chapter" style="font-weight: bold;"></div>
-                </td>
-                <td style="padding: 0px; padding-bottom: 0.5em; text-align: right;">
-                    <button id="confucius-said" onclick="confucius_said()">↻</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div id="analects-verse"></div>
+  <script src="confucius-said.js"></script>
+  <table style="width: 100%; padding: 0px;">
+    <tbody>
+      <tr style="border-bottom: 0px;">
+        <td style="padding: 0px; padding-bottom: 0.5em;">
+          <div id="analects-chapter" style="font-weight: bold;"></div>
+        </td>
+        <td style="padding: 0px; padding-bottom: 0.5em; text-align: right;">
+          <button id="confucius-said" onclick="confucius_said()">↻</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="analects-verse"></div>
 </blockquote>
 
 ## Popular Mathematics
@@ -104,16 +98,16 @@ header-includes:
   我國中莫名其妙發明的一款遊戲， 2020 年的時候想說可以把遊戲規則紀錄一下，以免變老之後就忘記了。
 - [**Punkt Uhr**](https://github.com/jessekelighine/punkt-uhr):
   Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move!
-- [**RE100: Taiwan Market Report 2020**](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan):
-  An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/).
-- [**18歲，投下你的第一票**](resources/voting-pamphlet.pdf):
-  2019 年教育部投票手冊。排版設計者：*我*。
-- [**《出洋肄習錄》**](educational-mission)：
-  在紐約所見所聞的流水帳。
+<!-- - [**RE100: Taiwan Market Report 2020**](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan): -->
+<!--   An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/). -->
 - [**《申請覺迷錄》**](grad-school-application)：
   申請碩班、博班的心得。
+- [**《出洋肄習錄》**](educational-mission)：
+  在紐約所見所聞的流水帳。
+- [**〈李鴻章特輯〉**](li-hung-chang-in-new-york)：
+  大清欽差頭等出使大臣太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。
 - [**Gallery**](gallery):
-  Some graphics and designs I've created.
+  Some graphics I've created.
 
 <div class="back-to-top">
 <a href="#" class="back-to-top">↑</a>
