@@ -8,7 +8,7 @@
 # Last Modified: 2024-09-01                                                   #
 ###############################################################################
 
-output="index-output.html"
+output="index.html"
 placeholder="THIS_IS_A_UNIQUE_PLACEHOLDER_THAT_CONTAINS_NO_SPECIAL_CHARACTERS"
 template=$(cat << EOF
 <!DOCTYPE html>

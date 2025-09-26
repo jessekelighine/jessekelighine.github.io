@@ -94,7 +94,7 @@ header-includes:
   中文裡有很多相似、但是意義卻又微妙不同的量詞，像是「雙、副、對」或「條、根、支」。
   台灣的母語使用者會怎麼在這幾個量詞之間選擇呢？
   一個簡單的問卷調查結果。
-- [**Kelighine 遊戲**](rulebook/rulebook.pdf):
+- [**Kelighine 遊戲**](kelighine-rulebook):
   我國中莫名其妙發明的一款遊戲， 2020 年的時候想說可以把遊戲規則紀錄一下，以免變老之後就忘記了。
 - [**Punkt Uhr**](https://github.com/jessekelighine/punkt-uhr):
   Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move!

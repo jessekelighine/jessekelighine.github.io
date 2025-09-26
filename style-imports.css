@@ -10,5 +10,5 @@
  * See [一个标点符号引发的血案](https://paro.one/20220728-introducing-google-fonts-plus/) for more information.
  * See also [Google Fonts+](https://github.com/refparo/google-fonts-plus) for the implementation.
  */
-@import url('https://fonts.paro.one/api?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900:exclude@U%2BB7,U%2B2002,U%2B2013-2014,U%2B2018-2019,U%2B201C-201D,U%2B2026&display=swap');
-@import url('https://fonts.paro.one/api?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700:exclude@U%2BB7,U%2B2002,U%2B2013-2014,U%2B2018-2019,U%2B201C-201D,U%2B2026&display=swap');
+@import url('https://fonts.paro.one/api?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900:exclude@U%2B2014&display=swap');
+@import url('https://fonts.paro.one/api?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700:exclude@U%2B2014&display=swap');

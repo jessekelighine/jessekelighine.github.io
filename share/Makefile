@@ -1,14 +1,18 @@
 # Makefile: Redirecting HTML
 
-REDIRECTION_PATH := https://drive.google.com/drive/folders/1BEI-TwPjtBVWPuV6qwJnp2rc32FvNejS?usp=drive_link
-GENERATOR := generate-redirection.sh
+GENERATOR := ../share/generate-redirection.sh
 OUTPUT := index.html
+URL := $(shell cat url)
 CSS := style.css
 
 .PHONY: all clean
 
-all:
-	./$(GENERATOR) "$(REDIRECTION_PATH)"
+all: $(OUTPUT)
+
+$(OUTPUT): url
+	$(GENERATOR) "$(URL)"
+	ln -s ../$(CSS) $(CSS)
 
 clean:
 	rm -rf $(OUTPUT)
+	rm -f $(CSS)
