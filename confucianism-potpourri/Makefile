@@ -20,7 +20,6 @@ index.html: index.md $(CSS_ALL)
 		--toc --toc-depth=1 \
 		--standalone --mathjax \
 		--css $(CSS_IMPORT) \
-		--css $(CSS_IMG) \
 		--css $(CSS) \
 		--output $@
 	# Run `make rss` to generate RSS feed
