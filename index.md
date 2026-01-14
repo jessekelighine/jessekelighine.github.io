@@ -106,6 +106,8 @@ header-includes:
   在紐約所見所聞的流水帳。
 - [**〈李鴻章特輯〉**](li-hung-chang-in-new-york)：
   大清欽差頭等出使大臣太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。
+- [**《論語雜論》**](confucianism-potpourri)：
+  跟「述而不作」完全相反一想到就忍不住寫下來的儒家筆記。
 - [**Gallery**](gallery):
   Some graphics I've created.
 
