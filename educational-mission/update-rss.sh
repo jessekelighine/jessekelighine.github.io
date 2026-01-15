@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-master_link="https://jessekelighine.com/educational-mission"
+master_link="$1"
 rss_file="rss.xml"
 index_file="index.md"
 latest_title="$(cat "$index_file" | grep "^#" | tail -n 2 | head -n 1 | sed -e 's/ *{.*//' -e 's/^# //')"

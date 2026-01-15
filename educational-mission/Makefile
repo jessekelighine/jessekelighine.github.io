@@ -29,4 +29,4 @@ index.html: index.md $(CSS_ALL)
 .PHONY: rss
 rss:
 	# Run `make` to generate index.html first
-	./update-rss.sh
+	./update-rss.sh "https://jessekelighine.com/educational-mission"
