@@ -11,8 +11,8 @@ all: $(OUTPUT)
 
 $(OUTPUT): url
 	$(GENERATOR) "$(URL)"
-	ln -s ../$(CSS) $(CSS)
+	ln -sf ../$(CSS) $(CSS)
 
 clean:
 	rm -rf $(OUTPUT)
-	rm -f $(CSS)
+	rm -rf $(CSS)

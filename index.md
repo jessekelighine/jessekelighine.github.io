@@ -68,7 +68,7 @@ header-includes:
 - [**Shannon Entropy**](shannon-entropy):
   Motivating the definition of *entropy* in information theroy.
 
-## Code Stuff
+## Code
 
 - [**vindent.nvim**](https://github.com/jessekelighine/vindent.nvim):
   A *minimal*, *modern* and *highly customizable* Neovim plugin
@@ -86,6 +86,17 @@ header-includes:
 - [**LaTeX Setup in Vim/Neovim**](latex-neovim-setup):
   A brief description of my $\mathrm{\LaTeX}$ setup in Vim/Neovim.
 
+## Potpourri
+
+- [**《出洋肄習錄》**](educational-mission)：
+  在紐約所見所聞的流水帳。
+- [**〈李鴻章特輯〉**](li-hung-chang-in-new-york)：
+  大清欽差頭等出使大臣太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。
+- [**《論語雜論》**](confucianism-potpourri)：
+  跟「述而不作」完全相反一想到就忍不住寫下來的儒家筆記。
+- [**《申請覺迷錄》**](grad-school-application)：
+  申請碩班、博班的心得。
+
 ## Miscellanea
 
 - [**Arrow's Impossibility Theorem**](arrows-impossibility-theorem):
@@ -100,14 +111,6 @@ header-includes:
   Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move!
 <!-- - [**RE100: Taiwan Market Report 2020**](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan): -->
 <!--   An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/). -->
-- [**《申請覺迷錄》**](grad-school-application)：
-  申請碩班、博班的心得。
-- [**《出洋肄習錄》**](educational-mission)：
-  在紐約所見所聞的流水帳。
-- [**〈李鴻章特輯〉**](li-hung-chang-in-new-york)：
-  大清欽差頭等出使大臣太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。
-- [**《論語雜論》**](confucianism-potpourri)：
-  跟「述而不作」完全相反一想到就忍不住寫下來的儒家筆記。
 - [**Gallery**](gallery):
   Some graphics I've created.
 
