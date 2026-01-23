@@ -50,7 +50,3 @@ img {
 </a>
 
 <img src="resources/cat_roll.gif" loading="lazy" style="aspect-ratio: 1/1;" />
-
-<div class="back-to-top">
-  <a href="#" class="back-to-top">↑</a>
-</div>

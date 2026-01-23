@@ -1,8 +1,7 @@
 ---
 title:  "陳捷	Jesse C. Chen"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-header-includes:
-	<link rel="icon" href="resources/sheep_color.png">
+header-includes: <link rel="icon" href="resources/sheep_color.png">
 ---
 
 <img class="front_pic"
@@ -113,7 +112,3 @@ header-includes:
 <!--   An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/). -->
 - [**Gallery**](gallery):
   Some graphics I've created.
-
-<div class="back-to-top">
-<a href="#" class="back-to-top">↑</a>
-</div>

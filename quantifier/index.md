@@ -2,8 +2,7 @@
 title:  "中文量詞"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2025-07-23"
-header-includes:
-  <link rel="icon" href="../resources/sheep_color.png">
+header-includes: <link rel="icon" href="../resources/sheep_color.png">
 ---
 
 **中文的量詞**非常神奇，
@@ -153,7 +152,3 @@ header-includes:
 因為這個只是某堂課的報告，所以沒有很嚴謹請見諒。
 
 <!-- [**報告本文**](report/quantifier_linguistics.pdf) -->
-
-<div class="back-to-top">
-<a href="#" class="back-to-top">↑</a>
-</div>
