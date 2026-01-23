@@ -2,8 +2,7 @@
 title: "Fisher Information"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2024-04-08"
-header-includes:
-	<link rel="icon" href="../resources/sheep_color.png">
+header-includes: <link rel="icon" href="../resources/sheep_color.png">
 ---
 
 $$
