@@ -1,7 +1,6 @@
 ---
 title:  "陳捷	Jesse C. Chen"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-header-includes: <link rel="icon" href="resources/sheep_color.png">
 ---
 
 <img class="front_pic"

@@ -2,7 +2,6 @@
 title:  "你能通過牛津大學的數學面試嗎？"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2022-12-22"
-header-includes: <link rel="icon" href="../resources/sheep_color.png">
 ---
 
 在學習數學的路程中，

@@ -2,8 +2,6 @@
 title: "How to compare the size of covariance matrices?"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2024-04-09"
-header-includes:
-	<link rel="icon" href="../resources/sheep_color.png">
 ---
 
 $$

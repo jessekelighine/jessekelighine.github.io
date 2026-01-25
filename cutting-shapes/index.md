@@ -2,7 +2,6 @@
 title:  "一個關於剪紙的定理"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2024-08-27"
-header-includes: <link rel="icon" href="../resources/sheep_color.png">
 ---
 
 大家可能都有玩過七巧板，

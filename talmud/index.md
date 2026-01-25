@@ -2,7 +2,6 @@
 title:  "怎麼樣分才公平？"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 date:   "2024-03-27"
-header-includes: <link rel="icon" href="../resources/sheep_color.png">
 ---
 
 <div style="padding: 1em 0em 1em 0em">

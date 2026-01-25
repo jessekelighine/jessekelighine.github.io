@@ -1,7 +1,6 @@
 ---
 title:  "Gallery"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
-header-includes: <link rel="icon" href="../resources/sheep_color.png">
 ---
 
 <style>
