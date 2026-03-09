@@ -42,28 +42,28 @@ author: "[`jessekelighine.com`](https://jessekelighine.com)"
 
 ## Statistics
 
-- [**Definiteness of Covariance Matrices**](covariance-matrix):
+- [**Definiteness of Covariance Matrices**](covariance-matrix/article/covariance-matrix.pdf):
   What do we mean when we compare covariances matrices through positive definiteness?
   A short intuitive interpretation.
-- [**James-Stein Estimator**](james-stein_estimator):
+- [**James-Stein Estimator**](james-stein_estimator/presentation/james-stein_estimator.pdf):
   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation.
-- [**Generalized Method of Moments**](gmm):
+- [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf):
   A brief introduction to Generalized Method of Moments, aka *GMM*.
-- [**Fisher Information**](fisher-information):
+- [**Fisher Information**](fisher-information/article/fisher-information.pdf):
   A brief introduction to Fisher Information and some related ideas.
 - [**Metropolis-Hastings Algorithm**](metropolis-hastings-algorithm):
   An explanation and demonstration of the Metropolis-Hastings algorithm.
-- [**Sufficient Statistics**](sufficient-statistic):
+- [**Sufficient Statistics**](sufficient-statistic/article/main.pdf):
   Short definition and example of sufficient statistics.
-- [**Mallow's Cp**](mallow-cp):
+- [**Mallow's Cp**](mallow-cp/article/mallow-cp.pdf):
   Motivating Mallow's $C_p$ criterion, one of the simplest model selection criterion.
-- [**Akaike Information Criterion (AIC)**](akaike-information-criterion):
+- [**Akaike Information Criterion (AIC)**](akaike-information-criterion/article/aic.pdf):
   Motivating AIC, one of the most popular model selection criterion.
-- [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity):
+- [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity/article/von-neumann-ergodicity.pdf):
   An introduction to von Neumann's Ergodicity Theroem and its connection with convergence of Markov Chains.
-- [**Weak IV**](weak-iv):
+- [**Weak IV**](weak-iv/article/weak-iv-note.pdf):
   An overview of some important concepts in weak instrument variables.
-- [**Shannon Entropy**](shannon-entropy):
+- [**Shannon Entropy**](shannon-entropy/article/shannon-entropy.pdf):
   Motivating the definition of *entropy* in information theroy.
 
 ## Code
@@ -97,13 +97,13 @@ author: "[`jessekelighine.com`](https://jessekelighine.com)"
 
 ## Miscellanea
 
-- [**Arrow's Impossibility Theorem**](arrows-impossibility-theorem):
+- [**Arrow's Impossibility Theorem**](arrows-impossibility-theorem/article/arrows-impossibility-theorem.pdf):
   A one-page summary of Arrow's Impossibility theroem.
 - [**中文量詞**](quantifier):
   中文裡有很多相似、但是意義卻又微妙不同的量詞，像是「雙、副、對」或「條、根、支」。
   台灣的母語使用者會怎麼在這幾個量詞之間選擇呢？
   一個簡單的問卷調查結果。
-- [**Kelighine 遊戲**](kelighine-rulebook):
+- [**Kelighine 遊戲**](kelighine-rulebook/rulebook/rulebook.pdf):
   我國中莫名其妙發明的一款遊戲， 2020 年的時候想說可以把遊戲規則紀錄一下，以免變老之後就忘記了。
 - [**Punkt Uhr**](https://github.com/jessekelighine/punkt-uhr):
   Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move!
