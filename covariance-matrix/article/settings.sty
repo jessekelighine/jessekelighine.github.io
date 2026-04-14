@@ -27,7 +27,7 @@ citecolor=myblue}
 %-----------------------------------------------------------------------------%
 %%% Math %%%
 \usepackage{amsmath,mathtools,amssymb,mathrsfs}
-\DeclareMathOperator{\E}{\text{\textrm{\upshape\textbf{E}}}}
+\DeclareMathOperator{\E}{\mathbb{E}}
 \DeclareMathOperator{\var}{\text{Var}}
 \newcommand{\raum}{\phantom{=}{\:\,}}
 \newcommand{\asDemonstrated}{\null\nobreak\hfill\ensuremath{\blue{\blacksquare}}}
@@ -36,6 +36,7 @@ citecolor=myblue}
 \newcommand{\vv}{\mathbf{v}}
 \newcommand{\xx}{\boldsymbol{x}}
 \newcommand{\yy}{\boldsymbol{y}}
+\newcommand{\zz}{\boldsymbol{z}}
 \newcommand{\KK}{\mathbf{K}}
 \newcommand{\BB}{\mathbf{B}}
 \newcommand{\reals}{\mathbb{R}}
@@ -50,7 +51,7 @@ citecolor=myblue}
 %<--------------------------------------------------------------------------->%
 %%% Minimal Title %%%
 \makeatletter\def\@maketitle{%
-\noindent{\bfseries\sffamily\@title}%
+\noindent{\bfseries\@title}%
 \hfill\texttt{\@date}\\%
 \raggedleft\ttfamily\@author%
 \par\vskip1em}\makeatother

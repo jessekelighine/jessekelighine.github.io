@@ -6,8 +6,8 @@
 \usepackage{settings}
 %<--------------------------------------------------------------------------->%
 %%% Title %%%
-\title{How to compare the size of covariance matrices?}
-\author{\href{https://jessekelighine.com}{jessekelighine.com}\\Jesse C.\ Chen\ 陳\,捷}
+\title{How to Compare Covariance Matrices?}
+\author{\href{https://jessekelighine.com}{jessekelighine.com}\\Jesse Chieh\ Chen\ 陳\,捷}
 \date{\today}
 %<--------------------------------------------------------------------------->%
 
@@ -20,98 +20,111 @@
 \noindent
 Consider two covariance matrices $\AA_{n\times n}$ and $\BB_{n\times n}$.
 We say that $\AA$ is \emph{larger} than $\BB$,
-denoted by $\AA\geq \BB$ or $\AA\succsim \BB$,
-if $\AA-\BB$ is semi-positive definite.
-But why do we use matrix definiteness to compare the ``size'' of covariance matrices?
+denoted by $\AA\succeq \BB$, if $\AA-\BB$ is positive semidefinite.
+But why is positive definiteness the right notation to compare the size of covariance matrices?
 
 To understand this,
 recall that a covariance matrix is not only symmetric,
-but also positive semi-definite.
+but also positive semidefinite.
 Let $\xx=(x_1,...,x_n)\T$ be a random vector.
 Its covariance matrix is given by:
-\begin{align*}
+\begin{align}
 	\KK &\coloneqq \E{(\xx-\E{\xx})(\xx-\E{\xx})\T}.
-\end{align*}
-Now consider any constant vector $\vv\in\reals^n$.
-We can examine the quadratic form:
-\begin{align*}
-	\vv\T \KK \vv &= \E(\vv\T(\xx-\E{\xx})(\vv\T(\xx-\E{\xx}))\T) \geq 0
-\end{align*}
-Therefore, the covariance matrix $\KK$ is always positive semi-definite.
+\end{align}
+For any fixed vector $\vv\in\reals^n$,
+consider the following quadratic form:
+\begin{align}
+	\vv\T \KK \vv &= \E[\vv\T(\xx-\E{\xx})(\vv\T(\xx-\E{\xx}))\T] \geq 0.
+\end{align}
+Since this holds for any $\vv$,
+the covariance matrix $\KK$ is positive semidefinite by definition.
 
-There is another intuitive way of understanding the positive semi-definiteness.
+There is another intuitive way of understanding the positive semidefiniteness.
 Consider the same vector $\vv$ and the random vector $\xx$.
-The dot product $\yy=\vv\T \xx$ is a projection of the random vector from $n$-dimensional
-space on a one-dimensional space along the direction of $\vv$.
-The variance of $\yy$ is given by
-\begin{align*}
-	\var(\yy)
-	&= \E((\vv\T \xx)(\vv\T \xx)\T ) - \E(\vv\T \xx)\E(\vv\T \xx)\T  \\
+The dot product $\zz=\vv\T \xx$ is a (scaled) projection of the random vector from $n$-dimensional
+space on a one-dimensional space spanned by $\vv$.
+The variance of $\zz$ is given by
+\begin{align}
+	\var(\zz)
+	&= \E[(\vv\T \xx)(\vv\T \xx)\T ] - \E(\vv\T \xx)\E(\vv\T \xx)\T  \\
 	&= \vv\T \big(\E(\xx\xx\T ) - \E(\xx)\E(\xx)\T \big)\vv \\
 	&= \vv\T \KK\vv.
-\end{align*}
-Notice that the variance of $\yy$ assumes the exact form as before.
-Since variance is always non-negative, the covariance matrix must be positive semi-definite.
-% Motivated by this intuition, we can now ask: how should we compare two covariance matrices?
+\end{align}
+Thus, the quadratic form $\vv\T\KK\vv$ has a concrete interpretation:
+It is the variance of the projection of $\xx$ in the direction $\vv$.
+And since variances are always non-negative, the covariance matrix must be positive semidefinite.
 
 With the two interpretations of covariance matrices in mind,
-let's now compare the size of two covariance matrices.
-Let $\xx=(x_1,...,x_n)\T$ and $\yy=(y_1,...,y_n)\T$ be random vectors, both with mean $(0,...,0)\T$ for simplicity.
-Let $\AA=\E(\xx\xx\T)$ and $\BB=\E(\yy\yy\T)$ denote their respective covariance matrices.
-Our goal is to compare $\AA$ and $\BB$ in some meaningful way.
+we can now understand how to compare two covariance matrices.
+Let $\xx=(x_1,...,x_n)\T$ and $\yy=(y_1,...,y_n)\T$ be random vectors,
+both with mean $(0,...,0)\T$ for simplicity.
+Let $\AA=\E(\xx\xx\T)$ and $\BB=\E(\yy\yy\T)$ denote their covariance matrices respectively.
+The question is how to compare $\AA$ and $\BB$ in a way that reflects the dispersion of the underlying random vectors.
 
-A natural thought is to project both $\xx$ and $\yy$ onto an arbitrary direction $\vv\in\reals^n$,
-then compare the variances of these one-dimensional projections.
-Since each projection yields a non-negative scalar variance,
-we can compare these scalar values across \emph{all} possible directions $\vv$.
-
-Formally, consider any vector $\vv$,
-consider the projection $\vv\T\xx$.
-Its variance is
-\begin{align*}
-	\E((\vv\T \xx)^2)
+Since it is easy to compare the variances of one-dimensional random variables,
+a natural idea is to compare the variances of \emph{all} one-dimensional projections.
+Let $\vv\in\reals^n$ be an arbitrary vector
+and consider the projection $\vv\T\xx$.
+Its variance is given by
+\begin{align}
+	\E[(\vv\T \xx)^2]
 	&= \E(\vv\T \xx\xx\T\vv) \\
 	&= \vv\T\E(\xx\xx\T)\vv
-	= \vv\T \AA\vv
-\end{align*}
+	= \vv\T \AA\vv.
+\end{align}
 Similarly, for $\yy$ we have
-\begin{align*}
-	\E((\vv\T \yy)^2)
+\begin{align}
+	\E[(\vv\T \yy)^2]
 	= \vv\T \BB\vv.
-\end{align*}
-If for all $\vv$, we find:
-\begin{align*}
+\end{align}
+Therefore, if we find that
+\begin{align}
 	\vv\T \AA\vv - \vv\T \BB\vv
 	= \vv\T (\AA - \BB)\vv
-	\geq 0,
-\end{align*}
-then the matrix $\AA-\BB$, by definition, is positive semi-definite.
-In this case, we say that $\AA$ is \emph{larger} than $\BB$ in the Loewner partial ordering. That is:
+	\geq 0
+	\quad\forall \vv\in\reals^n,
+\end{align}
+then matrix $\AA-\BB$ is positive semidefinite by definition.
+In other words,
+\begin{align}
+	\AA \succeq \BB
+	\iff
+	\vv\T \AA\vv \geq \vv\T \BB\vv
+	\quad\forall \vv\in\reals^n.
+\end{align}
+This defines the \href{https://en.wikipedia.org/wiki/Loewner_order}{\textit{Loewner order}}
+on the set of positive semidefinite matrices.
+When $\AA$ and $\BB$ are covariance matrices, the interpretation is especially natural:
 \begin{tcolorbox}[enhanced,sharp corners,frame hidden,boxrule=0sp,borderline west={3pt}{0pt}{black!70}]
-	If $\AA-\BB$ is positive semi-definite,
-	then \emph{for all possible directions $\vv$},
-	the variance of the projection of $\xx$ exceeds or equals that of $\yy$.
-	This defines the \href{https://en.wikipedia.org/wiki/Loewner_order}{Loewner ordering}.
+	If $\AA-\BB$ is positive semidefinite,
+	then \emph{in every direction $\vv$},
+	the variance of the projection of $\xx$ is at least as large as that of $\yy$.
 \end{tcolorbox}
 
-This interpretation is intuitive when visualized geometrically.
-Imagine two random vectors $\xx$ and $\yy$ in $\reals^2$, whose distributions are represented by ellipses:
+This perspective is also easy to visualize geometrically.
+In two dimensions, a covariance matrix can be represented by an ellipse.%
+\footnote{%
+Representing the covariance matrix of a random vector $\xx\in\reals^n$ by an ellipsoid in $\reals^n$ is natural.
+An ellipsoid can be defined as the set of points $\{\vv\in\reals^n: \vv\T \KK \vv \leq 1\}$ for some positive semidefinite matrix $\KK$.
+The shape and rotation of the ellipsoid are determined by eigenvalues and eigenvectors of $\KK$,
+which in turn correspond to the variances and principal directions of the distribution of $\xx$.
+\href{https://arxiv.org/abs/1302.4881}{Friendly, Monette, and Fox (2013)} explores some of these geometric insights in more detail.
+}
+Suppose the blue ellipse corresponds to $\blue{\xx}$, with covariance matrix $\blue{\AA}$,
+and the red ellipse corresponds to $\red{\yy}$, with covariance matrix $\red{\BB}$.
 \begin{center}
-	\includegraphics[width=0.2\textwidth]{figures/visual-1.pdf}
+	\includegraphics[scale=1]{figures/visual-1.pdf}
 	\hspace{0.5em}
-	\includegraphics[width=0.2\textwidth]{figures/visual-2.pdf}
+	\includegraphics[scale=1]{figures/visual-2.pdf}
 \end{center}
-Let the blue ellipse represent the distribution $\xx$ with covariance matrix $\AA$,
-and let the red ellipse represent the distribution $\yy$ with covariance matrix $\BB$.
-
-In case 1, $\AA$ is \emph{larger} than $\BB$
-since the blue ellipse fully encloses the red one,
-indicating that in \emph{every direction}, the variance of $\xx$ exceeds that of $\yy$.
-However, the same statement is not true in case 2.
-In some directions, e.g.\ along $\vv_1$, the variance of $\xx$ is larger;
-in other directions, e.g.\ along $\vv_2$, the variance of $\yy$ is larger.
-Thus, $\AA$ and $\BB$ are not comparable by Loewner ordering,
-meaning that it does not make sense to say that one covariance matrix is larger than the other.
+In \textsc{Case 1}, $\blue{\AA}$ is \emph{larger} than $\red{\BB}$
+since the blue ellipse completely contains the red ellipse,
+indicating that in \emph{every direction}, the variance of $\blue{\xx}$ exceeds that of $\red{\yy}$.
+However, the same cannot be said in \textsc{Case 2}.
+Along some directions, such as $\vv_1$, the variance of $\blue{\xx}$ is larger;
+along other directions, such as $\vv_2$, the variance of $\red{\yy}$ is larger.
+In this case, $\blue{\AA}$ and $\red{\BB}$ are not comparable under the Loewner order,
+meaning that there is no clear way to say that one covariance matrix is larger than the other.
 \asDemonstrated
 
 \end{multicols}
