@@ -24,4 +24,4 @@ You can find my CV [**here**](resume/jesse-chieh-chen-cv.pdf).
 # Teaching
 
 - [Intermediate Microeconomics, as *TA*](https://github.com/jessekelighine/ECON3211-intermediate-micro-recitation) (Undergrad, Fall 2025, Columbia University)
-- Introduction to Econometrics II, as *TA* (Ph.D., Spring 2026, Columbia University)
+- [Introduction to Econometrics II, as *TA*](https://github.com/jessekelighine/ECON6412-introduction-to-econometrics-ii-recitation) (Ph.D., Spring 2026, Columbia University)
