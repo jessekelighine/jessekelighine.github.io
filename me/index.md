@@ -9,7 +9,7 @@ author: "[`jessechiehchen.com`](http://jessechiehchen.com)"
   style="width: 100%;"
 />
 
-I am a Ph.D. Student in the Department of Economics at Columbia University.
+I am a PhD Student in the Department of Economics at Columbia University.
 My research interests are in econometrics.
 
 # Curriculum Vitae
@@ -23,5 +23,5 @@ You can find my CV [**here**](cv/jesse-chieh-chen-cv.pdf).
 
 # Teaching
 
-- Intermediate Microeconomics, [as *TA*](https://github.com/jessekelighine/ECON3211-intermediate-micro-recitation) (Undergrad, Fall 2025, Columbia University)
-- Introduction to Econometrics II, [as *TA*](https://github.com/jessekelighine/ECON6412-introduction-to-econometrics-ii-recitation) (Ph.D., Spring 2026, Columbia University)
+- Undergrad Intermediate Microeconomics, [as *TA*](https://github.com/jessekelighine/ECON3211-intermediate-micro-recitation) (Fall 2025, Columbia University)
+- PhD Introduction to Econometrics II, [as *TA*](https://github.com/jessekelighine/ECON6412-introduction-to-econometrics-ii-recitation) (Spring 2026, Columbia University)
