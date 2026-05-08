@@ -9,7 +9,7 @@ author: "[`jessechiehchen.com`](http://jessechiehchen.com)"
   style="width: 100%;"
 />
 
-I am a PhD Student in the Department of Economics at Columbia University.
+I am a Ph.D. Student in the Department of Economics at Columbia University.
 My research interests are in econometrics.
 
 # Curriculum Vitae
@@ -19,9 +19,9 @@ You can find my CV [**here**](cv/jesse-chieh-chen-cv.pdf).
 # Research
 
 - *Fixed-T Dynamic Spatial Panel Model with Common Shocks*, with Jushan Bai (Working Paper)
-- *A Bayesian Approach to the Problem of Unknown Networks* (Working in Progress)
+- *A Bayesian Approach to the Problem of Unknown Networks*, with Jushan Bai (Working in Progress)
 
 # Teaching
 
-- Undergrad Intermediate Microeconomics, [as *TA*](https://github.com/jessekelighine/ECON3211-intermediate-micro-recitation) (Fall 2025, Columbia University)
-- PhD Introduction to Econometrics II, [as *TA*](https://github.com/jessekelighine/ECON6412-introduction-to-econometrics-ii-recitation) (Spring 2026, Columbia University)
+- Undergraduate Intermediate Microeconomics, [as *TA*](https://github.com/jessekelighine/ECON3211-intermediate-micro-recitation) (Fall 2025, Columbia University)
+- Ph.D. Introduction to Econometrics II, [as *TA*](https://github.com/jessekelighine/ECON6412-introduction-to-econometrics-ii-recitation) (Spring 2026, Columbia University)
