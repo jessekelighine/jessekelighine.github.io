@@ -12,8 +12,8 @@
 %-----------------------------------------------------------------------------%
 %%% Section Font %%%
 \usepackage{titlesec}
-\titleformat*{\section}{\normalsize\bfseries\sffamily\raggedright}
-\titleformat*{\subsection}{\normalsize\bfseries\sffamily\raggedright}
+\titleformat*{\section}{\normalsize\bfseries\raggedright}
+\titleformat*{\subsection}{\normalsize\bfseries\raggedright}
 %-----------------------------------------------------------------------------%
 %%% Page # of # %%%
 \usepackage{fancyhdr,lastpage}
@@ -42,7 +42,7 @@ citecolor=myblue}
 \newcommand{\loglike}{\ell}
 \renewcommand{\star}{^{*}}
 \newcommand{\dd}{\,d}
-\newcommand{\Tsymb}{\mathsf{T}}
+\newcommand{\Tsymb}{\prime}
 \newcommand{\T}{^{\Tsymb}}
 \newcommand{\invT}{^{-\Tsymb}}
 \newcommand{\inv}{^{-1}}
@@ -81,11 +81,19 @@ citecolor=myblue}
 \setdefaultdate{\meinesdatum}
 %-----------------------------------------------------------------------------%
 %%% Minimal Title %%%
-\makeatletter\def\@maketitle{%
-\noindent{\bfseries\sffamily\@title}%
-\hfill\texttt{\@date}\\%
-\raggedleft\ttfamily\@author%
-\par\vskip1em}\makeatother
+\makeatletter
+\newsavebox{\titledatebox}
+\def\@maketitle{%
+\begingroup
+\sbox{\titledatebox}{{\bfseries\@title}\quad\texttt{\@date}}
+\noindent
+\ifdim\wd\titledatebox>\textwidth
+{\raggedright\bfseries\@title\par}{\raggedleft\texttt{\@date}\par}
+\else
+{\raggedright\noindent\bfseries\@title}\hfill\texttt{\@date}\par
+\fi
+{\raggedleft\ttfamily\@author\par}\vskip1em\endgroup
+}\makeatother
 %-----------------------------------------------------------------------------%
 %%% Glossaries & Acronyms %%%
 \usepackage[style=long,acronym]{glossaries}
@@ -93,7 +101,6 @@ citecolor=myblue}
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}
 \renewcommand*{\glsgroupskip}{}
 \setlength\LTleft{0pt}
-\makeglossaries % \printglossaries
 \newacronym{aic}{AIC}{Akaike Information Criterion}
 \newacronym{ml}{ML}{Maximum Likelihood}
 \newacronym{kl}{KL}{Kullback-Leibler Divergence}
