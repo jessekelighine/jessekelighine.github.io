@@ -45,10 +45,10 @@ author: "[`jessekelighine.com`](https://jessekelighine.com)"
 - [**Definiteness of Covariance Matrices**](covariance-matrix/article/covariance-matrix.pdf):
   What do we mean when we compare covariances matrices through positive definiteness?
   A short intuitive interpretation.
-- [**James-Stein Estimator**](james-stein_estimator/presentation/james-stein_estimator.pdf):
-  A brief introduction to the James-Stein Estimator and its empirical Bayes motivation.
-- [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf):
-  A brief introduction to Generalized Method of Moments, aka *GMM*.
+<!-- - [**James-Stein Estimator**](james-stein/presentation/james-stein_estimator.pdf): -->
+<!--   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation. -->
+<!-- - [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf): -->
+<!--   A brief introduction to Generalized Method of Moments, aka *GMM*. -->
 - [**Fisher Information**](fisher-information/article/fisher-information.pdf):
   A brief introduction to Fisher Information and some related ideas.
 - [**Metropolis-Hastings Algorithm**](metropolis-hastings-algorithm):
@@ -62,7 +62,7 @@ author: "[`jessekelighine.com`](https://jessekelighine.com)"
 - [**von Neumann's Ergodicity Theorem**](von-neumann-ergodicity/article/von-neumann-ergodicity.pdf):
   An introduction to von Neumann's Ergodicity Theroem and its connection with convergence of Markov Chains.
 - [**Weak IV**](weak-iv/article/weak-iv-note.pdf):
-  An overview of some important concepts in weak instrument variables.
+  An overview of some concepts in weak instrument variables.
 - [**Shannon Entropy**](shannon-entropy/article/shannon-entropy.pdf):
   Motivating the definition of *entropy* in information theroy.
 
@@ -83,17 +83,17 @@ author: "[`jessekelighine.com`](https://jessekelighine.com)"
   A practical introduction to `Makefile` for economists.
 - [**LaTeX Setup in Vim/Neovim**](latex-neovim-setup):
   A brief description of my $\mathrm{\LaTeX}$ setup in Vim/Neovim.
+- [**Hammerspoon Tips**](hammerspoon-tips):
+  A collection of useful Hammerspoon tips and tricks.
 
 ## Potpourri
 
 - [**《出洋肄習錄》**](educational-mission)：
   在紐約所見所聞的流水帳。
 - [**〈李鴻章特輯〉**](li-hung-chang-in-new-york)：
-  大清欽差頭等出使大臣太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。
+  太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。
 - [**《論語雜論》**](confucianism-potpourri)：
-  跟述而不作完全相反一想到就忍不住寫下來的儒家筆記。
-- [**《申請覺迷錄》**](grad-school-application)：
-  申請碩班、博班的心得。
+  想到就寫下來的儒家筆記。
 
 ## Miscellanea
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc 3.10.1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="jessekelighine.com" />
   <title>陳捷 Jesse C. Chen</title>
@@ -10,10 +10,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -29,7 +32,7 @@
   <link rel="stylesheet" href="style-imports.css" />
   <link rel="stylesheet" href="style.css" />
   <script defer=""
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"
   type="text/javascript"></script>
 </head>
 <body>
@@ -95,14 +98,11 @@ Calculator</strong></a>: An online <em>Reverse Polish Notation</em>
 href="covariance-matrix/article/covariance-matrix.pdf"><strong>Definiteness
 of Covariance Matrices</strong></a>: What do we mean when we compare
 covariances matrices through positive definiteness? A short intuitive
-interpretation.</li>
-<li><a
-href="james-stein_estimator/presentation/james-stein_estimator.pdf"><strong>James-Stein
-Estimator</strong></a>: A brief introduction to the James-Stein
-Estimator and its empirical Bayes motivation.</li>
-<li><a href="gmm/presentation/gmm_presentation.pdf"><strong>Generalized
-Method of Moments</strong></a>: A brief introduction to Generalized
-Method of Moments, aka <em>GMM</em>.</li>
+interpretation.
+<!-- - [**James-Stein Estimator**](james-stein/presentation/james-stein_estimator.pdf): -->
+<!--   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation. -->
+<!-- - [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf): -->
+<!--   A brief introduction to Generalized Method of Moments, aka *GMM*. --></li>
 <li><a
 href="fisher-information/article/fisher-information.pdf"><strong>Fisher
 Information</strong></a>: A brief introduction to Fisher Information and
@@ -127,8 +127,8 @@ Neumann’s Ergodicity Theorem</strong></a>: An introduction to von
 Neumann’s Ergodicity Theroem and its connection with convergence of
 Markov Chains.</li>
 <li><a href="weak-iv/article/weak-iv-note.pdf"><strong>Weak
-IV</strong></a>: An overview of some important concepts in weak
-instrument variables.</li>
+IV</strong></a>: An overview of some concepts in weak instrument
+variables.</li>
 <li><a
 href="shannon-entropy/article/shannon-entropy.pdf"><strong>Shannon
 Entropy</strong></a>: Motivating the definition of <em>entropy</em> in
@@ -162,17 +162,17 @@ for Economists</strong></a>: A practical introduction to
 <li><a href="latex-neovim-setup"><strong>LaTeX Setup in
 Vim/Neovim</strong></a>: A brief description of my <span
 class="math inline">\(\mathrm{\LaTeX}\)</span> setup in Vim/Neovim.</li>
+<li><a href="hammerspoon-tips"><strong>Hammerspoon Tips</strong></a>: A
+collection of useful Hammerspoon tips and tricks.</li>
 </ul>
 <h2 id="potpourri">Potpourri</h2>
 <ul>
 <li><a
 href="educational-mission"><strong>《出洋肄習錄》</strong></a>：在紐約所見所聞的流水帳。</li>
 <li><a
-href="li-hung-chang-in-new-york"><strong>〈李鴻章特輯〉</strong></a>：大清欽差頭等出使大臣太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。</li>
+href="li-hung-chang-in-new-york"><strong>〈李鴻章特輯〉</strong></a>：太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。</li>
 <li><a
-href="confucianism-potpourri"><strong>《論語雜論》</strong></a>：跟述而不作完全相反一想到就忍不住寫下來的儒家筆記。</li>
-<li><a
-href="grad-school-application"><strong>《申請覺迷錄》</strong></a>：申請碩班、博班的心得。</li>
+href="confucianism-potpourri"><strong>《論語雜論》</strong></a>：想到就寫下來的儒家筆記。</li>
 </ul>
 <h2 id="miscellanea">Miscellanea</h2>
 <ul>
