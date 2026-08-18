@@ -1,5 +1,6 @@
 ---
-title:  "陳捷	Jesse C. Chen"
+title:  "陳捷	Jesse Chieh Chen"
+author-meta: "Jesse Chieh Chen"
 author: "[`jessekelighine.com`](https://jessekelighine.com)"
 ---
 
@@ -25,6 +26,10 @@ author: "[`jessekelighine.com`](https://jessekelighine.com)"
   </table>
   <div id="analects-verse"></div>
 </blockquote>
+
+## Who am I?
+
+Find the serious answer [*here*](https://jessechiehchen.com).
 
 ## Popular Mathematics
 
@@ -94,19 +99,16 @@ author: "[`jessekelighine.com`](https://jessekelighine.com)"
   太子太傅文華殿大學士一等肅毅伯合肥李鴻章在紐約的一週。
 - [**《論語雜論》**](confucianism-potpourri)：
   想到就寫下來的儒家筆記。
-
-## Miscellanea
-
-- [**Arrow's Impossibility Theorem**](arrows-impossibility-theorem/article/arrows-impossibility-theorem.pdf):
-  A one-page summary of Arrow's Impossibility theroem.
 - [**中文量詞**](quantifier):
   中文裡有很多相似、但是意義卻又微妙不同的量詞，像是「雙、副、對」或「條、根、支」。
   台灣的母語使用者會怎麼在這幾個量詞之間選擇呢？
   一個簡單的問卷調查結果。
 - [**Kelighine 遊戲**](kelighine-rulebook/rulebook/rulebook.pdf):
   我國中莫名其妙發明的一款遊戲， 2020 年的時候想說可以把遊戲規則紀錄一下，以免變老之後就忘記了。
-- [**Punkt Uhr**](https://github.com/jessekelighine/punkt-uhr):
-  Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move!
+- [**Arrow's Impossibility Theorem**](arrows-impossibility-theorem/article/arrows-impossibility-theorem.pdf):
+  A one-page summary of Arrow's Impossibility theroem.
+<!-- - [**Punkt Uhr**](https://github.com/jessekelighine/punkt-uhr): -->
+<!--   Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move! -->
 <!-- - [**RE100: Taiwan Market Report 2020**](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan): -->
 <!--   An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/). -->
 - [**Gallery**](gallery):
