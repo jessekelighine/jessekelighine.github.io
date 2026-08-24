@@ -50,10 +50,6 @@ Find the serious answer [*here*](https://jessechiehchen.com).
 - [**Definiteness of Covariance Matrices**](covariance-matrix/article/covariance-matrix.pdf):
   What do we mean when we compare covariances matrices through positive definiteness?
   A short intuitive interpretation.
-<!-- - [**James-Stein Estimator**](james-stein/presentation/james-stein_estimator.pdf): -->
-<!--   A brief introduction to the James-Stein Estimator and its empirical Bayes motivation. -->
-<!-- - [**Generalized Method of Moments**](gmm/presentation/gmm_presentation.pdf): -->
-<!--   A brief introduction to Generalized Method of Moments, aka *GMM*. -->
 - [**Fisher Information**](fisher-information/article/fisher-information.pdf):
   A brief introduction to Fisher Information and some related ideas.
 - [**Metropolis-Hastings Algorithm**](metropolis-hastings-algorithm):
@@ -100,16 +96,12 @@ Find the serious answer [*here*](https://jessechiehchen.com).
 - [**《論語雜論》**](confucianism-potpourri)：
   想到就寫下來的儒家筆記。
 - [**中文量詞**](quantifier):
-  中文裡有很多相似、但是意義卻又微妙不同的量詞，像是「雙、副、對」或「條、根、支」。
-  台灣的母語使用者會怎麼在這幾個量詞之間選擇呢？
+  中文裡有很多相似但是意義卻又微妙不同的量詞，
+  台灣的中文母語使用者會怎麼在這些量詞之間選擇呢？
   一個簡單的問卷調查結果。
 - [**Kelighine 遊戲**](kelighine-rulebook/rulebook/rulebook.pdf):
-  我國中莫名其妙發明的一款遊戲， 2020 年的時候想說可以把遊戲規則紀錄一下，以免變老之後就忘記了。
+  莫名其妙發明的一款遊戲。
 - [**Arrow's Impossibility Theorem**](arrows-impossibility-theorem/article/arrows-impossibility-theorem.pdf):
   A one-page summary of Arrow's Impossibility theroem.
-<!-- - [**Punkt Uhr**](https://github.com/jessekelighine/punkt-uhr): -->
-<!--   Making an illustration by one of my favourite artists [Anna Kövecses](https://anna-kovecses.com/) move! -->
-<!-- - [**RE100: Taiwan Market Report 2020**](https://www.there100.org/our-work/publications/meeting-demand-supply-renewable-energy-market-briefing-taiwan): -->
-<!--   An RE100 report I helped create while interning at [CIER](https://www.cier.edu.tw/). -->
 - [**Gallery**](gallery):
   Some graphics I've created.

@@ -14,5 +14,5 @@ clean:
 $(NAME).pdf: $(MAIN).pdf
 	cp $(MAIN).pdf $(NAME).pdf
 
-$(MAIN).pdf: $(MAIN).tex
+$(MAIN).pdf: $(MAIN).tex settings.sty
 	latexmk -xelatex -synctex=1 $(MAIN).tex

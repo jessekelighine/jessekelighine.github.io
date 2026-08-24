@@ -3,6 +3,12 @@
 %-----------------------------------------------------------------------------%
 \usepackage{setspace}\setstretch{1.25} % {\setstretch{1.25} \par}
 %<---------------------------------------------------------------------------->%
+%%% Date Time %%%
+\usepackage{datetime}
+\newdateformat{mydate}
+{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+\setdefaultdate{\mydate}
+%-----------------------------------------------------------------------------%
 %%% Section Font %%%
 \usepackage[small,sf]{titlesec}
 \titleformat*{\section}{\normalsize\sf}
